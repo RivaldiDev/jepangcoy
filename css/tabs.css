@@ -107,8 +107,9 @@
     border-radius: var(--radius-lg);
     padding: 3rem;
     transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
     overflow: hidden;
+    top: 0;
+    left: 0;
 }
 
 /* Gradient glow on cards */
