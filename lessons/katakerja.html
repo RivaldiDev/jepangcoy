@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata Kerja Sehari-hari - Japanese N5</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/lesson.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-jp">日本語</span>
+                    <span class="logo-text">N5 Learning</span>
+                </div>
+                <nav class="nav">
+                    <a href="../index.html" class="nav-link">Beranda</a>
+                    <a href="#study" class="nav-link">Materi</a>
+                    <a href="#quiz" class="nav-link">Latihan</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-container">
+        <div class="lesson-header">
+            <h1 class="lesson-title">Kata Kerja Sehari-hari</h1>
+            <p class="lesson-subtitle">Kata kerja yang sering digunakan dalam percakapan</p>
+        </div>
+
+        <section id="study" class="study-section">
+            <h2>Kata Kerja Penting</h2>
+            <p>Berikut adalah kata kerja yang paling sering digunakan dalam kehidupan sehari-hari.</p>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
+                    <h3 style="font-family: 'Noto Sans JP', sans-serif; color: var(--primary); margin-bottom: 0.5rem;">
+                        食べます</h3>
+                    <p>tabemasu - makan</p>
+                </div>
+                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
+                    <h3 style="font-family: 'Noto Sans JP', sans-serif; color: var(--primary); margin-bottom: 0.5rem;">
+                        飲みます</h3>
+                    <p>nomimasu - minum</p>
+                </div>
+                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
+                    <h3 style="font-family: 'Noto Sans JP', sans-serif; color: var(--primary); margin-bottom: 0.5rem;">
+                        行きます</h3>
+                    <p>ikimasu - pergi</p>
+                </div>
+                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
+                    <h3 style="font-family: 'Noto Sans JP', sans-serif; color: var(--primary); margin-bottom: 0.5rem;">
+                        来ます</h3>
+                    <p>kimasu - datang</p>
+                </div>
+                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
+                    <h3 style="font-family: 'Noto Sans JP', sans-serif; color: var(--primary); margin-bottom: 0.5rem;">
+                        見ます</h3>
+                    <p>mimasu - melihat</p>
+                </div>
+                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
+                    <h3 style="font-family: 'Noto Sans JP', sans-serif; color: var(--primary); margin-bottom: 0.5rem;">
+                        聞きます</h3>
+                    <p>kikimasu - mendengar</p>
+                </div>
+                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
+                    <h3 style="font-family: 'Noto Sans JP', sans-serif; color: var(--primary); margin-bottom: 0.5rem;">
+                        読みます</h3>
+                    <p>yomimasu - membaca</p>
+                </div>
+                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
+                    <h3 style="font-family: 'Noto Sans JP', sans-serif; color: var(--primary); margin-bottom: 0.5rem;">
+                        書きます</h3>
+                    <p>kakimasu - menulis</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="quiz-section">
+            <div class="quiz-header">
+                <h2>Latihan Soal</h2>
+                <p>Uji pemahaman Anda tentang kata kerja sehari-hari</p>
+                <div class="quiz-progress-container">
+                    <div id="quiz-progress"></div>
+                </div>
+            </div>
+            <div id="quiz-container"></div>
+        </section>
+    </div>
+
+    <script>
+        const quizData = {
+            lessonId: 'katakerja',
+            questions: [
+                {
+                    question: 'Apa arti dari 食べます (tabemasu)?',
+                    options: ['minum', 'makan', 'tidur', 'pergi'],
+                    correct: 1,
+                    explanation: '食べます (tabemasu) berarti "makan".'
+                },
+                {
+                    question: 'Kata kerja apa yang berarti "pergi"?',
+                    options: ['来ます', '行きます', '帰ります', '出ます'],
+                    correct: 1,
+                    explanation: '行きます (ikimasu) berarti "pergi".'
+                },
+                {
+                    question: 'Apa arti dari 飲みます (nomimasu)?',
+                    options: ['makan', 'minum', 'membaca', 'menulis'],
+                    correct: 1,
+                    explanation: '飲みます (nomimasu) berarti "minum".'
+                },
+                {
+                    question: 'Kata kerja apa yang berarti "datang"?',
+                    options: ['行きます', '来ます', '帰ります', '出ます'],
+                    correct: 1,
+                    explanation: '来ます (kimasu) berarti "datang".'
+                },
+                {
+                    question: 'Apa arti dari 見ます (mimasu)?',
+                    options: ['mendengar', 'melihat', 'berbicara', 'berpikir'],
+                    correct: 1,
+                    explanation: '見ます (mimasu) berarti "melihat" atau "menonton".'
+                },
+                {
+                    question: 'Kata kerja apa yang berarti "membaca"?',
+                    options: ['書きます', '読みます', '話します', '聞きます'],
+                    correct: 1,
+                    explanation: '読みます (yomimasu) berarti "membaca".'
+                },
+                {
+                    question: 'Apa arti dari 書きます (kakimasu)?',
+                    options: ['membaca', 'berbicara', 'menulis', 'mendengar'],
+                    correct: 2,
+                    explanation: '書きます (kakimasu) berarti "menulis".'
+                },
+                {
+                    question: 'Kata kerja apa yang berarti "mendengar"?',
+                    options: ['見ます', '聞きます', '話します', '言います'],
+                    correct: 1,
+                    explanation: '聞きます (kikimasu) berarti "mendengar" atau "bertanya".'
+                },
+                {
+                    question: 'Apa arti dari 寝ます (nemasu)?',
+                    options: ['bangun', 'tidur', 'duduk', 'berdiri'],
+                    correct: 1,
+                    explanation: '寝ます (nemasu) berarti "tidur".'
+                },
+                {
+                    question: 'Kata kerja apa yang berarti "belajar"?',
+                    options: ['教えます', '勉強します', '習います', '覚えます'],
+                    correct: 1,
+                    explanation: '勉強します (benkyou shimasu) berarti "belajar".'
+                }
+            ]
+        };
+    </script>
+    <script src="../js/quiz.js"></script>
+</body>
+
+</html>

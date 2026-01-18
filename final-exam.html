@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Akhir N5 - Japanese Learning</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/lesson.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-jp">日本語</span>
+                    <span class="logo-text">N5 Learning</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-container">
+        <div class="lesson-header">
+            <h1 class="lesson-title">🎓 Ujian Akhir N5</h1>
+            <p class="lesson-subtitle">50 Soal Komprehensif - Persiapan Ujian Akhir</p>
+        </div>
+
+        <div
+            style="margin: 2rem 0; padding: 2rem; background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--primary); border-radius: 0.5rem;">
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">📋 Informasi Ujian:</h3>
+            <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                <li><strong>Total Soal:</strong> 50 pertanyaan</li>
+                <li><strong>Cakupan Materi:</strong> Hiragana, Katakana, Kanji, Partikel, Kata Kerja, Kata Sifat,
+                    Satuan, Waktu</li>
+                <li><strong>Waktu:</strong> Tidak dibatasi (latihan)</li>
+                <li><strong>Passing Score:</strong> 70% (35 soal benar)</li>
+            </ul>
+        </div>
+
+        <section class="quiz-section">
+            <div class="quiz-header">
+                <h2>Mulai Ujian</h2>
+                <p>Kerjakan semua soal dengan teliti. Semoga sukses!</p>
+                <div class="quiz-progress-container">
+                    <div id="quiz-progress"></div>
+                </div>
+            </div>
+            <div id="quiz-container"></div>
+        </section>
+    </div>
+
+    <script src="js/quiz.js"></script>
+    <script>
+        const quizData = {
+            lessonId: 'final-exam',
+            questions: [
+                // HIRAGANA & KATAKANA (10 soal)
+                { question: 'Huruf Hiragana "あ" dibaca?', options: ['a', 'i', 'u', 'e'], correct: 0, explanation: 'あ dibaca "a".' },
+                { question: 'Huruf Katakana "カ" dibaca?', options: ['sa', 'ka', 'ta', 'na'], correct: 1, explanation: 'カ dibaca "ka".' },
+                { question: 'Hiragana untuk "ki" adalah?', options: ['く', 'き', 'け', 'こ'], correct: 1, explanation: 'き adalah "ki".' },
+                { question: 'Katakana untuk "su" adalah?', options: ['ス', 'シ', 'ソ', 'サ'], correct: 0, explanation: 'ス adalah "su".' },
+                { question: 'Apa bunyi dari ひらがな "ん"?', options: ['n', 'm', 'ng', 'semua benar'], correct: 3, explanation: 'ん dapat dibaca n, m, atau ng tergantung konteks.' },
+
+                // KANJI (10 soal)
+                { question: 'Apa arti dari kanji 日?', options: ['bulan', 'hari/matahari', 'pohon', 'air'], correct: 1, explanation: '日 (hi/nichi) berarti "hari" atau "matahari".' },
+                { question: 'Kanji mana yang berarti "gunung"?', options: ['川', '山', '木', '田'], correct: 1, explanation: '山 (yama/san) berarti "gunung".' },
+                { question: 'Apa arti dari kanji 川?', options: ['gunung', 'sungai', 'pohon', 'sawah'], correct: 1, explanation: '川 (kawa/sen) berarti "sungai".' },
+                { question: 'Kanji mana yang berarti "sawah"?', options: ['田', '口', '車', '門'], correct: 0, explanation: '田 (ta/den) berarti "sawah".' },
+                { question: 'Apa arti dari kanji 人?', options: ['orang', 'mulut', 'mobil', 'gerbang'], correct: 0, explanation: '人 (hito/jin) berarti "orang".' },
+                { question: 'Kanji mana yang berarti "pohon"?', options: ['日', '月', '木', '山'], correct: 2, explanation: '木 (ki/moku) berarti "pohon" atau "kayu".' },
+                { question: 'Apa arti dari kanji 口?', options: ['sawah', 'mulut', 'mobil', 'gerbang'], correct: 1, explanation: '口 (kuchi/kou) berarti "mulut".' },
+                { question: 'Kanji mana yang berarti "mobil"?', options: ['車', '門', '田', '口'], correct: 0, explanation: '車 (kuruma/sha) berarti "mobil".' },
+                { question: 'Apa arti dari kanji 月?', options: ['hari', 'bulan', 'pohon', 'gunung'], correct: 1, explanation: '月 (tsuki/getsu) berarti "bulan".' },
+                { question: 'Kanji mana yang berarti "gerbang"?', options: ['口', '門', '車', '田'], correct: 1, explanation: '門 (mon/kado) berarti "gerbang" atau "pintu".' },
+
+                // PARTIKEL (10 soal)
+                { question: 'Partikel apa yang digunakan untuk menandai topik kalimat?', options: ['を', 'は', 'に', 'で'], correct: 1, explanation: 'Partikel は (wa) digunakan untuk menandai topik kalimat.' },
+                { question: 'Lengkapi: 私___学生です (Saya adalah pelajar)', options: ['を', 'は', 'に', 'が'], correct: 1, explanation: 'は (wa) menandai topik "私" (saya).' },
+                { question: 'Partikel apa yang menandai objek langsung?', options: ['を', 'は', 'に', 'で'], correct: 0, explanation: 'を (wo/o) menandai objek langsung dari kata kerja.' },
+                { question: 'Lengkapi: 学校___行きます (Pergi ke sekolah)', options: ['を', 'は', 'に', 'で'], correct: 2, explanation: 'に (ni) menandai tempat tujuan.' },
+                { question: 'Partikel apa yang digunakan untuk tempat aktivitas?', options: ['を', 'は', 'に', 'で'], correct: 3, explanation: 'で (de) menandai tempat dimana aktivitas terjadi.' },
+                { question: 'Lengkapi: これ___何ですか (Ini apa?)', options: ['を', 'は', 'に', 'か'], correct: 1, explanation: 'は (wa) menandai topik "これ" (ini).' },
+                { question: 'Partikel apa yang membuat kalimat menjadi pertanyaan?', options: ['を', 'は', 'に', 'か'], correct: 3, explanation: 'か (ka) di akhir kalimat membuatnya menjadi pertanyaan.' },
+                { question: 'Lengkapi: 本___読みます (Membaca buku)', options: ['を', 'は', 'に', 'で'], correct: 0, explanation: 'を (wo) menandai "本" (buku) sebagai objek langsung.' },
+                { question: 'Partikel apa yang menandai alat atau cara?', options: ['を', 'は', 'に', 'で'], correct: 3, explanation: 'で (de) juga digunakan untuk menandai alat atau cara melakukan sesuatu.' },
+                { question: 'Lengkapi: 私___本 (Buku saya)', options: ['を', 'は', 'の', 'で'], correct: 2, explanation: 'の (no) menunjukkan kepemilikan.' },
+
+                // KATA KERJA (10 soal)
+                { question: 'Bentuk negatif dari 食べます (tabemasu) adalah?', options: ['食べません', '食べました', '食べませんでした', '食べる'], correct: 0, explanation: 'Bentuk negatif: ganti -masu dengan -masen → 食べません (tabemasen).' },
+                { question: 'Bentuk lampau dari 行きます (ikimasu) adalah?', options: ['行きません', '行きました', '行きませんでした', '行く'], correct: 1, explanation: 'Bentuk lampau: ganti -masu dengan -mashita → 行きました (ikimashita).' },
+                { question: 'Bentuk negatif lampau dari 見ます (mimasu) adalah?', options: ['見ません', '見ました', '見ませんでした', '見る'], correct: 2, explanation: 'Bentuk negatif lampau: ganti -masu dengan -masen deshita → 見ませんでした (mimasen deshita).' },
+                { question: 'Bentuk negatif dari 勉強します (benkyou shimasu) adalah?', options: ['勉強しません', '勉強しました', '勉強する', '勉強しませんでした'], correct: 0, explanation: 'Kata kerja する: shimasu → shimasen.' },
+                { question: 'Bentuk lampau dari 来ます (kimasu) adalah?', options: ['来ません', '来ました', '来る', '来ませんでした'], correct: 1, explanation: 'Kata kerja 来る: kimasu → kimashita.' },
+                { question: 'Apa arti dari 飲みませんでした?', options: ['Tidak minum', 'Minum', 'Tidak minum (lampau)', 'Sudah minum'], correct: 2, explanation: '飲みませんでした (nomimasen deshita) = tidak minum (lampau).' },
+                { question: 'Bentuk present dari kata kerja "menulis" adalah?', options: ['書きます', '書きません', '書きました', '書く'], correct: 0, explanation: '書きます (kakimasu) = menulis (present/masu form).' },
+                { question: 'Bentuk negatif dari 起きます (okimasu) adalah?', options: ['起きません', '起きました', '起きませんでした', '起きる'], correct: 0, explanation: 'Bentuk negatif: 起きません (okimasen) = tidak bangun.' },
+                { question: 'Apa arti dari 帰りました?', options: ['Tidak pulang', 'Pulang', 'Sudah pulang', 'Tidak pulang (lampau)'], correct: 2, explanation: '帰りました (kaerimashita) = sudah pulang (lampau).' },
+                { question: 'Bentuk lampau dari 寝ます (nemasu) adalah?', options: ['寝ません', '寝ました', '寝ませんでした', '寝る'], correct: 1, explanation: '寝ました (nemashita) = sudah tidur (lampau).' },
+
+                // KATA SIFAT & WAKTU (10 soal)
+                { question: 'Bentuk negatif dari 大きい (ookii) adalah?', options: ['大きくない', '大きかった', '大きくなかった', '大きいです'], correct: 0, explanation: 'i-adjective negatif: ganti い dengan くない → 大きくない (ookikunai).' },
+                { question: 'Bentuk lampau dari 高い (takai) adalah?', options: ['高くない', '高かった', '高くなかった', '高いです'], correct: 1, explanation: 'i-adjective lampau: ganti い dengan かった → 高かった (takakatta).' },
+                { question: 'Bentuk negatif dari 静か (shizuka) adalah?', options: ['静かくない', '静かじゃない', '静かだった', '静かです'], correct: 1, explanation: 'na-adjective negatif: tambah じゃない → 静かじゃない (shizuka ja nai).' },
+                { question: 'Hari ini dalam bahasa Jepang adalah?', options: ['昨日', '今日', '明日', '明後日'], correct: 1, explanation: '今日 (kyou) = hari ini.' },
+                { question: 'Besok dalam bahasa Jepang adalah?', options: ['昨日', '今日', '明日', '明後日'], correct: 2, explanation: '明日 (ashita) = besok.' },
+                { question: 'Kemarin dalam bahasa Jepang adalah?', options: ['昨日', '今日', '明日', '明後日'], correct: 0, explanation: '昨日 (kinou) = kemarin.' },
+                { question: 'Minggu depan dalam bahasa Jepang adalah?', options: ['先週', '今週', '来週', '毎週'], correct: 2, explanation: '来週 (raishuu) = minggu depan.' },
+                { question: 'Tahun ini dalam bahasa Jepang adalah?', options: ['去年', '今年', '来年', '毎年'], correct: 1, explanation: '今年 (kotoshi) = tahun ini.' },
+                { question: 'Senin dalam bahasa Jepang adalah?', options: ['月曜日', '火曜日', '水曜日', '木曜日'], correct: 0, explanation: '月曜日 (getsuyoubi) = Senin.' },
+                { question: 'Jumat dalam bahasa Jepang adalah?', options: ['水曜日', '木曜日', '金曜日', '土曜日'], correct: 2, explanation: '金曜日 (kinyoubi) = Jumat.' }
+            ]
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+# Python files (development scripts)
+*.py
+*.pyc
+__pycache__/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log files
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Claude Code settings (keep local only)
+.claude/
+
+# Development agent files
+.agent/
+
+# PDF materials (large files)
+MateriJepang/*.pdf
+
+# Optional: Uncomment if you want to exclude materials folder entirely
+# MateriJepang/

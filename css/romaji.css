@@ -1,0 +1,72 @@
+/* Romaji Annotations Styling */
+ruby {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: baseline;
+    margin: 0 0.1em;
+}
+
+rt.romaji-rt {
+    font-size: 0.6em;
+    line-height: 1;
+    text-align: center;
+    color: var(--primary);
+    font-weight: 500;
+    display: block;
+    margin-top: 0.3em;
+    position: relative;
+}
+
+/* Arrow connecting character to romaji */
+rt.romaji-rt::before {
+    content: '↓';
+    position: absolute;
+    top: -0.8em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: var(--primary);
+    opacity: 0.6;
+}
+
+/* Hover effect */
+ruby:hover rt.romaji-rt {
+    color: #dc2626;
+}
+
+ruby:hover rt.romaji-rt::before {
+    opacity: 1;
+    color: #dc2626;
+}
+
+/* Question text specific styling */
+.question-text ruby {
+    margin: 0 0.15em;
+}
+
+.question-text rt.romaji-rt {
+    font-size: 0.55em;
+    margin-top: 0.4em;
+}
+
+/* Option text styling */
+.option-text ruby {
+    margin: 0 0.1em;
+}
+
+.option-text rt.romaji-rt {
+    font-size: 0.5em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    rt.romaji-rt {
+        font-size: 0.55em;
+    }
+
+    rt.romaji-rt::before {
+        font-size: 0.7em;
+    }
+}

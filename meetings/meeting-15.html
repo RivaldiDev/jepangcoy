@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 15: Pengenalan Kanji - Japanese Course by Ms. Aulia</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/lesson.css">
+    <link rel="stylesheet" href="../css/tabs.css">
+    <link rel="stylesheet" href="../css/romaji.css">
+    <style>
+        .kanji-card {
+            padding: 2rem;
+            background: var(--bg-tertiary);
+            border-radius: 0.5rem;
+            text-align: center;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .kanji-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .kanji-large {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .kanji-readings {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-jp">日本語</span>
+                    <span class="logo-text">Course by Ms. Aulia</span>
+                </div>
+                <nav class="nav">
+                    <a href="../index.html" class="nav-link">Beranda</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-container">
+        <div class="lesson-header">
+            <div
+                style="display: inline-block; padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 2rem; font-size: 0.875rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">
+                Pertemuan 15
+            </div>
+            <h1 class="lesson-title">漢字 (Kanji)</h1>
+            <p class="lesson-subtitle">Pengenalan Karakter Kanji Dasar</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab active" data-tab="intro"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">book</span> Pengenalan</button>
+            <button class="tab" data-tab="nature"><svg class="inline-block" width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" /></svg> Kanji Alam</button>
+            <button class="tab" data-tab="numbers"><span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle;">calculate</span> Kanji Angka</button>
+            <button class="tab" data-tab="readings"><span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle;">menu_book</span> Cara Baca</button>
+            <button class="tab" data-tab="practice"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">edit</span> Latihan</button>
+        </div>
+
+        <!-- Introduction Tab -->
+        <div class="tab-content active" id="intro">
+            <section class="study-section">
+                <h2>Apa itu Kanji?</h2>
+
+                <div style="background: rgba(59, 130, 246, 0.1); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0;">
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        <strong>Kanji (漢字)</strong> adalah karakter tulisan Jepang yang berasal dari China.
+                        Setiap kanji memiliki arti dan cara baca tersendiri.
+                    </p>
+                    <p style="line-height: 1.8;">
+                        Kanji berkembang dari gambar sederhana yang merepresentasikan objek atau konsep.
+                        Misalnya, kanji untuk "gunung" (山) terlihat seperti tiga puncak gunung.
+                    </p>
+                </div>
+
+                <h3 style="margin-top: 2rem; color: var(--primary);">Dua Cara Baca Kanji:</h3>
+                <div style="display: grid; gap: 1.5rem; margin: 2rem 0;">
+                    <div
+                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">音読み (On'yomi) - Bacaan China</h4>
+                        <p>Cara baca yang berasal dari bahasa China. Biasanya digunakan dalam kata majemuk.</p>
+                    </div>
+                    <div
+                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">訓読み (Kun'yomi) - Bacaan Jepang</h4>
+                        <p>Cara baca asli Jepang. Biasanya digunakan saat kanji berdiri sendiri.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Nature Kanji Tab -->
+        <div class="tab-content" id="nature">
+            <section class="study-section">
+                <h2>Kanji Alam & Benda</h2>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                    <div class="kanji-card">
+                        <div class="kanji-large">山</div>
+                        <div style="font-weight: 600; margin: 0.5rem 0;">Gunung</div>
+                        <div class="kanji-readings">
+                            <div style="margin: 0.25rem 0;"><strong>音:</strong> サン (san)</div>
+                            <div style="margin: 0.25rem 0;"><strong>訓:</strong> やま (yama)</div>
+                        </div>
+                    </div>
+
+                    <div class="kanji-card">
+                        <div class="kanji-large">川</div>
+                        <div style="font-weight: 600; margin: 0.5rem 0;">Sungai</div>
+                        <div class="kanji-readings">
+                            <div style="margin: 0.25rem 0;"><strong>音:</strong> セン (sen)</div>
+                            <div style="margin: 0.25rem 0;"><strong>訓:</strong> かわ (kawa)</div>
+                        </div>
+                    </div>
+
+                    <div class="kanji-card">
+                        <div class="kanji-large">田</div>
+                        <div style="font-weight: 600; margin: 0.5rem 0;">Sawah</div>
+                        <div class="kanji-readings">
+                            <div style="margin: 0.25rem 0;"><strong>音:</strong> デン (den)</div>
+                            <div style="margin: 0.25rem 0;"><strong>訓:</strong> た (ta)</div>
+                        </div>
+                    </div>
+
+                    <div class="kanji-card">
+                        <div class="kanji-large">木</div>
+                        <div style="font-weight: 600; margin: 0.5rem 0;">Pohon</div>
+                        <div class="kanji-readings">
+                            <div style="margin: 0.25rem 0;"><strong>音:</strong> モク (moku)</div>
+                            <div style="margin: 0.25rem 0;"><strong>訓:</strong> き (ki)</div>
+                        </div>
+                    </div>
+
+                    <div class="kanji-card">
+                        <div class="kanji-large">日</div>
+                        <div style="font-weight: 600; margin: 0.5rem 0;">Matahari/Hari</div>
+                        <div class="kanji-readings">
+                            <div style="margin: 0.25rem 0;"><strong>音:</strong> ニチ (nichi)</div>
+                            <div style="margin: 0.25rem 0;"><strong>訓:</strong> ひ (hi)</div>
+                        </div>
+                    </div>
+
+                    <div class="kanji-card">
+                        <div class="kanji-large">月</div>
+                        <div style="font-weight: 600; margin: 0.5rem 0;">Bulan</div>
+                        <div class="kanji-readings">
+                            <div style="margin: 0.25rem 0;"><strong>音:</strong> ゲツ (getsu)</div>
+                            <div style="margin: 0.25rem 0;"><strong>訓:</strong> つき (tsuki)</div>
+                        </div>
+                    </div>
+
+                    <div class="kanji-card">
+                        <div class="kanji-large">人</div>
+                        <div style="font-weight: 600; margin: 0.5rem 0;">Orang</div>
+                        <div class="kanji-readings">
+                            <div style="margin: 0.25rem 0;"><strong>音:</strong> ジン (jin)</div>
+                            <div style="margin: 0.25rem 0;"><strong>訓:</strong> ひと (hito)</div>
+                        </div>
+                    </div>
+
+                    <div class="kanji-card">
+                        <div class="kanji-large">口</div>
+                        <div style="font-weight: 600; margin: 0.5rem 0;">Mulut</div>
+                        <div class="kanji-readings">
+                            <div style="margin: 0.25rem 0;"><strong>音:</strong> コウ (kou)</div>
+                            <div style="margin: 0.25rem 0;"><strong>訓:</strong> くち (kuchi)</div>
+                        </div>
+                    </div>
+
+                    <div class="kanji-card">
+                        <div class="kanji-large">車</div>
+                        <div style="font-weight: 600; margin: 0.5rem 0;">Mobil</div>
+                        <div class="kanji-readings">
+                            <div style="margin: 0.25rem 0;"><strong>音:</strong> シャ (sha)</div>
+                            <div style="margin: 0.25rem 0;"><strong>訓:</strong> くるま (kuruma)</div>
+                        </div>
+                    </div>
+
+                    <div class="kanji-card">
+                        <div class="kanji-large">門</div>
+                        <div style="font-weight: 600; margin: 0.5rem 0;">Gerbang</div>
+                        <div class="kanji-readings">
+                            <div style="margin: 0.25rem 0;"><strong>音:</strong> モン (mon)</div>
+                            <div style="margin: 0.25rem 0;"><strong>訓:</strong> かど (kado)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Numbers Kanji Tab -->
+        <div class="tab-content" id="numbers">
+            <section class="study-section">
+                <h2>Kanji Angka</h2>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                    <div class="kanji-card">
+                        <div class="kanji-large">一</div>
+                        <div style="font-weight: 600;">1 - Ichi</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">二</div>
+                        <div style="font-weight: 600;">2 - Ni</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">三</div>
+                        <div style="font-weight: 600;">3 - San</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">四</div>
+                        <div style="font-weight: 600;">4 - Shi/Yon</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">五</div>
+                        <div style="font-weight: 600;">5 - Go</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">六</div>
+                        <div style="font-weight: 600;">6 - Roku</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">七</div>
+                        <div style="font-weight: 600;">7 - Shichi/Nana</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">八</div>
+                        <div style="font-weight: 600;">8 - Hachi</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">九</div>
+                        <div style="font-weight: 600;">9 - Kyuu/Ku</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">十</div>
+                        <div style="font-weight: 600;">10 - Juu</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">百</div>
+                        <div style="font-weight: 600;">100 - Hyaku</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">千</div>
+                        <div style="font-weight: 600;">1000 - Sen</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">万</div>
+                        <div style="font-weight: 600;">10,000 - Man</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">円</div>
+                        <div style="font-weight: 600;">Yen - En</div>
+                    </div>
+                    <div class="kanji-card">
+                        <div class="kanji-large">年</div>
+                        <div style="font-weight: 600;">Tahun - Nen/Toshi</div>
+                    </div>
+                </div>
+
+                <div
+                    style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Contoh Kombinasi:</h3>
+                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin: 1rem 0;">
+                        日本 (にほん) = Jepang
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">日 (matahari) + 本 (asal) = Negara
+                        Matahari Terbit</p>
+                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin: 1rem 0;">
+                        一万円 (いちまんえん) = 10,000 yen
+                    </div>
+                    <p style="color: var(--text-secondary);">一 (1) + 万 (10,000) + 円 (yen)</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Readings Tab -->
+        <div class="tab-content" id="readings">
+            <section class="study-section">
+                <h2>Cara Baca Kanji</h2>
+
+                <div
+                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Contoh: 山 (Gunung)</h3>
+                    <div style="margin: 1rem 0;">
+                        <strong>音読み (On'yomi):</strong> サン (san)
+                        <div
+                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; margin: 0.5rem 0; color: var(--text-secondary);">
+                            富士山 (ふじさん) = Gunung Fuji
+                        </div>
+                    </div>
+                    <div style="margin: 1rem 0;">
+                        <strong>訓読み (Kun'yomi):</strong> やま (yama)
+                        <div
+                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; margin: 0.5rem 0; color: var(--text-secondary);">
+                            山 (やま) = Gunung
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Contoh: 日 (Matahari/Hari)</h3>
+                    <div style="margin: 1rem 0;">
+                        <strong>音読み (On'yomi):</strong> ニチ (nichi)
+                        <div
+                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; margin: 0.5rem 0; color: var(--text-secondary);">
+                            日本 (にほん) = Jepang
+                        </div>
+                    </div>
+                    <div style="margin: 1rem 0;">
+                        <strong>訓読み (Kun'yomi):</strong> ひ (hi)
+                        <div
+                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; margin: 0.5rem 0; color: var(--text-secondary);">
+                            日 (ひ) = Hari/Matahari
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Tips Belajar Kanji:</h3>
+                    <ul style="line-height: 1.8; margin-left: 1.5rem;">
+                        <li>Pelajari urutan goresan (stroke order) yang benar</li>
+                        <li>Latih menulis kanji berulang kali</li>
+                        <li>Pelajari kanji dalam konteks kata, bukan sendiri</li>
+                        <li>Gunakan flashcard untuk menghafal</li>
+                        <li>Mulai dari kanji sederhana dan bertahap ke yang kompleks</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Practice Tab -->
+        <div class="tab-content" id="practice">
+            <section class="quiz-section">
+                <div class="quiz-header">
+                    <h2>Latihan Soal</h2>
+                    <p>Jawab semua pertanyaan, lalu lihat hasilnya</p>
+                    <div class="quiz-progress-container">
+                        <div id="quiz-progress"></div>
+                    </div>
+                </div>
+                <div id="quiz-container"></div>
+            </section>
+        </div>
+
+        <!-- Navigation -->
+        <div
+            style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+            <a href="meeting-14.html" class="btn btn-secondary">← Pertemuan 14</a>
+            <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+        style="background: var(--bg-secondary); padding: 2rem 0; margin-top: 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container">
+            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
+                Japanese Course by Ms. Aulia
+            </p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                Created by <a href="https://www.instagram.com/rvldii__/" target="_blank" rel="noopener noreferrer"
+                    style="color: var(--primary); text-decoration: none; font-weight: 500;">Rivaldi</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/speech.js"></script>
+    <script src="../js/romaji.js"></script>
+    <script src="../js/quiz.js"></script>
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = tab.dataset.tab;
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+
+        // Quiz data - Kanji recognition questions in full Japanese
+        const quizData = {
+            lessonId: 'meeting-15',
+            questions: [
+                {
+                    question: '「山」のくんよみはなんですか。',
+                    options: ['やま', 'さん', 'かわ', 'た'],
+                    correct: 0,
+                    explanation: '「山」のくんよみ（訓読み）は「やま」です。'
+                },
+                {
+                    question: '「日本」はどうよみますか。',
+                    options: ['にほん', 'ひほん', 'にっぽん', 'ひぽん'],
+                    correct: 0,
+                    explanation: '「日本」は「にほん」とよみます。'
+                },
+                {
+                    question: 'かんじ「人」のいみはなんですか。',
+                    options: ['ひと', 'やま', 'かわ', 'き'],
+                    correct: 0,
+                    explanation: '「人」のいみは「ひと（人）」です。'
+                },
+                {
+                    question: 'おんよみとくんよみ、どちらがちゅうごくからきましたか。',
+                    options: ['おんよみ', 'くんよみ', 'りょうほう', 'どちらでもない'],
+                    correct: 0,
+                    explanation: 'おんよみ（音読み）はちゅうごく（中国）からきました。'
+                },
+                {
+                    question: '「一万円」はいくらですか。',
+                    options: ['10,000円', '1,000円', '100,000円', '1,000,000円'],
+                    correct: 0,
+                    explanation: '「一万円」は10,000円です。'
+                }
+            ]
+        };
+    </script>
+</body>
+
+</html>

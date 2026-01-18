@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kosakata N5 - Japanese Learning</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/lesson.css">
+    <link rel="stylesheet" href="css/tabs.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-jp">日本語</span>
+                    <span class="logo-text">N5 Learning</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="lesson-container">
+        <div class="lesson-header">
+            <h1 class="lesson-title">Kosakata N5 (1000+ Kata)</h1>
+            <p class="lesson-subtitle">Pelajari kosakata penting untuk JLPT N5</p>
+        </div>
+
+        <!-- Search and Filter -->
+        <div
+            style="background: var(--bg-card); padding: 2rem; border-radius: var(--radius); margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                <input type="text" id="searchInput" placeholder="🔍 Cari kata (Jepang, romaji, atau Indonesia)..."
+                    style="flex: 1; min-width: 250px; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 0.5rem; font-size: 1rem;">
+                <button id="flashcardBtn"
+                    style="padding: 0.75rem 1.5rem; background: var(--accent); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">
+                    🎴 Mode Flashcard
+                </button>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button class="filter-btn active" data-category="all">Semua</button>
+                <button class="filter-btn" data-category="verbs">Kata Kerja</button>
+                <button class="filter-btn" data-category="adjectives">Kata Sifat</button>
+                <button class="filter-btn" data-category="places">Tempat</button>
+                <button class="filter-btn" data-category="objects">Benda</button>
+                <button class="filter-btn" data-category="food">Makanan</button>
+                <button class="filter-btn" data-category="people">Orang</button>
+                <button class="filter-btn" data-category="time">Waktu</button>
+            </div>
+        </div>
+
+        <!-- Vocabulary List -->
+        <div id="vocabularyList"
+            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;"></div>
+
+        <!-- Flashcard Mode (hidden by default) -->
+        <div id="flashcardMode" style="display: none;">
+            <div id="vocab-flashcard-container"></div>
+        </div>
+    </div>
+
+    <script src="data/vocabulary.js"></script>
+    <script src="js/speech.js"></script>
+    <script src="js/flashcard.js"></script>
+    <script>
+        let currentCategory = 'all';
+        let currentSearch = '';
+        let isFlashcardMode = false;
+
+        // Render vocabulary list
+        function renderVocabulary() {
+            const container = document.getElementById('vocabularyList');
+            let words = [];
+
+            if (currentCategory === 'all') {
+                words = getAllVocabulary();
+            } else {
+                words = getVocabularyByCategory(currentCategory);
+            }
+
+            // Apply search filter
+            if (currentSearch) {
+                words = searchVocabulary(currentSearch);
+            }
+
+            container.innerHTML = words.map(word => `
+                <div class="vocab-card" data-word="${word.jp}">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--primary); cursor: pointer;" 
+                            onclick="japaneseSpeech.speak('${word.jp}')">
+                            ${word.jp} 🔊
+                        </div>
+                        <span style="background: rgba(59, 130, 246, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600;">
+                            ${word.mainCategory || 'N5'}
+                        </span>
+                    </div>
+                    <div style="color: var(--text-secondary); margin-bottom: 0.5rem;">${word.romaji}</div>
+                    <div style="font-size: 1.125rem; font-weight: 600; color: var(--text-primary);">${word.id}</div>
+                </div>
+            `).join('');
+
+            // Add styles for vocab cards
+            const style = document.createElement('style');
+            style.textContent = `
+                .vocab-card {
+                    background: var(--bg-card);
+                    border: 1px solid var(--border);
+                    border-radius: 0.75rem;
+                    padding: 1.5rem;
+                    transition: var(--transition);
+                    box-shadow: var(--shadow-sm);
+                }
+                .vocab-card:hover {
+                    transform: translateY(-4px);
+                    box-shadow: var(--shadow-lg);
+                    border-color: var(--primary);
+                }
+                .filter-btn {
+                    padding: 0.5rem 1rem;
+                    background: var(--bg-tertiary);
+                    border: 2px solid transparent;
+                    border-radius: 0.5rem;
+                    cursor: pointer;
+                    font-weight: 500;
+                    transition: var(--transition);
+                    color: var(--text-primary);
+                }
+                .filter-btn:hover {
+                    background: var(--bg-card);
+                    border-color: var(--primary);
+                }
+                .filter-btn.active {
+                    background: var(--primary);
+                    color: white;
+                    border-color: var(--primary);
+                }
+            `;
+            if (!document.getElementById('vocab-styles')) {
+                style.id = 'vocab-styles';
+                document.head.appendChild(style);
+            }
+        }
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentCategory = btn.dataset.category;
+                renderVocabulary();
+            });
+        });
+
+        // Search
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            currentSearch = e.target.value;
+            renderVocabulary();
+        });
+
+        // Flashcard mode
+        document.getElementById('flashcardBtn').addEventListener('click', () => {
+            isFlashcardMode = !isFlashcardMode;
+
+            if (isFlashcardMode) {
+                document.getElementById('vocabularyList').style.display = 'none';
+                document.getElementById('flashcardMode').style.display = 'block';
+                document.getElementById('flashcardBtn').textContent = '📋 Mode Daftar';
+
+                // Prepare flashcard data
+                let words = currentCategory === 'all' ? getAllVocabulary() : getVocabularyByCategory(currentCategory);
+                if (currentSearch) {
+                    words = searchVocabulary(currentSearch);
+                }
+
+                const flashcardData = words.map(word => ({
+                    category: 'vocabulary',
+                    front: word.jp,
+                    romaji: word.romaji,
+                    back: word.id,
+                    example: word.mainCategory
+                }));
+
+                initFlashcards(flashcardData, 'vocab-flashcard-container');
+            } else {
+                document.getElementById('vocabularyList').style.display = 'grid';
+                document.getElementById('flashcardMode').style.display = 'none';
+                document.getElementById('flashcardBtn').textContent = '🎴 Mode Flashcard';
+            }
+        });
+
+        // Initial render
+        renderVocabulary();
+    </script>
+</body>
+
+</html>
