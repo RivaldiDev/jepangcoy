@@ -1,8 +1,36 @@
-// Load and display progress
+// ============================================
+// THEME TOGGLE FUNCTIONALITY
+// ============================================
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+    }
+}
+
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle('light-theme');
+
+    // Save preference to localStorage
+    const theme = body.classList.contains('light-theme') ? 'light' : 'dark';
+    localStorage.setItem('theme', theme);
+}
+
+// Initialize theme on page load
 document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
     loadProgress();
     updateProgressDisplay();
+
+    // Add click event to theme toggle button
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
 });
+
+// Load and display progress
 
 function loadProgress() {
     const saved = localStorage.getItem('n5_progress');

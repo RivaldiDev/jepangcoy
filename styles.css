@@ -63,6 +63,73 @@
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ============================================
+   LIGHT THEME OVERRIDES
+   ============================================ */
+body.light-theme {
+    /* ===== Light Theme Backgrounds ===== */
+    --bg-void: #ffffff;
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #f1f3f5;
+    --bg-card: #ffffff;
+    --bg-elevated: #fefefe;
+
+    /* ===== Light Theme Text ===== */
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-tertiary: #6b6b6b;
+    --text-muted: #9ca3af;
+
+    /* ===== Light Theme Borders ===== */
+    --border: rgba(0, 0, 0, 0.1);
+    --border-light: rgba(0, 0, 0, 0.05);
+    --border-glow: rgba(255, 46, 99, 0.2);
+
+    /* ===== Light Theme Shadows ===== */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+    --shadow-glow: 0 4px 20px rgba(255, 46, 99, 0.15);
+    --shadow-glow-cyan: 0 4px 20px rgba(0, 245, 255, 0.15);
+
+    /* ===== Accent Adjustments for Light ===== */
+    --accent-crimson-glow: rgba(255, 46, 99, 0.25);
+    --accent-cyan-glow: rgba(0, 245, 255, 0.2);
+}
+
+/* Light theme header adjustments */
+body.light-theme .header {
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Light theme noise overlay (reduce opacity) */
+body.light-theme::before {
+    opacity: 0.015;
+}
+
+/* Light theme hero background adjustments */
+body.light-theme .hero-bg {
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(255, 46, 99, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(0, 245, 255, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 100%, rgba(168, 85, 247, 0.06) 0%, transparent 40%),
+        var(--bg-primary);
+}
+
+/* Light theme grid lines */
+body.light-theme .hero-bg::before {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+/* Light theme floating characters */
+body.light-theme .hero-bg::after {
+    color: rgba(0, 0, 0, 0.02);
+}
+
 /* ===== Reset & Base ===== */
 * {
     margin: 0;
@@ -819,6 +886,54 @@ footer a:hover {
 }
 
 /* ============================================
+   THEME TOGGLE BUTTON
+   ============================================ */
+.theme-toggle {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-elevated);
+    border-color: var(--accent-crimson);
+    color: var(--accent-crimson);
+    box-shadow: 0 0 20px var(--accent-crimson-glow);
+    transform: rotate(20deg);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95) rotate(20deg);
+}
+
+/* Icon visibility based on theme */
+.theme-toggle .sun-icon {
+    display: none;
+}
+
+.theme-toggle .moon-icon {
+    display: block;
+}
+
+body.light-theme .theme-toggle .sun-icon {
+    display: block;
+}
+
+body.light-theme .theme-toggle .moon-icon {
+    display: none;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
@@ -849,6 +964,12 @@ footer a:hover {
     .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
     }
 }
 
