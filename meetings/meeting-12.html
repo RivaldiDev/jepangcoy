@@ -1,381 +1,600 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pertemuan 12: Waktu & Partikel - Japanese Course by Ms. Aulia</title>
+        <link rel="icon" type="image/png" href="../favicon.png" />
+        <link rel="shortcut icon" type="image/png" href="../favicon.png" />
+        <link rel="apple-touch-icon" href="../favicon.png" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link rel="stylesheet" href="../css/tabs.css" />
+        <link rel="stylesheet" href="../css/romaji.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pertemuan 12: Waktu & Partikel - Japanese Course by Ms. Aulia</title>
-    <link rel="icon" type="image/png" href="../favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../favicon.png">
-    <link rel="apple-touch-icon" href="../favicon.png">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/lesson.css">
-    <link rel="stylesheet" href="../css/tabs.css">
-    <link rel="stylesheet" href="../css/romaji.css">
-</head>
-
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-jp" aria-label="Japanese language">日本語</span>
-                    <span class="logo-text">Course by Ms. Aulia</span>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span>
+                        <span class="logo-text">Course by Ms. Aulia</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+                    </button>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                    </nav>
                 </div>
-                <nav class="nav" role="navigation">
-                    <a href="../index.html" class="nav-link">Beranda</a>
-                </nav>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div class="lesson-container">
-        <div class="lesson-header">
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <div
+                    style="
+                        display: inline-block;
+                        padding: 0.5rem 1rem;
+                        background: rgba(59, 130, 246, 0.1);
+                        border-radius: 2rem;
+                        font-size: 0.875rem;
+                        color: var(--primary);
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                    "
+                >
+                    Pertemuan 12
+                </div>
+                <h1 class="lesson-title">じかん・じょし (Waktu & Partikel)</h1>
+                <p class="lesson-subtitle">Menyatakan Waktu & Kata Kerja Sehari-hari</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-tab="particles">
+                    <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle"
+                        >description</span
+                    >
+                    Partikel
+                </button>
+                <button class="tab" data-tab="verbs">🏃 Kata Kerja</button>
+                <button class="tab" data-tab="time">
+                    <span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle"
+                        >schedule</span
+                    >
+                    Waktu Detail
+                </button>
+                <button class="tab" data-tab="dialogue">
+                    <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle"
+                        >chat_bubble</span
+                    >
+                    Dialog
+                </button>
+                <button class="tab" data-tab="practice">
+                    <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle">edit</span>
+                    Latihan
+                </button>
+            </div>
+
+            <!-- Particles Tab -->
+            <div class="tab-content active" id="particles">
+                <section class="study-section">
+                    <h2>じょし (Joshi) - Partikel Penting</h2>
+
+                    <div style="display: grid; gap: 2rem; margin: 2rem 0">
+                        <div
+                            style="
+                                padding: 2rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                border-left: 4px solid var(--primary);
+                            "
+                        >
+                            <h3 style="color: var(--primary); margin-bottom: 1rem">に (Waktu)</h3>
+                            <p style="margin-bottom: 1rem">Menandai waktu spesifik</p>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                                ごぜんしちじにおきます。
+                            </div>
+                            <p style="color: var(--text-secondary)">Gozen shichiji ni okimasu. (Bangun jam 7 pagi)</p>
+                        </div>
+
+                        <div
+                            style="
+                                padding: 2rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                border-left: 4px solid var(--primary);
+                            "
+                        >
+                            <h3 style="color: var(--primary); margin-bottom: 1rem">を (Objek)</h3>
+                            <p style="margin-bottom: 1rem">Menandai objek langsung dari kata kerja</p>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                                パンをたべます。
+                            </div>
+                            <p style="color: var(--text-secondary)">Pan wo tabemasu. (Makan roti)</p>
+                        </div>
+
+                        <div
+                            style="
+                                padding: 2rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                border-left: 4px solid var(--primary);
+                            "
+                        >
+                            <h3 style="color: var(--primary); margin-bottom: 1rem">で (Alat/Cara)</h3>
+                            <p style="margin-bottom: 1rem">Menandai alat atau cara melakukan sesuatu</p>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                                フォークでたべます。
+                            </div>
+                            <p style="color: var(--text-secondary)">Fooku de tabemasu. (Makan dengan garpu)</p>
+                        </div>
+
+                        <div
+                            style="
+                                padding: 2rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                border-left: 4px solid var(--primary);
+                            "
+                        >
+                            <h3 style="color: var(--primary); margin-bottom: 1rem">へ (Tujuan)</h3>
+                            <p style="margin-bottom: 1rem">Menandai arah atau tujuan</p>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                                がっこうへいきます。
+                            </div>
+                            <p style="color: var(--text-secondary)">Gakkou e ikimasu. (Pergi ke sekolah)</p>
+                        </div>
+
+                        <div
+                            style="
+                                padding: 2rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                border-left: 4px solid var(--primary);
+                            "
+                        >
+                            <h3 style="color: var(--primary); margin-bottom: 1rem">から～まで (Dari~Sampai)</h3>
+                            <p style="margin-bottom: 1rem">Menandai rentang waktu atau tempat</p>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                                くじからごじまではたらきます。
+                            </div>
+                            <p style="color: var(--text-secondary)">
+                                Kuji kara goji made hatarakimasu. (Bekerja dari jam 9 sampai 5)
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Verbs Tab -->
+            <div class="tab-content" id="verbs">
+                <section class="study-section">
+                    <h2>どうし (Doushi) - Kata Kerja Sehari-hari</h2>
+
+                    <div style="display: grid; gap: 1rem; margin: 2rem 0">
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    おきます
+                                </div>
+                                <div style="color: var(--text-secondary)">Okimasu</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Bangun</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    たべます
+                                </div>
+                                <div style="color: var(--text-secondary)">Tabemasu</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Makan</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    のみます
+                                </div>
+                                <div style="color: var(--text-secondary)">Nomimasu</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Minum</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    はたらきます
+                                </div>
+                                <div style="color: var(--text-secondary)">Hatarakimasu</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Bekerja</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    いきます
+                                </div>
+                                <div style="color: var(--text-secondary)">Ikimasu</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Pergi</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    かえります
+                                </div>
+                                <div style="color: var(--text-secondary)">Kaerimasu</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Pulang/Kembali</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    べんきょうします
+                                </div>
+                                <div style="color: var(--text-secondary)">Benkyou shimasu</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Belajar</div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="
+                            background: rgba(59, 130, 246, 0.1);
+                            padding: 1.5rem;
+                            border-radius: 0.5rem;
+                            margin-top: 2rem;
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">Kata Keterangan Waktu:</h3>
+                        <ul style="line-height: 1.8; margin-left: 1.5rem">
+                            <li><strong>いつも</strong> (itsumo) - Selalu</li>
+                            <li><strong>よく</strong> (yoku) - Sering</li>
+                            <li><strong>ときどき</strong> (tokidoki) - Kadang-kadang</li>
+                            <li><strong>あまり</strong> (amari) - Tidak begitu (+ negatif)</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Time Tab -->
+            <div class="tab-content" id="time">
+                <section class="study-section">
+                    <h2>Menyatakan Waktu Detail</h2>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">Waktu Makan</h3>
+                        <div style="display: grid; gap: 1rem">
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem">
+                                あさごはん (Asagohan) - Sarapan
+                            </div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem">
+                                ひるごはん (Hirugohan) - Makan Siang
+                            </div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem">
+                                ばんごはん (Bangohan) - Makan Malam
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">Pola Waktu</h3>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            いまなんじですか。
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem">
+                            Ima nanji desu ka? (Sekarang jam berapa?)
+                        </p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            ごぜんはちじです。
+                        </div>
+                        <p style="color: var(--text-secondary)">Gozen hachiji desu. (Jam 8 pagi)</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Dialogue Tab -->
+            <div class="tab-content" id="dialogue">
+                <section class="study-section">
+                    <h2>Dialog: Rutinitas Harian</h2>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <div style="margin-bottom: 1.5rem">
+                            <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem">A：</div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8">
+                                まいあさなんじにおきますか。
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.5rem">
+                            <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem">B：</div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8">
+                                ろくじにおきます。
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.5rem">
+                            <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem">A：</div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8">
+                                あさごはんをたべますか。
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem">B：</div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8">
+                                はい、パンとコーヒーをたべます。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="
+                            background: rgba(59, 130, 246, 0.1);
+                            padding: 1.5rem;
+                            border-radius: 0.5rem;
+                            margin-top: 2rem;
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">Terjemahan:</h3>
+                        <div style="line-height: 1.8">
+                            <strong>A:</strong> Setiap pagi bangun jam berapa?<br /><br />
+                            <strong>B:</strong> Bangun jam 6.<br /><br />
+                            <strong>A:</strong> Makan sarapan?<br /><br />
+                            <strong>B:</strong> Ya, makan roti dan kopi.
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Practice Tab -->
+            <div class="tab-content" id="practice">
+                <section class="quiz-section">
+                    <div class="quiz-header">
+                        <h2>Latihan Soal</h2>
+                        <p>Jawab semua pertanyaan, lalu lihat hasilnya</p>
+                        <div class="quiz-progress-container">
+                            <div id="quiz-progress"></div>
+                        </div>
+                    </div>
+                    <div id="quiz-container"></div>
+                </section>
+            </div>
+
+            <!-- Navigation -->
             <div
-                style="display: inline-block; padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 2rem; font-size: 0.875rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">
-                Pertemuan 12
+                style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 3rem;
+                    padding-top: 2rem;
+                    border-top: 1px solid var(--border);
+                "
+            >
+                <a href="meeting-11.html" class="btn btn-secondary">← Pertemuan 11</a>
+                <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
             </div>
-            <h1 class="lesson-title">じかん・じょし (Waktu & Partikel)</h1>
-            <p class="lesson-subtitle">Menyatakan Waktu & Kata Kerja Sehari-hari</p>
         </div>
 
-        <!-- Tab Navigation -->
-        <div class="tabs">
-            <button class="tab active" data-tab="particles"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">description</span> Partikel</button>
-            <button class="tab" data-tab="verbs">🏃 Kata Kerja</button>
-            <button class="tab" data-tab="time"><span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle;">schedule</span> Waktu Detail</button>
-            <button class="tab" data-tab="dialogue"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">chat_bubble</span> Dialog</button>
-            <button class="tab" data-tab="practice"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">edit</span> Latihan</button>
-        </div>
+        <!-- Footer -->
+        <footer
+            style="
+                background: var(--bg-secondary);
+                padding: 2rem 0;
+                margin-top: 4rem;
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            "
+        >
+            <div class="container">
+                <p style="color: var(--text-secondary); margin-bottom: 0.5rem">Japanese Course by Ms. Aulia</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem">
+                    Created by
+                    <a
+                        href="https://www.instagram.com/rvldii__/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: var(--primary); text-decoration: none; font-weight: 500"
+                        >Rivaldi</a
+                    >
+                </p>
+            </div>
+        </footer>
 
-        <!-- Particles Tab -->
-        <div class="tab-content active" id="particles">
-            <section class="study-section">
-                <h2>じょし (Joshi) - Partikel Penting</h2>
-
-                <div style="display: grid; gap: 2rem; margin: 2rem 0;">
-                    <div
-                        style="padding: 2rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--primary); margin-bottom: 1rem;">に (Waktu)</h3>
-                        <p style="margin-bottom: 1rem;">Menandai waktu spesifik</p>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                            ごぜんしちじにおきます。
-                        </div>
-                        <p style="color: var(--text-secondary);">Gozen shichiji ni okimasu. (Bangun jam 7 pagi)</p>
-                    </div>
-
-                    <div
-                        style="padding: 2rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--primary); margin-bottom: 1rem;">を (Objek)</h3>
-                        <p style="margin-bottom: 1rem;">Menandai objek langsung dari kata kerja</p>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                            パンをたべます。
-                        </div>
-                        <p style="color: var(--text-secondary);">Pan wo tabemasu. (Makan roti)</p>
-                    </div>
-
-                    <div
-                        style="padding: 2rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--primary); margin-bottom: 1rem;">で (Alat/Cara)</h3>
-                        <p style="margin-bottom: 1rem;">Menandai alat atau cara melakukan sesuatu</p>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                            フォークでたべます。
-                        </div>
-                        <p style="color: var(--text-secondary);">Fooku de tabemasu. (Makan dengan garpu)</p>
-                    </div>
-
-                    <div
-                        style="padding: 2rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--primary); margin-bottom: 1rem;">へ (Tujuan)</h3>
-                        <p style="margin-bottom: 1rem;">Menandai arah atau tujuan</p>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                            がっこうへいきます。
-                        </div>
-                        <p style="color: var(--text-secondary);">Gakkou e ikimasu. (Pergi ke sekolah)</p>
-                    </div>
-
-                    <div
-                        style="padding: 2rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--primary); margin-bottom: 1rem;">から～まで (Dari~Sampai)</h3>
-                        <p style="margin-bottom: 1rem;">Menandai rentang waktu atau tempat</p>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                            くじからごじまではたらきます。
-                        </div>
-                        <p style="color: var(--text-secondary);">Kuji kara goji made hatarakimasu. (Bekerja dari jam 9
-                            sampai 5)</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Verbs Tab -->
-        <div class="tab-content" id="verbs">
-            <section class="study-section">
-                <h2>どうし (Doushi) - Kata Kerja Sehari-hari</h2>
-
-                <div style="display: grid; gap: 1rem; margin: 2rem 0;">
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                おきます</div>
-                            <div style="color: var(--text-secondary);">Okimasu</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Bangun</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                たべます</div>
-                            <div style="color: var(--text-secondary);">Tabemasu</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Makan</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                のみます</div>
-                            <div style="color: var(--text-secondary);">Nomimasu</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Minum</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                はたらきます</div>
-                            <div style="color: var(--text-secondary);">Hatarakimasu</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Bekerja</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                いきます</div>
-                            <div style="color: var(--text-secondary);">Ikimasu</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Pergi</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                かえります</div>
-                            <div style="color: var(--text-secondary);">Kaerimasu</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Pulang/Kembali</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                べんきょうします</div>
-                            <div style="color: var(--text-secondary);">Benkyou shimasu</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Belajar</div>
-                    </div>
-                </div>
-
-                <div
-                    style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Kata Keterangan Waktu:</h3>
-                    <ul style="line-height: 1.8; margin-left: 1.5rem;">
-                        <li><strong>いつも</strong> (itsumo) - Selalu</li>
-                        <li><strong>よく</strong> (yoku) - Sering</li>
-                        <li><strong>ときどき</strong> (tokidoki) - Kadang-kadang</li>
-                        <li><strong>あまり</strong> (amari) - Tidak begitu (+ negatif)</li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-
-        <!-- Time Tab -->
-        <div class="tab-content" id="time">
-            <section class="study-section">
-                <h2>Menyatakan Waktu Detail</h2>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Waktu Makan</h3>
-                    <div style="display: grid; gap: 1rem;">
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem;">
-                            あさごはん (Asagohan) - Sarapan
-                        </div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem;">
-                            ひるごはん (Hirugohan) - Makan Siang
-                        </div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem;">
-                            ばんごはん (Bangohan) - Makan Malam
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Pola Waktu</h3>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        いまなんじですか。
-                    </div>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Ima nanji desu ka? (Sekarang jam
-                        berapa?)</p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        ごぜんはちじです。
-                    </div>
-                    <p style="color: var(--text-secondary);">Gozen hachiji desu. (Jam 8 pagi)</p>
-                </div>
-            </section>
-        </div>
-
-        <!-- Dialogue Tab -->
-        <div class="tab-content" id="dialogue">
-            <section class="study-section">
-                <h2>Dialog: Rutinitas Harian</h2>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">A：</div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8;">
-                            まいあさなんじにおきますか。
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">B：</div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8;">
-                            ろくじにおきます。
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">A：</div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8;">
-                            あさごはんをたべますか。
-                        </div>
-                    </div>
-                    <div>
-                        <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">B：</div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8;">
-                            はい、パンとコーヒーをたべます。
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Terjemahan:</h3>
-                    <div style="line-height: 1.8;">
-                        <strong>A:</strong> Setiap pagi bangun jam berapa?<br><br>
-                        <strong>B:</strong> Bangun jam 6.<br><br>
-                        <strong>A:</strong> Makan sarapan?<br><br>
-                        <strong>B:</strong> Ya, makan roti dan kopi.
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Practice Tab -->
-        <div class="tab-content" id="practice">
-            <section class="quiz-section">
-                <div class="quiz-header">
-                    <h2>Latihan Soal</h2>
-                    <p>Jawab semua pertanyaan, lalu lihat hasilnya</p>
-                    <div class="quiz-progress-container">
-                        <div id="quiz-progress"></div>
-                    </div>
-                </div>
-                <div id="quiz-container"></div>
-            </section>
-        </div>
-
-        <!-- Navigation -->
-        <div
-            style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <a href="meeting-11.html" class="btn btn-secondary">← Pertemuan 11</a>
-            <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer
-        style="background: var(--bg-secondary); padding: 2rem 0; margin-top: 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-        <div class="container">
-            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
-                Japanese Course by Ms. Aulia
-            </p>
-            <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                Created by <a href="https://www.instagram.com/rvldii__/" target="_blank" rel="noopener noreferrer"
-                    style="color: var(--primary); text-decoration: none; font-weight: 500;">Rivaldi</a>
-            </p>
-        </div>
-    </footer>
-
-    <script src="../js/speech.js"></script>
-    <script src="../js/romaji.js"></script>
-    <script src="../js/quiz.js"></script>
-    <script>
-        // Tab switching
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.tab;
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                document.getElementById(targetTab).classList.add('active');
+        <script src="../js/speech.js"></script>
+        <script src="../js/romaji.js"></script>
+        <script src="../js/quiz.js"></script>
+        <script>
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    document.getElementById(targetTab).classList.add('active');
+                });
             });
-        });
 
-        // Quiz data - Particles and daily routine questions in full Japanese
-        const quizData = {
-            lessonId: 'meeting-12',
-            questions: [
-                {
-                    question: '「パンをたべます」の「を」はなんですか。',
-                    options: ['じかん', 'もくてきご', 'ばしょ', 'ほうこう'],
-                    correct: 1,
-                    explanation: '「を」はもくてきご（目的語）をしめします。'
-                },
-                {
-                    question: 'がっこうへいきます。「へ」はなにをしめしますか。',
-                    options: ['ほうこう', 'じかん', 'どうぐ', 'ばしょ'],
-                    correct: 0,
-                    explanation: '「へ」はほうこう（方向）をしめします。'
-                },
-                {
-                    question: '「フォークでたべます」の「で」はなんですか。',
-                    options: ['どうぐ', 'じかん', 'ばしょ', 'ほうこう'],
-                    correct: 0,
-                    explanation: '「で」はどうぐ（道具）やほうほう（方法）をしめします。'
-                },
-                {
-                    question: 'あさのしょくじはなんですか。',
-                    options: ['あさごはん', 'ひるごはん', 'ばんごはん', 'よるごはん'],
-                    correct: 0,
-                    explanation: 'あさのしょくじは「あさごはん」です。'
-                },
-                {
-                    question: '「いつも」のいみはなんですか。',
-                    options: ['always', 'sometimes', 'never', 'often'],
-                    correct: 0,
-                    explanation: '「いつも」は「always（いつでも）」のいみです。'
-                }
-            ]
-        };
-    </script>
-</body>
-
+            // Quiz data - Particles and daily routine questions in full Japanese
+            const quizData = {
+                lessonId: 'meeting-12',
+                questions: [
+                    {
+                        question: '「パンをたべます」の「を」はなんですか。',
+                        options: ['じかん', 'もくてきご', 'ばしょ', 'ほうこう'],
+                        correct: 1,
+                        explanation: '「を」はもくてきご（目的語）をしめします。',
+                    },
+                    {
+                        question: 'がっこうへいきます。「へ」はなにをしめしますか。',
+                        options: ['ほうこう', 'じかん', 'どうぐ', 'ばしょ'],
+                        correct: 0,
+                        explanation: '「へ」はほうこう（方向）をしめします。',
+                    },
+                    {
+                        question: '「フォークでたべます」の「で」はなんですか。',
+                        options: ['どうぐ', 'じかん', 'ばしょ', 'ほうこう'],
+                        correct: 0,
+                        explanation: '「で」はどうぐ（道具）やほうほう（方法）をしめします。',
+                    },
+                    {
+                        question: 'あさのしょくじはなんですか。',
+                        options: ['あさごはん', 'ひるごはん', 'ばんごはん', 'よるごはん'],
+                        correct: 0,
+                        explanation: 'あさのしょくじは「あさごはん」です。',
+                    },
+                    {
+                        question: '「いつも」のいみはなんですか。',
+                        options: ['always', 'sometimes', 'never', 'often'],
+                        correct: 0,
+                        explanation: '「いつも」は「always（いつでも）」のいみです。',
+                    },
+                ],
+            };
+        </script>
+    </body>
 </html>

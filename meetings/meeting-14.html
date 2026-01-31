@@ -1,328 +1,487 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pertemuan 14: Dictionary Form - Japanese Course by Ms. Aulia</title>
+        <link rel="icon" type="image/png" href="../favicon.png" />
+        <link rel="shortcut icon" type="image/png" href="../favicon.png" />
+        <link rel="apple-touch-icon" href="../favicon.png" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link rel="stylesheet" href="../css/tabs.css" />
+        <link rel="stylesheet" href="../css/romaji.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pertemuan 14: Dictionary Form - Japanese Course by Ms. Aulia</title>
-    <link rel="icon" type="image/png" href="../favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../favicon.png">
-    <link rel="apple-touch-icon" href="../favicon.png">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/lesson.css">
-    <link rel="stylesheet" href="../css/tabs.css">
-    <link rel="stylesheet" href="../css/romaji.css">
-</head>
-
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-jp" aria-label="Japanese language">日本語</span>
-                    <span class="logo-text">Course by Ms. Aulia</span>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span>
+                        <span class="logo-text">Course by Ms. Aulia</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+                    </button>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                    </nav>
                 </div>
-                <nav class="nav" role="navigation">
-                    <a href="../index.html" class="nav-link">Beranda</a>
-                </nav>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div class="lesson-container">
-        <div class="lesson-header">
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <div
+                    style="
+                        display: inline-block;
+                        padding: 0.5rem 1rem;
+                        background: rgba(59, 130, 246, 0.1);
+                        border-radius: 2rem;
+                        font-size: 0.875rem;
+                        color: var(--primary);
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                    "
+                >
+                    Pertemuan 14
+                </div>
+                <h1 class="lesson-title">じしょけい (Dictionary Form)</h1>
+                <p class="lesson-subtitle">Bentuk Kamus & Review</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-tab="dictionary">
+                    <span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle"
+                        >menu_book</span
+                    >
+                    Dictionary Form
+                </button>
+                <button class="tab" data-tab="groups">
+                    <span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle"
+                        >calculate</span
+                    >
+                    Grup Kata Kerja
+                </button>
+                <button class="tab" data-tab="review">
+                    <span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle"
+                        >edit_note</span
+                    >
+                    Review Partikel
+                </button>
+                <button class="tab" data-tab="dialogue">
+                    <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle"
+                        >chat_bubble</span
+                    >
+                    Dialog
+                </button>
+                <button class="tab" data-tab="practice">
+                    <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle">edit</span>
+                    Latihan
+                </button>
+            </div>
+
+            <!-- Dictionary Form Tab -->
+            <div class="tab-content active" id="dictionary">
+                <section class="study-section">
+                    <h2>Bentuk Kamus (じしょけい)</h2>
+                    <p>
+                        Bentuk dasar kata kerja yang ditemukan di kamus. Digunakan untuk menghubungkan kalimat dan
+                        ekspresi informal.
+                    </p>
+
+                    <div
+                        style="
+                            background: rgba(59, 130, 246, 0.1);
+                            padding: 1.5rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">Aturan Konversi:</h3>
+                        <ul style="line-height: 1.8; margin-left: 1.5rem">
+                            <li><strong>Group I:</strong> Ganti い dengan う (かきます → かく)</li>
+                            <li><strong>Group II:</strong> Ganti ます dengan る (たべます → たべる)</li>
+                            <li><strong>Group III:</strong> します → する, きます → くる</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">Contoh Konversi:</h3>
+                    <div style="display: grid; gap: 1rem; margin: 1.5rem 0">
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    かきます → かく
+                                </div>
+                                <div style="color: var(--text-secondary)">Kakimasu → Kaku (Menulis)</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Group I</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    たべます → たべる
+                                </div>
+                                <div style="color: var(--text-secondary)">Tabemasu → Taberu (Makan)</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Group II</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    します → する
+                                </div>
+                                <div style="color: var(--text-secondary)">Shimasu → Suru (Melakukan)</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Group III</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    きます → くる
+                                </div>
+                                <div style="color: var(--text-secondary)">Kimasu → Kuru (Datang)</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Group III</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Groups Tab -->
+            <div class="tab-content" id="groups">
+                <section class="study-section">
+                    <h2>3 Grup Kata Kerja</h2>
+
+                    <div style="display: grid; gap: 2rem; margin: 2rem 0">
+                        <div
+                            style="
+                                padding: 2rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                border-left: 4px solid var(--primary);
+                            "
+                        >
+                            <h3 style="color: var(--primary); margin-bottom: 1rem">Group I (う-Verbs)</h3>
+                            <p style="margin-bottom: 1rem">Kata kerja yang berakhiran dengan bunyi う</p>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; line-height: 1.8">
+                                かく (menulis), よむ (membaca), のむ (minum), はなす (berbicara)
+                            </div>
+                        </div>
+
+                        <div
+                            style="
+                                padding: 2rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                border-left: 4px solid var(--primary);
+                            "
+                        >
+                            <h3 style="color: var(--primary); margin-bottom: 1rem">Group II (る-Verbs)</h3>
+                            <p style="margin-bottom: 1rem">Kata kerja yang berakhiran dengan る setelah え atau い</p>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; line-height: 1.8">
+                                たべる (makan), みる (melihat), おきる (bangun), ねる (tidur)
+                            </div>
+                        </div>
+
+                        <div
+                            style="
+                                padding: 2rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                border-left: 4px solid var(--primary);
+                            "
+                        >
+                            <h3 style="color: var(--primary); margin-bottom: 1rem">Group III (Irregular)</h3>
+                            <p style="margin-bottom: 1rem">Kata kerja tidak beraturan (hanya 2)</p>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; line-height: 1.8">
+                                する (melakukan), くる (datang)
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Review Tab -->
+            <div class="tab-content" id="review">
+                <section class="study-section">
+                    <h2>Review Partikel</h2>
+
+                    <div style="display: grid; gap: 1.5rem; margin: 2rem 0">
+                        <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem">
+                            <h3 style="color: var(--primary); margin-bottom: 0.5rem">と (Dengan/Dan)</h3>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; margin: 0.5rem 0">
+                                ともだちとえいがをみます。
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem">
+                                Tomodachi to eiga wo mimasu. (Nonton film dengan teman)
+                            </p>
+                        </div>
+
+                        <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem">
+                            <h3 style="color: var(--primary); margin-bottom: 0.5rem">で (Di/Dengan)</h3>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; margin: 0.5rem 0">
+                                レストランでたべます。
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem">
+                                Resutoran de tabemasu. (Makan di restoran)
+                            </p>
+                        </div>
+
+                        <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem">
+                            <h3 style="color: var(--primary); margin-bottom: 0.5rem">に (Pada/Di)</h3>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; margin: 0.5rem 0">
+                                ろくじにおきます。
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem">
+                                Rokuji ni okimasu. (Bangun pada jam 6)
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Dialogue Tab -->
+            <div class="tab-content" id="dialogue">
+                <section class="study-section">
+                    <h2>Dialog: Menanyakan Pengalaman</h2>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <div style="margin-bottom: 1.5rem">
+                            <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem">A：</div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8">
+                                きょうとのりょこうはどうでしたか。
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.5rem">
+                            <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem">B：</div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8">
+                                とてもたのしかったです。
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.5rem">
+                            <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem">A：</div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8">
+                                なにをしましたか。
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem">B：</div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8">
+                                おてらをみました。しゃしんもたくさんとりました。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="
+                            background: rgba(59, 130, 246, 0.1);
+                            padding: 1.5rem;
+                            border-radius: 0.5rem;
+                            margin-top: 2rem;
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">Terjemahan:</h3>
+                        <div style="line-height: 1.8">
+                            <strong>A:</strong> Bagaimana perjalanan ke Kyoto?<br /><br />
+                            <strong>B:</strong> Sangat menyenangkan.<br /><br />
+                            <strong>A:</strong> Apa yang dilakukan?<br /><br />
+                            <strong>B:</strong> Melihat kuil. Juga mengambil banyak foto.
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Practice Tab -->
+            <div class="tab-content" id="practice">
+                <section class="quiz-section">
+                    <div class="quiz-header">
+                        <h2>Latihan Soal</h2>
+                        <p>Jawab semua pertanyaan, lalu lihat hasilnya</p>
+                        <div class="quiz-progress-container">
+                            <div id="quiz-progress"></div>
+                        </div>
+                    </div>
+                    <div id="quiz-container"></div>
+                </section>
+            </div>
+
+            <!-- Navigation -->
             <div
-                style="display: inline-block; padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 2rem; font-size: 0.875rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">
-                Pertemuan 14
+                style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 3rem;
+                    padding-top: 2rem;
+                    border-top: 1px solid var(--border);
+                "
+            >
+                <a href="meeting-13.html" class="btn btn-secondary">← Pertemuan 13</a>
+                <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
             </div>
-            <h1 class="lesson-title">じしょけい (Dictionary Form)</h1>
-            <p class="lesson-subtitle">Bentuk Kamus & Review</p>
         </div>
 
-        <!-- Tab Navigation -->
-        <div class="tabs">
-            <button class="tab active" data-tab="dictionary"><span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle;">menu_book</span> Dictionary Form</button>
-            <button class="tab" data-tab="groups"><span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle;">calculate</span> Grup Kata Kerja</button>
-            <button class="tab" data-tab="review"><span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle;">edit_note</span> Review Partikel</button>
-            <button class="tab" data-tab="dialogue"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">chat_bubble</span> Dialog</button>
-            <button class="tab" data-tab="practice"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">edit</span> Latihan</button>
-        </div>
+        <!-- Footer -->
+        <footer
+            style="
+                background: var(--bg-secondary);
+                padding: 2rem 0;
+                margin-top: 4rem;
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            "
+        >
+            <div class="container">
+                <p style="color: var(--text-secondary); margin-bottom: 0.5rem">Japanese Course by Ms. Aulia</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem">
+                    Created by
+                    <a
+                        href="https://www.instagram.com/rvldii__/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: var(--primary); text-decoration: none; font-weight: 500"
+                        >Rivaldi</a
+                    >
+                </p>
+            </div>
+        </footer>
 
-        <!-- Dictionary Form Tab -->
-        <div class="tab-content active" id="dictionary">
-            <section class="study-section">
-                <h2>Bentuk Kamus (じしょけい)</h2>
-                <p>Bentuk dasar kata kerja yang ditemukan di kamus. Digunakan untuk menghubungkan kalimat dan ekspresi
-                    informal.</p>
-
-                <div
-                    style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 0.5rem; margin: 2rem 0;">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Aturan Konversi:</h3>
-                    <ul style="line-height: 1.8; margin-left: 1.5rem;">
-                        <li><strong>Group I:</strong> Ganti い dengan う (かきます → かく)</li>
-                        <li><strong>Group II:</strong> Ganti ます dengan る (たべます → たべる)</li>
-                        <li><strong>Group III:</strong> します → する, きます → くる</li>
-                    </ul>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);">Contoh Konversi:</h3>
-                <div style="display: grid; gap: 1rem; margin: 1.5rem 0;">
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                かきます → かく</div>
-                            <div style="color: var(--text-secondary);">Kakimasu → Kaku (Menulis)</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Group I</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                たべます → たべる</div>
-                            <div style="color: var(--text-secondary);">Tabemasu → Taberu (Makan)</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Group II</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                します → する</div>
-                            <div style="color: var(--text-secondary);">Shimasu → Suru (Melakukan)</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Group III</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                きます → くる</div>
-                            <div style="color: var(--text-secondary);">Kimasu → Kuru (Datang)</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Group III</div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Groups Tab -->
-        <div class="tab-content" id="groups">
-            <section class="study-section">
-                <h2>3 Grup Kata Kerja</h2>
-
-                <div style="display: grid; gap: 2rem; margin: 2rem 0;">
-                    <div
-                        style="padding: 2rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Group I (う-Verbs)</h3>
-                        <p style="margin-bottom: 1rem;">Kata kerja yang berakhiran dengan bunyi う</p>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; line-height: 1.8;">
-                            かく (menulis), よむ (membaca), のむ (minum), はなす (berbicara)
-                        </div>
-                    </div>
-
-                    <div
-                        style="padding: 2rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Group II (る-Verbs)</h3>
-                        <p style="margin-bottom: 1rem;">Kata kerja yang berakhiran dengan る setelah え atau い</p>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; line-height: 1.8;">
-                            たべる (makan), みる (melihat), おきる (bangun), ねる (tidur)
-                        </div>
-                    </div>
-
-                    <div
-                        style="padding: 2rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Group III (Irregular)</h3>
-                        <p style="margin-bottom: 1rem;">Kata kerja tidak beraturan (hanya 2)</p>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; line-height: 1.8;">
-                            する (melakukan), くる (datang)
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Review Tab -->
-        <div class="tab-content" id="review">
-            <section class="study-section">
-                <h2>Review Partikel</h2>
-
-                <div style="display: grid; gap: 1.5rem; margin: 2rem 0;">
-                    <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">と (Dengan/Dan)</h3>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; margin: 0.5rem 0;">
-                            ともだちとえいがをみます。
-                        </div>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Tomodachi to eiga wo mimasu. (Nonton
-                            film dengan teman)</p>
-                    </div>
-
-                    <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">で (Di/Dengan)</h3>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; margin: 0.5rem 0;">
-                            レストランでたべます。
-                        </div>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Resutoran de tabemasu. (Makan di
-                            restoran)</p>
-                    </div>
-
-                    <div style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem;">
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">に (Pada/Di)</h3>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; margin: 0.5rem 0;">
-                            ろくじにおきます。
-                        </div>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Rokuji ni okimasu. (Bangun pada jam
-                            6)</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Dialogue Tab -->
-        <div class="tab-content" id="dialogue">
-            <section class="study-section">
-                <h2>Dialog: Menanyakan Pengalaman</h2>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">A：</div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8;">
-                            きょうとのりょこうはどうでしたか。
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">B：</div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8;">
-                            とてもたのしかったです。
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">A：</div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8;">
-                            なにをしましたか。
-                        </div>
-                    </div>
-                    <div>
-                        <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">B：</div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8;">
-                            おてらをみました。しゃしんもたくさんとりました。
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Terjemahan:</h3>
-                    <div style="line-height: 1.8;">
-                        <strong>A:</strong> Bagaimana perjalanan ke Kyoto?<br><br>
-                        <strong>B:</strong> Sangat menyenangkan.<br><br>
-                        <strong>A:</strong> Apa yang dilakukan?<br><br>
-                        <strong>B:</strong> Melihat kuil. Juga mengambil banyak foto.
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Practice Tab -->
-        <div class="tab-content" id="practice">
-            <section class="quiz-section">
-                <div class="quiz-header">
-                    <h2>Latihan Soal</h2>
-                    <p>Jawab semua pertanyaan, lalu lihat hasilnya</p>
-                    <div class="quiz-progress-container">
-                        <div id="quiz-progress"></div>
-                    </div>
-                </div>
-                <div id="quiz-container"></div>
-            </section>
-        </div>
-
-        <!-- Navigation -->
-        <div
-            style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <a href="meeting-13.html" class="btn btn-secondary">← Pertemuan 13</a>
-            <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer
-        style="background: var(--bg-secondary); padding: 2rem 0; margin-top: 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-        <div class="container">
-            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
-                Japanese Course by Ms. Aulia
-            </p>
-            <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                Created by <a href="https://www.instagram.com/rvldii__/" target="_blank" rel="noopener noreferrer"
-                    style="color: var(--primary); text-decoration: none; font-weight: 500;">Rivaldi</a>
-            </p>
-        </div>
-    </footer>
-
-    <script src="../js/speech.js"></script>
-    <script src="../js/romaji.js"></script>
-    <script src="../js/quiz.js"></script>
-    <script>
-        // Tab switching
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.tab;
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                document.getElementById(targetTab).classList.add('active');
+        <script src="../js/speech.js"></script>
+        <script src="../js/romaji.js"></script>
+        <script src="../js/quiz.js"></script>
+        <script>
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    document.getElementById(targetTab).classList.add('active');
+                });
             });
-        });
 
-        // Quiz data - Dictionary form and review questions in full Japanese
-        const quizData = {
-            lessonId: 'meeting-14',
-            questions: [
-                {
-                    question: '「たべます」のじしょけいはなんですか。',
-                    options: ['たべる', 'たべ', 'たべます', 'たべた'],
-                    correct: 0,
-                    explanation: '「たべます」のじしょけい（辞書形）は「たべる」です。'
-                },
-                {
-                    question: '「します」のじしょけいはなんですか。',
-                    options: ['する', 'し', 'すます', 'した'],
-                    correct: 0,
-                    explanation: '「します」のじしょけいは「する」です。Group IIIです。'
-                },
-                {
-                    question: '「と」のいみはなんですか。',
-                    options: ['with/and', 'at', 'to', 'from'],
-                    correct: 0,
-                    explanation: '「と」は「with/and（〜と一緒に）」のいみです。'
-                },
-                {
-                    question: 'Group IIのどうしはどれですか。',
-                    options: ['たべる', 'かく', 'する', 'はなす'],
-                    correct: 0,
-                    explanation: '「たべる」はGroup II（る-verbs）です。'
-                },
-                {
-                    question: '「どうでしたか」はなにをききますか。',
-                    options: ['かこのけいけん', 'いまのじょうきょう', 'みらいのよてい', 'ばしょ'],
-                    correct: 0,
-                    explanation: '「どうでしたか」はかこのけいけん（過去の経験）をききます。'
-                }
-            ]
-        };
-    </script>
-</body>
-
+            // Quiz data - Dictionary form and review questions in full Japanese
+            const quizData = {
+                lessonId: 'meeting-14',
+                questions: [
+                    {
+                        question: '「たべます」のじしょけいはなんですか。',
+                        options: ['たべる', 'たべ', 'たべます', 'たべた'],
+                        correct: 0,
+                        explanation: '「たべます」のじしょけい（辞書形）は「たべる」です。',
+                    },
+                    {
+                        question: '「します」のじしょけいはなんですか。',
+                        options: ['する', 'し', 'すます', 'した'],
+                        correct: 0,
+                        explanation: '「します」のじしょけいは「する」です。Group IIIです。',
+                    },
+                    {
+                        question: '「と」のいみはなんですか。',
+                        options: ['with/and', 'at', 'to', 'from'],
+                        correct: 0,
+                        explanation: '「と」は「with/and（〜と一緒に）」のいみです。',
+                    },
+                    {
+                        question: 'Group IIのどうしはどれですか。',
+                        options: ['たべる', 'かく', 'する', 'はなす'],
+                        correct: 0,
+                        explanation: '「たべる」はGroup II（る-verbs）です。',
+                    },
+                    {
+                        question: '「どうでしたか」はなにをききますか。',
+                        options: ['かこのけいけん', 'いまのじょうきょう', 'みらいのよてい', 'ばしょ'],
+                        correct: 0,
+                        explanation: '「どうでしたか」はかこのけいけん（過去の経験）をききます。',
+                    },
+                ],
+            };
+        </script>
+    </body>
 </html>

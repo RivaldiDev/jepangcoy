@@ -1,489 +1,816 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pertemuan 3-4: Katakana & Tata Bahasa - Japanese Course by Ms. Aulia</title>
+        <link rel="icon" type="image/png" href="../favicon.png" />
+        <link rel="shortcut icon" type="image/png" href="../favicon.png" />
+        <link rel="apple-touch-icon" href="../favicon.png" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link rel="stylesheet" href="../css/tabs.css" />
+        <link rel="stylesheet" href="../css/romaji.css" />
+        <style>
+            ruby {
+                ruby-position: over;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pertemuan 3-4: Katakana & Tata Bahasa - Japanese Course by Ms. Aulia</title>
-    <link rel="icon" type="image/png" href="../favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../favicon.png">
-    <link rel="apple-touch-icon" href="../favicon.png">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/lesson.css">
-    <link rel="stylesheet" href="../css/tabs.css">
-    <link rel="stylesheet" href="../css/romaji.css">
-    <style>
-        ruby {
-            ruby-position: over;
-        }
+            rt {
+                font-size: 0.5em;
+                color: var(--primary);
+            }
+        </style>
+    </head>
 
-        rt {
-            font-size: 0.5em;
-            color: var(--primary);
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-jp" aria-label="Japanese language">日本語</span>
-                    <span class="logo-text">Course by Ms. Aulia</span>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span>
+                        <span class="logo-text">Course by Ms. Aulia</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+                    </button>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                    </nav>
                 </div>
-                <nav class="nav" role="navigation">
-                    <a href="../index.html" class="nav-link">Beranda</a>
-                </nav>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div class="lesson-container">
-        <div class="lesson-header">
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <div
+                    style="
+                        display: inline-block;
+                        padding: 0.5rem 1rem;
+                        background: rgba(59, 130, 246, 0.1);
+                        border-radius: 2rem;
+                        font-size: 0.875rem;
+                        color: var(--primary);
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                    "
+                >
+                    Pertemuan 3-4
+                </div>
+                <h1 class="lesson-title">Katakana & Tata Bahasa Dasar</h1>
+                <p class="lesson-subtitle">Kata Serapan Asing & Pola Kalimat Sederhana</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-tab="study">
+                    <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle">book</span>
+                    Katakana
+                </button>
+                <button class="tab" data-tab="grammar">
+                    <span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle"
+                        >menu_book</span
+                    >
+                    Tata Bahasa
+                </button>
+                <button class="tab" data-tab="vocabulary">🗣️ Kosakata</button>
+                <button class="tab" data-tab="dialogue">
+                    <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle"
+                        >chat_bubble</span
+                    >
+                    Dialog
+                </button>
+                <button class="tab" data-tab="practice">
+                    <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle">edit</span>
+                    Latihan
+                </button>
+            </div>
+
+            <!-- Katakana Tab -->
+            <div class="tab-content active" id="study">
+                <section class="study-section">
+                    <h2>Katakana - カタカナ</h2>
+                    <p>
+                        Katakana digunakan untuk menulis kata-kata serapan dari bahasa asing, nama negara, dan istilah
+                        teknis.
+                    </p>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">Vokal Dasar</h3>
+                    <div class="character-grid">
+                        <div class="character-item">
+                            <span class="character-jp">ア</span><span class="character-divider">|</span
+                            ><span class="character-romaji">a</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">イ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">i</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ウ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">u</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">エ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">e</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">オ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">o</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">K-Baris (カ行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item">
+                            <span class="character-jp">カ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ka</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">キ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ki</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ク</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ku</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ケ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ke</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">コ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ko</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">S-Baris (サ行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item">
+                            <span class="character-jp">サ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">sa</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">シ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">shi</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ス</span><span class="character-divider">|</span
+                            ><span class="character-romaji">su</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">セ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">se</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ソ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">so</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">T-Baris (タ行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item">
+                            <span class="character-jp">タ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ta</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">チ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">chi</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ツ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">tsu</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">テ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">te</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ト</span><span class="character-divider">|</span
+                            ><span class="character-romaji">to</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">N-Baris (ナ行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item">
+                            <span class="character-jp">ナ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">na</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ニ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ni</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ヌ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">nu</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ネ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ne</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ノ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">no</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">H-Baris (ハ行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item">
+                            <span class="character-jp">ハ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ha</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ヒ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">hi</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">フ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">fu</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ヘ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">he</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ホ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ho</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">M-Baris (マ行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item">
+                            <span class="character-jp">マ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ma</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ミ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">mi</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ム</span><span class="character-divider">|</span
+                            ><span class="character-romaji">mu</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">メ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">me</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">モ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">mo</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">Y-Baris (ヤ行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item">
+                            <span class="character-jp">ヤ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ya</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ユ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">yu</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ヨ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">yo</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">R-Baris (ラ行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item">
+                            <span class="character-jp">ラ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ra</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">リ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ri</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ル</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ru</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">レ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">re</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ロ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">ro</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">W-Baris & N (ワ行・ン)</h3>
+                    <div class="character-grid">
+                        <div class="character-item">
+                            <span class="character-jp">ワ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">wa</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ヲ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">wo</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character-jp">ン</span><span class="character-divider">|</span
+                            ><span class="character-romaji">n</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Grammar Tab -->
+            <div class="tab-content" id="grammar">
+                <section class="study-section">
+                    <h2>Tata Bahasa Dasar</h2>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">1. Partikel は (wa) + です (desu)</h3>
+                        <p style="margin-bottom: 1rem">Pola: <strong>A は B です</strong> (A adalah B)</p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            わたしは<ruby>学生<rt>がくせい</rt></ruby
+                            >です。
+                        </div>
+                        <p style="color: var(--text-secondary)">Watashi wa gakusei desu. (Saya adalah pelajar)</p>
+                    </div>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">2. Bentuk Negatif: じゃありません</h3>
+                        <p style="margin-bottom: 1rem">Pola: <strong>A は B じゃありません</strong> (A bukan B)</p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            わたしは<ruby>先生<rt>せんせい</rt></ruby
+                            >じゃありません。
+                        </div>
+                        <p style="color: var(--text-secondary)">Watashi wa sensei ja arimasen. (Saya bukan guru)</p>
+                    </div>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">3. Partikel か (ka) - Pertanyaan</h3>
+                        <p style="margin-bottom: 1rem">Tambahkan か di akhir kalimat untuk membuat pertanyaan</p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            これは<ruby>本<rt>ほん</rt></ruby
+                            >ですか。
+                        </div>
+                        <p style="color: var(--text-secondary)">Kore wa hon desu ka? (Apakah ini buku?)</p>
+                    </div>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">4. Partikel も (mo) - Juga</h3>
+                        <p style="margin-bottom: 1rem">Menggantikan は untuk menyatakan "juga"</p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            わたしも<ruby>学生<rt>がくせい</rt></ruby
+                            >です。
+                        </div>
+                        <p style="color: var(--text-secondary)">Watashi mo gakusei desu. (Saya juga pelajar)</p>
+                    </div>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">5. Partikel の (no) - Kepemilikan</h3>
+                        <p style="margin-bottom: 1rem">Menghubungkan kata benda (A の B = B milik A)</p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            インドネシアの<ruby>学生<rt>がくせい</rt></ruby>
+                        </div>
+                        <p style="color: var(--text-secondary)">Indoneshia no gakusei (Pelajar Indonesia)</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Vocabulary Tab -->
+            <div class="tab-content" id="vocabulary">
+                <section class="study-section">
+                    <h2>Kosakata Pertemuan 3-4</h2>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">
+                        <ruby>国<rt>くに</rt></ruby> (Kuni) - Negara
+                    </h3>
+                    <div style="display: grid; gap: 1rem; margin: 1.5rem 0">
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    インドネシア
+                                </div>
+                                <div style="color: var(--text-secondary)">Indoneshia</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Indonesia</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    アメリカ
+                                </div>
+                                <div style="color: var(--text-secondary)">Amerika</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Amerika</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    イギリス
+                                </div>
+                                <div style="color: var(--text-secondary)">Igirisu</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Inggris</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    フランス
+                                </div>
+                                <div style="color: var(--text-secondary)">Furansu</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Prancis</div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">
+                        <ruby>仕事<rt>しごと</rt></ruby> (Shigoto) - Pekerjaan
+                    </h3>
+                    <div style="display: grid; gap: 1rem; margin: 1.5rem 0">
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    <ruby>学生<rt>がくせい</rt></ruby>
+                                </div>
+                                <div style="color: var(--text-secondary)">Gakusei</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Pelajar</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    <ruby>先生<rt>せんせい</rt></ruby>
+                                </div>
+                                <div style="color: var(--text-secondary)">Sensei</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Guru</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    エンジニア
+                                </div>
+                                <div style="color: var(--text-secondary)">Enjinia</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Insinyur</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    <ruby>医者<rt>いしゃ</rt></ruby>
+                                </div>
+                                <div style="color: var(--text-secondary)">Isha</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Dokter</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Dialogue Tab -->
+            <div class="tab-content" id="dialogue">
+                <section class="study-section">
+                    <h2>Dialog Perkenalan dengan Pekerjaan</h2>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <div style="margin-bottom: 1.5rem">
+                            <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem">やまと：</div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8">
+                                こんにちは、となりのへやのやまとです。<br />
+                                わたしはUBPの<ruby>学生<rt>がくせい</rt></ruby
+                                >です。
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem">さくら：</div>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8">
+                                こんにちは、さくらです。<br />
+                                わたしもUBPの<ruby>学生<rt>がくせい</rt></ruby
+                                >です。<br />
+                                よろしくおねがいします。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="
+                            background: rgba(59, 130, 246, 0.1);
+                            padding: 1.5rem;
+                            border-radius: 0.5rem;
+                            margin-top: 2rem;
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">Terjemahan:</h3>
+                        <div style="line-height: 1.8">
+                            <strong>Yamato:</strong> Halo, saya Yamato dari kamar sebelah. Saya adalah pelajar UBP.<br /><br />
+                            <strong>Sakura:</strong> Halo, saya Sakura. Saya juga pelajar UBP. Mohon bantuannya.
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Practice Tab -->
+            <div class="tab-content" id="practice">
+                <section class="quiz-section">
+                    <div class="quiz-header">
+                        <h2>Latihan Soal</h2>
+                        <p>Jawab semua pertanyaan, lalu lihat hasilnya</p>
+                        <div class="quiz-progress-container">
+                            <div id="quiz-progress"></div>
+                        </div>
+                    </div>
+                    <div id="quiz-container"></div>
+                </section>
+            </div>
+
+            <!-- Navigation -->
             <div
-                style="display: inline-block; padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 2rem; font-size: 0.875rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">
-                Pertemuan 3-4
+                style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 3rem;
+                    padding-top: 2rem;
+                    border-top: 1px solid var(--border);
+                "
+            >
+                <a href="meeting-01-02.html" class="btn btn-secondary">← Pertemuan 1-2</a>
+                <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
             </div>
-            <h1 class="lesson-title">Katakana & Tata Bahasa Dasar</h1>
-            <p class="lesson-subtitle">Kata Serapan Asing & Pola Kalimat Sederhana</p>
         </div>
 
-        <!-- Tab Navigation -->
-        <div class="tabs">
-            <button class="tab active" data-tab="study"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">book</span> Katakana</button>
-            <button class="tab" data-tab="grammar"><span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle;">menu_book</span> Tata Bahasa</button>
-            <button class="tab" data-tab="vocabulary">🗣️ Kosakata</button>
-            <button class="tab" data-tab="dialogue"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">chat_bubble</span> Dialog</button>
-            <button class="tab" data-tab="practice"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">edit</span> Latihan</button>
-        </div>
+        <!-- Footer -->
+        <footer
+            style="
+                background: var(--bg-secondary);
+                padding: 2rem 0;
+                margin-top: 4rem;
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            "
+        >
+            <div class="container">
+                <p style="color: var(--text-secondary); margin-bottom: 0.5rem">Japanese Course by Ms. Aulia</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem">
+                    Created by
+                    <a
+                        href="https://www.instagram.com/rvldii__/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: var(--primary); text-decoration: none; font-weight: 500"
+                        >Rivaldi</a
+                    >
+                </p>
+            </div>
+        </footer>
 
-        <!-- Katakana Tab -->
-        <div class="tab-content active" id="study">
-            <section class="study-section">
-                <h2>Katakana - カタカナ</h2>
-                <p>Katakana digunakan untuk menulis kata-kata serapan dari bahasa asing, nama negara, dan istilah
-                    teknis.</p>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);">Vokal Dasar</h3>
-                <div class="character-grid">
-                    <div class="character-item"><span class="character-jp">ア</span><span
-                            class="character-divider">|</span><span class="character-romaji">a</span></div>
-                    <div class="character-item"><span class="character-jp">イ</span><span
-                            class="character-divider">|</span><span class="character-romaji">i</span></div>
-                    <div class="character-item"><span class="character-jp">ウ</span><span
-                            class="character-divider">|</span><span class="character-romaji">u</span></div>
-                    <div class="character-item"><span class="character-jp">エ</span><span
-                            class="character-divider">|</span><span class="character-romaji">e</span></div>
-                    <div class="character-item"><span class="character-jp">オ</span><span
-                            class="character-divider">|</span><span class="character-romaji">o</span></div>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);">K-Baris (カ行)</h3>
-                <div class="character-grid">
-                    <div class="character-item"><span class="character-jp">カ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ka</span></div>
-                    <div class="character-item"><span class="character-jp">キ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ki</span></div>
-                    <div class="character-item"><span class="character-jp">ク</span><span
-                            class="character-divider">|</span><span class="character-romaji">ku</span></div>
-                    <div class="character-item"><span class="character-jp">ケ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ke</span></div>
-                    <div class="character-item"><span class="character-jp">コ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ko</span></div>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);">S-Baris (サ行)</h3>
-                <div class="character-grid">
-                    <div class="character-item"><span class="character-jp">サ</span><span
-                            class="character-divider">|</span><span class="character-romaji">sa</span></div>
-                    <div class="character-item"><span class="character-jp">シ</span><span
-                            class="character-divider">|</span><span class="character-romaji">shi</span></div>
-                    <div class="character-item"><span class="character-jp">ス</span><span
-                            class="character-divider">|</span><span class="character-romaji">su</span></div>
-                    <div class="character-item"><span class="character-jp">セ</span><span
-                            class="character-divider">|</span><span class="character-romaji">se</span></div>
-                    <div class="character-item"><span class="character-jp">ソ</span><span
-                            class="character-divider">|</span><span class="character-romaji">so</span></div>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);">T-Baris (タ行)</h3>
-                <div class="character-grid">
-                    <div class="character-item"><span class="character-jp">タ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ta</span></div>
-                    <div class="character-item"><span class="character-jp">チ</span><span
-                            class="character-divider">|</span><span class="character-romaji">chi</span></div>
-                    <div class="character-item"><span class="character-jp">ツ</span><span
-                            class="character-divider">|</span><span class="character-romaji">tsu</span></div>
-                    <div class="character-item"><span class="character-jp">テ</span><span
-                            class="character-divider">|</span><span class="character-romaji">te</span></div>
-                    <div class="character-item"><span class="character-jp">ト</span><span
-                            class="character-divider">|</span><span class="character-romaji">to</span></div>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);">N-Baris (ナ行)</h3>
-                <div class="character-grid">
-                    <div class="character-item"><span class="character-jp">ナ</span><span
-                            class="character-divider">|</span><span class="character-romaji">na</span></div>
-                    <div class="character-item"><span class="character-jp">ニ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ni</span></div>
-                    <div class="character-item"><span class="character-jp">ヌ</span><span
-                            class="character-divider">|</span><span class="character-romaji">nu</span></div>
-                    <div class="character-item"><span class="character-jp">ネ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ne</span></div>
-                    <div class="character-item"><span class="character-jp">ノ</span><span
-                            class="character-divider">|</span><span class="character-romaji">no</span></div>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);">H-Baris (ハ行)</h3>
-                <div class="character-grid">
-                    <div class="character-item"><span class="character-jp">ハ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ha</span></div>
-                    <div class="character-item"><span class="character-jp">ヒ</span><span
-                            class="character-divider">|</span><span class="character-romaji">hi</span></div>
-                    <div class="character-item"><span class="character-jp">フ</span><span
-                            class="character-divider">|</span><span class="character-romaji">fu</span></div>
-                    <div class="character-item"><span class="character-jp">ヘ</span><span
-                            class="character-divider">|</span><span class="character-romaji">he</span></div>
-                    <div class="character-item"><span class="character-jp">ホ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ho</span></div>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);">M-Baris (マ行)</h3>
-                <div class="character-grid">
-                    <div class="character-item"><span class="character-jp">マ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ma</span></div>
-                    <div class="character-item"><span class="character-jp">ミ</span><span
-                            class="character-divider">|</span><span class="character-romaji">mi</span></div>
-                    <div class="character-item"><span class="character-jp">ム</span><span
-                            class="character-divider">|</span><span class="character-romaji">mu</span></div>
-                    <div class="character-item"><span class="character-jp">メ</span><span
-                            class="character-divider">|</span><span class="character-romaji">me</span></div>
-                    <div class="character-item"><span class="character-jp">モ</span><span
-                            class="character-divider">|</span><span class="character-romaji">mo</span></div>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);">Y-Baris (ヤ行)</h3>
-                <div class="character-grid">
-                    <div class="character-item"><span class="character-jp">ヤ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ya</span></div>
-                    <div class="character-item"><span class="character-jp">ユ</span><span
-                            class="character-divider">|</span><span class="character-romaji">yu</span></div>
-                    <div class="character-item"><span class="character-jp">ヨ</span><span
-                            class="character-divider">|</span><span class="character-romaji">yo</span></div>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);">R-Baris (ラ行)</h3>
-                <div class="character-grid">
-                    <div class="character-item"><span class="character-jp">ラ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ra</span></div>
-                    <div class="character-item"><span class="character-jp">リ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ri</span></div>
-                    <div class="character-item"><span class="character-jp">ル</span><span
-                            class="character-divider">|</span><span class="character-romaji">ru</span></div>
-                    <div class="character-item"><span class="character-jp">レ</span><span
-                            class="character-divider">|</span><span class="character-romaji">re</span></div>
-                    <div class="character-item"><span class="character-jp">ロ</span><span
-                            class="character-divider">|</span><span class="character-romaji">ro</span></div>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);">W-Baris & N (ワ行・ン)</h3>
-                <div class="character-grid">
-                    <div class="character-item"><span class="character-jp">ワ</span><span
-                            class="character-divider">|</span><span class="character-romaji">wa</span></div>
-                    <div class="character-item"><span class="character-jp">ヲ</span><span
-                            class="character-divider">|</span><span class="character-romaji">wo</span></div>
-                    <div class="character-item"><span class="character-jp">ン</span><span
-                            class="character-divider">|</span><span class="character-romaji">n</span></div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Grammar Tab -->
-        <div class="tab-content" id="grammar">
-            <section class="study-section">
-                <h2>Tata Bahasa Dasar</h2>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">1. Partikel は (wa) + です (desu)</h3>
-                    <p style="margin-bottom: 1rem;">Pola: <strong>A は B です</strong> (A adalah B)</p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        わたしは<ruby>学生<rt>がくせい</rt></ruby>です。
-                    </div>
-                    <p style="color: var(--text-secondary);">Watashi wa gakusei desu. (Saya adalah pelajar)</p>
-                </div>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">2. Bentuk Negatif: じゃありません</h3>
-                    <p style="margin-bottom: 1rem;">Pola: <strong>A は B じゃありません</strong> (A bukan B)</p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        わたしは<ruby>先生<rt>せんせい</rt></ruby>じゃありません。
-                    </div>
-                    <p style="color: var(--text-secondary);">Watashi wa sensei ja arimasen. (Saya bukan guru)</p>
-                </div>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">3. Partikel か (ka) - Pertanyaan</h3>
-                    <p style="margin-bottom: 1rem;">Tambahkan か di akhir kalimat untuk membuat pertanyaan</p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        これは<ruby>本<rt>ほん</rt></ruby>ですか。
-                    </div>
-                    <p style="color: var(--text-secondary);">Kore wa hon desu ka? (Apakah ini buku?)</p>
-                </div>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">4. Partikel も (mo) - Juga</h3>
-                    <p style="margin-bottom: 1rem;">Menggantikan は untuk menyatakan "juga"</p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        わたしも<ruby>学生<rt>がくせい</rt></ruby>です。
-                    </div>
-                    <p style="color: var(--text-secondary);">Watashi mo gakusei desu. (Saya juga pelajar)</p>
-                </div>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">5. Partikel の (no) - Kepemilikan</h3>
-                    <p style="margin-bottom: 1rem;">Menghubungkan kata benda (A の B = B milik A)</p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        インドネシアの<ruby>学生<rt>がくせい</rt></ruby>
-                    </div>
-                    <p style="color: var(--text-secondary);">Indoneshia no gakusei (Pelajar Indonesia)</p>
-                </div>
-            </section>
-        </div>
-
-        <!-- Vocabulary Tab -->
-        <div class="tab-content" id="vocabulary">
-            <section class="study-section">
-                <h2>Kosakata Pertemuan 3-4</h2>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);"><ruby>国<rt>くに</rt></ruby> (Kuni) - Negara</h3>
-                <div style="display: grid; gap: 1rem; margin: 1.5rem 0;">
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                インドネシア</div>
-                            <div style="color: var(--text-secondary);">Indoneshia</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Indonesia</div>
-                    </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                アメリカ</div>
-                            <div style="color: var(--text-secondary);">Amerika</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Amerika</div>
-                    </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                イギリス</div>
-                            <div style="color: var(--text-secondary);">Igirisu</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Inggris</div>
-                    </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                フランス</div>
-                            <div style="color: var(--text-secondary);">Furansu</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Prancis</div>
-                    </div>
-                </div>
-
-                <h3 style="margin-top: 2rem; color: var(--primary);"><ruby>仕事<rt>しごと</rt></ruby> (Shigoto) - Pekerjaan
-                </h3>
-                <div style="display: grid; gap: 1rem; margin: 1.5rem 0;">
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                <ruby>学生<rt>がくせい</rt></ruby></div>
-                            <div style="color: var(--text-secondary);">Gakusei</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Pelajar</div>
-                    </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                <ruby>先生<rt>せんせい</rt></ruby></div>
-                            <div style="color: var(--text-secondary);">Sensei</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Guru</div>
-                    </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                エンジニア</div>
-                            <div style="color: var(--text-secondary);">Enjinia</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Insinyur</div>
-                    </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                <ruby>医者<rt>いしゃ</rt></ruby></div>
-                            <div style="color: var(--text-secondary);">Isha</div>
-                        </div>
-                        <div style="color: var(--primary); font-weight: 600;">Dokter</div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Dialogue Tab -->
-        <div class="tab-content" id="dialogue">
-            <section class="study-section">
-                <h2>Dialog Perkenalan dengan Pekerjaan</h2>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <div style="margin-bottom: 1.5rem;">
-                        <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">やまと：</div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8;">
-                            こんにちは、となりのへやのやまとです。<br>
-                            わたしはUBPの<ruby>学生<rt>がくせい</rt></ruby>です。
-                        </div>
-                    </div>
-                    <div>
-                        <div style="font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">さくら：</div>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; line-height: 1.8;">
-                            こんにちは、さくらです。<br>
-                            わたしもUBPの<ruby>学生<rt>がくせい</rt></ruby>です。<br>
-                            よろしくおねがいします。
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Terjemahan:</h3>
-                    <div style="line-height: 1.8;">
-                        <strong>Yamato:</strong> Halo, saya Yamato dari kamar sebelah. Saya adalah pelajar UBP.<br><br>
-                        <strong>Sakura:</strong> Halo, saya Sakura. Saya juga pelajar UBP. Mohon bantuannya.
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Practice Tab -->
-        <div class="tab-content" id="practice">
-            <section class="quiz-section">
-                <div class="quiz-header">
-                    <h2>Latihan Soal</h2>
-                    <p>Jawab semua pertanyaan, lalu lihat hasilnya</p>
-                    <div class="quiz-progress-container">
-                        <div id="quiz-progress"></div>
-                    </div>
-                </div>
-                <div id="quiz-container"></div>
-            </section>
-        </div>
-
-        <!-- Navigation -->
-        <div
-            style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <a href="meeting-01-02.html" class="btn btn-secondary">← Pertemuan 1-2</a>
-            <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer
-        style="background: var(--bg-secondary); padding: 2rem 0; margin-top: 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-        <div class="container">
-            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
-                Japanese Course by Ms. Aulia
-            </p>
-            <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                Created by <a href="https://www.instagram.com/rvldii__/" target="_blank" rel="noopener noreferrer"
-                    style="color: var(--primary); text-decoration: none; font-weight: 500;">Rivaldi</a>
-            </p>
-        </div>
-    </footer>
-
-    <script src="../js/speech.js"></script>
-    <script src="../js/romaji.js"></script>
-    <script src="../js/quiz.js"></script>
-    <script>
-        // Tab switching
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.tab;
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                document.getElementById(targetTab).classList.add('active');
+        <script src="../js/speech.js"></script>
+        <script src="../js/romaji.js"></script>
+        <script src="../js/quiz.js"></script>
+        <script>
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    document.getElementById(targetTab).classList.add('active');
+                });
             });
-        });
 
-        // Quiz data - Dialogue-based questions in full Japanese
-        const quizData = {
-            lessonId: 'meeting-03-04',
-            questions: [
-                {
-                    dialogue: `やまと：こんにちは、となりのへやのやまとです。わたしはUBPのがくせいです。\nさくら：こんにちは、さくらです。わたしもUBPのがくせいです。`,
-                    question: 'やまとさんはだれですか。',
-                    options: ['UBPのがくせい', 'せんせい', 'いしゃ', 'エンジニア'],
-                    correct: 0,
-                    explanation: 'やまとさんは「UBPのがくせい」です。'
-                },
-                {
-                    dialogue: `やまと：こんにちは、となりのへやのやまとです。わたしはUBPのがくせいです。\nさくら：こんにちは、さくらです。わたしもUBPのがくせいです。`,
-                    question: 'さくらさんもがくせいですか。',
-                    options: ['はい、がくせいです', 'いいえ、せんせいです', 'いいえ、いしゃです', 'いいえ、エンジニアです'],
-                    correct: 0,
-                    explanation: 'さくらさんは「わたしもUBPのがくせいです」といいました。'
-                },
-                {
-                    dialogue: `やまと：こんにちは、となりのへやのやまとです。わたしはUBPのがくせいです。\nさくら：こんにちは、さくらです。わたしもUBPのがくせいです。`,
-                    question: 'やまとさんのへやはどこですか。',
-                    options: ['となりのへや', 'うえのへや', 'したのへや', 'まえのへや'],
-                    correct: 0,
-                    explanation: 'やまとさんは「となりのへやのやまと」といいました。'
-                },
-                {
-                    question: '「わたしはがくせいです」のひていけいは？',
-                    options: ['わたしはがくせいじゃありません', 'わたしはがくせいですか', 'わたしもがくせいです', 'わたしのがくせいです'],
-                    correct: 0,
-                    explanation: 'ひていけい（否定形）は「じゃありません」をつかいます。'
-                },
-                {
-                    question: '「これはほんです」をしつもんにするには？',
-                    options: ['これはほんですか', 'これはほんじゃありません', 'これもほんです', 'これのほんです'],
-                    correct: 0,
-                    explanation: 'しつもんは「か」をつかいます。'
-                }
-            ]
-        };
-    </script>
-</body>
-
+            // Quiz data - Dialogue-based questions in full Japanese
+            const quizData = {
+                lessonId: 'meeting-03-04',
+                questions: [
+                    {
+                        dialogue: `やまと：こんにちは、となりのへやのやまとです。わたしはUBPのがくせいです。\nさくら：こんにちは、さくらです。わたしもUBPのがくせいです。`,
+                        question: 'やまとさんはだれですか。',
+                        options: ['UBPのがくせい', 'せんせい', 'いしゃ', 'エンジニア'],
+                        correct: 0,
+                        explanation: 'やまとさんは「UBPのがくせい」です。',
+                    },
+                    {
+                        dialogue: `やまと：こんにちは、となりのへやのやまとです。わたしはUBPのがくせいです。\nさくら：こんにちは、さくらです。わたしもUBPのがくせいです。`,
+                        question: 'さくらさんもがくせいですか。',
+                        options: [
+                            'はい、がくせいです',
+                            'いいえ、せんせいです',
+                            'いいえ、いしゃです',
+                            'いいえ、エンジニアです',
+                        ],
+                        correct: 0,
+                        explanation: 'さくらさんは「わたしもUBPのがくせいです」といいました。',
+                    },
+                    {
+                        dialogue: `やまと：こんにちは、となりのへやのやまとです。わたしはUBPのがくせいです。\nさくら：こんにちは、さくらです。わたしもUBPのがくせいです。`,
+                        question: 'やまとさんのへやはどこですか。',
+                        options: ['となりのへや', 'うえのへや', 'したのへや', 'まえのへや'],
+                        correct: 0,
+                        explanation: 'やまとさんは「となりのへやのやまと」といいました。',
+                    },
+                    {
+                        question: '「わたしはがくせいです」のひていけいは？',
+                        options: [
+                            'わたしはがくせいじゃありません',
+                            'わたしはがくせいですか',
+                            'わたしもがくせいです',
+                            'わたしのがくせいです',
+                        ],
+                        correct: 0,
+                        explanation: 'ひていけい（否定形）は「じゃありません」をつかいます。',
+                    },
+                    {
+                        question: '「これはほんです」をしつもんにするには？',
+                        options: ['これはほんですか', 'これはほんじゃありません', 'これもほんです', 'これのほんです'],
+                        correct: 0,
+                        explanation: 'しつもんは「か」をつかいます。',
+                    },
+                ],
+            };
+        </script>
+    </body>
 </html>

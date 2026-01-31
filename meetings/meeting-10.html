@@ -1,468 +1,871 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pertemuan 10: Kata Sifat & Keberadaan - Japanese Course by Ms. Aulia</title>
+        <link rel="icon" type="image/png" href="../favicon.png" />
+        <link rel="shortcut icon" type="image/png" href="../favicon.png" />
+        <link rel="apple-touch-icon" href="../favicon.png" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link rel="stylesheet" href="../css/tabs.css" />
+        <link rel="stylesheet" href="../css/romaji.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pertemuan 10: Kata Sifat & Keberadaan - Japanese Course by Ms. Aulia</title>
-    <link rel="icon" type="image/png" href="../favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../favicon.png">
-    <link rel="apple-touch-icon" href="../favicon.png">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/lesson.css">
-    <link rel="stylesheet" href="../css/tabs.css">
-    <link rel="stylesheet" href="../css/romaji.css">
-</head>
-
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-jp" aria-label="Japanese language">日本語</span>
-                    <span class="logo-text">Course by Ms. Aulia</span>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span>
+                        <span class="logo-text">Course by Ms. Aulia</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+                    </button>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                    </nav>
                 </div>
-                <nav class="nav" role="navigation">
-                    <a href="../index.html" class="nav-link">Beranda</a>
-                </nav>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div class="lesson-container">
-        <div class="lesson-header">
-            <div
-                style="display: inline-block; padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 2rem; font-size: 0.875rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem;">
-                Pertemuan 10
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <div
+                    style="
+                        display: inline-block;
+                        padding: 0.5rem 1rem;
+                        background: rgba(59, 130, 246, 0.1);
+                        border-radius: 2rem;
+                        font-size: 0.875rem;
+                        color: var(--primary);
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                    "
+                >
+                    Pertemuan 10
+                </div>
+                <h1 class="lesson-title">けいようし (Kata Sifat)</h1>
+                <p class="lesson-subtitle">I-Adjective, Na-Adjective & Kata Kerja Keberadaan</p>
             </div>
-            <h1 class="lesson-title">けいようし (Kata Sifat)</h1>
-            <p class="lesson-subtitle">I-Adjective, Na-Adjective & Kata Kerja Keberadaan</p>
-        </div>
 
-        <!-- Tab Navigation -->
-        <div class="tabs">
-            <button class="tab active" data-tab="i-adj">📏 I-Adjective</button>
-            <button class="tab" data-tab="na-adj"><span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle;">palette</span> Na-Adjective</button>
-            <button class="tab" data-tab="existence"><span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle;">location_on</span> Keberadaan</button>
-            <button class="tab" data-tab="grammar"><span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle;">menu_book</span> Tata Bahasa</button>
-            <button class="tab" data-tab="practice"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">edit</span> Latihan</button>
-        </div>
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-tab="i-adj">📏 I-Adjective</button>
+                <button class="tab" data-tab="na-adj">
+                    <span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle"
+                        >palette</span
+                    >
+                    Na-Adjective
+                </button>
+                <button class="tab" data-tab="existence">
+                    <span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle"
+                        >location_on</span
+                    >
+                    Keberadaan
+                </button>
+                <button class="tab" data-tab="grammar">
+                    <span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle"
+                        >menu_book</span
+                    >
+                    Tata Bahasa
+                </button>
+                <button class="tab" data-tab="practice">
+                    <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle">edit</span>
+                    Latihan
+                </button>
+            </div>
 
-        <!-- I-Adjective Tab -->
-        <div class="tab-content active" id="i-adj">
-            <section class="study-section">
-                <h2>い-けいようし (I-Adjective)</h2>
-                <p>Kata sifat yang berakhiran い (i). Dapat langsung memodifikasi kata benda.</p>
+            <!-- I-Adjective Tab -->
+            <div class="tab-content active" id="i-adj">
+                <section class="study-section">
+                    <h2>い-けいようし (I-Adjective)</h2>
+                    <p>Kata sifat yang berakhiran い (i). Dapat langsung memodifikasi kata benda.</p>
 
-                <div style="display: grid; gap: 1rem; margin: 2rem 0;">
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                おおきい</div>
-                            <div style="color: var(--text-secondary);">Ookii</div>
+                    <div style="display: grid; gap: 1rem; margin: 2rem 0">
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    おおきい
+                                </div>
+                                <div style="color: var(--text-secondary)">Ookii</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Besar</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Besar</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                ちいさい</div>
-                            <div style="color: var(--text-secondary);">Chiisai</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    ちいさい
+                                </div>
+                                <div style="color: var(--text-secondary)">Chiisai</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Kecil</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Kecil</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                たかい</div>
-                            <div style="color: var(--text-secondary);">Takai</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    たかい
+                                </div>
+                                <div style="color: var(--text-secondary)">Takai</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Tinggi / Mahal</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Tinggi / Mahal</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                やすい</div>
-                            <div style="color: var(--text-secondary);">Yasui</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    やすい
+                                </div>
+                                <div style="color: var(--text-secondary)">Yasui</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Murah</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Murah</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                あたらしい</div>
-                            <div style="color: var(--text-secondary);">Atarashii</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    あたらしい
+                                </div>
+                                <div style="color: var(--text-secondary)">Atarashii</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Baru</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Baru</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                ふるい</div>
-                            <div style="color: var(--text-secondary);">Furui</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    ふるい
+                                </div>
+                                <div style="color: var(--text-secondary)">Furui</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Lama / Tua</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Lama / Tua</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                おいしい</div>
-                            <div style="color: var(--text-secondary);">Oishii</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    おいしい
+                                </div>
+                                <div style="color: var(--text-secondary)">Oishii</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Enak</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Enak</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                おもしろい</div>
-                            <div style="color: var(--text-secondary);">Omoshiroi</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    おもしろい
+                                </div>
+                                <div style="color: var(--text-secondary)">Omoshiroi</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Menarik</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Menarik</div>
                     </div>
-                </div>
 
-                <div
-                    style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Bentuk Negatif:</h3>
-                    <p style="margin-bottom: 0.5rem;">Ganti い dengan <strong>くないです</strong></p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        おおきい → おおきくないです
+                    <div
+                        style="
+                            background: rgba(59, 130, 246, 0.1);
+                            padding: 1.5rem;
+                            border-radius: 0.5rem;
+                            margin-top: 2rem;
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">Bentuk Negatif:</h3>
+                        <p style="margin-bottom: 0.5rem">Ganti い dengan <strong>くないです</strong></p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            おおきい → おおきくないです
+                        </div>
+                        <p style="color: var(--text-secondary)">Ookii → Ookikunai desu (Tidak besar)</p>
                     </div>
-                    <p style="color: var(--text-secondary);">Ookii → Ookikunai desu (Tidak besar)</p>
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
 
-        <!-- Na-Adjective Tab -->
-        <div class="tab-content" id="na-adj">
-            <section class="study-section">
-                <h2>な-けいようし (Na-Adjective)</h2>
-                <p>Kata sifat yang memerlukan な (na) saat memodifikasi kata benda.</p>
+            <!-- Na-Adjective Tab -->
+            <div class="tab-content" id="na-adj">
+                <section class="study-section">
+                    <h2>な-けいようし (Na-Adjective)</h2>
+                    <p>Kata sifat yang memerlukan な (na) saat memodifikasi kata benda.</p>
 
-                <div style="display: grid; gap: 1rem; margin: 2rem 0;">
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                ゆうめい</div>
-                            <div style="color: var(--text-secondary);">Yuumei</div>
+                    <div style="display: grid; gap: 1rem; margin: 2rem 0">
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    ゆうめい
+                                </div>
+                                <div style="color: var(--text-secondary)">Yuumei</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Terkenal</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Terkenal</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                きれい</div>
-                            <div style="color: var(--text-secondary);">Kirei</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    きれい
+                                </div>
+                                <div style="color: var(--text-secondary)">Kirei</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Cantik / Bersih</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Cantik / Bersih</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                しずか</div>
-                            <div style="color: var(--text-secondary);">Shizuka</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    しずか
+                                </div>
+                                <div style="color: var(--text-secondary)">Shizuka</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Tenang / Sepi</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Tenang / Sepi</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                べんり</div>
-                            <div style="color: var(--text-secondary);">Benri</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    べんり
+                                </div>
+                                <div style="color: var(--text-secondary)">Benri</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Praktis / Nyaman</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Praktis / Nyaman</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                にぎやか</div>
-                            <div style="color: var(--text-secondary);">Nigiyaka</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    にぎやか
+                                </div>
+                                <div style="color: var(--text-secondary)">Nigiyaka</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Ramai</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Ramai</div>
-                    </div>
-                    <div
-                        style="padding: 1.5rem; background: var(--bg-tertiary); border-radius: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.5rem; margin-bottom: 0.25rem;">
-                                げんき</div>
-                            <div style="color: var(--text-secondary);">Genki</div>
+                        <div
+                            style="
+                                padding: 1.5rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            "
+                        >
+                            <div>
+                                <div
+                                    style="
+                                        font-family: 'Noto Sans JP', sans-serif;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 0.25rem;
+                                    "
+                                >
+                                    げんき
+                                </div>
+                                <div style="color: var(--text-secondary)">Genki</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600">Sehat / Energik</div>
                         </div>
-                        <div style="color: var(--primary); font-weight: 600;">Sehat / Energik</div>
                     </div>
-                </div>
 
-                <div
-                    style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Bentuk Negatif:</h3>
-                    <p style="margin-bottom: 0.5rem;">Tambahkan <strong>じゃありません</strong></p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        ゆうめい → ゆうめいじゃありません
-                    </div>
-                    <p style="color: var(--text-secondary);">Yuumei → Yuumei ja arimasen (Tidak terkenal)</p>
-                </div>
-            </section>
-        </div>
-
-        <!-- Existence Tab -->
-        <div class="tab-content" id="existence">
-            <section class="study-section">
-                <h2>Kata Kerja Keberadaan</h2>
-
-                <div style="display: grid; gap: 2rem; margin: 2rem 0;">
                     <div
-                        style="padding: 2rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--primary); margin-bottom: 1rem;">あります (Arimasu)</h3>
-                        <p style="margin-bottom: 1rem;">Untuk benda mati (tidak bernyawa)</p>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                            つくえのうえにほんがあります。
+                        style="
+                            background: rgba(59, 130, 246, 0.1);
+                            padding: 1.5rem;
+                            border-radius: 0.5rem;
+                            margin-top: 2rem;
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">Bentuk Negatif:</h3>
+                        <p style="margin-bottom: 0.5rem">Tambahkan <strong>じゃありません</strong></p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            ゆうめい → ゆうめいじゃありません
                         </div>
-                        <p style="color: var(--text-secondary);">Tsukue no ue ni hon ga arimasu. (Ada buku di atas meja)
+                        <p style="color: var(--text-secondary)">Yuumei → Yuumei ja arimasen (Tidak terkenal)</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Existence Tab -->
+            <div class="tab-content" id="existence">
+                <section class="study-section">
+                    <h2>Kata Kerja Keberadaan</h2>
+
+                    <div style="display: grid; gap: 2rem; margin: 2rem 0">
+                        <div
+                            style="
+                                padding: 2rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                border-left: 4px solid var(--primary);
+                            "
+                        >
+                            <h3 style="color: var(--primary); margin-bottom: 1rem">あります (Arimasu)</h3>
+                            <p style="margin-bottom: 1rem">Untuk benda mati (tidak bernyawa)</p>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                                つくえのうえにほんがあります。
+                            </div>
+                            <p style="color: var(--text-secondary)">
+                                Tsukue no ue ni hon ga arimasu. (Ada buku di atas meja)
+                            </p>
+                        </div>
+
+                        <div
+                            style="
+                                padding: 2rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                border-left: 4px solid var(--primary);
+                            "
+                        >
+                            <h3 style="color: var(--primary); margin-bottom: 1rem">います (Imasu)</h3>
+                            <p style="margin-bottom: 1rem">Untuk makhluk hidup (bernyawa)</p>
+                            <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                                にわにねこがいます。
+                            </div>
+                            <p style="color: var(--text-secondary)">Niwa ni neko ga imasu. (Ada kucing di taman)</p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 2rem; color: var(--primary)">Kata Lokasi</h3>
+                    <div
+                        style="
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                            gap: 1rem;
+                            margin: 1.5rem 0;
+                        "
+                    >
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                text-align: center;
+                            "
+                        >
+                            <div
+                                style="
+                                    font-family: 'Noto Sans JP', sans-serif;
+                                    font-size: 1.25rem;
+                                    margin-bottom: 0.25rem;
+                                "
+                            >
+                                うえ
+                            </div>
+                            <div style="color: var(--text-secondary)">Ue - Atas</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                text-align: center;
+                            "
+                        >
+                            <div
+                                style="
+                                    font-family: 'Noto Sans JP', sans-serif;
+                                    font-size: 1.25rem;
+                                    margin-bottom: 0.25rem;
+                                "
+                            >
+                                した
+                            </div>
+                            <div style="color: var(--text-secondary)">Shita - Bawah</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                text-align: center;
+                            "
+                        >
+                            <div
+                                style="
+                                    font-family: 'Noto Sans JP', sans-serif;
+                                    font-size: 1.25rem;
+                                    margin-bottom: 0.25rem;
+                                "
+                            >
+                                なか
+                            </div>
+                            <div style="color: var(--text-secondary)">Naka - Dalam</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                text-align: center;
+                            "
+                        >
+                            <div
+                                style="
+                                    font-family: 'Noto Sans JP', sans-serif;
+                                    font-size: 1.25rem;
+                                    margin-bottom: 0.25rem;
+                                "
+                            >
+                                そと
+                            </div>
+                            <div style="color: var(--text-secondary)">Soto - Luar</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                text-align: center;
+                            "
+                        >
+                            <div
+                                style="
+                                    font-family: 'Noto Sans JP', sans-serif;
+                                    font-size: 1.25rem;
+                                    margin-bottom: 0.25rem;
+                                "
+                            >
+                                となり
+                            </div>
+                            <div style="color: var(--text-secondary)">Tonari - Sebelah</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                text-align: center;
+                            "
+                        >
+                            <div
+                                style="
+                                    font-family: 'Noto Sans JP', sans-serif;
+                                    font-size: 1.25rem;
+                                    margin-bottom: 0.25rem;
+                                "
+                            >
+                                まえ
+                            </div>
+                            <div style="color: var(--text-secondary)">Mae - Depan</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                text-align: center;
+                            "
+                        >
+                            <div
+                                style="
+                                    font-family: 'Noto Sans JP', sans-serif;
+                                    font-size: 1.25rem;
+                                    margin-bottom: 0.25rem;
+                                "
+                            >
+                                うしろ
+                            </div>
+                            <div style="color: var(--text-secondary)">Ushiro - Belakang</div>
+                        </div>
+                        <div
+                            style="
+                                padding: 1rem;
+                                background: var(--bg-tertiary);
+                                border-radius: 0.5rem;
+                                text-align: center;
+                            "
+                        >
+                            <div
+                                style="
+                                    font-family: 'Noto Sans JP', sans-serif;
+                                    font-size: 1.25rem;
+                                    margin-bottom: 0.25rem;
+                                "
+                            >
+                                あいだ
+                            </div>
+                            <div style="color: var(--text-secondary)">Aida - Antara</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Grammar Tab -->
+            <div class="tab-content" id="grammar">
+                <section class="study-section">
+                    <h2>Pola Kalimat</h2>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">1. Adjective + Noun</h3>
+                        <p style="margin-bottom: 1rem"><strong>I-Adj:</strong> [い-adj] + [Noun]</p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            ふるいまち
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem">Furui machi (Kota tua)</p>
+
+                        <p style="margin-bottom: 1rem"><strong>Na-Adj:</strong> [な-adj] + な + [Noun]</p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            きれいなまち
+                        </div>
+                        <p style="color: var(--text-secondary)">Kirei na machi (Kota cantik)</p>
+                    </div>
+
+                    <div
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">2. Existence Location</h3>
+                        <p style="margin-bottom: 1rem">
+                            Pola: <strong>[Tempat] に [Benda/Orang] が あります/います</strong>
                         </p>
-                    </div>
-
-                    <div
-                        style="padding: 2rem; background: var(--bg-tertiary); border-radius: 0.5rem; border-left: 4px solid var(--primary);">
-                        <h3 style="color: var(--primary); margin-bottom: 1rem;">います (Imasu)</h3>
-                        <p style="margin-bottom: 1rem;">Untuk makhluk hidup (bernyawa)</p>
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                            にわにねこがいます。
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            へやにつくえがあります。
                         </div>
-                        <p style="color: var(--text-secondary);">Niwa ni neko ga imasu. (Ada kucing di taman)</p>
+                        <p style="color: var(--text-secondary)">Heya ni tsukue ga arimasu. (Ada meja di kamar)</p>
                     </div>
-                </div>
 
-                <h3 style="margin-top: 2rem; color: var(--primary);">Kata Lokasi</h3>
-                <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
                     <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; text-align: center;">
-                        <div
-                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.25rem;">
-                            うえ</div>
-                        <div style="color: var(--text-secondary);">Ue - Atas</div>
+                        style="
+                            background: var(--bg-tertiary);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                            border-left: 4px solid var(--primary);
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">3. Descriptive Questions</h3>
+                        <p style="margin-bottom: 1rem">Pola: <strong>どんな [Noun] ですか</strong></p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            どんなまちですか。
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem">
+                            Donna machi desu ka? (Kota seperti apa?)
+                        </p>
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0">
+                            しずかなまちです。
+                        </div>
+                        <p style="color: var(--text-secondary)">Shizuka na machi desu. (Kota yang tenang)</p>
                     </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; text-align: center;">
-                        <div
-                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.25rem;">
-                            した</div>
-                        <div style="color: var(--text-secondary);">Shita - Bawah</div>
+                </section>
+            </div>
+
+            <!-- Practice Tab -->
+            <div class="tab-content" id="practice">
+                <section class="quiz-section">
+                    <div class="quiz-header">
+                        <h2>Latihan Soal</h2>
+                        <p>Jawab semua pertanyaan, lalu lihat hasilnya</p>
+                        <div class="quiz-progress-container">
+                            <div id="quiz-progress"></div>
+                        </div>
                     </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; text-align: center;">
-                        <div
-                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.25rem;">
-                            なか</div>
-                        <div style="color: var(--text-secondary);">Naka - Dalam</div>
-                    </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; text-align: center;">
-                        <div
-                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.25rem;">
-                            そと</div>
-                        <div style="color: var(--text-secondary);">Soto - Luar</div>
-                    </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; text-align: center;">
-                        <div
-                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.25rem;">
-                            となり</div>
-                        <div style="color: var(--text-secondary);">Tonari - Sebelah</div>
-                    </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; text-align: center;">
-                        <div
-                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.25rem;">
-                            まえ</div>
-                        <div style="color: var(--text-secondary);">Mae - Depan</div>
-                    </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; text-align: center;">
-                        <div
-                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.25rem;">
-                            うしろ</div>
-                        <div style="color: var(--text-secondary);">Ushiro - Belakang</div>
-                    </div>
-                    <div
-                        style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.5rem; text-align: center;">
-                        <div
-                            style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.25rem;">
-                            あいだ</div>
-                        <div style="color: var(--text-secondary);">Aida - Antara</div>
-                    </div>
-                </div>
-            </section>
+                    <div id="quiz-container"></div>
+                </section>
+            </div>
+
+            <!-- Navigation -->
+            <div
+                style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 3rem;
+                    padding-top: 2rem;
+                    border-top: 1px solid var(--border);
+                "
+            >
+                <a href="meeting-09.html" class="btn btn-secondary">← Pertemuan 9</a>
+                <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
+            </div>
         </div>
 
-        <!-- Grammar Tab -->
-        <div class="tab-content" id="grammar">
-            <section class="study-section">
-                <h2>Pola Kalimat</h2>
+        <!-- Footer -->
+        <footer
+            style="
+                background: var(--bg-secondary);
+                padding: 2rem 0;
+                margin-top: 4rem;
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            "
+        >
+            <div class="container">
+                <p style="color: var(--text-secondary); margin-bottom: 0.5rem">Japanese Course by Ms. Aulia</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem">
+                    Created by
+                    <a
+                        href="https://www.instagram.com/rvldii__/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: var(--primary); text-decoration: none; font-weight: 500"
+                        >Rivaldi</a
+                    >
+                </p>
+            </div>
+        </footer>
 
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">1. Adjective + Noun</h3>
-                    <p style="margin-bottom: 1rem;"><strong>I-Adj:</strong> [い-adj] + [Noun]</p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        ふるいまち
-                    </div>
-                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Furui machi (Kota tua)</p>
-
-                    <p style="margin-bottom: 1rem;"><strong>Na-Adj:</strong> [な-adj] + な + [Noun]</p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        きれいなまち
-                    </div>
-                    <p style="color: var(--text-secondary);">Kirei na machi (Kota cantik)</p>
-                </div>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">2. Existence Location</h3>
-                    <p style="margin-bottom: 1rem;">Pola: <strong>[Tempat] に [Benda/Orang] が あります/います</strong></p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        へやにつくえがあります。
-                    </div>
-                    <p style="color: var(--text-secondary);">Heya ni tsukue ga arimasu. (Ada meja di kamar)</p>
-                </div>
-
-                <div
-                    style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">3. Descriptive Questions</h3>
-                    <p style="margin-bottom: 1rem;">Pola: <strong>どんな [Noun] ですか</strong></p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        どんなまちですか。
-                    </div>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Donna machi desu ka? (Kota seperti
-                        apa?)</p>
-                    <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin: 1rem 0;">
-                        しずかなまちです。
-                    </div>
-                    <p style="color: var(--text-secondary);">Shizuka na machi desu. (Kota yang tenang)</p>
-                </div>
-            </section>
-        </div>
-
-        <!-- Practice Tab -->
-        <div class="tab-content" id="practice">
-            <section class="quiz-section">
-                <div class="quiz-header">
-                    <h2>Latihan Soal</h2>
-                    <p>Jawab semua pertanyaan, lalu lihat hasilnya</p>
-                    <div class="quiz-progress-container">
-                        <div id="quiz-progress"></div>
-                    </div>
-                </div>
-                <div id="quiz-container"></div>
-            </section>
-        </div>
-
-        <!-- Navigation -->
-        <div
-            style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <a href="meeting-09.html" class="btn btn-secondary">← Pertemuan 9</a>
-            <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer
-        style="background: var(--bg-secondary); padding: 2rem 0; margin-top: 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-        <div class="container">
-            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
-                Japanese Course by Ms. Aulia
-            </p>
-            <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                Created by <a href="https://www.instagram.com/rvldii__/" target="_blank" rel="noopener noreferrer"
-                    style="color: var(--primary); text-decoration: none; font-weight: 500;">Rivaldi</a>
-            </p>
-        </div>
-    </footer>
-
-    <script src="../js/speech.js"></script>
-    <script src="../js/romaji.js"></script>
-    <script src="../js/quiz.js"></script>
-    <script>
-        // Tab switching
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.tab;
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                document.getElementById(targetTab).classList.add('active');
+        <script src="../js/speech.js"></script>
+        <script src="../js/romaji.js"></script>
+        <script src="../js/quiz.js"></script>
+        <script>
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    document.getElementById(targetTab).classList.add('active');
+                });
             });
-        });
 
-        // Quiz data - Adjectives and existence-based questions in full Japanese
-        const quizData = {
-            lessonId: 'meeting-10',
-            questions: [
-                {
-                    question: '「おおきい」はどんなけいようしですか。',
-                    options: ['い-けいようし', 'な-けいようし', 'どうし', 'めいし'],
-                    correct: 0,
-                    explanation: '「おおきい」はい-けいようし（い形容詞）です。'
-                },
-                {
-                    question: '「きれいなまち」のぶんぽうはただしいですか。',
-                    options: ['はい、ただしいです', 'いいえ、まちがいです', 'わかりません', 'どちらでもいいです'],
-                    correct: 0,
-                    explanation: 'な-けいようしは「な」がひつようです。「きれいなまち」はただしいです。'
-                },
-                {
-                    question: 'いきているものにはどれをつかいますか。',
-                    options: ['います', 'あります', 'です', 'ます'],
-                    correct: 0,
-                    explanation: 'いきているもの（生きているもの）には「います」をつかいます。'
-                },
-                {
-                    question: '「つくえのうえ」の「うえ」はなんですか。',
-                    options: ['ばしょ', 'じかん', 'ひと', 'もの'],
-                    correct: 0,
-                    explanation: '「うえ」はばしょ（場所）をあらわします。'
-                },
-                {
-                    question: '「おおきい」のひていけいはなんですか。',
-                    options: ['おおきくないです', 'おおきいじゃありません', 'おおきくありません', 'おおきいません'],
-                    correct: 0,
-                    explanation: 'い-けいようしのひてい（否定）は「～くないです」です。'
-                }
-            ]
-        };
-    </script>
-</body>
-
+            // Quiz data - Adjectives and existence-based questions in full Japanese
+            const quizData = {
+                lessonId: 'meeting-10',
+                questions: [
+                    {
+                        question: '「おおきい」はどんなけいようしですか。',
+                        options: ['い-けいようし', 'な-けいようし', 'どうし', 'めいし'],
+                        correct: 0,
+                        explanation: '「おおきい」はい-けいようし（い形容詞）です。',
+                    },
+                    {
+                        question: '「きれいなまち」のぶんぽうはただしいですか。',
+                        options: ['はい、ただしいです', 'いいえ、まちがいです', 'わかりません', 'どちらでもいいです'],
+                        correct: 0,
+                        explanation: 'な-けいようしは「な」がひつようです。「きれいなまち」はただしいです。',
+                    },
+                    {
+                        question: 'いきているものにはどれをつかいますか。',
+                        options: ['います', 'あります', 'です', 'ます'],
+                        correct: 0,
+                        explanation: 'いきているもの（生きているもの）には「います」をつかいます。',
+                    },
+                    {
+                        question: '「つくえのうえ」の「うえ」はなんですか。',
+                        options: ['ばしょ', 'じかん', 'ひと', 'もの'],
+                        correct: 0,
+                        explanation: '「うえ」はばしょ（場所）をあらわします。',
+                    },
+                    {
+                        question: '「おおきい」のひていけいはなんですか。',
+                        options: ['おおきくないです', 'おおきいじゃありません', 'おおきくありません', 'おおきいません'],
+                        correct: 0,
+                        explanation: 'い-けいようしのひてい（否定）は「～くないです」です。',
+                    },
+                ],
+            };
+        </script>
+    </body>
 </html>
