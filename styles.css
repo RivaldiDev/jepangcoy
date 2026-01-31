@@ -123,6 +123,59 @@ body {
    THEME TOGGLE ICONS
    ============================================ */
 
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+}
+
+.mobile-menu-btn:hover {
+    border-color: var(--accent-crimson);
+    background: rgba(255, 46, 99, 0.1);
+}
+
+.mobile-menu-btn .material-symbols-outlined {
+    font-size: 24px;
+}
+
+/* Show mobile menu button on small screens */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--bg-primary);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 .theme-toggle {
     background: var(--bg-card);
     border: 2px solid var(--border);
