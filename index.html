@@ -1,692 +1,987 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Japanese Course by Ms. Aulia - Belajar Bahasa Jepang</title>
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="shortcut icon" type="image/png" href="favicon.png" />
+        <link rel="apple-touch-icon" href="favicon.png" />
+        <meta
+            name="description"
+            content="Kursus Bahasa Jepang by Ms. Aulia - Platform interaktif untuk belajar bahasa Jepang dengan materi Hiragana, Katakana, Partikel, Kata Kerja, dan Kanji"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japanese Course by Ms. Aulia - Belajar Bahasa Jepang</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    <meta name="description"
-        content="Kursus Bahasa Jepang by Ms. Aulia - Platform interaktif untuk belajar bahasa Jepang dengan materi Hiragana, Katakana, Partikel, Kata Kerja, dan Kanji">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="styles.css">
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
 
-</head>
-
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Header -->
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-jp" aria-label="Japanese language">日本語</span>
-                    <span class="logo-text">Course by Ms. Aulia</span>
-                </div>
-                <nav class="nav" role="navigation" aria-label="Main navigation">
-                    <a href="#home" class="nav-link active" aria-current="page">Beranda</a>
-                    <a href="#lessons" class="nav-link">Pelajaran</a>
-                    <a href="vocabulary.html" class="nav-link">Kosakata</a>
-                    <a href="#progress" class="nav-link">Progress</a>
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
-                        <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
-                        <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span>
+                        <span class="logo-text">Course by Ms. Aulia</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
                     </button>
-                </nav>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="#home" class="nav-link active" aria-current="page">Beranda</a>
+                        <a href="#lessons" class="nav-link">Pelajaran</a>
+                        <a href="vocabulary.html" class="nav-link">Kosakata</a>
+                        <a href="#progress" class="nav-link">Progress</a>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                            <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                            <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+                        </button>
+                    </nav>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- Hero Section -->
-    <main id="main-content">
-    <section id="home" class="hero" role="banner" aria-label="Welcome to Japanese Course">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="hero-title-main">Japanese Course</span>
-                    <span class="hero-title-sub">by Ms. Aulia</span>
-                </h1>
-                <p class="hero-description">
-                    Belajar bahasa Jepang dengan metode yang mudah dipahami dan interaktif
+        <!-- Hero Section -->
+        <main id="main-content">
+            <section id="home" class="hero" role="banner" aria-label="Welcome to Japanese Course">
+                <div class="hero-bg"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="hero-title-main">Japanese Course</span>
+                            <span class="hero-title-sub">by Ms. Aulia</span>
+                        </h1>
+                        <p class="hero-description">
+                            Belajar bahasa Jepang dengan metode yang mudah dipahami dan interaktif
+                        </p>
+                        <a href="#meetings" class="btn btn-primary">
+                            Mulai Belajar
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path
+                                    d="M7.5 15L12.5 10L7.5 5"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meetings Section (NEW) -->
+            <section id="meetings" class="lessons" style="background: var(--bg-primary)">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">15 Pertemuan Kursus</h2>
+                        <p class="section-description">Belajar bahasa Jepang secara terstruktur dengan Ms. Aulia</p>
+                    </div>
+
+                    <div class="lessons-grid">
+                        <!-- Meeting 1-2: Hiragana -->
+                        <a
+                            href="meetings/meeting-01-02.html"
+                            class="lesson-card"
+                            style="border: 2px solid var(--primary)"
+                        >
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text">あ</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 1-2</h3>
+                                <p class="lesson-description">Hiragana & Salam Dasar</p>
+                                <div class="lesson-stats">
+                                    <span
+                                        class="lesson-stat"
+                                        style="
+                                            color: var(--primary);
+                                            font-weight: 600;
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 0.5rem;
+                                        "
+                                    >
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 3-4: Katakana -->
+                        <a
+                            href="meetings/meeting-03-04.html"
+                            class="lesson-card"
+                            style="border: 2px solid var(--primary)"
+                        >
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text">ア</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 3-4</h3>
+                                <p class="lesson-description">Katakana & Tata Bahasa</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat" style="color: var(--primary); font-weight: 600">
+                                        <span
+                                            class="material-symbols-outlined"
+                                            style="font-size: 20px; vertical-align: middle"
+                                            >check_circle</span
+                                        >
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 5: Geography -->
+                        <a href="meetings/meeting-05.html" class="lesson-card" style="border: 2px solid var(--primary)">
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text"
+                                    ><span
+                                        class="material-symbols-outlined"
+                                        style="font-size: 24px; vertical-align: middle"
+                                        >map</span
+                                    ></span
+                                >
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 5</h3>
+                                <p class="lesson-description">Kosakata: Geografi & Makanan</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat" style="color: var(--primary); font-weight: 600">
+                                        <span
+                                            class="material-symbols-outlined"
+                                            style="font-size: 20px; vertical-align: middle"
+                                            >check_circle</span
+                                        >
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 6: Demonstratives -->
+                        <a href="meetings/meeting-06.html" class="lesson-card" style="border: 2px solid var(--primary)">
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text"
+                                    ><span
+                                        class="material-symbols-outlined"
+                                        style="font-size: 24px; vertical-align: middle"
+                                        >south</span
+                                    ></span
+                                >
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 6</h3>
+                                <p class="lesson-description">Kata Tunjuk (これ/それ/あれ)</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat" style="color: var(--primary); font-weight: 600">
+                                        <span
+                                            class="material-symbols-outlined"
+                                            style="font-size: 20px; vertical-align: middle"
+                                            >check_circle</span
+                                        >
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 7 -->
+                        <a href="meetings/meeting-07.html" class="lesson-card" style="border: 2px solid var(--primary)">
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text"
+                                    ><span
+                                        class="material-symbols-outlined"
+                                        style="font-size: 24px; vertical-align: middle"
+                                        >edit_note</span
+                                    ></span
+                                >
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 7</h3>
+                                <p class="lesson-description">Kosakata Lanjutan</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat" style="color: var(--primary); font-weight: 600">
+                                        <span
+                                            class="material-symbols-outlined"
+                                            style="font-size: 20px; vertical-align: middle"
+                                            >check_circle</span
+                                        >
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 8: UTS -->
+                        <a
+                            href="meetings/meeting-08.html"
+                            class="lesson-card"
+                            style="
+                                border: 2px solid #dc2626;
+                                background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(153, 27, 27, 0.1));
+                            "
+                        >
+                            <div class="lesson-icon" style="background: linear-gradient(135deg, #dc2626, #991b1b)">
+                                <span class="lesson-icon-text"
+                                    ><span
+                                        class="material-symbols-outlined"
+                                        style="font-size: 24px; vertical-align: middle"
+                                        >edit_note</span
+                                    ></span
+                                >
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 8: UTS</h3>
+                                <p class="lesson-description">Ulangan Tengah Semester</p>
+                                <div class="lesson-stats">
+                                    <span
+                                        class="lesson-stat"
+                                        style="
+                                            color: #dc2626;
+                                            font-weight: 600;
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 0.5rem;
+                                        "
+                                    >
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M10 2c-2.236 0-4.43.18-6.57.524C1.993 2.755 1 4.014 1 5.426v5.148c0 1.413.993 2.67 2.43 2.902 1.168.188 2.352.327 3.55.414.28.02.521.18.642.413l1.713 3.293a.75.75 0 001.33 0l1.713-3.293a.783.783 0 01.642-.413 41.102 41.102 0 003.55-.414c1.437-.231 2.43-1.49 2.43-2.902V5.426c0-1.413-.993-2.67-2.43-2.902A41.289 41.289 0 0010 2zM6.75 6a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 2.5a.75.75 0 000 1.5h3.5a.75.75 0 000-1.5h-3.5z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        25 PG + 5 Essay
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 9 -->
+                        <a href="meetings/meeting-09.html" class="lesson-card" style="border: 2px solid var(--primary)">
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text"
+                                    ><span
+                                        class="material-symbols-outlined"
+                                        style="font-size: 24px; vertical-align: middle"
+                                        >calculate</span
+                                    ></span
+                                >
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 9</h3>
+                                <p class="lesson-description">Angka & Waktu</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat" style="color: var(--primary); font-weight: 600">
+                                        <span
+                                            class="material-symbols-outlined"
+                                            style="font-size: 20px; vertical-align: middle"
+                                            >check_circle</span
+                                        >
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 10 -->
+                        <a href="meetings/meeting-10.html" class="lesson-card" style="border: 2px solid var(--primary)">
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text"
+                                    ><span
+                                        class="material-symbols-outlined"
+                                        style="font-size: 24px; vertical-align: middle"
+                                        >palette</span
+                                    ></span
+                                >
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 10</h3>
+                                <p class="lesson-description">Kata Sifat (い & な)</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat" style="color: var(--primary); font-weight: 600">
+                                        <span
+                                            class="material-symbols-outlined"
+                                            style="font-size: 20px; vertical-align: middle"
+                                            >check_circle</span
+                                        >
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 11 -->
+                        <a href="meetings/meeting-11.html" class="lesson-card" style="border: 2px solid var(--primary)">
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text"
+                                    ><span
+                                        class="material-symbols-outlined"
+                                        style="font-size: 24px; vertical-align: middle"
+                                        >location_on</span
+                                    ></span
+                                >
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 11</h3>
+                                <p class="lesson-description">Review Keberadaan & Lokasi</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat" style="color: var(--primary); font-weight: 600">
+                                        <span
+                                            class="material-symbols-outlined"
+                                            style="font-size: 20px; vertical-align: middle"
+                                            >check_circle</span
+                                        >
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 12 -->
+                        <a href="meetings/meeting-12.html" class="lesson-card" style="border: 2px solid var(--primary)">
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text"
+                                    ><span
+                                        class="material-symbols-outlined"
+                                        style="font-size: 24px; vertical-align: middle"
+                                        >schedule</span
+                                    ></span
+                                >
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 12</h3>
+                                <p class="lesson-description">Waktu & Partikel</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat" style="color: var(--primary); font-weight: 600">
+                                        <span
+                                            class="material-symbols-outlined"
+                                            style="font-size: 20px; vertical-align: middle"
+                                            >check_circle</span
+                                        >
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 13 -->
+                        <a href="meetings/meeting-13.html" class="lesson-card" style="border: 2px solid var(--primary)">
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text"
+                                    ><span
+                                        class="material-symbols-outlined"
+                                        style="font-size: 24px; vertical-align: middle"
+                                        >sync</span
+                                    ></span
+                                >
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 13</h3>
+                                <p class="lesson-description">Konjugasi Kata Kerja</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat" style="color: var(--primary); font-weight: 600">
+                                        <span
+                                            class="material-symbols-outlined"
+                                            style="font-size: 20px; vertical-align: middle"
+                                            >check_circle</span
+                                        >
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 14 -->
+                        <a href="meetings/meeting-14.html" class="lesson-card" style="border: 2px solid var(--primary)">
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text"
+                                    ><span
+                                        class="material-symbols-outlined"
+                                        style="font-size: 24px; vertical-align: middle"
+                                        >menu_book</span
+                                    ></span
+                                >
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 14</h3>
+                                <p class="lesson-description">Dictionary Form</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat" style="color: var(--primary); font-weight: 600">
+                                        <span
+                                            class="material-symbols-outlined"
+                                            style="font-size: 20px; vertical-align: middle"
+                                            >check_circle</span
+                                        >
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 15 -->
+                        <a href="meetings/meeting-15.html" class="lesson-card" style="border: 2px solid var(--primary)">
+                            <div
+                                class="lesson-icon"
+                                style="background: linear-gradient(135deg, var(--primary), #dc2626)"
+                            >
+                                <span class="lesson-icon-text">漢</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 15</h3>
+                                <p class="lesson-description">Pengenalan Kanji</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat" style="color: var(--primary); font-weight: 600">
+                                        <span
+                                            class="material-symbols-outlined"
+                                            style="font-size: 20px; vertical-align: middle"
+                                            >check_circle</span
+                                        >
+                                        Tersedia
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Meeting 16: UAS -->
+                        <a
+                            href="meetings/meeting-16.html"
+                            class="lesson-card"
+                            style="
+                                border: 2px solid #7c3aed;
+                                background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(91, 33, 182, 0.1));
+                            "
+                        >
+                            <div class="lesson-icon" style="background: linear-gradient(135deg, #7c3aed, #5b21b6)">
+                                <span class="lesson-icon-text"
+                                    ><span
+                                        class="material-symbols-outlined"
+                                        style="font-size: 20px; vertical-align: middle"
+                                        >school</span
+                                    ></span
+                                >
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Pertemuan 16: UAS</h3>
+                                <p class="lesson-description">Ulangan Akhir Semester</p>
+                                <div class="lesson-stats">
+                                    <span
+                                        class="lesson-stat"
+                                        style="
+                                            color: #7c3aed;
+                                            font-weight: 600;
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 0.5rem;
+                                        "
+                                    >
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                            <path
+                                                d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z"
+                                            />
+                                            <path
+                                                d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"
+                                            />
+                                        </svg>
+                                        40 PG + 10 Essay
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lessons Section (OLD - Optional) -->
+            <section id="lessons" class="lessons">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Materi Pembelajaran</h2>
+                        <p class="section-description">9 topik penting untuk menguasai bahasa Jepang level N5</p>
+                    </div>
+
+                    <div class="lessons-grid">
+                        <!-- Lesson 1: Hiragana -->
+                        <a href="lessons/hiragana.html" class="lesson-card" data-lesson="hiragana">
+                            <div class="lesson-icon">
+                                <span class="lesson-icon-text">あ</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Hiragana</h3>
+                                <p class="lesson-description">Pelajari 46 karakter dasar Hiragana</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                            />
+                                            <path
+                                                d="M8 5v3l2 2"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                        46 Karakter
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="lesson-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </a>
+
+                        <!-- Lesson 2: Katakana -->
+                        <a href="lessons/katakana.html" class="lesson-card" data-lesson="katakana">
+                            <div class="lesson-icon">
+                                <span class="lesson-icon-text">ア</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Katakana</h3>
+                                <p class="lesson-description">Pelajari 46 karakter Katakana untuk kata serapan</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                            />
+                                            <path
+                                                d="M8 5v3l2 2"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                        46 Karakter
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="lesson-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </a>
+
+                        <!-- Lesson 3: Partikel -->
+                        <a href="lessons/partikel.html" class="lesson-card" data-lesson="partikel">
+                            <div class="lesson-icon">
+                                <span class="lesson-icon-text">は</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Partikel & Partikel Tanya</h3>
+                                <p class="lesson-description">Kuasai penggunaan partikel dalam kalimat</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                            />
+                                            <path
+                                                d="M8 5v3l2 2"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                        15+ Partikel
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="lesson-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </a>
+
+                        <!-- Lesson 4: Kata Kerja -->
+                        <a href="lessons/katakerja.html" class="lesson-card" data-lesson="katakerja">
+                            <div class="lesson-icon">
+                                <span class="lesson-icon-text">動</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Kata Kerja Sehari-hari</h3>
+                                <p class="lesson-description">Kata kerja yang sering digunakan dalam percakapan</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                            />
+                                            <path
+                                                d="M8 5v3l2 2"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                        50+ Kata Kerja
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="lesson-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </a>
+
+                        <!-- Lesson 5: Kata Sifat -->
+                        <a href="lessons/katasifat.html" class="lesson-card" data-lesson="katasifat">
+                            <div class="lesson-icon">
+                                <span class="lesson-icon-text">形</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Kata Sifat, Kata Kerja Negatif & Lampau</h3>
+                                <p class="lesson-description">Bentuk negatif dan lampau kata sifat & kerja</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                            />
+                                            <path
+                                                d="M8 5v3l2 2"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                        40+ Kata
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="lesson-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </a>
+
+                        <!-- Lesson 6: Satuan Benda -->
+                        <a href="lessons/satuan.html" class="lesson-card" data-lesson="satuan">
+                            <div class="lesson-icon">
+                                <span class="lesson-icon-text">数</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Satuan Benda</h3>
+                                <p class="lesson-description">Counter words untuk berbagai jenis benda</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                            />
+                                            <path
+                                                d="M8 5v3l2 2"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                        20+ Satuan
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="lesson-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </a>
+
+                        <!-- Lesson 7: Kata Sifat i & na -->
+                        <a href="lessons/ina.html" class="lesson-card" data-lesson="ina">
+                            <div class="lesson-icon">
+                                <span class="lesson-icon-text">い</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Kata Sifat i & na</h3>
+                                <p class="lesson-description">Kata sifat dengan lawan katanya</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                            />
+                                            <path
+                                                d="M8 5v3l2 2"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                        30+ Pasangan
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="lesson-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </a>
+
+                        <!-- Lesson 8: Keterangan Waktu -->
+                        <a href="lessons/waktu.html" class="lesson-card" data-lesson="waktu">
+                            <div class="lesson-icon">
+                                <span class="lesson-icon-text">時</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Keterangan Waktu</h3>
+                                <p class="lesson-description">Ungkapan waktu, hari, bulan, dan tahun</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                            />
+                                            <path
+                                                d="M8 5v3l2 2"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                        25+ Ungkapan
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="lesson-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </a>
+
+                        <!-- Lesson 9: Kanji -->
+                        <a href="lessons/kanji.html" class="lesson-card" data-lesson="kanji">
+                            <div class="lesson-icon">
+                                <span class="lesson-icon-text">漢</span>
+                            </div>
+                            <div class="lesson-content">
+                                <h3 class="lesson-title">Kanji Dasar</h3>
+                                <p class="lesson-description">20 Kanji (Lesson 1 + 2) untuk ujian</p>
+                                <div class="lesson-stats">
+                                    <span class="lesson-stat">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                            />
+                                            <path
+                                                d="M8 5v3l2 2"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                        20 Karakter
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="lesson-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress" class="progress-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Progress Belajar Anda</h2>
+                        <p class="section-description">Pantau kemajuan pembelajaran Anda</p>
+                    </div>
+
+                    <div class="progress-cards">
+                        <div class="progress-card">
+                            <div class="progress-card-icon">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                    <path
+                                        d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    />
+                                    <path
+                                        d="M16 10V16L20 20"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="progress-card-content">
+                                <h3 class="progress-card-title">Total Waktu Belajar</h3>
+                                <p class="progress-card-value" id="totalTime">0 jam</p>
+                            </div>
+                        </div>
+
+                        <div class="progress-card">
+                            <div class="progress-card-icon">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                    <path
+                                        d="M28 16L16 4L4 16"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M8 16V26H24V16"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="progress-card-content">
+                                <h3 class="progress-card-title">Pelajaran Selesai</h3>
+                                <p class="progress-card-value" id="completedLessons">0 / 9</p>
+                            </div>
+                        </div>
+
+                        <div class="progress-card">
+                            <div class="progress-card-icon">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                    <path
+                                        d="M16 4L20 12L28 14L22 20L24 28L16 24L8 28L10 20L4 14L12 12L16 4Z"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="progress-card-content">
+                                <h3 class="progress-card-title">Total Karakter Dikuasai</h3>
+                                <p class="progress-card-value" id="masteredChars">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer
+            role="contentinfo"
+            style="
+                background: var(--bg-secondary);
+                padding: 2rem 0;
+                margin-top: 4rem;
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            "
+        >
+            <div class="container">
+                <p style="color: var(--text-secondary); margin-bottom: 0.5rem">Japanese Course by Ms. Aulia</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem">
+                    Created by
+                    <a
+                        href="https://www.instagram.com/rvldii__/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: var(--primary); text-decoration: none; font-weight: 500"
+                        >Rivaldi</a
+                    >
                 </p>
-                <a href="#meetings" class="btn btn-primary">
-                    Mulai Belajar
-                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </a>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <!-- Meetings Section (NEW) -->
-    <section id="meetings" class="lessons" style="background: var(--bg-primary);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">15 Pertemuan Kursus</h2>
-                <p class="section-description">Belajar bahasa Jepang secara terstruktur dengan Ms. Aulia</p>
-            </div>
-
-            <div class="lessons-grid">
-                <!-- Meeting 1-2: Hiragana -->
-                <a href="meetings/meeting-01-02.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text">あ</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 1-2</h3>
-                        <p class="lesson-description">Hiragana & Salam Dasar</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat"
-                                style="color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 3-4: Katakana -->
-                <a href="meetings/meeting-03-04.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text">ア</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 3-4</h3>
-                        <p class="lesson-description">Katakana & Tata Bahasa</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat" style="color: var(--primary); font-weight: 600;">
-                                <span class="material-symbols-outlined"
-                                    style="font-size: 20px; vertical-align: middle;">check_circle</span> Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 5: Geography -->
-                <a href="meetings/meeting-05.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text"><span class="material-symbols-outlined"
-                                style="font-size: 24px; vertical-align: middle;">map</span></span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 5</h3>
-                        <p class="lesson-description">Kosakata: Geografi & Makanan</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat" style="color: var(--primary); font-weight: 600;">
-                                <span class="material-symbols-outlined"
-                                    style="font-size: 20px; vertical-align: middle;">check_circle</span> Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 6: Demonstratives -->
-                <a href="meetings/meeting-06.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text"><span class="material-symbols-outlined"
-                                style="font-size: 24px; vertical-align: middle;">south</span></span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 6</h3>
-                        <p class="lesson-description">Kata Tunjuk (これ/それ/あれ)</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat" style="color: var(--primary); font-weight: 600;">
-                                <span class="material-symbols-outlined"
-                                    style="font-size: 20px; vertical-align: middle;">check_circle</span> Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 7 -->
-                <a href="meetings/meeting-07.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text"><span class="material-symbols-outlined"
-                                style="font-size: 24px; vertical-align: middle;">edit_note</span></span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 7</h3>
-                        <p class="lesson-description">Kosakata Lanjutan</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat" style="color: var(--primary); font-weight: 600;">
-                                <span class="material-symbols-outlined"
-                                    style="font-size: 20px; vertical-align: middle;">check_circle</span> Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 8: UTS -->
-                <a href="meetings/meeting-08.html" class="lesson-card"
-                    style="border: 2px solid #dc2626; background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(153, 27, 27, 0.1));">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, #dc2626, #991b1b);">
-                        <span class="lesson-icon-text"><span class="material-symbols-outlined"
-                                style="font-size: 24px; vertical-align: middle;">edit_note</span></span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 8: UTS</h3>
-                        <p class="lesson-description">Ulangan Tengah Semester</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat"
-                                style="color: #dc2626; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 2c-2.236 0-4.43.18-6.57.524C1.993 2.755 1 4.014 1 5.426v5.148c0 1.413.993 2.67 2.43 2.902 1.168.188 2.352.327 3.55.414.28.02.521.18.642.413l1.713 3.293a.75.75 0 001.33 0l1.713-3.293a.783.783 0 01.642-.413 41.102 41.102 0 003.55-.414c1.437-.231 2.43-1.49 2.43-2.902V5.426c0-1.413-.993-2.67-2.43-2.902A41.289 41.289 0 0010 2zM6.75 6a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 2.5a.75.75 0 000 1.5h3.5a.75.75 0 000-1.5h-3.5z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                25 PG + 5 Essay
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 9 -->
-                <a href="meetings/meeting-09.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text"><span class="material-symbols-outlined"
-                                style="font-size: 24px; vertical-align: middle;">calculate</span></span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 9</h3>
-                        <p class="lesson-description">Angka & Waktu</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat" style="color: var(--primary); font-weight: 600;">
-                                <span class="material-symbols-outlined"
-                                    style="font-size: 20px; vertical-align: middle;">check_circle</span> Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 10 -->
-                <a href="meetings/meeting-10.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text"><span class="material-symbols-outlined"
-                                style="font-size: 24px; vertical-align: middle;">palette</span></span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 10</h3>
-                        <p class="lesson-description">Kata Sifat (い & な)</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat" style="color: var(--primary); font-weight: 600;">
-                                <span class="material-symbols-outlined"
-                                    style="font-size: 20px; vertical-align: middle;">check_circle</span> Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 11 -->
-                <a href="meetings/meeting-11.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text"><span class="material-symbols-outlined"
-                                style="font-size: 24px; vertical-align: middle;">location_on</span></span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 11</h3>
-                        <p class="lesson-description">Review Keberadaan & Lokasi</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat" style="color: var(--primary); font-weight: 600;">
-                                <span class="material-symbols-outlined"
-                                    style="font-size: 20px; vertical-align: middle;">check_circle</span> Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 12 -->
-                <a href="meetings/meeting-12.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text"><span class="material-symbols-outlined"
-                                style="font-size: 24px; vertical-align: middle;">schedule</span></span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 12</h3>
-                        <p class="lesson-description">Waktu & Partikel</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat" style="color: var(--primary); font-weight: 600;">
-                                <span class="material-symbols-outlined"
-                                    style="font-size: 20px; vertical-align: middle;">check_circle</span> Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 13 -->
-                <a href="meetings/meeting-13.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text"><span class="material-symbols-outlined"
-                                style="font-size: 24px; vertical-align: middle;">sync</span></span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 13</h3>
-                        <p class="lesson-description">Konjugasi Kata Kerja</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat" style="color: var(--primary); font-weight: 600;">
-                                <span class="material-symbols-outlined"
-                                    style="font-size: 20px; vertical-align: middle;">check_circle</span> Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 14 -->
-                <a href="meetings/meeting-14.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text"><span class="material-symbols-outlined"
-                                style="font-size: 24px; vertical-align: middle;">menu_book</span></span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 14</h3>
-                        <p class="lesson-description">Dictionary Form</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat" style="color: var(--primary); font-weight: 600;">
-                                <span class="material-symbols-outlined"
-                                    style="font-size: 20px; vertical-align: middle;">check_circle</span> Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 15 -->
-                <a href="meetings/meeting-15.html" class="lesson-card" style="border: 2px solid var(--primary);">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, var(--primary), #dc2626);">
-                        <span class="lesson-icon-text">漢</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 15</h3>
-                        <p class="lesson-description">Pengenalan Kanji</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat" style="color: var(--primary); font-weight: 600;">
-                                <span class="material-symbols-outlined"
-                                    style="font-size: 20px; vertical-align: middle;">check_circle</span> Tersedia
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Meeting 16: UAS -->
-                <a href="meetings/meeting-16.html" class="lesson-card"
-                    style="border: 2px solid #7c3aed; background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(91, 33, 182, 0.1));">
-                    <div class="lesson-icon" style="background: linear-gradient(135deg, #7c3aed, #5b21b6);">
-                        <span class="lesson-icon-text"><span class="material-symbols-outlined"
-                                style="font-size: 20px; vertical-align: middle;">school</span></span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Pertemuan 16: UAS</h3>
-                        <p class="lesson-description">Ulangan Akhir Semester</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat"
-                                style="color: #7c3aed; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                    <path
-                                        d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z" />
-                                    <path
-                                        d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z" />
-                                </svg>
-                                40 PG + 10 Essay
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lessons Section (OLD - Optional) -->
-    <section id="lessons" class="lessons">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Materi Pembelajaran</h2>
-                <p class="section-description">9 topik penting untuk menguasai bahasa Jepang level N5</p>
-            </div>
-
-            <div class="lessons-grid">
-                <!-- Lesson 1: Hiragana -->
-                <a href="lessons/hiragana.html" class="lesson-card" data-lesson="hiragana">
-                    <div class="lesson-icon">
-                        <span class="lesson-icon-text">あ</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Hiragana</h3>
-                        <p class="lesson-description">Pelajari 46 karakter dasar Hiragana</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                    <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                </svg>
-                                46 Karakter
-                            </span>
-                        </div>
-                    </div>
-                    <div class="lesson-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                        <span class="progress-text">0%</span>
-                    </div>
-                </a>
-
-                <!-- Lesson 2: Katakana -->
-                <a href="lessons/katakana.html" class="lesson-card" data-lesson="katakana">
-                    <div class="lesson-icon">
-                        <span class="lesson-icon-text">ア</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Katakana</h3>
-                        <p class="lesson-description">Pelajari 46 karakter Katakana untuk kata serapan</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                    <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                </svg>
-                                46 Karakter
-                            </span>
-                        </div>
-                    </div>
-                    <div class="lesson-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                        <span class="progress-text">0%</span>
-                    </div>
-                </a>
-
-                <!-- Lesson 3: Partikel -->
-                <a href="lessons/partikel.html" class="lesson-card" data-lesson="partikel">
-                    <div class="lesson-icon">
-                        <span class="lesson-icon-text">は</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Partikel & Partikel Tanya</h3>
-                        <p class="lesson-description">Kuasai penggunaan partikel dalam kalimat</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                    <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                </svg>
-                                15+ Partikel
-                            </span>
-                        </div>
-                    </div>
-                    <div class="lesson-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                        <span class="progress-text">0%</span>
-                    </div>
-                </a>
-
-                <!-- Lesson 4: Kata Kerja -->
-                <a href="lessons/katakerja.html" class="lesson-card" data-lesson="katakerja">
-                    <div class="lesson-icon">
-                        <span class="lesson-icon-text">動</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Kata Kerja Sehari-hari</h3>
-                        <p class="lesson-description">Kata kerja yang sering digunakan dalam percakapan</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                    <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                </svg>
-                                50+ Kata Kerja
-                            </span>
-                        </div>
-                    </div>
-                    <div class="lesson-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                        <span class="progress-text">0%</span>
-                    </div>
-                </a>
-
-                <!-- Lesson 5: Kata Sifat -->
-                <a href="lessons/katasifat.html" class="lesson-card" data-lesson="katasifat">
-                    <div class="lesson-icon">
-                        <span class="lesson-icon-text">形</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Kata Sifat, Kata Kerja Negatif & Lampau</h3>
-                        <p class="lesson-description">Bentuk negatif dan lampau kata sifat & kerja</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                    <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                </svg>
-                                40+ Kata
-                            </span>
-                        </div>
-                    </div>
-                    <div class="lesson-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                        <span class="progress-text">0%</span>
-                    </div>
-                </a>
-
-                <!-- Lesson 6: Satuan Benda -->
-                <a href="lessons/satuan.html" class="lesson-card" data-lesson="satuan">
-                    <div class="lesson-icon">
-                        <span class="lesson-icon-text">数</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Satuan Benda</h3>
-                        <p class="lesson-description">Counter words untuk berbagai jenis benda</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                    <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                </svg>
-                                20+ Satuan
-                            </span>
-                        </div>
-                    </div>
-                    <div class="lesson-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                        <span class="progress-text">0%</span>
-                    </div>
-                </a>
-
-                <!-- Lesson 7: Kata Sifat i & na -->
-                <a href="lessons/ina.html" class="lesson-card" data-lesson="ina">
-                    <div class="lesson-icon">
-                        <span class="lesson-icon-text">い</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Kata Sifat i & na</h3>
-                        <p class="lesson-description">Kata sifat dengan lawan katanya</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                    <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                </svg>
-                                30+ Pasangan
-                            </span>
-                        </div>
-                    </div>
-                    <div class="lesson-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                        <span class="progress-text">0%</span>
-                    </div>
-                </a>
-
-                <!-- Lesson 8: Keterangan Waktu -->
-                <a href="lessons/waktu.html" class="lesson-card" data-lesson="waktu">
-                    <div class="lesson-icon">
-                        <span class="lesson-icon-text">時</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Keterangan Waktu</h3>
-                        <p class="lesson-description">Ungkapan waktu, hari, bulan, dan tahun</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                    <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                </svg>
-                                25+ Ungkapan
-                            </span>
-                        </div>
-                    </div>
-                    <div class="lesson-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                        <span class="progress-text">0%</span>
-                    </div>
-                </a>
-
-                <!-- Lesson 9: Kanji -->
-                <a href="lessons/kanji.html" class="lesson-card" data-lesson="kanji">
-                    <div class="lesson-icon">
-                        <span class="lesson-icon-text">漢</span>
-                    </div>
-                    <div class="lesson-content">
-                        <h3 class="lesson-title">Kanji Dasar</h3>
-                        <p class="lesson-description">20 Kanji (Lesson 1 + 2) untuk ujian</p>
-                        <div class="lesson-stats">
-                            <span class="lesson-stat">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" stroke="currentColor"
-                                        stroke-width="1.5" />
-                                    <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5"
-                                        stroke-linecap="round" />
-                                </svg>
-                                20 Karakter
-                            </span>
-                        </div>
-                    </div>
-                    <div class="lesson-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                        <span class="progress-text">0%</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Progress Section -->
-    <section id="progress" class="progress-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Progress Belajar Anda</h2>
-                <p class="section-description">Pantau kemajuan pembelajaran Anda</p>
-            </div>
-
-            <div class="progress-cards">
-                <div class="progress-card">
-                    <div class="progress-card-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <path
-                                d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z"
-                                stroke="currentColor" stroke-width="2" />
-                            <path d="M16 10V16L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    </div>
-                    <div class="progress-card-content">
-                        <h3 class="progress-card-title">Total Waktu Belajar</h3>
-                        <p class="progress-card-value" id="totalTime">0 jam</p>
-                    </div>
-                </div>
-
-                <div class="progress-card">
-                    <div class="progress-card-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <path d="M28 16L16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M8 16V26H24V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                    <div class="progress-card-content">
-                        <h3 class="progress-card-title">Pelajaran Selesai</h3>
-                        <p class="progress-card-value" id="completedLessons">0 / 9</p>
-                    </div>
-                </div>
-
-                <div class="progress-card">
-                    <div class="progress-card-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <path d="M16 4L20 12L28 14L22 20L24 28L16 24L8 28L10 20L4 14L12 12L16 4Z"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                    <div class="progress-card-content">
-                        <h3 class="progress-card-title">Total Karakter Dikuasai</h3>
-                        <p class="progress-card-value" id="masteredChars">0</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer role="contentinfo"
-        style="background: var(--bg-secondary); padding: 2rem 0; margin-top: 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-        <div class="container">
-            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
-                Japanese Course by Ms. Aulia
-            </p>
-            <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                Created by <a href="https://www.instagram.com/rvldii__/" target="_blank" rel="noopener noreferrer"
-                    style="color: var(--primary); text-decoration: none; font-weight: 500;">Rivaldi</a>
-            </p>
-        </div>
-    </footer>
-
-
-    <script src="script.js"></script>
-</body>
-
+        <script src="script.js"></script>
+    </body>
 </html>
