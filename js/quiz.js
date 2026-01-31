@@ -38,20 +38,21 @@ class QuizEngine {
   renderQuestion() {
     const question = this.questions[this.currentQuestion];
     const container = document.getElementById('quiz-container');
+    const isExam = this.lessonId === 'uts-midterm' || this.lessonId === 'uas-final';
 
     container.innerHTML = `
             <div class="question-card">
                 <div class="question-header">
                     <span class="question-number">Pertanyaan ${this.currentQuestion + 1} dari ${this.questions.length}</span>
                 </div>
-                <h3 class="question-text">${this.stripRomaji(question.question)}</h3>
+                <h3 class="question-text">${isExam ? this.stripRomaji(question.question) : addRomaji(question.question)}</h3>
                 <div class="options-container">
                     ${question.options
                       .map(
                         (option, index) => `
                         <button class="option-btn" data-index="${index}">
                             <span class="option-letter">${String.fromCharCode(65 + index)}</span>
-                            <span class="option-text">${this.stripRomaji(option)}</span>
+                            <span class="option-text">${isExam ? this.stripRomaji(option) : addRomaji(option)}</span>
                         </button>
                     `
                       )
@@ -106,6 +107,7 @@ class QuizEngine {
   showFeedback(isCorrect, question) {
     const container = document.getElementById('quiz-container');
     const percentage = Math.round((this.score / this.questions.length) * 100);
+    const isExam = this.lessonId === 'uts-midterm' || this.lessonId === 'uas-final';
 
     // Build feedback content
     let feedbackContent = `
@@ -116,8 +118,8 @@ class QuizEngine {
                 <h3 class="feedback-title">${isCorrect ? 'Benar!' : 'Salah'}</h3>
         `;
 
-    // Show romaji breakdown for wrong answers
-    if (!isCorrect) {
+    // Show romaji breakdown for wrong answers in exams, or always in regular quizzes
+    if (!isCorrect || !isExam) {
       feedbackContent += `
                 <div class="feedback-romaji-section">
                     <p class="romaji-label">Jawaban yang benar:</p>
