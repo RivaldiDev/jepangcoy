@@ -31,10 +31,7 @@
 .lesson-title {
     font-family: "Zen Dots", sans-serif;
     font-size: clamp(2rem, 5vw, 3rem);
-    background: linear-gradient(135deg, var(--text-primary), var(--accent-crimson));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
     margin-bottom: 0.75rem;
 }
 
@@ -70,10 +67,7 @@
 .study-section h2 {
     font-family: "Zen Dots", sans-serif;
     font-size: 1.5rem;
-    background: linear-gradient(135deg, var(--accent-crimson), var(--accent-cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-crimson);
     margin-bottom: 1rem;
 }
 
@@ -311,10 +305,7 @@
 .quiz-header h2 {
     font-family: "Zen Dots", sans-serif;
     font-size: 1.5rem;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-crimson));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-crimson);
     margin-bottom: 0.5rem;
 }
 
@@ -567,10 +558,7 @@
     font-family: "Zen Dots", sans-serif;
     font-size: 2rem;
     margin-bottom: 2rem;
-    background: linear-gradient(135deg, var(--text-primary), var(--accent-crimson));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
 }
 
 .score-circle {
@@ -602,10 +590,7 @@
     font-family: "Zen Dots", sans-serif;
     font-size: 2.5rem;
     font-weight: 400;
-    background: linear-gradient(135deg, var(--accent-crimson), var(--accent-cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-crimson);
 }
 
 .results-details {
