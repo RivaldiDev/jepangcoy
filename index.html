@@ -22,22 +22,25 @@
 </head>
 
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <span class="logo-jp">日本語</span>
+                    <span class="logo-jp" aria-label="Japanese language">日本語</span>
                     <span class="logo-text">Course by Ms. Aulia</span>
                 </div>
-                <nav class="nav">
-                    <a href="#home" class="nav-link active">Beranda</a>
+                <nav class="nav" role="navigation" aria-label="Main navigation">
+                    <a href="#home" class="nav-link active" aria-current="page">Beranda</a>
                     <a href="#lessons" class="nav-link">Pelajaran</a>
                     <a href="vocabulary.html" class="nav-link">Kosakata</a>
                     <a href="#progress" class="nav-link">Progress</a>
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                        <span class="sun-icon">☀️</span>
-                        <span class="moon-icon">🌙</span>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                        <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                        <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
                     </button>
                 </nav>
             </div>
@@ -45,7 +48,8 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <main id="main-content">
+    <section id="home" class="hero" role="banner" aria-label="Welcome to Japanese Course">
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
@@ -665,8 +669,10 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
-    <footer
+    <footer role="contentinfo"
         style="background: var(--bg-secondary); padding: 2rem 0; margin-top: 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
         <div class="container">
             <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">

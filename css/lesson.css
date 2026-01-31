@@ -29,7 +29,7 @@
 }
 
 .lesson-title {
-    font-family: 'Zen Dots', sans-serif;
+    font-family: "Zen Dots", sans-serif;
     font-size: clamp(2rem, 5vw, 3rem);
     background: linear-gradient(135deg, var(--text-primary), var(--accent-crimson));
     -webkit-background-clip: text;
@@ -57,7 +57,7 @@
 
 /* Subtle gradient glow at top */
 .study-section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -68,7 +68,7 @@
 }
 
 .study-section h2 {
-    font-family: 'Zen Dots', sans-serif;
+    font-family: "Zen Dots", sans-serif;
     font-size: 1.5rem;
     background: linear-gradient(135deg, var(--accent-crimson), var(--accent-cyan));
     -webkit-background-clip: text;
@@ -78,7 +78,7 @@
 }
 
 .study-section h3 {
-    font-family: 'Zen Maru Gothic', sans-serif;
+    font-family: "Zen Maru Gothic", sans-serif;
     font-size: 1.125rem;
     color: var(--accent-crimson) !important;
     margin-top: 2.5rem !important;
@@ -87,9 +87,114 @@
     border-left: 3px solid var(--accent-crimson);
 }
 
-.study-section>p {
+.study-section > p {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
+}
+
+/* ===== Particle Section Styles ===== */
+.particle-box {
+    margin: 2.5rem 0;
+    padding: 2rem;
+    background: var(--bg-elevated);
+    border-left: 4px solid var(--accent-crimson);
+    border-radius: var(--radius-lg);
+    position: relative;
+}
+
+.particle-title {
+    color: var(--accent-crimson);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.particle-desc {
+    font-size: 1.0625rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.particle-box h4 {
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+    margin: 1.5rem 0 1rem;
+    font-weight: 600;
+}
+
+.example-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.example-card {
+    padding: 1.25rem;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+}
+
+.example-card:hover {
+    border-color: var(--accent-crimson);
+    transform: translateX(4px);
+}
+
+.example-card .jp {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.particle-highlight {
+    color: var(--accent-crimson);
+    font-weight: 700;
+    background: rgba(255, 46, 99, 0.1);
+    padding: 0 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.example-card .romaji {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+}
+
+.example-card .meaning {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.explanation-note {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--border);
+    font-size: 0.875rem;
+    color: var(--accent-cyan);
+    font-style: italic;
+}
+
+.tip-box {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: var(--radius);
+    border-left: 3px solid var(--accent-cyan);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.warning-box {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: var(--radius);
+    border-left: 3px solid var(--warning);
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* ===== Character Grid ===== */
@@ -114,7 +219,7 @@
 
 /* Hover glow effect */
 .character-item::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at center, var(--accent-crimson-glow), transparent 70%);
@@ -140,7 +245,7 @@
 }
 
 .character-jp {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     font-size: 2.25rem;
     font-weight: 500;
     display: block;
@@ -189,7 +294,7 @@
 }
 
 .quiz-section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -204,7 +309,7 @@
 }
 
 .quiz-header h2 {
-    font-family: 'Zen Dots', sans-serif;
+    font-family: "Zen Dots", sans-serif;
     font-size: 1.5rem;
     background: linear-gradient(135deg, var(--accent-cyan), var(--accent-crimson));
     -webkit-background-clip: text;
@@ -213,7 +318,7 @@
     margin-bottom: 0.5rem;
 }
 
-.quiz-header>p {
+.quiz-header > p {
     color: var(--text-secondary);
 }
 
@@ -369,7 +474,6 @@
 }
 
 @keyframes iconPulse {
-
     0%,
     100% {
         transform: scale(1);
@@ -393,7 +497,7 @@
 }
 
 .feedback-title {
-    font-family: 'Zen Dots', sans-serif;
+    font-family: "Zen Dots", sans-serif;
     font-size: 1.75rem;
     margin-bottom: 1rem;
 }
@@ -422,7 +526,7 @@
     color: white;
     border: none;
     border-radius: var(--radius);
-    font-family: 'Zen Dots', sans-serif;
+    font-family: "Zen Dots", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     cursor: pointer;
@@ -460,7 +564,7 @@
 }
 
 .results-title {
-    font-family: 'Zen Dots', sans-serif;
+    font-family: "Zen Dots", sans-serif;
     font-size: 2rem;
     margin-bottom: 2rem;
     background: linear-gradient(135deg, var(--text-primary), var(--accent-crimson));
@@ -486,7 +590,7 @@
 }
 
 .score-circle::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: -8px;
     border-radius: 50%;
@@ -495,7 +599,7 @@
 }
 
 .score-number {
-    font-family: 'Zen Dots', sans-serif;
+    font-family: "Zen Dots", sans-serif;
     font-size: 2.5rem;
     font-weight: 400;
     background: linear-gradient(135deg, var(--accent-crimson), var(--accent-cyan));
@@ -527,7 +631,7 @@
 }
 
 .result-value {
-    font-family: 'Zen Dots', sans-serif;
+    font-family: "Zen Dots", sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
 }
@@ -558,7 +662,7 @@
     border: 1px solid var(--border);
     padding: 1rem 2rem;
     border-radius: var(--radius);
-    font-family: 'Zen Maru Gothic', sans-serif;
+    font-family: "Zen Maru Gothic", sans-serif;
     font-size: 1rem;
     cursor: pointer;
     transition: var(--transition);

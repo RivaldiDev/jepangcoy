@@ -1,0 +1,43 @@
+{
+  "name": "japanese-course-n5",
+  "version": "1.0.0",
+  "description": "Japanese Language Learning Web Application for JLPT N5 level students by Ms. Aulia",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --open=/",
+    "start": "npm run dev",
+    "lint": "eslint js/ --ext .js",
+    "lint:fix": "eslint js/ --ext .js --fix",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
+    "validate": "npm run lint && npm run format:check",
+    "test": "echo \"No tests configured yet\""
+  },
+  "keywords": [
+    "japanese",
+    "learning",
+    "jlpt",
+    "n5",
+    "hiragana",
+    "katakana",
+    "kanji",
+    "language",
+    "education"
+  ],
+  "author": "Rivaldi",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rvldii/japanese-course-n5.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rvldii/japanese-course-n5/issues"
+  },
+  "homepage": "https://rvldii.github.io/japanese-course-n5"
+}

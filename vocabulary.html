@@ -5,72 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kosakata N5 - Japanese Learning</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/lesson.css">
     <link rel="stylesheet" href="css/tabs.css">
 </head>
 
 <body>
-    <header class="header">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header" role="banner">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <span class="logo-jp">日本語</span>
+                    <span class="logo-jp" aria-label="Japanese language">日本語</span>
                     <span class="logo-text">N5 Learning</span>
                 </div>
-                <nav class="nav">
+                <nav class="nav" role="navigation" aria-label="Main navigation">
                     <a href="index.html" class="nav-link">Beranda</a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                        <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                        <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+                    </button>
                 </nav>
             </div>
         </div>
     </header>
 
-    <div class="lesson-container">
+    <main id="main-content" class="lesson-container">
         <div class="lesson-header">
             <h1 class="lesson-title">Kosakata N5 (1000+ Kata)</h1>
             <p class="lesson-subtitle">Pelajari kosakata penting untuk JLPT N5</p>
         </div>
 
         <!-- Search and Filter -->
-        <div
-            style="background: var(--bg-card); padding: 2rem; border-radius: var(--radius); margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                <input type="text" id="searchInput" placeholder="🔍 Cari kata (Jepang, romaji, atau Indonesia)..."
-                    style="flex: 1; min-width: 250px; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 0.5rem; font-size: 1rem;">
-                <button id="flashcardBtn"
-                    style="padding: 0.75rem 1.5rem; background: var(--accent); color: white; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">
-                    🎴 Mode Flashcard
+        <section class="card-container" aria-label="Search and filter vocabulary">
+            <div class="flex flex-wrap gap-1 mb-4">
+                <input type="text" id="searchInput" placeholder="Cari kata (Jepang, romaji, atau Indonesia)..."
+                    class="search-input" aria-label="Search vocabulary">
+                <button id="flashcardBtn" class="action-btn">
+                    <span class="material-symbols-outlined" aria-hidden="true">style</span>
+                    Mode Flashcard
                 </button>
             </div>
 
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                <button class="filter-btn active" data-category="all">Semua</button>
-                <button class="filter-btn" data-category="verbs">Kata Kerja</button>
-                <button class="filter-btn" data-category="adjectives">Kata Sifat</button>
-                <button class="filter-btn" data-category="places">Tempat</button>
-                <button class="filter-btn" data-category="objects">Benda</button>
-                <button class="filter-btn" data-category="food">Makanan</button>
-                <button class="filter-btn" data-category="people">Orang</button>
-                <button class="filter-btn" data-category="time">Waktu</button>
+            <div class="filter-container" role="group" aria-label="Filter vocabulary by category">
+                <button class="filter-btn active" data-category="all" aria-pressed="true">Semua</button>
+                <button class="filter-btn" data-category="verbs" aria-pressed="false">Kata Kerja</button>
+                <button class="filter-btn" data-category="adjectives" aria-pressed="false">Kata Sifat</button>
+                <button class="filter-btn" data-category="places" aria-pressed="false">Tempat</button>
+                <button class="filter-btn" data-category="objects" aria-pressed="false">Benda</button>
+                <button class="filter-btn" data-category="food" aria-pressed="false">Makanan</button>
+                <button class="filter-btn" data-category="people" aria-pressed="false">Orang</button>
+                <button class="filter-btn" data-category="time" aria-pressed="false">Waktu</button>
             </div>
-        </div>
+        </section>
 
         <!-- Vocabulary List -->
-        <div id="vocabularyList"
-            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;"></div>
+        <section aria-label="Vocabulary list">
+            <div id="vocabularyList" class="vocab-grid"></div>
+        </section>
 
         <!-- Flashcard Mode (hidden by default) -->
-        <div id="flashcardMode" style="display: none;">
+        <section id="flashcardMode" style="display: none;" aria-label="Flashcard mode">
             <div id="vocab-flashcard-container"></div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <script src="data/vocabulary.js"></script>
     <script src="js/speech.js"></script>
     <script src="js/flashcard.js"></script>
+    <script src="js/theme.js"></script>
     <script>
         let currentCategory = 'all';
         let currentSearch = '';
@@ -95,9 +108,10 @@
             container.innerHTML = words.map(word => `
                 <div class="vocab-card" data-word="${word.jp}">
                     <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
-                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--primary); cursor: pointer;" 
-                            onclick="japaneseSpeech.speak('${word.jp}')">
-                            ${word.jp} 🔊
+                        <div style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--primary); cursor: pointer; display: flex; align-items: center; gap: 0.5rem;" 
+                            onclick="japaneseSpeech.speak('${word.jp}')" role="button" tabindex="0" aria-label="Play pronunciation for ${word.jp}">
+                            ${word.jp}
+                            <span class="material-symbols-outlined" aria-hidden="true" style="font-size: 20px;">volume_up</span>
                         </div>
                         <span style="background: rgba(59, 130, 246, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 600;">
                             ${word.mainCategory || 'N5'}
@@ -153,8 +167,12 @@
         // Filter buttons
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
                 btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
                 currentCategory = btn.dataset.category;
                 renderVocabulary();
             });
@@ -173,7 +191,7 @@
             if (isFlashcardMode) {
                 document.getElementById('vocabularyList').style.display = 'none';
                 document.getElementById('flashcardMode').style.display = 'block';
-                document.getElementById('flashcardBtn').textContent = '📋 Mode Daftar';
+                document.getElementById('flashcardBtn').innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">list</span> Mode Daftar';
 
                 // Prepare flashcard data
                 let words = currentCategory === 'all' ? getAllVocabulary() : getVocabularyByCategory(currentCategory);
@@ -193,7 +211,7 @@
             } else {
                 document.getElementById('vocabularyList').style.display = 'grid';
                 document.getElementById('flashcardMode').style.display = 'none';
-                document.getElementById('flashcardBtn').textContent = '🎴 Mode Flashcard';
+                document.getElementById('flashcardBtn').innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">style</span> Mode Flashcard';
             }
         });
 

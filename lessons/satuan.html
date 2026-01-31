@@ -10,15 +10,22 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/lesson.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
-    <header class="header">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header" role="banner">
         <div class="container">
             <div class="header-content">
-                <div class="logo"><span class="logo-jp">日本語</span><span class="logo-text">N5 Learning</span></div>
-                <nav class="nav">
+                <div class="logo"><span class="logo-jp" aria-label="Japanese language">日本語</span><span class="logo-text">N5 Learning</span></div>
+                <nav class="nav" role="navigation">
                     <a href="../index.html" class="nav-link">Beranda</a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                        <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                        <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+                    </button>
                     <a href="#study" class="nav-link">Materi</a>
                     <a href="#quiz" class="nav-link">Latihan</a>
                 </nav>
@@ -98,6 +105,7 @@
         };
     </script>
     <script src="../js/quiz.js"></script>
+        <script src="../js/theme.js"></script>
 </body>
 
 </html>

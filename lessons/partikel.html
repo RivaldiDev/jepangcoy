@@ -1,415 +1,458 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Partikel - Japanese N5</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link rel="stylesheet" href="../css/tabs.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partikel - Japanese N5</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/lesson.css">
-    <link rel="stylesheet" href="../css/tabs.css">
-</head>
-
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-jp">日本語</span>
-                    <span class="logo-text">N5 Learning</span>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span>
+                        <span class="logo-text">N5 Learning</span>
+                    </div>
+                    <nav class="nav" role="navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                            <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                            <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+                        </button>
+                    </nav>
                 </div>
-                <nav class="nav">
-                    <a href="../index.html" class="nav-link">Beranda</a>
-                </nav>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div class="lesson-container">
-        <div class="lesson-header">
-            <h1 class="lesson-title">Partikel & Partikel Tanya</h1>
-            <p class="lesson-subtitle">Kata bantu yang menunjukkan fungsi kata dalam kalimat</p>
-        </div>
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <h1 class="lesson-title">Partikel & Partikel Tanya</h1>
+                <p class="lesson-subtitle">Kata bantu yang menunjukkan fungsi kata dalam kalimat</p>
+            </div>
 
-        <!-- Tab Navigation -->
-        <div class="tabs">
-            <button class="tab active" data-tab="study">📚 Belajar</button>
-            <button class="tab" data-tab="practice">✏️ Latihan</button>
-        </div>
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-tab="study">
+                    <span class="material-symbols-outlined" aria-hidden="true">menu_book</span> Belajar
+                </button>
+                <button class="tab" data-tab="practice">
+                    <span class="material-symbols-outlined" aria-hidden="true">edit</span> Latihan
+                </button>
+            </div>
 
-        <!-- Study Tab -->
-        <div class="tab-content active" id="study">
-            <section class="study-section">
-                <h2>Partikel Penting dalam Bahasa Jepang</h2>
-                <p>Partikel adalah kata kecil yang menunjukkan hubungan antar kata dalam kalimat. Sangat penting untuk
-                    memahami penggunaannya!</p>
+            <!-- Study Tab -->
+            <div class="tab-content active" id="study">
+                <section class="study-section">
+                    <h2>Partikel Penting dalam Bahasa Jepang</h2>
+                    <p>
+                        Partikel adalah kata kecil yang menunjukkan fungsi kata dalam kalimat. Ada tiga partikel yang
+                        wajib dikuasai pemula: <strong>は</strong>, <strong>を</strong>, dan <strong>の</strong>.
+                    </p>
 
-                <!-- Particle は -->
-                <div
-                    style="margin: 3rem 0; padding: 2rem; background: var(--bg-tertiary); border-left: 4px solid var(--primary); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">1. は (wa) - Penanda
-                        Topik</h3>
-                    <p style="font-size: 1.125rem; margin-bottom: 1.5rem;"><strong>Fungsi:</strong> Menandai topik
-                        pembicaraan (apa yang sedang dibicarakan)</p>
+                    <!-- Particle は -->
+                    <div class="particle-box">
+                        <h3 class="particle-title">1. は (wa) - Topik Pembicaraan</h3>
+                        <p class="particle-desc">
+                            <strong>Fungsi:</strong> Menandai topik yang sedang dibicarakan. Dibaca "wa", bukan "ha".
+                        </p>
 
-                    <h4 style="color: var(--accent); margin: 1.5rem 0 1rem;">Contoh Kalimat:</h4>
-                    <div style="display: grid; gap: 1rem;">
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                私は学生です。</div>
-                            <div style="color: var(--text-secondary);">Watashi wa gakusei desu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Saya adalah pelajar.</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                これは本です。</div>
-                            <div style="color: var(--text-secondary);">Kore wa hon desu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Ini adalah buku.</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                日本語は難しいです。</div>
-                            <div style="color: var(--text-secondary);">Nihongo wa muzukashii desu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Bahasa Jepang itu sulit.</div>
-                        </div>
-                    </div>
-
-                    <div
-                        style="margin-top: 1.5rem; padding: 1rem; background: rgba(59, 130, 246, 0.1); border-radius: 0.5rem;">
-                        <strong>💡 Tips:</strong> は dibaca "wa" bukan "ha" ketika digunakan sebagai partikel!
-                    </div>
-                </div>
-
-                <!-- Particle を -->
-                <div
-                    style="margin: 3rem 0; padding: 2rem; background: var(--bg-tertiary); border-left: 4px solid var(--primary); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">2. を (wo/o) - Penanda
-                        Objek</h3>
-                    <p style="font-size: 1.125rem; margin-bottom: 1.5rem;"><strong>Fungsi:</strong> Menandai objek
-                        langsung dari kata kerja transitif</p>
-
-                    <h4 style="color: var(--accent); margin: 1.5rem 0 1rem;">Contoh Kalimat:</h4>
-                    <div style="display: grid; gap: 1rem;">
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                本を読みます。</div>
-                            <div style="color: var(--text-secondary);">Hon wo yomimasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Membaca buku.</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                コーヒーを飲みます。</div>
-                            <div style="color: var(--text-secondary);">Koohii wo nomimasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Minum kopi.</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                音楽を聞きます。</div>
-                            <div style="color: var(--text-secondary);">Ongaku wo kikimasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Mendengarkan musik.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Particle に -->
-                <div
-                    style="margin: 3rem 0; padding: 2rem; background: var(--bg-tertiary); border-left: 4px solid var(--primary); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">3. に (ni) - Penanda
-                        Arah/Waktu/Keberadaan</h3>
-                    <p style="font-size: 1.125rem; margin-bottom: 1.5rem;"><strong>Fungsi:</strong> Menandai tempat
-                        tujuan, waktu spesifik, atau lokasi keberadaan</p>
-
-                    <h4 style="color: var(--accent); margin: 1.5rem 0 1rem;">Penggunaan 1: Tempat Tujuan</h4>
-                    <div style="display: grid; gap: 1rem;">
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                学校に行きます。</div>
-                            <div style="color: var(--text-secondary);">Gakkou ni ikimasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Pergi ke sekolah.</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                日本に来ました。</div>
-                            <div style="color: var(--text-secondary);">Nihon ni kimashita.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Datang ke Jepang.</div>
-                        </div>
-                    </div>
-
-                    <h4 style="color: var(--accent); margin: 1.5rem 0 1rem;">Penggunaan 2: Waktu Spesifik</h4>
-                    <div style="display: grid; gap: 1rem;">
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                7時に起きます。</div>
-                            <div style="color: var(--text-secondary);">Shichi-ji ni okimasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Bangun jam 7.</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                月曜日に会います。</div>
-                            <div style="color: var(--text-secondary);">Getsuyoubi ni aimasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Bertemu pada hari Senin.</div>
-                        </div>
-                    </div>
-
-                    <h4 style="color: var(--accent); margin: 1.5rem 0 1rem;">Penggunaan 3: Lokasi Keberadaan</h4>
-                    <div style="display: grid; gap: 1rem;">
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                机の上に本があります。</div>
-                            <div style="color: var(--text-secondary);">Tsukue no ue ni hon ga arimasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Ada buku di atas meja.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Particle で -->
-                <div
-                    style="margin: 3rem 0; padding: 2rem; background: var(--bg-tertiary); border-left: 4px solid var(--primary); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">4. で (de) - Penanda
-                        Tempat Aktivitas/Alat</h3>
-                    <p style="font-size: 1.125rem; margin-bottom: 1.5rem;"><strong>Fungsi:</strong> Menandai tempat
-                        dimana aktivitas terjadi atau alat yang digunakan</p>
-
-                    <h4 style="color: var(--accent); margin: 1.5rem 0 1rem;">Penggunaan 1: Tempat Aktivitas</h4>
-                    <div style="display: grid; gap: 1rem;">
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                図書館で勉強します。</div>
-                            <div style="color: var(--text-secondary);">Toshokan de benkyou shimasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Belajar di perpustakaan.</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                レストランで食べます。</div>
-                            <div style="color: var(--text-secondary);">Resutoran de tabemasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Makan di restoran.</div>
-                        </div>
-                    </div>
-
-                    <h4 style="color: var(--accent); margin: 1.5rem 0 1rem;">Penggunaan 2: Alat/Cara</h4>
-                    <div style="display: grid; gap: 1rem;">
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                ペンで書きます。</div>
-                            <div style="color: var(--text-secondary);">Pen de kakimasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Menulis dengan pena.</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                バスで行きます。</div>
-                            <div style="color: var(--text-secondary);">Basu de ikimasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Pergi dengan bus.</div>
-                        </div>
-                    </div>
-
-                    <div
-                        style="margin-top: 1.5rem; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                        <strong>⚡ Perbedaan に vs で:</strong><br>
-                        • に = tempat tujuan atau lokasi statis (ada/berada)<br>
-                        • で = tempat dimana aktivitas dilakukan
-                    </div>
-                </div>
-
-                <!-- Particle が -->
-                <div
-                    style="margin: 3rem 0; padding: 2rem; background: var(--bg-tertiary); border-left: 4px solid var(--primary); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">5. が (ga) - Penanda
-                        Subjek</h3>
-                    <p style="font-size: 1.125rem; margin-bottom: 1.5rem;"><strong>Fungsi:</strong> Menandai subjek
-                        kalimat, terutama untuk informasi baru atau penekanan</p>
-
-                    <h4 style="color: var(--accent); margin: 1.5rem 0 1rem;">Contoh Kalimat:</h4>
-                    <div style="display: grid; gap: 1rem;">
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                雨が降ります。</div>
-                            <div style="color: var(--text-secondary);">Ame ga furimasu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Hujan turun.</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                犬が好きです。</div>
-                            <div style="color: var(--text-secondary);">Inu ga suki desu.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Suka anjing.</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                誰が来ましたか。</div>
-                            <div style="color: var(--text-secondary);">Dare ga kimashita ka.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Siapa yang datang?</div>
-                        </div>
-                    </div>
-
-                    <div
-                        style="margin-top: 1.5rem; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                        <strong>⚡ Perbedaan は vs が:</strong><br>
-                        • は = menandai topik (informasi lama/umum)<br>
-                        • が = menandai subjek (informasi baru/penekanan)
-                    </div>
-                </div>
-
-                <!-- Particle の -->
-                <div
-                    style="margin: 3rem 0; padding: 2rem; background: var(--bg-tertiary); border-left: 4px solid var(--primary); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">6. の (no) - Penanda
-                        Kepemilikan/Modifikasi</h3>
-                    <p style="font-size: 1.125rem; margin-bottom: 1.5rem;"><strong>Fungsi:</strong> Menunjukkan
-                        kepemilikan atau hubungan antar kata benda</p>
-
-                    <h4 style="color: var(--accent); margin: 1.5rem 0 1rem;">Contoh Kalimat:</h4>
-                    <div style="display: grid; gap: 1rem;">
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                私の本</div>
-                            <div style="color: var(--text-secondary);">Watashi no hon</div>
-                            <div style="color: var(--primary); font-weight: 600;">Buku saya</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                日本の文化</div>
-                            <div style="color: var(--text-secondary);">Nihon no bunka</div>
-                            <div style="color: var(--primary); font-weight: 600;">Budaya Jepang</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                友達の家</div>
-                            <div style="color: var(--text-secondary);">Tomodachi no ie</div>
-                            <div style="color: var(--primary); font-weight: 600;">Rumah teman</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Particle か -->
-                <div
-                    style="margin: 3rem 0; padding: 2rem; background: var(--bg-tertiary); border-left: 4px solid var(--primary); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary); font-size: 1.75rem; margin-bottom: 1rem;">7. か (ka) - Penanda
-                        Pertanyaan</h3>
-                    <p style="font-size: 1.125rem; margin-bottom: 1.5rem;"><strong>Fungsi:</strong> Mengubah kalimat
-                        menjadi pertanyaan (seperti tanda tanya)</p>
-
-                    <h4 style="color: var(--accent); margin: 1.5rem 0 1rem;">Contoh Kalimat:</h4>
-                    <div style="display: grid; gap: 1rem;">
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                これは何ですか。</div>
-                            <div style="color: var(--text-secondary);">Kore wa nan desu ka.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Ini apa?</div>
-                        </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                日本語が分かりますか。</div>
-                            <div style="color: var(--text-secondary);">Nihongo ga wakarimasu ka.</div>
-                            <div style="color: var(--primary); font-weight: 600;">Apakah Anda mengerti bahasa Jepang?
+                        <h4>Contoh:</h4>
+                        <div class="example-list">
+                            <div class="example-card">
+                                <div class="jp">わたし<span class="particle-highlight">は</span>がくせいです。</div>
+                                <div class="romaji">watashi wa gakusei desu.</div>
+                                <div class="meaning">Saya adalah pelajar.</div>
+                                <div class="explanation-note">Topik: わたし (saya)</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">これ<span class="particle-highlight">は</span>ほんです。</div>
+                                <div class="romaji">kore wa hon desu.</div>
+                                <div class="meaning">Ini adalah buku.</div>
+                                <div class="explanation-note">Topik: これ (ini)</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">にほんご<span class="particle-highlight">は</span>おもしろいです。</div>
+                                <div class="romaji">nihongo wa omoshiroi desu.</div>
+                                <div class="meaning">Bahasa Jepang itu menarik.</div>
+                                <div class="explanation-note">Topik: にほんご (bahasa Jepang)</div>
                             </div>
                         </div>
-                        <div
-                            style="padding: 1rem; background: white; border-radius: 0.5rem; border: 1px solid var(--border);">
-                            <div
-                                style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">
-                                コーヒーか紅茶</div>
-                            <div style="color: var(--text-secondary);">Koohii ka koucha</div>
-                            <div style="color: var(--primary); font-weight: 600;">Kopi atau teh (pilihan)</div>
+
+                        <div class="tip-box">
+                            <strong>💡 Cara membaca:</strong> は sebagai partikel selalu dibaca "wa", jangan baca "ha"!
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
 
-        <!-- Practice Tab -->
-        <div class="tab-content" id="practice">
-            <section class="quiz-section">
-                <div class="quiz-header">
-                    <h2>Latihan Soal</h2>
-                    <p>Uji pemahaman Anda tentang penggunaan partikel</p>
-                    <div class="quiz-progress-container">
-                        <div id="quiz-progress"></div>
+                    <!-- Particle を -->
+                    <div class="particle-box">
+                        <h3 class="particle-title">2. を (wo/o) - Penanda Objek</h3>
+                        <p class="particle-desc">
+                            <strong>Fungsi:</strong> Menandai objek (sesuatu yang diberi aksi) dari kata kerja. Dibaca
+                            "o" atau "wo".
+                        </p>
+
+                        <h4>Contoh:</h4>
+                        <div class="example-list">
+                            <div class="example-card">
+                                <div class="jp">本(ほん)<span class="particle-highlight">を</span>読(よ)みます。</div>
+                                <div class="romaji">Hon wo yomimasu.</div>
+                                <div class="meaning">Membaca buku.</div>
+                                <div class="explanation-note">Objek: 本(ほん) (buku)</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">コーヒー<span class="particle-highlight">を</span>飲(の)みます。</div>
+                                <div class="romaji">Koohii wo nomimasu.</div>
+                                <div class="meaning">Minum kopi.</div>
+                                <div class="explanation-note">Objek: コーヒー (kopi)</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">
+                                    音楽(おんがく)<span class="particle-highlight">を</span>聞(き)きます。
+                                </div>
+                                <div class="romaji">Ongaku wo kikimasu.</div>
+                                <div class="meaning">Mendengarkan musik.</div>
+                                <div class="explanation-note">Objek: 音楽(おんがく) (musik)</div>
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <strong>💡 Ingat:</strong> を selalu digunakan setelah objek dan sebelum kata kerja.
+                        </div>
                     </div>
-                </div>
-                <div id="quiz-container"></div>
-            </section>
+
+                    <!-- Particle に -->
+                    <div class="particle-box">
+                        <h3 class="particle-title">3. に (ni) - Penanda Arah, Waktu, atau Lokasi</h3>
+                        <p class="particle-desc">
+                            <strong>Fungsi:</strong> Menunjukkan tujuan, waktu, atau tempat sesuatu berada.
+                        </p>
+
+                        <h4>Penggunaan 1: Tempat Tujuan</h4>
+                        <div class="example-list">
+                            <div class="example-card">
+                                <div class="jp">
+                                    学校(がっこう)<span class="particle-highlight">に</span>行(い)きます。
+                                </div>
+                                <div class="romaji">Gakkou ni ikimasu.</div>
+                                <div class="meaning">Pergi ke sekolah.</div>
+                                <div class="explanation-note">Tujuan: 学校(がっこう) (sekolah)</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">
+                                    日本(にほん)<span class="particle-highlight">に</span>来(き)ました。
+                                </div>
+                                <div class="romaji">Nihon ni kimashita.</div>
+                                <div class="meaning">Datang ke Jepang.</div>
+                                <div class="explanation-note">Tujuan: 日本(にほん) (Jepang)</div>
+                            </div>
+                        </div>
+
+                        <h4>Penggunaan 2: Waktu Spesifik</h4>
+                        <div class="example-list">
+                            <div class="example-card">
+                                <div class="jp">
+                                    7時(しちじ)<span class="particle-highlight">に</span>起(お)きます。
+                                </div>
+                                <div class="romaji">Shichi-ji ni okimasu.</div>
+                                <div class="meaning">Bangun jam 7.</div>
+                                <div class="explanation-note">Waktu: 7時(しちじ) (jam 7)</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">
+                                    月曜日(げつようび)<span class="particle-highlight">に</span>会(あ)います。
+                                </div>
+                                <div class="romaji">Getsuyoubi ni aimasu.</div>
+                                <div class="meaning">Bertemu hari Senin.</div>
+                                <div class="explanation-note">Waktu: 月曜日(げつようび) (hari Senin)</div>
+                            </div>
+                        </div>
+
+                        <h4>Penggunaan 3: Lokasi Keberadaan</h4>
+                        <div class="example-list">
+                            <div class="example-card">
+                                <div class="jp">
+                                    机(つくえ)の上(うえ)<span class="particle-highlight">に</span>本(ほん)があります。
+                                </div>
+                                <div class="romaji">Tsukue no ue ni hon ga arimasu.</div>
+                                <div class="meaning">Ada buku di atas meja.</div>
+                                <div class="explanation-note">Lokasi: 机(つくえ)の上(うえ) (di atas meja)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Particle で -->
+                    <div class="particle-box">
+                        <h3 class="particle-title">4. で (de) - Penanda Tempat atau Alat</h3>
+                        <p class="particle-desc">
+                            <strong>Fungsi:</strong> Menunjukkan tempat aktivitas atau alat yang digunakan.
+                        </p>
+
+                        <h4>Penggunaan 1: Tempat Aktivitas</h4>
+                        <div class="example-list">
+                            <div class="example-card">
+                                <div class="jp">
+                                    図書館(としょかん)<span class="particle-highlight">で</span>勉強(べんきょう)します。
+                                </div>
+                                <div class="romaji">Toshokan de benkyou shimasu.</div>
+                                <div class="meaning">Belajar di perpustakaan.</div>
+                                <div class="explanation-note">Tempat: 図書館(としょかん) (perpustakaan)</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">レストラン<span class="particle-highlight">で</span>食(た)べます。</div>
+                                <div class="romaji">Resutoran de tabemasu.</div>
+                                <div class="meaning">Makan di restoran.</div>
+                                <div class="explanation-note">Tempat: レストラン (restoran)</div>
+                            </div>
+                        </div>
+
+                        <h4>Penggunaan 2: Alat atau Cara</h4>
+                        <div class="example-list">
+                            <div class="example-card">
+                                <div class="jp">ペン<span class="particle-highlight">で</span>書(か)きます。</div>
+                                <div class="romaji">Pen de kakimasu.</div>
+                                <div class="meaning">Menulis dengan pena.</div>
+                                <div class="explanation-note">Alat: ペン (pena)</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">バス<span class="particle-highlight">で</span>行(い)きます。</div>
+                                <div class="romaji">Basu de ikimasu.</div>
+                                <div class="meaning">Pergi dengan bus.</div>
+                                <div class="explanation-note">Alat: バス (bus)</div>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <strong>⚡ Perbedaan に dan で:</strong><br />
+                            に = tempat tujuan (ke mana)<br />
+                            で = tempat aktivitas (di mana melakukan sesuatu)
+                        </div>
+                    </div>
+
+                    <!-- Particle が -->
+                    <div class="particle-box">
+                        <h3 class="particle-title">5. が (ga) - Penanda Subjek</h3>
+                        <p class="particle-desc">
+                            <strong>Fungsi:</strong> Menunjukkan subjek yang melakukan aksi atau sesuatu yang menjadi
+                            fokus.
+                        </p>
+
+                        <h4>Contoh:</h4>
+                        <div class="example-list">
+                            <div class="example-card">
+                                <div class="jp">雨(あめ)<span class="particle-highlight">が</span>降(ふ)ります。</div>
+                                <div class="romaji">Ame ga furimasu.</div>
+                                <div class="meaning">Hujan turun.</div>
+                                <div class="explanation-note">Subjek: 雨(あめ) (hujan)</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">犬(いぬ)<span class="particle-highlight">が</span>好(す)きです。</div>
+                                <div class="romaji">Inu ga suki desu.</div>
+                                <div class="meaning">Suka anjing.</div>
+                                <div class="explanation-note">Subjek: 犬(いぬ) (anjing)</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">誰(だれ)<span class="particle-highlight">が</span>来(き)ましたか。</div>
+                                <div class="romaji">Dare ga kimashita ka.</div>
+                                <div class="meaning">Siapa yang datang?</div>
+                                <div class="explanation-note">Subjek: 誰(だれ) (siapa)</div>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <strong>⚡ Perbedaan は dan が:</strong><br />
+                            は = topik yang sudah diketahui<br />
+                            が = subjek yang baru atau menjadi fokus
+                        </div>
+                    </div>
+
+                    <!-- Particle の -->
+                    <div class="particle-box">
+                        <h3 class="particle-title">6. の (no) - Penanda Kepemilikan</h3>
+                        <p class="particle-desc">
+                            <strong>Fungsi:</strong> Menunjukkan kepemilikan atau keterhubungan dua kata benda.
+                        </p>
+
+                        <h4>Contoh:</h4>
+                        <div class="example-list">
+                            <div class="example-card">
+                                <div class="jp">私(わたし)<span class="particle-highlight">の</span>本(ほん)</div>
+                                <div class="romaji">Watashi no hon</div>
+                                <div class="meaning">Buku saya</div>
+                                <div class="explanation-note">Pemilik: 私(わたし) (saya)</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">日本(にほん)<span class="particle-highlight">の</span>文化(ぶんか)</div>
+                                <div class="romaji">Nihon no bunka</div>
+                                <div class="meaning">Budaya Jepang</div>
+                                <div class="explanation-note">
+                                    Hubungan: 日本(にほん) (Jepang) dan 文化(ぶんか) (budaya)
+                                </div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">友達(ともだち)<span class="particle-highlight">の</span>家(いえ)</div>
+                                <div class="romaji">Tomodachi no ie</div>
+                                <div class="meaning">Rumah teman</div>
+                                <div class="explanation-note">Pemilik: 友達(ともだち) (teman)</div>
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <strong>💡 Ingat:</strong> の berfungsi seperti "-nya" atau "de" dalam bahasa Indonesia.
+                        </div>
+                    </div>
+
+                    <!-- Particle か -->
+                    <div class="particle-box">
+                        <h3 class="particle-title">7. か (ka) - Penanda Pertanyaan</h3>
+                        <p class="particle-desc">
+                            <strong>Fungsi:</strong> Mengubah kalimat menjadi pertanyaan, seperti tanda tanya "?"
+                        </p>
+
+                        <h4>Contoh:</h4>
+                        <div class="example-list">
+                            <div class="example-card">
+                                <div class="jp">これは何(なん)です<span class="particle-highlight">か</span>。</div>
+                                <div class="romaji">Kore wa nan desu ka.</div>
+                                <div class="meaning">Ini apa?</div>
+                                <div class="explanation-note">か di akhir = pertanyaan</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">
+                                    日本語(にほんご)<span class="particle-highlight">が</span>分(わ)かります<span
+                                        class="particle-highlight"
+                                        >か</span
+                                    >。
+                                </div>
+                                <div class="romaji">Nihongo ga wakarimasu ka.</div>
+                                <div class="meaning">Apakah kamu mengerti bahasa Jepang?</div>
+                                <div class="explanation-note">か di akhir = pertanyaan</div>
+                            </div>
+                            <div class="example-card">
+                                <div class="jp">コーヒー<span class="particle-highlight">か</span>紅茶(こうちゃ)</div>
+                                <div class="romaji">Koohii ka koucha</div>
+                                <div class="meaning">Kopi atau teh</div>
+                                <div class="explanation-note">か di tengah = pilihan "atau"</div>
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <strong>💡 Tips:</strong> Tambahkan か di akhir kalimat untuk bertanya. Tidak perlu tanda
+                            tanya "?".
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Practice Tab -->
+            <div class="tab-content" id="practice">
+                <section class="quiz-section">
+                    <div class="quiz-header">
+                        <h2>Latihan Soal</h2>
+                        <p>Uji pemahaman Anda tentang penggunaan partikel</p>
+                        <div class="quiz-progress-container">
+                            <div id="quiz-progress"></div>
+                        </div>
+                    </div>
+                    <div id="quiz-container"></div>
+                </section>
+            </div>
         </div>
-    </div>
 
-    <script src="../js/speech.js"></script>
-    <script src="../js/quiz.js"></script>
-    <script>
-        // Tab switching
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.tab;
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                document.getElementById(targetTab).classList.add('active');
+        <script src="../js/speech.js"></script>
+        <script src="../js/quiz.js"></script>
+        <script>
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    document.getElementById(targetTab).classList.add('active');
+                });
             });
-        });
 
-        // Quiz data
-        const quizData = {
-            lessonId: 'partikel',
-            questions: [
-                { question: 'Partikel apa yang digunakan untuk menandai topik kalimat?', options: ['を', 'は', 'に', 'で'], correct: 1, explanation: 'Partikel は (wa) digunakan untuk menandai topik kalimat.' },
-                { question: 'Lengkapi: 私___学生です (Saya adalah pelajar)', options: ['を', 'は', 'に', 'が'], correct: 1, explanation: 'は (wa) menandai topik "私" (saya).' },
-                { question: 'Partikel apa yang menandai objek langsung?', options: ['を', 'は', 'に', 'で'], correct: 0, explanation: 'を (wo/o) menandai objek langsung dari kata kerja.' },
-                { question: 'Lengkapi: 学校___行きます (Pergi ke sekolah)', options: ['を', 'は', 'に', 'で'], correct: 2, explanation: 'に (ni) menandai tempat tujuan.' },
-                { question: 'Partikel apa yang digunakan untuk tempat aktivitas?', options: ['を', 'は', 'に', 'で'], correct: 3, explanation: 'で (de) menandai tempat dimana aktivitas terjadi.' },
-                { question: 'Lengkapi: これ___何ですか (Ini apa?)', options: ['を', 'は', 'に', 'か'], correct: 1, explanation: 'は (wa) menandai topik "これ" (ini).' },
-                { question: 'Partikel apa yang membuat kalimat menjadi pertanyaan?', options: ['を', 'は', 'に', 'か'], correct: 3, explanation: 'か (ka) di akhir kalimat membuatnya menjadi pertanyaan.' },
-                { question: 'Lengkapi: 本___読みます (Membaca buku)', options: ['を', 'は', 'に', 'で'], correct: 0, explanation: 'を (wo) menandai "本" (buku) sebagai objek langsung.' },
-                { question: 'Partikel apa yang menandai alat atau cara?', options: ['を', 'は', 'に', 'で'], correct: 3, explanation: 'で (de) juga digunakan untuk menandai alat atau cara melakukan sesuatu.' },
-                { question: 'Lengkapi: 友達___会います (Bertemu dengan teman)', options: ['を', 'は', 'に', 'で'], correct: 2, explanation: 'に (ni) digunakan dengan kata kerja 会います untuk menandai orang yang ditemui.' }
-            ]
-        };
-    </script>
-</body>
-
+            // Quiz data
+            const quizData = {
+                lessonId: 'partikel',
+                questions: [
+                    {
+                        question: 'Partikel apa yang digunakan untuk menandai topik kalimat?',
+                        options: ['を', 'は', 'に', 'で'],
+                        correct: 1,
+                        explanation: 'Partikel は (wa) digunakan untuk menandai topik kalimat.',
+                    },
+                    {
+                        question: 'Lengkapi: 私___学生です (Saya adalah pelajar)',
+                        options: ['を', 'は', 'に', 'が'],
+                        correct: 1,
+                        explanation: 'は (wa) menandai topik "私" (saya).',
+                    },
+                    {
+                        question: 'Partikel apa yang menandai objek langsung?',
+                        options: ['を', 'は', 'に', 'で'],
+                        correct: 0,
+                        explanation: 'を (wo/o) menandai objek langsung dari kata kerja.',
+                    },
+                    {
+                        question: 'Lengkapi: 学校___行きます (Pergi ke sekolah)',
+                        options: ['を', 'は', 'に', 'で'],
+                        correct: 2,
+                        explanation: 'に (ni) menandai tempat tujuan.',
+                    },
+                    {
+                        question: 'Partikel apa yang digunakan untuk tempat aktivitas?',
+                        options: ['を', 'は', 'に', 'で'],
+                        correct: 3,
+                        explanation: 'で (de) menandai tempat dimana aktivitas terjadi.',
+                    },
+                    {
+                        question: 'Lengkapi: これ___何ですか (Ini apa?)',
+                        options: ['を', 'は', 'に', 'か'],
+                        correct: 1,
+                        explanation: 'は (wa) menandai topik "これ" (ini).',
+                    },
+                    {
+                        question: 'Partikel apa yang membuat kalimat menjadi pertanyaan?',
+                        options: ['を', 'は', 'に', 'か'],
+                        correct: 3,
+                        explanation: 'か (ka) di akhir kalimat membuatnya menjadi pertanyaan.',
+                    },
+                    {
+                        question: 'Lengkapi: 本___読みます (Membaca buku)',
+                        options: ['を', 'は', 'に', 'で'],
+                        correct: 0,
+                        explanation: 'を (wo) menandai "本" (buku) sebagai objek langsung.',
+                    },
+                    {
+                        question: 'Partikel apa yang menandai alat atau cara?',
+                        options: ['を', 'は', 'に', 'で'],
+                        correct: 3,
+                        explanation: 'で (de) juga digunakan untuk menandai alat atau cara melakukan sesuatu.',
+                    },
+                    {
+                        question: 'Lengkapi: 友達___会います (Bertemu dengan teman)',
+                        options: ['を', 'は', 'に', 'で'],
+                        correct: 2,
+                        explanation: 'に (ni) digunakan dengan kata kerja 会います untuk menandai orang yang ditemui.',
+                    },
+                ],
+            };
+        </script>
+        <script src="../js/theme.js"></script>
+    </body>
 </html>

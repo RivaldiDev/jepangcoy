@@ -10,18 +10,25 @@
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../css/lesson.css">
         <link rel="stylesheet" href="../css/tabs.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
-        <header class="header">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
                 <div class="container">
                         <div class="header-content">
                                 <div class="logo">
-                                        <span class="logo-jp">日本語</span>
+                                        <span class="logo-jp" aria-label="Japanese language">日本語</span>
                                         <span class="logo-text">N5 Learning</span>
                                 </div>
-                                <nav class="nav">
+                                <nav class="nav" role="navigation">
                                         <a href="../index.html" class="nav-link">Beranda</a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                        <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                        <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+                    </button>
                                 </nav>
                         </div>
                 </div>
@@ -35,9 +42,9 @@
 
                 <!-- Tab Navigation -->
                 <div class="tabs">
-                        <button class="tab active" data-tab="study">📚 Belajar</button>
-                        <button class="tab" data-tab="flashcard-tab">🎴 Flashcard</button>
-                        <button class="tab" data-tab="practice">✏️ Latihan</button>
+                        <button class="tab active" data-tab="study"><span class="material-symbols-outlined" aria-hidden="true">menu_book</span> Belajar</button>
+                        <button class="tab" data-tab="flashcard-tab"><span class="material-symbols-outlined" aria-hidden="true">style</span> Flashcard</button>
+                        <button class="tab" data-tab="practice"><span class="material-symbols-outlined" aria-hidden="true">edit</span> Latihan</button>
                 </div>
 
                 <!-- Study Tab -->
@@ -467,6 +474,7 @@
                         ]
                 };
         </script>
+        <script src="../js/theme.js"></script>
 </body>
 
 </html>
