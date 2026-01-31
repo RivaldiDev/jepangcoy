@@ -29,35 +29,6 @@
                 margin: 2rem 0;
             }
 
-            .essay-section {
-                background: var(--bg-tertiary);
-                padding: 2rem;
-                border-radius: 0.5rem;
-                margin: 2rem 0;
-            }
-
-            .essay-question {
-                margin: 1.5rem 0;
-                padding: 1.5rem;
-                background: var(--bg-secondary);
-                border-radius: 0.5rem;
-                border-left: 4px solid var(--primary);
-            }
-
-            .essay-answer {
-                width: 100%;
-                min-height: 100px;
-                padding: 1rem;
-                margin-top: 1rem;
-                border: 2px solid var(--border);
-                border-radius: 0.5rem;
-                background: var(--bg-primary);
-                color: var(--text-primary);
-                font-family: 'Noto Sans JP', 'Inter', sans-serif;
-                font-size: 1rem;
-                resize: vertical;
-            }
-
             .exam-timer {
                 position: fixed;
                 top: 100px;
@@ -70,60 +41,6 @@
                 font-weight: 700;
                 color: var(--primary);
                 z-index: 100;
-            }
-
-            .handwriting-canvas {
-                width: 100%;
-                height: 300px;
-                border: 2px solid var(--border);
-                border-radius: 0.5rem;
-                background: white;
-                cursor: crosshair;
-                margin-top: 1rem;
-            }
-
-            .canvas-controls {
-                display: flex;
-                gap: 0.5rem;
-                margin-top: 0.5rem;
-            }
-
-            .canvas-btn {
-                padding: 0.5rem 1rem;
-                border: 1px solid var(--border);
-                border-radius: 0.25rem;
-                background: var(--bg-tertiary);
-                color: var(--text-primary);
-                cursor: pointer;
-                font-size: 0.875rem;
-                transition: all 0.2s;
-            }
-
-            .canvas-btn:hover {
-                background: var(--primary);
-                color: white;
-            }
-
-            .answer-mode-toggle {
-                display: flex;
-                gap: 0.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .mode-btn {
-                padding: 0.5rem 1rem;
-                border: 2px solid var(--border);
-                border-radius: 0.25rem;
-                background: var(--bg-tertiary);
-                cursor: pointer;
-                transition: all 0.2s;
-            }
-
-            .mode-btn.active {
-                border-color: var(--primary);
-                background: rgba(59, 130, 246, 0.1);
-                color: var(--primary);
-                font-weight: 600;
             }
         </style>
     </head>
@@ -168,7 +85,7 @@
                 </h1>
                 <h2 style="font-size: 1.5rem; margin-bottom: 1rem">Ulangan Tengah Semester</h2>
                 <p style="font-size: 1.1rem; opacity: 0.9">Materi: Pertemuan 1-7</p>
-                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem">25 Pilihan Ganda + 5 Essay</p>
+                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem">25 Pilihan Ganda</p>
             </div>
 
             <!-- Exam Timer -->
@@ -199,7 +116,6 @@
                     </svg>
                     Pilihan Ganda (25)
                 </button>
-                <button class="tab" data-tab="essay">✍️ Essay (5)</button>
             </div>
 
             <!-- Instructions Tab -->
@@ -218,8 +134,9 @@
                         <h3 style="color: var(--primary); margin-bottom: 1rem">Aturan Ujian:</h3>
                         <ul style="line-height: 2; margin-left: 1.5rem">
                             <li><strong>Waktu:</strong> 60 menit</li>
-                            <li><strong>Bagian A:</strong> 25 soal pilihan ganda (masing-masing 2 poin) = 50 poin</li>
-                            <li><strong>Bagian B:</strong> 5 soal essay (masing-masing 10 poin) = 50 poin</li>
+                            <li>
+                                <strong>Jumlah Soal:</strong> 25 soal pilihan ganda (masing-masing 4 poin) = 100 poin
+                            </li>
                             <li><strong>Total:</strong> 100 poin</li>
                             <li>
                                 <strong>Materi:</strong> Hiragana, Katakana, Grammar Dasar, Kosakata (Pertemuan 1-7)
@@ -232,8 +149,6 @@
                         <ol style="line-height: 2; margin-left: 1.5rem">
                             <li>Klik tab "Pilihan Ganda" untuk mengerjakan 25 soal pilihan ganda</li>
                             <li>Pilih jawaban yang paling tepat untuk setiap soal</li>
-                            <li>Klik tab "Essay" untuk mengerjakan 5 soal essay</li>
-                            <li>Tulis jawaban essay dalam bahasa Jepang (Hiragana/Katakana/Kanji)</li>
                             <li>Perhatikan waktu yang tersisa di pojok kanan atas</li>
                             <li>Klik "Lihat Hasil" setelah selesai mengerjakan semua soal</li>
                         </ol>
@@ -255,283 +170,13 @@
             <div class="tab-content" id="multiple-choice">
                 <section class="quiz-section">
                     <div class="quiz-header">
-                        <h2>Bagian A: Pilihan Ganda (50 poin)</h2>
+                        <h2>Soal Pilihan Ganda (100 poin)</h2>
                         <p>Pilih jawaban yang paling tepat</p>
                         <div class="quiz-progress-container">
                             <div id="quiz-progress"></div>
                         </div>
                     </div>
                     <div id="quiz-container"></div>
-                </section>
-            </div>
-
-            <!-- Essay Tab -->
-            <div class="tab-content" id="essay">
-                <section class="study-section">
-                    <h2>Bagian B: Essay (50 poin)</h2>
-                    <p style="margin-bottom: 2rem">Jawab pertanyaan berikut dalam bahasa Jepang</p>
-
-                    <div class="essay-section">
-                        <div class="essay-question">
-                            <h3 style="color: var(--primary); margin-bottom: 1rem">1. じこしょうかい (10 poin)</h3>
-                            <div
-                                style="
-                                    background: rgba(59, 130, 246, 0.05);
-                                    padding: 1.5rem;
-                                    border-radius: 0.5rem;
-                                    margin-bottom: 1rem;
-                                    border-left: 3px solid var(--primary);
-                                "
-                            >
-                                <p style="font-weight: 600; margin-bottom: 0.5rem">Baca dialog berikut:</p>
-                                <div
-                                    style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; line-height: 1.8"
-                                >
-                                    <p><strong>たなか：</strong>はじめまして。たなかです。</p>
-                                    <p><strong>さとう：</strong>はじめまして。さとうです。どうぞよろしく。</p>
-                                    <p><strong>たなか：</strong>さとうさんはがくせいですか。</p>
-                                    <p><strong>さとう：</strong>はい、だいがくせいです。たなかさんは？</p>
-                                    <p><strong>たなか：</strong>わたしはかいしゃいんです。</p>
-                                </div>
-                            </div>
-                            <p
-                                style="
-                                    font-family: 'Noto Sans JP', sans-serif;
-                                    font-size: 1.1rem;
-                                    margin-bottom: 0.5rem;
-                                "
-                            >
-                                このダイアログをよんで、あなたのじこしょうかいをかいてください。
-                            </p>
-                            <div class="answer-mode-toggle">
-                                <button class="mode-btn active" onclick="switchMode(this, 'text', 1)">⌨️ Ketik</button>
-                                <button class="mode-btn" onclick="switchMode(this, 'draw', 1)">✍️ Tulis Tangan</button>
-                            </div>
-                            <div class="answer-container">
-                                <textarea
-                                    class="essay-answer"
-                                    id="answer-text-1"
-                                    placeholder="Tulis jawaban Anda di sini..."
-                                ></textarea>
-                                <div id="answer-draw-1" style="display: none">
-                                    <canvas class="handwriting-canvas" id="canvas-1"></canvas>
-                                    <div class="canvas-controls">
-                                        <button class="canvas-btn clear-canvas" onclick="clearCanvas(1)">
-                                            🗑️ Hapus
-                                        </button>
-                                        <button class="canvas-btn" onclick="undoCanvas(1)">↶ Undo</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="essay-question">
-                            <h3 style="color: var(--primary); margin-bottom: 1rem">2. カフェでのかいわ (10 poin)</h3>
-                            <div
-                                style="
-                                    background: rgba(59, 130, 246, 0.05);
-                                    padding: 1.5rem;
-                                    border-radius: 0.5rem;
-                                    margin-bottom: 1rem;
-                                    border-left: 3px solid var(--primary);
-                                "
-                            >
-                                <p style="font-weight: 600; margin-bottom: 0.5rem">Baca cerita berikut:</p>
-                                <div
-                                    style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; line-height: 1.8"
-                                >
-                                    <p>
-                                        きょう、わたしはカフェにいきました。カフェでコーヒーをのみました。ともだちもきました。ともだちはケーキをたべました。とてもおいしかったです。
-                                    </p>
-                                </div>
-                            </div>
-                            <p
-                                style="
-                                    font-family: 'Noto Sans JP', sans-serif;
-                                    font-size: 1.1rem;
-                                    margin-bottom: 0.5rem;
-                                "
-                            >
-                                このストーリーをよんで、しつもんにこたえてください：カフェでなにをしましたか。ともだちはなにをたべましたか。
-                            </p>
-                            <div class="answer-mode-toggle">
-                                <button class="mode-btn active" onclick="switchMode(this, 'text', 2)">⌨️ Ketik</button>
-                                <button class="mode-btn" onclick="switchMode(this, 'draw', 2)">✍️ Tulis Tangan</button>
-                            </div>
-                            <div class="answer-container">
-                                <textarea
-                                    class="essay-answer"
-                                    id="answer-text-2"
-                                    placeholder="Tulis jawaban Anda di sini..."
-                                ></textarea>
-                                <div id="answer-draw-2" style="display: none">
-                                    <canvas class="handwriting-canvas" id="canvas-2"></canvas>
-                                    <div class="canvas-controls">
-                                        <button class="canvas-btn clear-canvas" onclick="clearCanvas(2)">
-                                            🗑️ Hapus
-                                        </button>
-                                        <button class="canvas-btn" onclick="undoCanvas(2)">↶ Undo</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="essay-question">
-                            <h3 style="color: var(--primary); margin-bottom: 1rem">3. へやのなか (10 poin)</h3>
-                            <div
-                                style="
-                                    background: rgba(59, 130, 246, 0.05);
-                                    padding: 1.5rem;
-                                    border-radius: 0.5rem;
-                                    margin-bottom: 1rem;
-                                    border-left: 3px solid var(--primary);
-                                "
-                            >
-                                <p style="font-weight: 600; margin-bottom: 0.5rem">Baca dialog berikut:</p>
-                                <div
-                                    style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; line-height: 1.8"
-                                >
-                                    <p><strong>A：</strong>つくえのうえになにがありますか。</p>
-                                    <p><strong>B：</strong>ほんがあります。</p>
-                                    <p><strong>A：</strong>ベッドのしたにもなにかありますか。</p>
-                                    <p><strong>B：</strong>はい、かばんがあります。</p>
-                                </div>
-                            </div>
-                            <p
-                                style="
-                                    font-family: 'Noto Sans JP', sans-serif;
-                                    font-size: 1.1rem;
-                                    margin-bottom: 0.5rem;
-                                "
-                            >
-                                あなたのへやについて、おなじようにかいてください。5つのものとばしょをかいてください。
-                            </p>
-                            <div class="answer-mode-toggle">
-                                <button class="mode-btn active" onclick="switchMode(this, 'text', 3)">⌨️ Ketik</button>
-                                <button class="mode-btn" onclick="switchMode(this, 'draw', 3)">✍️ Tulis Tangan</button>
-                            </div>
-                            <div class="answer-container">
-                                <textarea
-                                    class="essay-answer"
-                                    id="answer-text-3"
-                                    placeholder="Contoh: つくえのうえにほんがあります。"
-                                ></textarea>
-                                <div id="answer-draw-3" style="display: none">
-                                    <canvas class="handwriting-canvas" id="canvas-3"></canvas>
-                                    <div class="canvas-controls">
-                                        <button class="canvas-btn clear-canvas" onclick="clearCanvas(3)">
-                                            🗑️ Hapus
-                                        </button>
-                                        <button class="canvas-btn" onclick="undoCanvas(3)">↶ Undo</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="essay-question">
-                            <h3 style="color: var(--primary); margin-bottom: 1rem">4. かいもの (10 poin)</h3>
-                            <div
-                                style="
-                                    background: rgba(59, 130, 246, 0.05);
-                                    padding: 1.5rem;
-                                    border-radius: 0.5rem;
-                                    margin-bottom: 1rem;
-                                    border-left: 3px solid var(--primary);
-                                "
-                            >
-                                <p style="font-weight: 600; margin-bottom: 0.5rem">Baca cerita berikut:</p>
-                                <div
-                                    style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; line-height: 1.8"
-                                >
-                                    <p>
-                                        デパートにいきました。これはわたしのかばんです。それはともだちのかばんです。あれはせんせいのかばんです。
-                                    </p>
-                                </div>
-                            </div>
-                            <p
-                                style="
-                                    font-family: 'Noto Sans JP', sans-serif;
-                                    font-size: 1.1rem;
-                                    margin-bottom: 0.5rem;
-                                "
-                            >
-                                「これ」「それ」「あれ」のつかいかたをせつめいして、あなたのれいぶんをかいてください。
-                            </p>
-                            <div class="answer-mode-toggle">
-                                <button class="mode-btn active" onclick="switchMode(this, 'text', 4)">⌨️ Ketik</button>
-                                <button class="mode-btn" onclick="switchMode(this, 'draw', 4)">✍️ Tulis Tangan</button>
-                            </div>
-                            <div class="answer-container">
-                                <textarea
-                                    class="essay-answer"
-                                    id="answer-text-4"
-                                    placeholder="Tulis jawaban Anda di sini..."
-                                ></textarea>
-                                <div id="answer-draw-4" style="display: none">
-                                    <canvas class="handwriting-canvas" id="canvas-4"></canvas>
-                                    <div class="canvas-controls">
-                                        <button class="canvas-btn clear-canvas" onclick="clearCanvas(4)">
-                                            🗑️ Hapus
-                                        </button>
-                                        <button class="canvas-btn" onclick="undoCanvas(4)">↶ Undo</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="essay-question">
-                            <h3 style="color: var(--primary); margin-bottom: 1rem">
-                                5. Dialog: Rencana Liburan (10 poin)
-                            </h3>
-                            <div
-                                style="
-                                    background: rgba(59, 130, 246, 0.05);
-                                    padding: 1.5rem;
-                                    border-radius: 0.5rem;
-                                    margin-bottom: 1rem;
-                                    border-left: 3px solid var(--primary);
-                                "
-                            >
-                                <p style="font-weight: 600; margin-bottom: 0.5rem">Baca dialog berikut:</p>
-                                <div
-                                    style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; line-height: 1.8"
-                                >
-                                    <p><strong>A：</strong>なつやすみにどこにいきますか。</p>
-                                    <p><strong>B：</strong>とうきょうにいきます。</p>
-                                    <p><strong>A：</strong>いいですね。わたしはおおさかにいきます。</p>
-                                </div>
-                            </div>
-                            <p
-                                style="
-                                    font-family: 'Noto Sans JP', sans-serif;
-                                    font-size: 1.1rem;
-                                    margin-bottom: 0.5rem;
-                                "
-                            >
-                                にほんのけん（prefecture）を5つかいてください。そして、どこにいきたいですか。
-                            </p>
-                            <div class="answer-mode-toggle">
-                                <button class="mode-btn active" onclick="switchMode(this, 'text', 5)">⌨️ Ketik</button>
-                                <button class="mode-btn" onclick="switchMode(this, 'draw', 5)">✍️ Tulis Tangan</button>
-                            </div>
-                            <div class="answer-container">
-                                <textarea
-                                    class="essay-answer"
-                                    id="answer-text-5"
-                                    placeholder="Contoh: とうきょう、おおさか..."
-                                ></textarea>
-                                <div id="answer-draw-5" style="display: none">
-                                    <canvas class="handwriting-canvas" id="canvas-5"></canvas>
-                                    <div class="canvas-controls">
-                                        <button class="canvas-btn clear-canvas" onclick="clearCanvas(5)">
-                                            🗑️ Hapus
-                                        </button>
-                                        <button class="canvas-btn" onclick="undoCanvas(5)">↶ Undo</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </section>
             </div>
 
@@ -782,68 +427,6 @@
                     },
                 ],
             };
-        </script>
-        <script src="../js/handwriting.js"></script>
-        <script>
-            // Mode switching function
-            function switchMode(btn, mode, questionNum) {
-                const parent = btn.parentElement;
-                const buttons = parent.querySelectorAll('.mode-btn');
-                buttons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const textArea = document.getElementById(`answer-text-${questionNum}`);
-                const drawArea = document.getElementById(`answer-draw-${questionNum}`);
-
-                if (mode === 'text') {
-                    if (textArea) textArea.style.display = 'block';
-                    if (drawArea) drawArea.style.display = 'none';
-                } else {
-                    if (textArea) textArea.style.display = 'none';
-                    if (drawArea) drawArea.style.display = 'block';
-                    // Initialize canvas if not already done
-                    const canvas = document.getElementById(`canvas-${questionNum}`);
-                    if (canvas && !canvas.dataset.initialized) {
-                        new HandwritingCanvas(`canvas-${questionNum}`);
-                        canvas.dataset.initialized = 'true';
-                    }
-                }
-            }
-
-            // Canvas control functions
-            function clearCanvas(questionNum) {
-                const canvas = document.getElementById(`canvas-${questionNum}`);
-                if (canvas) {
-                    const ctx = canvas.getContext('2d');
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    drawGrid(canvas);
-                }
-            }
-
-            function undoCanvas(questionNum) {
-                clearCanvas(questionNum);
-            }
-
-            function drawGrid(canvas) {
-                const ctx = canvas.getContext('2d');
-                const gridSize = 40;
-                ctx.strokeStyle = '#e5e7eb';
-                ctx.lineWidth = 1;
-
-                for (let x = 0; x <= canvas.width; x += gridSize) {
-                    ctx.beginPath();
-                    ctx.moveTo(x, 0);
-                    ctx.lineTo(x, canvas.height);
-                    ctx.stroke();
-                }
-
-                for (let y = 0; y <= canvas.height; y += gridSize) {
-                    ctx.beginPath();
-                    ctx.moveTo(0, y);
-                    ctx.lineTo(canvas.width, y);
-                    ctx.stroke();
-                }
-            }
         </script>
     </body>
 </html>

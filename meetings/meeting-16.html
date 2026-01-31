@@ -1,831 +1,502 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pertemuan 16: UAS (Ulangan Akhir Semester) - Japanese Course by Ms. Aulia</title>
+        <link rel="icon" type="image/png" href="../favicon.png" />
+        <link rel="shortcut icon" type="image/png" href="../favicon.png" />
+        <link rel="apple-touch-icon" href="../favicon.png" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link rel="stylesheet" href="../css/tabs.css" />
+        <link rel="stylesheet" href="../css/romaji.css" />
+        <style>
+            .exam-header {
+                background: linear-gradient(135deg, #7c3aed, #5b21b6);
+                padding: 2rem;
+                border-radius: 0.5rem;
+                color: white;
+                text-align: center;
+                margin: 2rem 0;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pertemuan 16: UAS (Ulangan Akhir Semester) - Japanese Course by Ms. Aulia</title>
-    <link rel="icon" type="image/png" href="../favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../favicon.png">
-    <link rel="apple-touch-icon" href="../favicon.png">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/lesson.css">
-    <link rel="stylesheet" href="../css/tabs.css">
-    <link rel="stylesheet" href="../css/romaji.css">
-    <style>
-        .exam-header {
-            background: linear-gradient(135deg, #7c3aed, #5b21b6);
-            padding: 2rem;
-            border-radius: 0.5rem;
-            color: white;
-            text-align: center;
-            margin: 2rem 0;
-        }
+            .exam-timer {
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: var(--bg-tertiary);
+                padding: 1rem;
+                border-radius: 0.5rem;
+                border: 2px solid #7c3aed;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #7c3aed;
+                z-index: 100;
+            }
+        </style>
+    </head>
 
-        .essay-section {
-            background: var(--bg-tertiary);
-            padding: 2rem;
-            border-radius: 0.5rem;
-            margin: 2rem 0;
-        }
-
-        .essay-question {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: var(--bg-secondary);
-            border-radius: 0.5rem;
-            border-left: 4px solid var(--primary);
-        }
-
-        .essay-answer {
-            width: 100%;
-            min-height: 120px;
-            padding: 1rem;
-            margin-top: 1rem;
-            border: 2px solid var(--border);
-            border-radius: 0.5rem;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            font-family: 'Noto Sans JP', 'Inter', sans-serif;
-            font-size: 1rem;
-            resize: vertical;
-        }
-
-        .exam-timer {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: var(--bg-tertiary);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            border: 2px solid #7c3aed;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #7c3aed;
-            z-index: 100;
-        }
-    
-        .handwriting-canvas {
-            width: 100%;
-            height: 300px;
-            border: 2px solid var(--border);
-            border-radius: 0.5rem;
-            background: white;
-            cursor: crosshair;
-            margin-top: 1rem;
-        }
-
-        .canvas-controls {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .canvas-btn {
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 0.25rem;
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-            cursor: pointer;
-            font-size: 0.875rem;
-            transition: all 0.2s;
-        }
-
-        .canvas-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .answer-mode-toggle {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .mode-btn {
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--border);
-            border-radius: 0.25rem;
-            background: var(--bg-tertiary);
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .mode-btn.active {
-            border-color: var(--primary);
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--primary);
-            font-weight: 600;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-jp" aria-label="Japanese language">日本語</span>
-                    <span class="logo-text">Course by Ms. Aulia</span>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span>
+                        <span class="logo-text">Course by Ms. Aulia</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+                    </button>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                    </nav>
                 </div>
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+            </div>
+        </header>
+
+        <div class="lesson-container">
+            <div class="exam-header">
+                <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem">
+                    <span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle"
+                        >edit_note</span
+                    >
+                    UAS
+                </h1>
+                <h2 style="font-size: 1.5rem; margin-bottom: 1rem">Ulangan Akhir Semester</h2>
+                <p style="font-size: 1.1rem; opacity: 0.9">Materi: Pertemuan 1-15 (Semua Materi)</p>
+                <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem">40 Soal Pilihan Ganda</p>
+            </div>
+
+            <!-- Exam Timer -->
+            <div class="exam-timer" id="timer">⏱️ 90:00</div>
+
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-tab="instructions">
+                    <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle"
+                        >assignment</span
+                    >
+                    Petunjuk
                 </button>
-                <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
-                    <a href="../index.html" class="nav-link">Beranda</a>
-                </nav>
+                <button class="tab" data-tab="multiple-choice">
+                    <span class="material-symbols-outlined" style="font-size: 20px; vertical-align: middle"
+                        >check_circle</span
+                    >
+                    Pilihan Ganda (40)
+                </button>
+            </div>
+
+            <!-- Instructions Tab -->
+            <div class="tab-content active" id="instructions">
+                <section class="study-section">
+                    <h2>Petunjuk Ujian</h2>
+
+                    <div
+                        style="
+                            background: rgba(124, 58, 237, 0.1);
+                            padding: 2rem;
+                            border-radius: 0.5rem;
+                            margin: 2rem 0;
+                        "
+                    >
+                        <h3 style="color: #7c3aed; margin-bottom: 1rem">Aturan Ujian:</h3>
+                        <ul style="line-height: 2; margin-left: 1.5rem">
+                            <li><strong>Waktu:</strong> 90 menit</li>
+                            <li>
+                                <strong>Jumlah Soal:</strong> 40 soal pilihan ganda (masing-masing 2.5 poin) = 100 poin
+                            </li>
+                            <li><strong>Total:</strong> 100 poin</li>
+                            <li><strong>Materi:</strong> Semua materi Pertemuan 1-15</li>
+                        </ul>
+                    </div>
+
+                    <div style="text-align: center; margin: 3rem 0">
+                        <button
+                            onclick="startExam()"
+                            class="btn btn-primary"
+                            style="font-size: 1.2rem; padding: 1rem 2rem; background: #7c3aed"
+                        >
+                            🚀 Mulai Ujian Akhir
+                        </button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Multiple Choice Tab -->
+            <div class="tab-content" id="multiple-choice">
+                <section class="quiz-section">
+                    <div class="quiz-header">
+                        <h2>Pilihan Ganda (100 poin)</h2>
+                        <p>Pilih jawaban yang paling tepat</p>
+                        <div class="quiz-progress-container">
+                            <div id="quiz-progress"></div>
+                        </div>
+                    </div>
+                    <div id="quiz-container"></div>
+                </section>
+            </div>
+
+            <!-- Navigation -->
+            <div
+                style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 3rem;
+                    padding-top: 2rem;
+                    border-top: 1px solid var(--border);
+                "
+            >
+                <a href="meeting-15.html" class="btn btn-secondary">← Pertemuan 15</a>
+                <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
             </div>
         </div>
-    </header>
 
-    <div class="lesson-container">
-        <div class="exam-header">
-            <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;"><span class="material-symbols-outlined" style="font-size: 24px; vertical-align: middle;">edit_note</span> UAS</h1>
-            <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Ulangan Akhir Semester</h2>
-            <p style="font-size: 1.1rem; opacity: 0.9;">Materi: Pertemuan 1-15 (Semua Materi)</p>
-            <p style="font-size: 1rem; opacity: 0.8; margin-top: 0.5rem;">40 Pilihan Ganda + 10 Essay</p>
-        </div>
+        <!-- Footer -->
+        <footer
+            style="
+                background: var(--bg-secondary);
+                padding: 2rem 0;
+                margin-top: 4rem;
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            "
+        >
+            <div class="container">
+                <p style="color: var(--text-secondary); margin-bottom: 0.5rem">Japanese Course by Ms. Aulia</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem">
+                    Created by
+                    <a
+                        href="https://www.instagram.com/rvldii__/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: var(--primary); text-decoration: none; font-weight: 500"
+                        >Rivaldi</a
+                    >
+                </p>
+            </div>
+        </footer>
 
-        <!-- Exam Timer -->
-        <div class="exam-timer" id="timer">
-            ⏱️ 90:00
-        </div>
+        <script src="../js/speech.js"></script>
+        <script src="../js/romaji.js"></script>
+        <script src="../js/quiz.js"></script>
+        <script>
+            let examStarted = false;
+            let timeLeft = 90 * 60; // 90 minutes in seconds
 
-        <!-- Tab Navigation -->
-        <div class="tabs">
-            <button class="tab active" data-tab="instructions"><span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle;">assignment</span> Petunjuk</button>
-            <button class="tab" data-tab="multiple-choice"><span class="material-symbols-outlined" style="font-size: 20px; vertical-align: middle;">check_circle</span> Pilihan Ganda (40)</button>
-            <button class="tab" data-tab="essay">✍️ Essay (10)</button>
-        </div>
-
-        <!-- Instructions Tab -->
-        <div class="tab-content active" id="instructions">
-            <section class="study-section">
-                <h2>Petunjuk Ujian</h2>
-
-                <div style="background: rgba(124, 58, 237, 0.1); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0;">
-                    <h3 style="color: #7c3aed; margin-bottom: 1rem;">Aturan Ujian:</h3>
-                    <ul style="line-height: 2; margin-left: 1.5rem;">
-                        <li><strong>Waktu:</strong> 90 menit</li>
-                        <li><strong>Bagian A:</strong> 40 soal pilihan ganda (masing-masing 1.5 poin) = 60 poin</li>
-                        <li><strong>Bagian B:</strong> 10 soal essay (masing-masing 4 poin) = 40 poin</li>
-                        <li><strong>Total:</strong> 100 poin</li>
-                        <li><strong>Materi:</strong> Semua materi Pertemuan 1-15</li>
-                    </ul>
-                </div>
-
-                <div style="background: var(--bg-tertiary); padding: 2rem; border-radius: 0.5rem; margin: 2rem 0;">
-                    <h3 style="color: #7c3aed; margin-bottom: 1rem;">Cakupan Materi:</h3>
-                    <ul style="line-height: 2; margin-left: 1.5rem;">
-                        <li>Hiragana & Katakana (Pertemuan 1-4)</li>
-                        <li>Kosakata: Geografi, Hewan, Makanan, Tubuh, Toko (Pertemuan 5, 7)</li>
-                        <li>Grammar: Partikel, KOSOADO, Kata Sifat (Pertemuan 3-4, 6, 10)</li>
-                        <li>Angka, Waktu, Kalender, Counter (Pertemuan 9)</li>
-                        <li>Keberadaan & Lokasi (Pertemuan 10-11)</li>
-                        <li>Kata Kerja: Konjugasi, Dictionary Form (Pertemuan 12-14)</li>
-                        <li>Kanji Dasar (Pertemuan 15)</li>
-                    </ul>
-                </div>
-
-                <div style="text-align: center; margin: 3rem 0;">
-                    <button onclick="startExam()" class="btn btn-primary"
-                        style="font-size: 1.2rem; padding: 1rem 2rem; background: #7c3aed;">
-                        🚀 Mulai Ujian Akhir
-                    </button>
-                </div>
-            </section>
-        </div>
-
-        <!-- Multiple Choice Tab -->
-        <div class="tab-content" id="multiple-choice">
-            <section class="quiz-section">
-                <div class="quiz-header">
-                    <h2>Bagian A: Pilihan Ganda (60 poin)</h2>
-                    <p>Pilih jawaban yang paling tepat</p>
-                    <div class="quiz-progress-container">
-                        <div id="quiz-progress"></div>
-                    </div>
-                </div>
-                <div id="quiz-container"></div>
-            </section>
-        </div>
-
-        <!-- Essay Tab -->
-        <div class="tab-content" id="essay">
-            <section class="study-section">
-                <h2>Bagian B: Essay (40 poin)</h2>
-                <p style="margin-bottom: 2rem;">Jawab pertanyaan berikut dalam bahasa Jepang</p>
-
-                <div class="essay-section">
-                    <div class="essay-question">
-                        <h3 style="color: #7c3aed; margin-bottom: 1rem;">1. Perkenalan Lengkap (4 poin)</h3>
-                        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem;">
-                            じこしょうかいをしてください。なまえ、ねんれい、しゅっしん、しごと、かぞく、しゅみについてかいてください。
-                        </p>
-                                                <div class="answer-mode-toggle">
-                            <button class="mode-btn active" onclick="switchMode(this, 'text', 1)">⌨️ Ketik</button>
-                            <button class="mode-btn" onclick="switchMode(this, 'draw', 1)">✍️ Tulis Tangan</button>
-                        </div>
-                        <div class="answer-container">
-                            <textarea class="essay-answer" id="answer-text-1" placeholder="Tulis jawaban Anda di sini..."></textarea>
-                            <div id="answer-draw-1" style="display: none;">
-                                <canvas class="handwriting-canvas" id="canvas-1"></canvas>
-                                <div class="canvas-controls">
-                                    <button class="canvas-btn clear-canvas" onclick="clearCanvas(1)">🗑️ Hapus</button>
-                                    <button class="canvas-btn" onclick="undoCanvas(1)">↶ Undo</button>
-                                </div>
-                            </div>
-                        </div>></textarea>
-                    </div>
-
-                    <div class="essay-question">
-                        <h3 style="color: #7c3aed; margin-bottom: 1rem;">2. Rutinitas Harian (4 poin)</h3>
-                        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem;">
-                            まいにちのせいかつについてかいてください。なんじにおきますか。あさごはんをたべますか。なんじにはたらきますか。
-                        </p>
-                                                <div class="answer-mode-toggle">
-                            <button class="mode-btn active" onclick="switchMode(this, 'text', 2)">⌨️ Ketik</button>
-                            <button class="mode-btn" onclick="switchMode(this, 'draw', 2)">✍️ Tulis Tangan</button>
-                        </div>
-                        <div class="answer-container">
-                            <textarea class="essay-answer" id="answer-text-2" placeholder="Contoh: まいあさろくじにおきます..."></textarea>
-                            <div id="answer-draw-2" style="display: none;">
-                                <canvas class="handwriting-canvas" id="canvas-2"></canvas>
-                                <div class="canvas-controls">
-                                    <button class="canvas-btn clear-canvas" onclick="clearCanvas(2)">🗑️ Hapus</button>
-                                    <button class="canvas-btn" onclick="undoCanvas(2)">↶ Undo</button>
-                                </div>
-                            </div>
-                        </div>></textarea>
-                    </div>
-
-                    <div class="essay-question">
-                        <h3 style="color: #7c3aed; margin-bottom: 1rem;">3. Kata Sifat (4 poin)</h3>
-                        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem;">
-                            い-けいようしとな-けいようしのちがいをせつめいしてください。それぞれ3つずつれいをかいてください。
-                        </p>
-                                                <div class="answer-mode-toggle">
-                            <button class="mode-btn active" onclick="switchMode(this, 'text', 3)">⌨️ Ketik</button>
-                            <button class="mode-btn" onclick="switchMode(this, 'draw', 3)">✍️ Tulis Tangan</button>
-                        </div>
-                        <div class="answer-container">
-                            <textarea class="essay-answer" id="answer-text-3" placeholder="Tulis jawaban Anda di sini..."></textarea>
-                            <div id="answer-draw-3" style="display: none;">
-                                <canvas class="handwriting-canvas" id="canvas-3"></canvas>
-                                <div class="canvas-controls">
-                                    <button class="canvas-btn clear-canvas" onclick="clearCanvas(3)">🗑️ Hapus</button>
-                                    <button class="canvas-btn" onclick="undoCanvas(3)">↶ Undo</button>
-                                </div>
-                            </div>
-                        </div>></textarea>
-                    </div>
-
-                    <div class="essay-question">
-                        <h3 style="color: #7c3aed; margin-bottom: 1rem;">4. Lokasi & Keberadaan (4 poin)</h3>
-                        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem;">
-                            あなたのへやのなかにあるものを5つかいてください。どこにありますか。「あります」と「います」のちがいもせつめいしてください。
-                        </p>
-                                                <div class="answer-mode-toggle">
-                            <button class="mode-btn active" onclick="switchMode(this, 'text', 4)">⌨️ Ketik</button>
-                            <button class="mode-btn" onclick="switchMode(this, 'draw', 4)">✍️ Tulis Tangan</button>
-                        </div>
-                        <div class="answer-container">
-                            <textarea class="essay-answer" id="answer-text-4" placeholder="Contoh: つくえのうえにほんがあります..."></textarea>
-                            <div id="answer-draw-4" style="display: none;">
-                                <canvas class="handwriting-canvas" id="canvas-4"></canvas>
-                                <div class="canvas-controls">
-                                    <button class="canvas-btn clear-canvas" onclick="clearCanvas(4)">🗑️ Hapus</button>
-                                    <button class="canvas-btn" onclick="undoCanvas(4)">↶ Undo</button>
-                                </div>
-                            </div>
-                        </div>></textarea>
-                    </div>
-
-                    <div class="essay-question">
-                        <h3 style="color: #7c3aed; margin-bottom: 1rem;">5. Partikel (4 poin)</h3>
-                        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem;">
-                            じょし「を」「に」「で」「へ」のつかいかたをせつめいしてください。それぞれれいぶんをかいてください。
-                        </p>
-                                                <div class="answer-mode-toggle">
-                            <button class="mode-btn active" onclick="switchMode(this, 'text', 5)">⌨️ Ketik</button>
-                            <button class="mode-btn" onclick="switchMode(this, 'draw', 5)">✍️ Tulis Tangan</button>
-                        </div>
-                        <div class="answer-container">
-                            <textarea class="essay-answer" id="answer-text-5" placeholder="Tulis jawaban Anda di sini..."></textarea>
-                            <div id="answer-draw-5" style="display: none;">
-                                <canvas class="handwriting-canvas" id="canvas-5"></canvas>
-                                <div class="canvas-controls">
-                                    <button class="canvas-btn clear-canvas" onclick="clearCanvas(5)">🗑️ Hapus</button>
-                                    <button class="canvas-btn" onclick="undoCanvas(5)">↶ Undo</button>
-                                </div>
-                            </div>
-                        </div>></textarea>
-                    </div>
-
-                    <div class="essay-question">
-                        <h3 style="color: #7c3aed; margin-bottom: 1rem;">6. Kata Kerja Lampau (4 poin)</h3>
-                        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem;">
-                            きのうなにをしましたか。5つのぶんをかいてください。（かこけいをつかってください）
-                        </p>
-                                                <div class="answer-mode-toggle">
-                            <button class="mode-btn active" onclick="switchMode(this, 'text', 6)">⌨️ Ketik</button>
-                            <button class="mode-btn" onclick="switchMode(this, 'draw', 6)">✍️ Tulis Tangan</button>
-                        </div>
-                        <div class="answer-container">
-                            <textarea class="essay-answer" id="answer-text-6" placeholder="Contoh: きのうべんきょうしました..."></textarea>
-                            <div id="answer-draw-6" style="display: none;">
-                                <canvas class="handwriting-canvas" id="canvas-6"></canvas>
-                                <div class="canvas-controls">
-                                    <button class="canvas-btn clear-canvas" onclick="clearCanvas(6)">🗑️ Hapus</button>
-                                    <button class="canvas-btn" onclick="undoCanvas(6)">↶ Undo</button>
-                                </div>
-                            </div>
-                        </div>></textarea>
-                    </div>
-
-                    <div class="essay-question">
-                        <h3 style="color: #7c3aed; margin-bottom: 1rem;">7. Ajakan (4 poin)</h3>
-                        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem;">
-                            ともだちをえいがにさそってください。「～ませんか」と「～ましょう」をつかってかいわをつくってください。
-                        </p>
-                                                <div class="answer-mode-toggle">
-                            <button class="mode-btn active" onclick="switchMode(this, 'text', 7)">⌨️ Ketik</button>
-                            <button class="mode-btn" onclick="switchMode(this, 'draw', 7)">✍️ Tulis Tangan</button>
-                        </div>
-                        <div class="answer-container">
-                            <textarea class="essay-answer" id="answer-text-7" placeholder="A: いっしょにえいがをみませんか..."></textarea>
-                            <div id="answer-draw-7" style="display: none;">
-                                <canvas class="handwriting-canvas" id="canvas-7"></canvas>
-                                <div class="canvas-controls">
-                                    <button class="canvas-btn clear-canvas" onclick="clearCanvas(7)">🗑️ Hapus</button>
-                                    <button class="canvas-btn" onclick="undoCanvas(7)">↶ Undo</button>
-                                </div>
-                            </div>
-                        </div>></textarea>
-                    </div>
-
-                    <div class="essay-question">
-                        <h3 style="color: #7c3aed; margin-bottom: 1rem;">8. Angka & Counter (4 poin)</h3>
-                        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem;">
-                            カウンター「～にん」「～つ」「～まい」「～だい」のつかいかたをせつめいしてください。それぞれれいをかいてください。
-                        </p>
-                                                <div class="answer-mode-toggle">
-                            <button class="mode-btn active" onclick="switchMode(this, 'text', 8)">⌨️ Ketik</button>
-                            <button class="mode-btn" onclick="switchMode(this, 'draw', 8)">✍️ Tulis Tangan</button>
-                        </div>
-                        <div class="answer-container">
-                            <textarea class="essay-answer" id="answer-text-8" placeholder="Tulis jawaban Anda di sini..."></textarea>
-                            <div id="answer-draw-8" style="display: none;">
-                                <canvas class="handwriting-canvas" id="canvas-8"></canvas>
-                                <div class="canvas-controls">
-                                    <button class="canvas-btn clear-canvas" onclick="clearCanvas(8)">🗑️ Hapus</button>
-                                    <button class="canvas-btn" onclick="undoCanvas(8)">↶ Undo</button>
-                                </div>
-                            </div>
-                        </div>></textarea>
-                    </div>
-
-                    <div class="essay-question">
-                        <h3 style="color: #7c3aed; margin-bottom: 1rem;">9. Dictionary Form (4 poin)</h3>
-                        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem;">
-                            どうしのじしょけいをせつめいしてください。Group I、II、IIIのちがいはなんですか。
-                        </p>
-                                                <div class="answer-mode-toggle">
-                            <button class="mode-btn active" onclick="switchMode(this, 'text', 9)">⌨️ Ketik</button>
-                            <button class="mode-btn" onclick="switchMode(this, 'draw', 9)">✍️ Tulis Tangan</button>
-                        </div>
-                        <div class="answer-container">
-                            <textarea class="essay-answer" id="answer-text-9" placeholder="Tulis jawaban Anda di sini..."></textarea>
-                            <div id="answer-draw-9" style="display: none;">
-                                <canvas class="handwriting-canvas" id="canvas-9"></canvas>
-                                <div class="canvas-controls">
-                                    <button class="canvas-btn clear-canvas" onclick="clearCanvas(9)">🗑️ Hapus</button>
-                                    <button class="canvas-btn" onclick="undoCanvas(9)">↶ Undo</button>
-                                </div>
-                            </div>
-                        </div>></textarea>
-                    </div>
-
-                    <div class="essay-question">
-                        <h3 style="color: #7c3aed; margin-bottom: 1rem;">10. Kanji (4 poin)</h3>
-                        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem;">
-                            おんよみとくんよみのちがいをせつめいしてください。かんじ「山」「日」「人」のよみかたをかいてください。
-                        </p>
-                                                <div class="answer-mode-toggle">
-                            <button class="mode-btn active" onclick="switchMode(this, 'text', 10)">⌨️ Ketik</button>
-                            <button class="mode-btn" onclick="switchMode(this, 'draw', 10)">✍️ Tulis Tangan</button>
-                        </div>
-                        <div class="answer-container">
-                            <textarea class="essay-answer" id="answer-text-10" placeholder="Tulis jawaban Anda di sini..."></textarea>
-                            <div id="answer-draw-10" style="display: none;">
-                                <canvas class="handwriting-canvas" id="canvas-10"></canvas>
-                                <div class="canvas-controls">
-                                    <button class="canvas-btn clear-canvas" onclick="clearCanvas(10)">🗑️ Hapus</button>
-                                    <button class="canvas-btn" onclick="undoCanvas(10)">↶ Undo</button>
-                                </div>
-                            </div>
-                        </div>></textarea>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Navigation -->
-        <div
-            style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <a href="meeting-15.html" class="btn btn-secondary">← Pertemuan 15</a>
-            <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer
-        style="background: var(--bg-secondary); padding: 2rem 0; margin-top: 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-        <div class="container">
-            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
-                Japanese Course by Ms. Aulia
-            </p>
-            <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                Created by <a href="https://www.instagram.com/rvldii__/" target="_blank" rel="noopener noreferrer"
-                    style="color: var(--primary); text-decoration: none; font-weight: 500;">Rivaldi</a>
-            </p>
-        </div>
-    </footer>
-
-    <script src="../js/speech.js"></script>
-    <script src="../js/romaji.js"></script>
-    <script src="../js/quiz.js"></script>
-    <script>
-        let examStarted = false;
-        let timeLeft = 90 * 60; // 90 minutes in seconds
-
-        // Tab switching
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.tab;
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                document.getElementById(targetTab).classList.add('active');
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    document.getElementById(targetTab).classList.add('active');
+                });
             });
-        });
 
-        function startExam() {
-            examStarted = true;
-            document.querySelector('[data-tab="multiple-choice"]').click();
-            startTimer();
-        }
-
-        function startTimer() {
-            const timerElement = document.getElementById('timer');
-            const interval = setInterval(() => {
-                if (timeLeft <= 0) {
-                    clearInterval(interval);
-                    alert('Waktu habis! Ujian selesai.');
-                    return;
-                }
-                timeLeft--;
-                const minutes = Math.floor(timeLeft / 60);
-                const seconds = timeLeft % 60;
-                timerElement.textContent = `⏱️ ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-                if (timeLeft <= 600) { // Last 10 minutes
-                    timerElement.style.color = '#dc2626';
-                }
-            }, 1000);
-        }
-
-        // UAS Quiz data - 40 comprehensive questions covering all 15 meetings
-        const quizData = {
-            lessonId: 'uas-final',
-            questions: [
-                // Hiragana & Katakana (5 questions)
-                {
-                    question: 'ひらがな「を」のローマじはなんですか。',
-                    options: ['wo', 'o', 'u', 'e'],
-                    correct: 0,
-                    explanation: '「を」のローマじは「wo」です。'
-                },
-                {
-                    question: '「きょう」の「きょ」はなんですか。',
-                    options: ['ちいさい「よ」', 'ちいさい「ゆ」', 'ちいさい「あ」', 'ちいさい「い」'],
-                    correct: 0,
-                    explanation: '「きょう」の「きょ」はちいさい「よ」をつかいます。'
-                },
-                {
-                    question: 'カタカナ「ン」のひらがなはなんですか。',
-                    options: ['ん', 'む', 'ぬ', 'る'],
-                    correct: 0,
-                    explanation: 'カタカナ「ン」のひらがなは「ん」です。'
-                },
-                {
-                    question: '「がっこう」の「っ」はなんですか。',
-                    options: ['ちいさい「つ」', 'ちいさい「く」', 'ちいさい「す」', 'ちいさい「ふ」'],
-                    correct: 0,
-                    explanation: '「っ」はちいさい「つ」です。'
-                },
-                {
-                    question: '「コンピューター」のひらがなはなんですか。',
-                    options: ['こんぴゅーたー', 'こんぴゆうたあ', 'こんぴゅたー', 'こんぴゆたあ'],
-                    correct: 0,
-                    explanation: '「コンピューター」は「こんぴゅーたー」です。'
-                },
-
-                // Grammar & Particles (10 questions)
-                {
-                    question: '「わたし___がくせいです」のただしいじょしはなんですか。',
-                    options: ['は', 'が', 'を', 'に'],
-                    correct: 0,
-                    explanation: '「わたし」はたいしょうです。「は」をつかいます。'
-                },
-                {
-                    question: '「パン___たべます」のただしいじょしはなんですか。',
-                    options: ['を', 'は', 'が', 'に'],
-                    correct: 0,
-                    explanation: '「パン」はたべます。「を」をつかいます。'
-                },
-                {
-                    question: '「がっこう___いきます」のただしいじょしはなんですか。',
-                    options: ['へ', 'を', 'で', 'と'],
-                    correct: 0,
-                    explanation: '「がっこう」はいきます。「へ」をつかいます。'
-                },
-                {
-                    question: '「フォーク___たべます」のただしいじょしはなんですか。',
-                    options: ['で', 'を', 'に', 'へ'],
-                    correct: 0,
-                    explanation: '「フォーク」はたべます。「で」をつかいます。'
-                },
-                {
-                    question: '「くじ___ごじ___はたらきます」のただしいじょしはなんですか。',
-                    options: ['から、まで', 'に、まで', 'から、に', 'まで、から'],
-                    correct: 0,
-                    explanation: '「くじ」から「ごじ」までです。「から」と「まで」をつかいます。'
-                },
-                {
-                    question: '「あれ」はどれですか。',
-                    options: ['とおくのもの', 'ちかくのもの', 'わたしのもの', 'あなたのもの'],
-                    correct: 0,
-                    explanation: '「あれ」はとおくのものです。'
-                },
-                {
-                    question: '「どこ」はなんですか。',
-                    options: ['ばしょ', 'ひと', 'もの', 'じかん'],
-                    correct: 0,
-                    explanation: '「どこ」はばしょです。'
-                },
-                {
-                    question: '「この」はどこにつかいますか。',
-                    options: ['「ほん」のまえ', '「たべます」のまえ', '「いきます」のまえ', '「です」のまえ'],
-                    correct: 0,
-                    explanation: '「この」は「ほん」のまえにつかいます。「このほん」です。'
-                },
-                {
-                    question: '「も」はなんですか。',
-                    options: ['おなじもの', 'ちがうもの', 'あたらしいもの', 'ふるいもの'],
-                    correct: 0,
-                    explanation: '「も」はおなじものです。「わたしも」です。'
-                },
-                {
-                    question: '「わたし___ほん」のただしいじょしはなんですか。',
-                    options: ['の', 'は', 'が', 'を'],
-                    correct: 0,
-                    explanation: '「わたしのほん」です。「の」をつかいます。'
-                },
-
-                // Adjectives (5 questions)
-                {
-                    question: '「おおきい」はなんですか。',
-                    options: ['いがつく', 'ながつく', 'ですがつく', 'ますがつく'],
-                    correct: 0,
-                    explanation: '「おおきい」は「い」がつきます。「い」がつくものです。'
-                },
-                {
-                    question: '「きれい」はなんですか。',
-                    options: ['ながつく', 'いがつく', 'ですがつく', 'ますがつく'],
-                    correct: 0,
-                    explanation: '「きれい」は「な」がつきます。「な」がつくものです。'
-                },
-                {
-                    question: '「おいしい」のむかしはなんですか。',
-                    options: ['おいしかったです', 'おいしいでした', 'おいしかった', 'おいしいました'],
-                    correct: 0,
-                    explanation: 'むかしは「おいしかったです」です。'
-                },
-                {
-                    question: '「ゆうめい」のむかしはなんですか。',
-                    options: ['ゆうめいでした', 'ゆうめいかったです', 'ゆうめいました', 'ゆうめいだった'],
-                    correct: 0,
-                    explanation: 'むかしは「ゆうめいでした」です。'
-                },
-                {
-                    question: '「おおきくないです」はなんですか。',
-                    options: ['おおきくありません', 'とてもおおきいです', 'おおきいです', 'すこしおおきいです'],
-                    correct: 0,
-                    explanation: '「おおきくないです」は「おおきくありません」とおなじです。'
-                },
-
-                // Numbers & Time (5 questions)
-                {
-                    question: '「さんびゃく」はいくつですか。',
-                    options: ['300', '3000', '30', '3'],
-                    correct: 0,
-                    explanation: '「さんびゃく」は300です。'
-                },
-                {
-                    question: '「よじ」はなんじですか。',
-                    options: ['4じ', '3じ', '5じ', '6じ'],
-                    correct: 0,
-                    explanation: '「よじ」は4じです。'
-                },
-                {
-                    question: '「はん」はなんですか。',
-                    options: ['30ふん', '15ふん', '45ふん', '0ふん'],
-                    correct: 0,
-                    explanation: '「はん」は30ふんです。'
-                },
-                {
-                    question: '「ついたち」はなんにちですか。',
-                    options: ['1にち', '2にち', '10にち', '20にち'],
-                    correct: 0,
-                    explanation: '「ついたち」は1にちです。'
-                },
-                {
-                    question: '「げつようび」はなんようびですか。',
-                    options: ['げつようび', 'かようび', 'にちようび', 'どようび'],
-                    correct: 0,
-                    explanation: '「げつようび」はげつようびです。'
-                },
-
-                // Counters (3 questions)
-                {
-                    question: 'ひとをかぞえるとき、なにをつかいますか。',
-                    options: ['にん', 'つ', 'だい', 'まい'],
-                    correct: 0,
-                    explanation: 'ひとは「にん」でかぞえます。ひとり、ふたりです。'
-                },
-                {
-                    question: 'CDをかぞえるとき、なにをつかいますか。',
-                    options: ['まい', 'つ', 'にん', 'だい'],
-                    correct: 0,
-                    explanation: 'CDは「まい」でかぞえます。いちまい、にまいです。'
-                },
-                {
-                    question: 'くるまをかぞえるとき、なにをつかいますか。',
-                    options: ['だい', 'つ', 'にん', 'まい'],
-                    correct: 0,
-                    explanation: 'くるまは「だい」でかぞえます。いちだい、にだいです。'
-                },
-
-                // Existence & Location (4 questions)
-                {
-                    question: 'いきているものはなんですか。',
-                    options: ['ねこ', 'ほん', 'ペン', 'みず'],
-                    correct: 0,
-                    explanation: 'ねこはいきています。「います」をつかいます。'
-                },
-                {
-                    question: '「うえ」のはんたいはなんですか。',
-                    options: ['した', 'みぎ', 'ひだり', 'まえ'],
-                    correct: 0,
-                    explanation: '「うえ」のはんたいは「した」です。'
-                },
-                {
-                    question: '「となり」はなんですか。',
-                    options: ['ちかく', 'うえ', 'した', 'なか'],
-                    correct: 0,
-                    explanation: '「となり」はちかくです。'
-                },
-                {
-                    question: '「なか」はなんですか。',
-                    options: ['ボックスのなか', 'ボックスのうえ', 'ボックスのした', 'ボックスのそと'],
-                    correct: 0,
-                    explanation: '「なか」はボックスのなかです。'
-                },
-
-                // Verbs (5 questions)
-                {
-                    question: '「たべます」のむかしはなんですか。',
-                    options: ['たべました', 'たべません', 'たべましょう', 'たべませんか'],
-                    correct: 0,
-                    explanation: 'むかしは「たべました」です。'
-                },
-                {
-                    question: '「いきませんか」はなんですか。',
-                    options: ['いきましょう', 'いきません', 'いきました', 'いきます'],
-                    correct: 0,
-                    explanation: '「いきませんか」は「いきましょう」のいみです。'
-                },
-                {
-                    question: '「たべましょう」はなんですか。',
-                    options: ['いっしょにたべます', 'たべません', 'たべました', 'たべています'],
-                    correct: 0,
-                    explanation: '「たべましょう」はいっしょにたべます。'
-                },
-                {
-                    question: '「のみます」のじしょはなんですか。',
-                    options: ['のむ', 'のみ', 'のみます', 'のみた'],
-                    correct: 0,
-                    explanation: '「のみます」のじしょは「のむ」です。'
-                },
-                {
-                    question: '「する」はなんですか。',
-                    options: ['べんきょうします', 'たべます', 'のみます', 'きます'],
-                    correct: 0,
-                    explanation: '「する」は「べんきょうします」とおなじです。'
-                },
-
-                // Kanji (3 questions)
-                {
-                    question: '「山」はなんとよみますか。',
-                    options: ['やま', 'さん', 'かわ', 'た'],
-                    correct: 0,
-                    explanation: '「山」は「やま」とよみます。'
-                },
-                {
-                    question: '「日本」はなんとよみますか。',
-                    options: ['にほん', 'ひほん', 'にっぽん', 'ひぽん'],
-                    correct: 0,
-                    explanation: '「日本」は「にほん」とよみます。'
-                },
-                {
-                    question: 'おんよみはどこからきましたか。',
-                    options: ['ちゅうごく', 'にほん', 'かんこく', 'アメリカ'],
-                    correct: 0,
-                    explanation: 'おんよみはちゅうごくからきました。'
-                }
-            ]
-        };
-    </script>
-    <script src="../js/handwriting.js"></script>
-    <script>
-        // Mode switching function
-        function switchMode(btn, mode, questionNum) {
-            const parent = btn.parentElement;
-            const buttons = parent.querySelectorAll('.mode-btn');
-            buttons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const textArea = document.getElementById(`answer-text-${questionNum}`);
-            const drawArea = document.getElementById(`answer-draw-${questionNum}`);
-            
-            if (mode === 'text') {
-                if (textArea) textArea.style.display = 'block';
-                if (drawArea) drawArea.style.display = 'none';
-            } else {
-                if (textArea) textArea.style.display = 'none';
-                if (drawArea) drawArea.style.display = 'block';
-                // Initialize canvas if not already done
-                const canvas = document.getElementById(`canvas-${questionNum}`);
-                if (canvas && !canvas.dataset.initialized) {
-                    new HandwritingCanvas(`canvas-${questionNum}`);
-                    canvas.dataset.initialized = 'true';
-                }
+            function startExam() {
+                examStarted = true;
+                document.querySelector('[data-tab="multiple-choice"]').click();
+                startTimer();
             }
-        }
-        
-        // Canvas control functions
-        function clearCanvas(questionNum) {
-            const canvas = document.getElementById(`canvas-${questionNum}`);
-            if (canvas) {
-                const ctx = canvas.getContext('2d');
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                drawGrid(canvas);
-            }
-        }
-        
-        function undoCanvas(questionNum) {
-            clearCanvas(questionNum);
-        }
-        
-        function drawGrid(canvas) {
-            const ctx = canvas.getContext('2d');
-            const gridSize = 40;
-            ctx.strokeStyle = '#e5e7eb';
-            ctx.lineWidth = 1;
-            
-            for (let x = 0; x <= canvas.width; x += gridSize) {
-                ctx.beginPath();
-                ctx.moveTo(x, 0);
-                ctx.lineTo(x, canvas.height);
-                ctx.stroke();
-            }
-            
-            for (let y = 0; y <= canvas.height; y += gridSize) {
-                ctx.beginPath();
-                ctx.moveTo(0, y);
-                ctx.lineTo(canvas.width, y);
-                ctx.stroke();
-            }
-        }
-    </script>
-</body>
 
+            function startTimer() {
+                const timerElement = document.getElementById('timer');
+                const interval = setInterval(() => {
+                    if (timeLeft <= 0) {
+                        clearInterval(interval);
+                        alert('Waktu habis! Ujian selesai.');
+                        return;
+                    }
+                    timeLeft--;
+                    const minutes = Math.floor(timeLeft / 60);
+                    const seconds = timeLeft % 60;
+                    timerElement.textContent = `⏱️ ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                    if (timeLeft <= 600) {
+                        // Last 10 minutes
+                        timerElement.style.color = '#dc2626';
+                    }
+                }, 1000);
+            }
+
+            // UAS Quiz data - 40 comprehensive questions covering all 15 meetings
+            const quizData = {
+                lessonId: 'uas-final',
+                questions: [
+                    // Hiragana & Katakana (5 questions)
+                    {
+                        question: 'ひらがな「を」のローマじはなんですか。',
+                        options: ['wo', 'o', 'u', 'e'],
+                        correct: 0,
+                        explanation: '「を」のローマじは「wo」です。',
+                    },
+                    {
+                        question: '「きょう」の「きょ」はなんですか。',
+                        options: ['ちいさい「よ」', 'ちいさい「ゆ」', 'ちいさい「あ」', 'ちいさい「い」'],
+                        correct: 0,
+                        explanation: '「きょう」の「きょ」はちいさい「よ」をつかいます。',
+                    },
+                    {
+                        question: 'カタカナ「ン」のひらがなはなんですか。',
+                        options: ['ん', 'む', 'ぬ', 'る'],
+                        correct: 0,
+                        explanation: 'カタカナ「ン」のひらがなは「ん」です。',
+                    },
+                    {
+                        question: '「がっこう」の「っ」はなんですか。',
+                        options: ['ちいさい「つ」', 'ちいさい「く」', 'ちいさい「す」', 'ちいさい「ふ」'],
+                        correct: 0,
+                        explanation: '「っ」はちいさい「つ」です。',
+                    },
+                    {
+                        question: '「コンピューター」のひらがなはなんですか。',
+                        options: ['こんぴゅーたー', 'こんぴゆうたあ', 'こんぴゅたー', 'こんぴゆたあ'],
+                        correct: 0,
+                        explanation: '「コンピューター」は「こんぴゅーたー」です。',
+                    },
+
+                    // Grammar & Particles (10 questions)
+                    {
+                        question: '「わたし___がくせいです」のただしいじょしはなんですか。',
+                        options: ['は', 'が', 'を', 'に'],
+                        correct: 0,
+                        explanation: '「わたし」はたいしょうです。「は」をつかいます。',
+                    },
+                    {
+                        question: '「パン___たべます」のただしいじょしはなんですか。',
+                        options: ['を', 'は', 'が', 'に'],
+                        correct: 0,
+                        explanation: '「パン」はたべます。「を」をつかいます。',
+                    },
+                    {
+                        question: '「がっこう___いきます」のただしいじょしはなんですか。',
+                        options: ['へ', 'を', 'で', 'と'],
+                        correct: 0,
+                        explanation: '「がっこう」はいきます。「へ」をつかいます。',
+                    },
+                    {
+                        question: '「フォーク___たべます」のただしいじょしはなんですか。',
+                        options: ['で', 'を', 'に', 'へ'],
+                        correct: 0,
+                        explanation: '「フォーク」はたべます。「で」をつかいます。',
+                    },
+                    {
+                        question: '「くじ___ごじ___はたらきます」のただしいじょしはなんですか。',
+                        options: ['から、まで', 'に、まで', 'から、に', 'まで、から'],
+                        correct: 0,
+                        explanation: '「くじ」から「ごじ」までです。「から」と「まで」をつかいます。',
+                    },
+                    {
+                        question: '「あれ」はどれですか。',
+                        options: ['とおくのもの', 'ちかくのもの', 'わたしのもの', 'あなたのもの'],
+                        correct: 0,
+                        explanation: '「あれ」はとおくのものです。',
+                    },
+                    {
+                        question: '「どこ」はなんですか。',
+                        options: ['ばしょ', 'ひと', 'もの', 'じかん'],
+                        correct: 0,
+                        explanation: '「どこ」はばしょです。',
+                    },
+                    {
+                        question: '「この」はどこにつかいますか。',
+                        options: ['「ほん」のまえ', '「たべます」のまえ', '「いきます」のまえ', '「です」のまえ'],
+                        correct: 0,
+                        explanation: '「この」は「ほん」のまえにつかいます。「このほん」です。',
+                    },
+                    {
+                        question: '「も」はなんですか。',
+                        options: ['おなじもの', 'ちがうもの', 'あたらしいもの', 'ふるいもの'],
+                        correct: 0,
+                        explanation: '「も」はおなじものです。「わたしも」です。',
+                    },
+                    {
+                        question: '「わたし___ほん」のただしいじょしはなんですか。',
+                        options: ['の', 'は', 'が', 'を'],
+                        correct: 0,
+                        explanation: '「わたしのほん」です。「の」をつかいます。',
+                    },
+
+                    // Adjectives (5 questions)
+                    {
+                        question: '「おおきい」はなんですか。',
+                        options: ['いがつく', 'ながつく', 'ですがつく', 'ますがつく'],
+                        correct: 0,
+                        explanation: '「おおきい」は「い」がつきます。「い」がつくものです。',
+                    },
+                    {
+                        question: '「きれい」はなんですか。',
+                        options: ['ながつく', 'いがつく', 'ですがつく', 'ますがつく'],
+                        correct: 0,
+                        explanation: '「きれい」は「な」がつきます。「な」がつくものです。',
+                    },
+                    {
+                        question: '「おいしい」のむかしはなんですか。',
+                        options: ['おいしかったです', 'おいしいでした', 'おいしかった', 'おいしいました'],
+                        correct: 0,
+                        explanation: 'むかしは「おいしかったです」です。',
+                    },
+                    {
+                        question: '「ゆうめい」のむかしはなんですか。',
+                        options: ['ゆうめいでした', 'ゆうめいかったです', 'ゆうめいました', 'ゆうめいだった'],
+                        correct: 0,
+                        explanation: 'むかしは「ゆうめいでした」です。',
+                    },
+                    {
+                        question: '「おおきくないです」はなんですか。',
+                        options: ['おおきくありません', 'とてもおおきいです', 'おおきいです', 'すこしおおきいです'],
+                        correct: 0,
+                        explanation: '「おおきくないです」は「おおきくありません」とおなじです。',
+                    },
+
+                    // Numbers & Time (5 questions)
+                    {
+                        question: '「さんびゃく」はいくつですか。',
+                        options: ['300', '3000', '30', '3'],
+                        correct: 0,
+                        explanation: '「さんびゃく」は300です。',
+                    },
+                    {
+                        question: '「よじ」はなんじですか。',
+                        options: ['4じ', '3じ', '5じ', '6じ'],
+                        correct: 0,
+                        explanation: '「よじ」は4じです。',
+                    },
+                    {
+                        question: '「はん」はなんですか。',
+                        options: ['30ふん', '15ふん', '45ふん', '0ふん'],
+                        correct: 0,
+                        explanation: '「はん」は30ふんです。',
+                    },
+                    {
+                        question: '「ついたち」はなんにちですか。',
+                        options: ['1にち', '2にち', '10にち', '20にち'],
+                        correct: 0,
+                        explanation: '「ついたち」は1にちです。',
+                    },
+                    {
+                        question: '「げつようび」はなんようびですか。',
+                        options: ['げつようび', 'かようび', 'にちようび', 'どようび'],
+                        correct: 0,
+                        explanation: '「げつようび」はげつようびです。',
+                    },
+
+                    // Counters (3 questions)
+                    {
+                        question: 'ひとをかぞえるとき、なにをつかいますか。',
+                        options: ['にん', 'つ', 'だい', 'まい'],
+                        correct: 0,
+                        explanation: 'ひとは「にん」でかぞえます。ひとり、ふたりです。',
+                    },
+                    {
+                        question: 'CDをかぞえるとき、なにをつかいますか。',
+                        options: ['まい', 'つ', 'にん', 'だい'],
+                        correct: 0,
+                        explanation: 'CDは「まい」でかぞえます。いちまい、にまいです。',
+                    },
+                    {
+                        question: 'くるまをかぞえるとき、なにをつかいますか。',
+                        options: ['だい', 'つ', 'にん', 'まい'],
+                        correct: 0,
+                        explanation: 'くるまは「だい」でかぞえます。いちだい、にだいです。',
+                    },
+
+                    // Existence & Location (4 questions)
+                    {
+                        question: 'いきているものはなんですか。',
+                        options: ['ねこ', 'ほん', 'ペン', 'みず'],
+                        correct: 0,
+                        explanation: 'ねこはいきています。「います」をつかいます。',
+                    },
+                    {
+                        question: '「うえ」のはんたいはなんですか。',
+                        options: ['した', 'みぎ', 'ひだり', 'まえ'],
+                        correct: 0,
+                        explanation: '「うえ」のはんたいは「した」です。',
+                    },
+                    {
+                        question: '「となり」はなんですか。',
+                        options: ['ちかく', 'うえ', 'した', 'なか'],
+                        correct: 0,
+                        explanation: '「となり」はちかくです。',
+                    },
+                    {
+                        question: '「なか」はなんですか。',
+                        options: ['ボックスのなか', 'ボックスのうえ', 'ボックスのした', 'ボックスのそと'],
+                        correct: 0,
+                        explanation: '「なか」はボックスのなかです。',
+                    },
+
+                    // Verbs (5 questions)
+                    {
+                        question: '「たべます」のむかしはなんですか。',
+                        options: ['たべました', 'たべません', 'たべましょう', 'たべませんか'],
+                        correct: 0,
+                        explanation: 'むかしは「たべました」です。',
+                    },
+                    {
+                        question: '「いきませんか」はなんですか。',
+                        options: ['いきましょう', 'いきません', 'いきました', 'いきます'],
+                        correct: 0,
+                        explanation: '「いきませんか」は「いきましょう」のいみです。',
+                    },
+                    {
+                        question: '「たべましょう」はなんですか。',
+                        options: ['いっしょにたべます', 'たべません', 'たべました', 'たべています'],
+                        correct: 0,
+                        explanation: '「たべましょう」はいっしょにたべます。',
+                    },
+                    {
+                        question: '「のみます」のじしょはなんですか。',
+                        options: ['のむ', 'のみ', 'のみます', 'のみた'],
+                        correct: 0,
+                        explanation: '「のみます」のじしょは「のむ」です。',
+                    },
+                    {
+                        question: '「する」はなんですか。',
+                        options: ['べんきょうします', 'たべます', 'のみます', 'きます'],
+                        correct: 0,
+                        explanation: '「する」は「べんきょうします」とおなじです。',
+                    },
+
+                    // Kanji (3 questions)
+                    {
+                        question: '「山」はなんとよみますか。',
+                        options: ['やま', 'さん', 'かわ', 'た'],
+                        correct: 0,
+                        explanation: '「山」は「やま」とよみます。',
+                    },
+                    {
+                        question: '「日本」はなんとよみますか。',
+                        options: ['にほん', 'ひほん', 'にっぽん', 'ひぽん'],
+                        correct: 0,
+                        explanation: '「日本」は「にほん」とよみます。',
+                    },
+                    {
+                        question: 'おんよみはどこからきましたか。',
+                        options: ['ちゅうごく', 'にほん', 'かんこく', 'アメリカ'],
+                        correct: 0,
+                        explanation: 'おんよみはちゅうごくからきました。',
+                    },
+                ],
+            };
+        </script>
+    </body>
 </html>
