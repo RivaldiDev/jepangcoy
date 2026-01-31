@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="../css/lesson.css" />
         <link rel="stylesheet" href="../css/tabs.css" />
         <link rel="stylesheet" href="../css/romaji.css" />
+        <link rel="stylesheet" href="../css/dragdrop.css" />
         <style>
             .exam-header {
                 background: linear-gradient(135deg, #dc2626, #991b1b);
@@ -116,6 +117,14 @@
                     </svg>
                     Pilihan Ganda (25)
                 </button>
+                <button class="tab" data-tab="drag-drop">
+                    <svg class="inline-block" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 14a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"
+                        />
+                    </svg>
+                    Susun Kata (10)
+                </button>
             </div>
 
             <!-- Instructions Tab -->
@@ -177,6 +186,20 @@
                         </div>
                     </div>
                     <div id="quiz-container"></div>
+                </section>
+            </div>
+
+            <!-- Drag and Drop Tab -->
+            <div class="tab-content" id="drag-drop">
+                <section class="quiz-section">
+                    <div class="quiz-header">
+                        <h2>Soal Susun Kata (100 poin)</h2>
+                        <p>Susun kata-kata menjadi kalimat yang benar</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem">
+                            Petunjuk: Tarik kata dari kotak bawah ke area kosong di atas untuk membuat kalimat
+                        </p>
+                    </div>
+                    <div id="dragdrop-container" class="drag-drop-container"></div>
                 </section>
             </div>
 
@@ -427,6 +450,92 @@
                     },
                 ],
             };
+        </script>
+
+        <script src="../js/dragdrop.js"></script>
+        <script>
+            // Drag and Drop Exercises for UTS
+            const dragDropExercises = [
+                {
+                    prompt: 'Saya adalah pelajar',
+                    translation: 'わたしはがくせいです',
+                    words: ['わたし', 'は', 'がくせい', 'です', 'が', 'の', 'も'],
+                    correct: 'わたしはがくせいです',
+                    explanation: 'Polanya adalah: わたし (saya) + は (partikel) + がくせい (pelajar) + です',
+                },
+                {
+                    prompt: 'Ini adalah buku',
+                    translation: 'これはほんです',
+                    words: ['これ', 'は', 'ほん', 'です', 'が', 'を', 'に'],
+                    correct: 'これはほんです',
+                    explanation: 'Polanya adalah: これ (ini) + は (partikel) + ほん (buku) + です',
+                },
+                {
+                    prompt: 'Saya makan apel',
+                    translation: 'わたしはりんごをたべます',
+                    words: ['わたし', 'は', 'りんご', 'を', 'たべます', 'が', 'に', 'で'],
+                    correct: 'わたしはりんごをたべます',
+                    explanation: 'Polanya adalah: わたしは (saya) + りんごを (apel) + たべます (makan)',
+                },
+                {
+                    prompt: 'Saya pergi ke sekolah',
+                    translation: 'わたしはがっこうへいきます',
+                    words: ['わたし', 'は', 'がっこう', 'へ', 'いきます', 'に', 'を', 'で'],
+                    correct: 'わたしはがっこうへいきます',
+                    explanation: 'Polanya adalah: わたしは (saya) + がっこうへ (ke sekolah) + いきます (pergi)',
+                },
+                {
+                    prompt: 'Apakah ini pena?',
+                    translation: 'これはペンですか',
+                    words: ['これ', 'は', 'ペン', 'です', 'か', 'が', 'を'],
+                    correct: 'これはペンですか',
+                    explanation: 'Polanya adalah: これは (ini) + ペン (pena) + ですか? (apakah?)',
+                },
+                {
+                    prompt: 'Itu adalah rumah saya',
+                    translation: 'それはわたしのいえです',
+                    words: ['それ', 'は', 'わたし', 'の', 'いえ', 'です', 'が', 'を'],
+                    correct: 'それはわたしのいえです',
+                    explanation: 'Polanya adalah: それは (itu) + わたしの (saya punya) + いえ (rumah) + です',
+                },
+                {
+                    prompt: 'Saya minum kopi di kafe',
+                    translation: 'わたしはカフェでコーヒーをのみます',
+                    words: ['わたし', 'は', 'カフェ', 'で', 'コーヒー', 'を', 'のみます', 'へ', 'に'],
+                    correct: 'わたしはカフェでコーヒーをのみます',
+                    explanation:
+                        'Polanya adalah: わたしは (saya) + カフェで (di kafe) + コーヒーを (kopi) + のみます (minum)',
+                },
+                {
+                    prompt: 'Apa ini?',
+                    translation: 'これはなんですか',
+                    words: ['これ', 'は', 'なん', 'です', 'か', 'が', 'に'],
+                    correct: 'これはなんですか',
+                    explanation: 'Polanya adalah: これは (ini) + なん (apa) + ですか? (apakah?)',
+                },
+                {
+                    prompt: 'Saya juga pelajar',
+                    translation: 'わたしもがくせいです',
+                    words: ['わたし', 'も', 'がくせい', 'です', 'は', 'が', 'を'],
+                    correct: 'わたしもがくせいです',
+                    explanation: "Gunakan も untuk 'juga': わたしも (saya juga) + がくせい (pelajar) + です",
+                },
+                {
+                    prompt: 'Ini bukan pensil',
+                    translation: 'これはえんぴつじゃないです',
+                    words: ['これ', 'は', 'えんぴつ', 'じゃない', 'です', 'が', 'を', 'に'],
+                    correct: 'これはえんぴつじゃないです',
+                    explanation: 'Untuk negatif: これは (ini) + えんぴつ (pensil) + じゃないです (bukan)',
+                },
+            ];
+
+            // Initialize drag-drop quiz when tab is clicked
+            document.querySelector('[data-tab="drag-drop"]').addEventListener('click', () => {
+                if (!window.dragDropQuiz) {
+                    window.dragDropQuiz = new DragDropQuiz('dragdrop-container', dragDropExercises);
+                    window.dragDropQuiz.init();
+                }
+            });
         </script>
     </body>
 </html>

@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="../css/lesson.css" />
         <link rel="stylesheet" href="../css/tabs.css" />
         <link rel="stylesheet" href="../css/romaji.css" />
+        <link rel="stylesheet" href="../css/dragdrop.css" />
         <style>
             .exam-header {
                 background: linear-gradient(135deg, #7c3aed, #5b21b6);
@@ -100,6 +101,10 @@
                     >
                     Pilihan Ganda (40)
                 </button>
+                <button class="tab" data-tab="drag-drop">
+                    <span class="material-symbols-outlined">drag_indicator</span>
+                    Susun Kata (10)
+                </button>
             </div>
 
             <!-- Instructions Tab -->
@@ -152,6 +157,20 @@
                 </section>
             </div>
 
+            <!-- Drag and Drop Tab -->
+            <div class="tab-content" id="drag-drop">
+                <section class="quiz-section">
+                    <div class="quiz-header">
+                        <h2>Soal Susun Kata (100 poin)</h2>
+                        <p>Susun kata-kata menjadi kalimat yang benar</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem">
+                            Petunjuk: Tarik kata dari kotak bawah ke area kosong di atas untuk membuat kalimat
+                        </p>
+                    </div>
+                    <div id="dragdrop-container" class="drag-drop-container"></div>
+                </section>
+            </div>
+
             <!-- Navigation -->
             <div
                 style="
@@ -195,6 +214,7 @@
         <script src="../js/speech.js"></script>
         <script src="../js/romaji.js"></script>
         <script src="../js/quiz.js"></script>
+        <script src="../js/dragdrop.js"></script>
         <script>
             let examStarted = false;
             let timeLeft = 90 * 60; // 90 minutes in seconds
@@ -235,6 +255,355 @@
                     }
                 }, 1000);
             }
+
+            // UAS Quiz data - 40 comprehensive questions covering all 15 meetings
+            const quizData = {
+                lessonId: 'uas-final',
+                questions: [
+                    // Hiragana & Katakana (5 questions)
+                    {
+                        question: 'ひらがな「を」のローマじはなんですか。',
+                        options: ['wo', 'o', 'u', 'e'],
+                        correct: 0,
+                        explanation: '「を」のローマじは「wo」です。',
+                    },
+                    {
+                        question: '「きょう」の「きょ」はなんですか。',
+                        options: ['ちいさい「よ」', 'ちいさい「ゆ」', 'ちいさい「あ」', 'ちいさい「い」'],
+                        correct: 0,
+                        explanation: '「きょう」の「きょ」はちいさい「よ」をつかいます。',
+                    },
+                    {
+                        question: 'カタカナ「ン」のひらがなはなんですか。',
+                        options: ['ん', 'む', 'ぬ', 'る'],
+                        correct: 0,
+                        explanation: 'カタカナ「ン」のひらがなは「ん」です。',
+                    },
+                    {
+                        question: '「がっこう」の「っ」はなんですか。',
+                        options: ['ちいさい「つ」', 'ちいさい「く」', 'ちいさい「す」', 'ちいさい「ふ」'],
+                        correct: 0,
+                        explanation: '「っ」はちいさい「つ」です。',
+                    },
+                    {
+                        question: '「コンピューター」のひらがなはなんですか。',
+                        options: ['こんぴゅーたー', 'こんぴゆうたあ', 'こんぴゅたー', 'こんぴゆたあ'],
+                        correct: 0,
+                        explanation: '「コンピューター」は「こんぴゅーたー」です。',
+                    },
+
+                    // Grammar & Particles (10 questions)
+                    {
+                        question: '「わたし___がくせいです」のただしいじょしはなんですか。',
+                        options: ['は', 'が', 'を', 'に'],
+                        correct: 0,
+                        explanation: '「わたし」はたいしょうです。「は」をつかいます。',
+                    },
+                    {
+                        question: '「パン___たべます」のただしいじょしはなんですか。',
+                        options: ['を', 'は', 'が', 'に'],
+                        correct: 0,
+                        explanation: '「パン」はたべます。「を」をつかいます。',
+                    },
+                    {
+                        question: '「がっこう___いきます」のただしいじょしはなんですか。',
+                        options: ['へ', 'を', 'で', 'と'],
+                        correct: 0,
+                        explanation: '「がっこう」はいきます。「へ」をつかいます。',
+                    },
+                    {
+                        question: '「フォーク___たべます」のただしいじょしはなんですか。',
+                        options: ['で', 'を', 'に', 'へ'],
+                        correct: 0,
+                        explanation: '「フォーク」はたべます。「で」をつかいます。',
+                    },
+                    {
+                        question: '「くじ___ごじ___はたらきます」のただしいじょしはなんですか。',
+                        options: ['から、まで', 'に、まで', 'から、に', 'まで、から'],
+                        correct: 0,
+                        explanation: '「くじ」から「ごじ」までです。「から」と「まで」をつかいます。',
+                    },
+                    {
+                        question: '「あれ」はどれですか。',
+                        options: ['とおくのもの', 'ちかくのもの', 'わたしのもの', 'あなたのもの'],
+                        correct: 0,
+                        explanation: '「あれ」はとおくのものです。',
+                    },
+                    {
+                        question: '「どこ」はなんですか。',
+                        options: ['ばしょ', 'ひと', 'もの', 'じかん'],
+                        correct: 0,
+                        explanation: '「どこ」はばしょです。',
+                    },
+                    {
+                        question: '「この」はどこにつかいますか。',
+                        options: ['「ほん」のまえ', '「たべます」のまえ', '「いきます」のまえ', '「です」のまえ'],
+                        correct: 0,
+                        explanation: '「この」は「ほん」のまえにつかいます。「このほん」です。',
+                    },
+                    {
+                        question: '「も」はなんですか。',
+                        options: ['おなじもの', 'ちがうもの', 'あたらしいもの', 'ふるいもの'],
+                        correct: 0,
+                        explanation: '「も」はおなじものです。「わたしも」です。',
+                    },
+                    {
+                        question: '「わたし___ほん」のただしいじょしはなんですか。',
+                        options: ['の', 'は', 'が', 'を'],
+                        correct: 0,
+                        explanation: '「わたしのほん」です。「の」をつかいます。',
+                    },
+
+                    // Adjectives (5 questions)
+                    {
+                        question: '「おおきい」はなんですか。',
+                        options: ['いがつく', 'ながつく', 'ですがつく', 'ますがつく'],
+                        correct: 0,
+                        explanation: '「おおきい」は「い」がつきます。「い」がつくものです。',
+                    },
+                    {
+                        question: '「きれい」はなんですか。',
+                        options: ['ながつく', 'いがつく', 'ですがつく', 'ますがつく'],
+                        correct: 0,
+                        explanation: '「きれい」は「な」がつきます。「な」がつくものです。',
+                    },
+                    {
+                        question: '「おいしい」のむかしはなんですか。',
+                        options: ['おいしかったです', 'おいしいでした', 'おいしかった', 'おいしいました'],
+                        correct: 0,
+                        explanation: 'むかしは「おいしかったです」です。',
+                    },
+                    {
+                        question: '「ゆうめい」のむかしはなんですか。',
+                        options: ['ゆうめいでした', 'ゆうめいかったです', 'ゆうめいました', 'ゆうめいだった'],
+                        correct: 0,
+                        explanation: 'むかしは「ゆうめいでした」です。',
+                    },
+                    {
+                        question: '「おおきくないです」はなんですか。',
+                        options: ['おおきくありません', 'とてもおおきいです', 'おおきいです', 'すこしおおきいです'],
+                        correct: 0,
+                        explanation: '「おおきくないです」は「おおきくありません」とおなじです。',
+                    },
+
+                    // Numbers & Time (5 questions)
+                    {
+                        question: '「さんびゃく」はいくつですか。',
+                        options: ['300', '3000', '30', '3'],
+                        correct: 0,
+                        explanation: '「さんびゃく」は300です。',
+                    },
+                    {
+                        question: '「よじ」はなんじですか。',
+                        options: ['4じ', '3じ', '5じ', '6じ'],
+                        correct: 0,
+                        explanation: '「よじ」は4じです。',
+                    },
+                    {
+                        question: '「はん」はなんですか。',
+                        options: ['30ふん', '15ふん', '45ふん', '0ふん'],
+                        correct: 0,
+                        explanation: '「はん」は30ふんです。',
+                    },
+                    {
+                        question: '「ついたち」はなんにちですか。',
+                        options: ['1にち', '2にち', '10にち', '20にち'],
+                        correct: 0,
+                        explanation: '「ついたち」は1にちです。',
+                    },
+                    {
+                        question: '「げつようび」はなんようびですか。',
+                        options: ['げつようび', 'かようび', 'にちようび', 'どようび'],
+                        correct: 0,
+                        explanation: '「げつようび」はげつようびです。',
+                    },
+
+                    // Counters (3 questions)
+                    {
+                        question: 'ひとをかぞえるとき、なにをつかいますか。',
+                        options: ['にん', 'つ', 'だい', 'まい'],
+                        correct: 0,
+                        explanation: 'ひとは「にん」でかぞえます。ひとり、ふたりです。',
+                    },
+                    {
+                        question: 'CDをかぞえるとき、なにをつかいますか。',
+                        options: ['まい', 'つ', 'にん', 'だい'],
+                        correct: 0,
+                        explanation: 'CDは「まい」でかぞえます。いちまい、にまいです。',
+                    },
+                    {
+                        question: 'くるまをかぞえるとき、なにをつかいますか。',
+                        options: ['だい', 'つ', 'にん', 'まい'],
+                        correct: 0,
+                        explanation: 'くるまは「だい」でかぞえます。いちだい、にだいです。',
+                    },
+
+                    // Existence & Location (4 questions)
+                    {
+                        question: 'いきているものはなんですか。',
+                        options: ['ねこ', 'ほん', 'ペン', 'みず'],
+                        correct: 0,
+                        explanation: 'ねこはいきています。「います」をつかいます。',
+                    },
+                    {
+                        question: '「うえ」のはんたいはなんですか。',
+                        options: ['した', 'みぎ', 'ひだり', 'まえ'],
+                        correct: 0,
+                        explanation: '「うえ」のはんたいは「した」です。',
+                    },
+                    {
+                        question: '「となり」はなんですか。',
+                        options: ['ちかく', 'うえ', 'した', 'なか'],
+                        correct: 0,
+                        explanation: '「となり」はちかくです。',
+                    },
+                    {
+                        question: '「なか」はなんですか。',
+                        options: ['ボックスのなか', 'ボックスのうえ', 'ボックスのした', 'ボックスのそと'],
+                        correct: 0,
+                        explanation: '「なか」はボックスのなかです。',
+                    },
+
+                    // Verbs (5 questions)
+                    {
+                        question: '「たべます」のむかしはなんですか。',
+                        options: ['たべました', 'たべません', 'たべましょう', 'たべませんか'],
+                        correct: 0,
+                        explanation: 'むかしは「たべました」です。',
+                    },
+                    {
+                        question: '「いきませんか」はなんですか。',
+                        options: ['いきましょう', 'いきません', 'いきました', 'いきます'],
+                        correct: 0,
+                        explanation: '「いきませんか」は「いきましょう」のいみです。',
+                    },
+                    {
+                        question: '「たべましょう」はなんですか。',
+                        options: ['いっしょにたべます', 'たべません', 'たべました', 'たべています'],
+                        correct: 0,
+                        explanation: '「たべましょう」はいっしょにたべます。',
+                    },
+                    {
+                        question: '「のみます」のじしょはなんですか。',
+                        options: ['のむ', 'のみ', 'のみます', 'のみた'],
+                        correct: 0,
+                        explanation: '「のみます」のじしょは「のむ」です。',
+                    },
+                    {
+                        question: '「する」はなんですか。',
+                        options: ['べんきょうします', 'たべます', 'のみます', 'きます'],
+                        correct: 0,
+                        explanation: '「する」は「べんきょうします」とおなじです。',
+                    },
+
+                    // Kanji (3 questions)
+                    {
+                        question: '「山」はなんとよみますか。',
+                        options: ['やま', 'さん', 'かわ', 'た'],
+                        correct: 0,
+                        explanation: '「山」は「やま」とよみます。',
+                    },
+                    {
+                        question: '「日本」はなんとよみますか。',
+                        options: ['にほん', 'ひほん', 'にっぽん', 'ひぽん'],
+                        correct: 0,
+                        explanation: '「日本」は「にほん」とよみます。',
+                    },
+                    {
+                        question: 'おんよみはどこからきましたか。',
+                        options: ['ちゅうごく', 'にほん', 'かんこく', 'アメリカ'],
+                        correct: 0,
+                        explanation: 'おんよみはちゅうごくからきました。',
+                    },
+                ],
+            };
+
+            // Drag and Drop Exercises for UAS
+            const dragDropExercises = [
+                {
+                    prompt: 'Saya akan makan sushi besok',
+                    translation: 'わたしはあしたすしをたべます',
+                    words: ['わたし', 'は', 'あした', 'すし', 'を', 'たべます', 'が', 'に', 'で'],
+                    correct: 'わたしはあしたすしをたべます',
+                    explanation: 'Polanya: わたしは (saya) + あした (besok) + すしを (sushi) + たべます (akan makan)',
+                },
+                {
+                    prompt: 'Apakah kamu suka musik?',
+                    translation: 'あなたはおんがくがすきですか',
+                    words: ['あなた', 'は', 'おんがく', 'が', 'すき', 'です', 'か', 'を', 'に'],
+                    correct: 'あなたはおんがくがすきですか',
+                    explanation: 'Polanya: あなたは (kamu) + おんがくが (musik) + すき (suka) + ですか? (apakah?)',
+                },
+                {
+                    prompt: 'Saya bangun jam 7 pagi',
+                    translation: 'わたしはしちじにおきます',
+                    words: ['わたし', 'は', 'しちじ', 'に', 'おきます', 'へ', 'を', 'が'],
+                    correct: 'わたしはしちじにおきます',
+                    explanation: 'Polanya: わたしは (saya) + しちじに (jam 7) + おきます (bangun)',
+                },
+                {
+                    prompt: 'Film itu sangat menarik',
+                    translation: 'そのえいがはとてもおもしろいです',
+                    words: ['その', 'えいが', 'は', 'とても', 'おもしろい', 'です', 'が', 'を', 'に'],
+                    correct: 'そのえいがはとてもおもしろいです',
+                    explanation: 'Polanya: そのえいがは (film itu) + とても (sangat) + おもしろい (menarik) + です',
+                },
+                {
+                    prompt: 'Saya belajar bahasa Jepang setiap hari',
+                    translation: 'わたしはまいにちにほんごをべんきょうします',
+                    words: ['わたし', 'は', 'まいにち', 'にほんご', 'を', 'べんきょうします', 'に', 'が', 'で'],
+                    correct: 'わたしはまいにちにほんごをべんきょうします',
+                    explanation:
+                        'Polanya: わたしは (saya) + まいにち (setiap hari) + にほんごを (bahasa Jepang) + べんきょうします (belajar)',
+                },
+                {
+                    prompt: 'Di meja ada komputer',
+                    translation: 'つくえのうえにコンピューターがあります',
+                    words: ['つくえ', 'の', 'うえ', 'に', 'コンピューター', 'が', 'あります', 'は', 'を'],
+                    correct: 'つくえのうえにコンピューターがあります',
+                    explanation:
+                        'Polanya: つくえのうえに (di atas meja) + コンピューターが (komputer) + あります (ada)',
+                },
+                {
+                    prompt: 'Mari kita pergi bersama',
+                    translation: 'いっしょにいきましょう',
+                    words: ['いっしょ', 'に', 'いきましょう', 'は', 'が', 'を', 'です'],
+                    correct: 'いっしょにいきましょう',
+                    explanation: 'Polanya: いっしょに (bersama) + いきましょう (mari pergi)',
+                },
+                {
+                    prompt: 'Cuaca hari ini sangat bagus',
+                    translation: 'きょうのてんきはとてもいいです',
+                    words: ['きょう', 'の', 'てんき', 'は', 'とても', 'いい', 'です', 'が', 'に'],
+                    correct: 'きょうのてんきはとてもいいです',
+                    explanation:
+                        'Polanya: きょうの (hari ini) + てんきは (cuaca) + とても (sangat) + いい (bagus) + です',
+                },
+                {
+                    prompt: 'Adik perempuan saya suka kucing',
+                    translation: 'わたしのいもうとはねこがすきです',
+                    words: ['わたし', 'の', 'いもうと', 'は', 'ねこ', 'が', 'すき', 'です', 'を', 'に'],
+                    correct: 'わたしのいもうとはねこがすきです',
+                    explanation:
+                        'Polanya: わたしの (saya punya) + いもうとは (adik perempuan) + ねこが (kucing) + すき (suka) + です',
+                },
+                {
+                    prompt: 'Saya tidak minum kopi di malam hari',
+                    translation: 'わたしはよるコーヒーをのみません',
+                    words: ['わたし', 'は', 'よる', 'コーヒー', 'を', 'のみません', 'に', 'が', 'で'],
+                    correct: 'わたしはよるコーヒーをのみません',
+                    explanation:
+                        'Polanya: わたしは (saya) + よる (malam hari) + コーヒーを (kopi) + のみません (tidak minum)',
+                },
+            ];
+
+            // Initialize drag-drop quiz when tab is clicked
+            document.querySelector('[data-tab="drag-drop"]').addEventListener('click', () => {
+                if (!window.dragDropQuiz) {
+                    window.dragDropQuiz = new DragDropQuiz('dragdrop-container', dragDropExercises);
+                    window.dragDropQuiz.init();
+                }
+            });
 
             // UAS Quiz data - 40 comprehensive questions covering all 15 meetings
             const quizData = {
