@@ -1,119 +1,195 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kata Sifat i & na - Japanese N5</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kata Sifat i & na - Japanese N5</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/lesson.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo"><span class="logo-jp" aria-label="Japanese language">日本語</span><span class="logo-text">N5 Learning</span></div>
-                <nav class="nav" role="navigation">
-                    <a href="../index.html" class="nav-link">Beranda</a>
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
-                        <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
-                        <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span
+                        ><span class="logo-text">N5 Learning</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
                     </button>
-                    <a href="#study" class="nav-link">Materi</a>
-                    <a href="#quiz" class="nav-link">Latihan</a>
-                </nav>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                            <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                            <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+                        </button>
+                        <a href="#study" class="nav-link">Materi</a>
+                        <a href="#quiz" class="nav-link">Latihan</a>
+                    </nav>
+                </div>
             </div>
+        </header>
+
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <h1 class="lesson-title">Kata Sifat i & na</h1>
+                <p class="lesson-subtitle">Dua jenis kata sifat dengan lawan katanya</p>
+            </div>
+
+            <section id="study" class="study-section">
+                <h2>Kata Sifat i (い形容詞)</h2>
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                        gap: 1rem;
+                        margin: 2rem 0;
+                    "
+                >
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="font-family: 'Noto Sans JP', sans-serif">大きい ⇔ 小さい</h3>
+                        <p>besar ⇔ kecil</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="font-family: 'Noto Sans JP', sans-serif">高い ⇔ 安い</h3>
+                        <p>mahal/tinggi ⇔ murah</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="font-family: 'Noto Sans JP', sans-serif">新しい ⇔ 古い</h3>
+                        <p>baru ⇔ lama</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="font-family: 'Noto Sans JP', sans-serif">暑い ⇔ 寒い</h3>
+                        <p>panas ⇔ dingin</p>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 2rem">Kata Sifat na (な形容詞)</h2>
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                        gap: 1rem;
+                        margin: 2rem 0;
+                    "
+                >
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="font-family: 'Noto Sans JP', sans-serif">きれい ⇔ きたない</h3>
+                        <p>bersih/cantik ⇔ kotor</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="font-family: 'Noto Sans JP', sans-serif">静か ⇔ にぎやか</h3>
+                        <p>sepi/tenang ⇔ ramai</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="font-family: 'Noto Sans JP', sans-serif">便利 ⇔ 不便</h3>
+                        <p>praktis ⇔ tidak praktis</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="font-family: 'Noto Sans JP', sans-serif">簡単 ⇔ 難しい</h3>
+                        <p>mudah ⇔ sulit</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quiz" class="quiz-section">
+                <div class="quiz-header">
+                    <h2>Latihan Soal</h2>
+                    <p>Uji pemahaman Anda tentang kata sifat i dan na</p>
+                    <div class="quiz-progress-container">
+                        <div id="quiz-progress"></div>
+                    </div>
+                </div>
+                <div id="quiz-container"></div>
+            </section>
         </div>
-    </header>
 
-    <div class="lesson-container">
-        <div class="lesson-header">
-            <h1 class="lesson-title">Kata Sifat i & na</h1>
-            <p class="lesson-subtitle">Dua jenis kata sifat dengan lawan katanya</p>
-        </div>
-
-        <section id="study" class="study-section">
-            <h2>Kata Sifat i (い形容詞)</h2>
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="font-family: 'Noto Sans JP', sans-serif;">大きい ⇔ 小さい</h3>
-                    <p>besar ⇔ kecil</p>
-                </div>
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="font-family: 'Noto Sans JP', sans-serif;">高い ⇔ 安い</h3>
-                    <p>mahal/tinggi ⇔ murah</p>
-                </div>
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="font-family: 'Noto Sans JP', sans-serif;">新しい ⇔ 古い</h3>
-                    <p>baru ⇔ lama</p>
-                </div>
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="font-family: 'Noto Sans JP', sans-serif;">暑い ⇔ 寒い</h3>
-                    <p>panas ⇔ dingin</p>
-                </div>
-            </div>
-
-            <h2 style="margin-top: 2rem;">Kata Sifat na (な形容詞)</h2>
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="font-family: 'Noto Sans JP', sans-serif;">きれい ⇔ きたない</h3>
-                    <p>bersih/cantik ⇔ kotor</p>
-                </div>
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="font-family: 'Noto Sans JP', sans-serif;">静か ⇔ にぎやか</h3>
-                    <p>sepi/tenang ⇔ ramai</p>
-                </div>
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="font-family: 'Noto Sans JP', sans-serif;">便利 ⇔ 不便</h3>
-                    <p>praktis ⇔ tidak praktis</p>
-                </div>
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="font-family: 'Noto Sans JP', sans-serif;">簡単 ⇔ 難しい</h3>
-                    <p>mudah ⇔ sulit</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="quiz" class="quiz-section">
-            <div class="quiz-header">
-                <h2>Latihan Soal</h2>
-                <p>Uji pemahaman Anda tentang kata sifat i dan na</p>
-                <div class="quiz-progress-container">
-                    <div id="quiz-progress"></div>
-                </div>
-            </div>
-            <div id="quiz-container"></div>
-        </section>
-    </div>
-
-    <script>
-        const quizData = {
-            lessonId: 'ina',
-            questions: [
-                { question: 'Apa lawan kata dari 大きい (ookii)?', options: ['高い', '小さい', '低い', '短い'], correct: 1, explanation: '大きい (besar) lawannya adalah 小さい (kecil).' },
-                { question: 'Apa lawan kata dari 高い (takai)?', options: ['小さい', '低い', '安い', 'B dan C benar'], correct: 3, explanation: '高い bisa berarti tinggi (lawan: 低い) atau mahal (lawan: 安い).' },
-                { question: 'Apa lawan kata dari 新しい (atarashii)?', options: ['若い', '古い', '悪い', '遅い'], correct: 1, explanation: '新しい (baru) lawannya adalah 古い (lama).' },
-                { question: 'Apa lawan kata dari きれい (kirei)?', options: ['汚い', 'きたない', '悪い', 'A dan B benar'], correct: 3, explanation: 'きれい (bersih/cantik) lawannya adalah 汚い atau きたない (kotor).' },
-                { question: 'Apa lawan kata dari 静か (shizuka)?', options: ['うるさい', 'にぎやか', '大きい', 'A dan B benar'], correct: 3, explanation: '静か (tenang) lawannya adalah うるさい (berisik) atau にぎやか (ramai).' },
-                { question: 'Kata sifat mana yang termasuk kata sifat i?', options: ['きれい', '便利', '大きい', '静か'], correct: 2, explanation: 'Kata sifat i berakhiran い. 大きい adalah kata sifat i.' },
-                { question: 'Kata sifat mana yang termasuk kata sifat na?', options: ['高い', '新しい', '便利', '暑い'], correct: 2, explanation: 'Kata sifat na tidak berakhiran い. 便利 adalah kata sifat na.' },
-                { question: 'Apa lawan kata dari 暑い (atsui)?', options: ['涼しい', '寒い', '冷たい', 'Semua benar'], correct: 3, explanation: '暑い (panas) bisa berlawanan dengan 涼しい (sejuk), 寒い (dingin), atau 冷たい (dingin untuk benda).' },
-                { question: 'Apa lawan kata dari 簡単 (kantan)?', options: ['難しい', '複雑', '大変', 'Semua benar'], correct: 3, explanation: '簡単 (mudah) lawannya bisa 難しい, 複雑, atau 大変 (sulit/rumit).' },
-                { question: 'Apa lawan kata dari 便利 (benri)?', options: ['不便', '難しい', '悪い', '遠い'], correct: 0, explanation: '便利 (praktis) lawannya adalah 不便 (tidak praktis).' }
-            ]
-        };
-    </script>
-    <script src="../js/quiz.js"></script>
+        <script>
+            const quizData = {
+                lessonId: 'ina',
+                questions: [
+                    {
+                        question: 'Apa lawan kata dari 大きい (ookii)?',
+                        options: ['高い', '小さい', '低い', '短い'],
+                        correct: 1,
+                        explanation: '大きい (besar) lawannya adalah 小さい (kecil).',
+                    },
+                    {
+                        question: 'Apa lawan kata dari 高い (takai)?',
+                        options: ['小さい', '低い', '安い', 'B dan C benar'],
+                        correct: 3,
+                        explanation: '高い bisa berarti tinggi (lawan: 低い) atau mahal (lawan: 安い).',
+                    },
+                    {
+                        question: 'Apa lawan kata dari 新しい (atarashii)?',
+                        options: ['若い', '古い', '悪い', '遅い'],
+                        correct: 1,
+                        explanation: '新しい (baru) lawannya adalah 古い (lama).',
+                    },
+                    {
+                        question: 'Apa lawan kata dari きれい (kirei)?',
+                        options: ['汚い', 'きたない', '悪い', 'A dan B benar'],
+                        correct: 3,
+                        explanation: 'きれい (bersih/cantik) lawannya adalah 汚い atau きたない (kotor).',
+                    },
+                    {
+                        question: 'Apa lawan kata dari 静か (shizuka)?',
+                        options: ['うるさい', 'にぎやか', '大きい', 'A dan B benar'],
+                        correct: 3,
+                        explanation: '静か (tenang) lawannya adalah うるさい (berisik) atau にぎやか (ramai).',
+                    },
+                    {
+                        question: 'Kata sifat mana yang termasuk kata sifat i?',
+                        options: ['きれい', '便利', '大きい', '静か'],
+                        correct: 2,
+                        explanation: 'Kata sifat i berakhiran い. 大きい adalah kata sifat i.',
+                    },
+                    {
+                        question: 'Kata sifat mana yang termasuk kata sifat na?',
+                        options: ['高い', '新しい', '便利', '暑い'],
+                        correct: 2,
+                        explanation: 'Kata sifat na tidak berakhiran い. 便利 adalah kata sifat na.',
+                    },
+                    {
+                        question: 'Apa lawan kata dari 暑い (atsui)?',
+                        options: ['涼しい', '寒い', '冷たい', 'Semua benar'],
+                        correct: 3,
+                        explanation:
+                            '暑い (panas) bisa berlawanan dengan 涼しい (sejuk), 寒い (dingin), atau 冷たい (dingin untuk benda).',
+                    },
+                    {
+                        question: 'Apa lawan kata dari 簡単 (kantan)?',
+                        options: ['難しい', '複雑', '大変', 'Semua benar'],
+                        correct: 3,
+                        explanation: '簡単 (mudah) lawannya bisa 難しい, 複雑, atau 大変 (sulit/rumit).',
+                    },
+                    {
+                        question: 'Apa lawan kata dari 便利 (benri)?',
+                        options: ['不便', '難しい', '悪い', '遠い'],
+                        correct: 0,
+                        explanation: '便利 (praktis) lawannya adalah 不便 (tidak praktis).',
+                    },
+                ],
+            };
+        </script>
+        <script src="../js/quiz.js"></script>
         <script src="../js/theme.js"></script>
-</body>
-
+    </body>
 </html>

@@ -1,111 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Satuan Benda - Japanese N5</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satuan Benda - Japanese N5</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/lesson.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo"><span class="logo-jp" aria-label="Japanese language">日本語</span><span class="logo-text">N5 Learning</span></div>
-                <nav class="nav" role="navigation">
-                    <a href="../index.html" class="nav-link">Beranda</a>
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
-                        <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
-                        <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span
+                        ><span class="logo-text">N5 Learning</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
                     </button>
-                    <a href="#study" class="nav-link">Materi</a>
-                    <a href="#quiz" class="nav-link">Latihan</a>
-                </nav>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                            <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                            <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+                        </button>
+                        <a href="#study" class="nav-link">Materi</a>
+                        <a href="#quiz" class="nav-link">Latihan</a>
+                    </nav>
+                </div>
             </div>
+        </header>
+
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <h1 class="lesson-title">Satuan Benda (Counter Words)</h1>
+                <p class="lesson-subtitle">Kata penghitung untuk berbagai jenis benda</p>
+            </div>
+
+            <section id="study" class="study-section">
+                <h2>Counter Words Penting</h2>
+                <div style="display: grid; gap: 1rem; margin: 2rem 0">
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="color: var(--primary)">〜人 (nin)</h3>
+                        <p>Untuk menghitung orang</p>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem">Contoh: 三人 (san-nin) = 3 orang</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="color: var(--primary)">〜本 (hon/bon/pon)</h3>
+                        <p>Untuk benda panjang (pensil, botol, pohon)</p>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem">Contoh: 二本 (ni-hon) = 2 batang</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="color: var(--primary)">〜枚 (mai)</h3>
+                        <p>Untuk benda tipis/datar (kertas, tiket, piring)</p>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem">Contoh: 五枚 (go-mai) = 5 lembar</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="color: var(--primary)">〜冊 (satsu)</h3>
+                        <p>Untuk buku dan majalah</p>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem">Contoh: 一冊 (is-satsu) = 1 buku</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="color: var(--primary)">〜匹 (hiki/biki/piki)</h3>
+                        <p>Untuk hewan kecil</p>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem">Contoh: 二匹 (ni-hiki) = 2 ekor</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem">
+                        <h3 style="color: var(--primary)">〜台 (dai)</h3>
+                        <p>Untuk mesin dan kendaraan</p>
+                        <p style="color: var(--text-secondary); margin-top: 0.5rem">Contoh: 三台 (san-dai) = 3 unit</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quiz" class="quiz-section">
+                <div class="quiz-header">
+                    <h2>Latihan Soal</h2>
+                    <p>Uji pemahaman Anda tentang satuan benda</p>
+                    <div class="quiz-progress-container">
+                        <div id="quiz-progress"></div>
+                    </div>
+                </div>
+                <div id="quiz-container"></div>
+            </section>
         </div>
-    </header>
 
-    <div class="lesson-container">
-        <div class="lesson-header">
-            <h1 class="lesson-title">Satuan Benda (Counter Words)</h1>
-            <p class="lesson-subtitle">Kata penghitung untuk berbagai jenis benda</p>
-        </div>
-
-        <section id="study" class="study-section">
-            <h2>Counter Words Penting</h2>
-            <div style="display: grid; gap: 1rem; margin: 2rem 0;">
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary);">〜人 (nin)</h3>
-                    <p>Untuk menghitung orang</p>
-                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Contoh: 三人 (san-nin) = 3 orang</p>
-                </div>
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary);">〜本 (hon/bon/pon)</h3>
-                    <p>Untuk benda panjang (pensil, botol, pohon)</p>
-                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Contoh: 二本 (ni-hon) = 2 batang</p>
-                </div>
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary);">〜枚 (mai)</h3>
-                    <p>Untuk benda tipis/datar (kertas, tiket, piring)</p>
-                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Contoh: 五枚 (go-mai) = 5 lembar</p>
-                </div>
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary);">〜冊 (satsu)</h3>
-                    <p>Untuk buku dan majalah</p>
-                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Contoh: 一冊 (is-satsu) = 1 buku</p>
-                </div>
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary);">〜匹 (hiki/biki/piki)</h3>
-                    <p>Untuk hewan kecil</p>
-                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Contoh: 二匹 (ni-hiki) = 2 ekor</p>
-                </div>
-                <div style="padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary);">〜台 (dai)</h3>
-                    <p>Untuk mesin dan kendaraan</p>
-                    <p style="color: var(--text-secondary); margin-top: 0.5rem;">Contoh: 三台 (san-dai) = 3 unit</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="quiz" class="quiz-section">
-            <div class="quiz-header">
-                <h2>Latihan Soal</h2>
-                <p>Uji pemahaman Anda tentang satuan benda</p>
-                <div class="quiz-progress-container">
-                    <div id="quiz-progress"></div>
-                </div>
-            </div>
-            <div id="quiz-container"></div>
-        </section>
-    </div>
-
-    <script>
-        const quizData = {
-            lessonId: 'satuan',
-            questions: [
-                { question: 'Counter apa yang digunakan untuk menghitung orang?', options: ['〜本', '〜人', '〜枚', '〜匹'], correct: 1, explanation: '〜人 (nin) digunakan untuk menghitung orang.' },
-                { question: 'Bagaimana cara mengatakan "3 orang" dalam bahasa Jepang?', options: ['三本', '三人', '三枚', '三匹'], correct: 1, explanation: '三人 (san-nin) berarti 3 orang.' },
-                { question: 'Counter apa yang digunakan untuk pensil?', options: ['〜本', '〜枚', '〜冊', '〜台'], correct: 0, explanation: '〜本 digunakan untuk benda panjang seperti pensil.' },
-                { question: 'Bagaimana cara mengatakan "2 lembar kertas"?', options: ['二本', '二人', '二枚', '二冊'], correct: 2, explanation: '二枚 (ni-mai) berarti 2 lembar.' },
-                { question: 'Counter apa yang digunakan untuk buku?', options: ['〜本', '〜枚', '〜冊', '〜台'], correct: 2, explanation: '〜冊 (satsu) digunakan untuk buku.' },
-                { question: 'Bagaimana cara mengatakan "1 buku"?', options: ['一本', '一枚', '一冊', '一台'], correct: 2, explanation: '一冊 (is-satsu) berarti 1 buku.' },
-                { question: 'Counter apa yang digunakan untuk kucing?', options: ['〜人', '〜本', '〜匹', '〜台'], correct: 2, explanation: '〜匹 (hiki) digunakan untuk hewan kecil.' },
-                { question: 'Bagaimana cara mengatakan "2 ekor anjing"?', options: ['二人', '二本', '二匹', '二台'], correct: 2, explanation: '二匹 (ni-hiki) berarti 2 ekor.' },
-                { question: 'Counter apa yang digunakan untuk mobil?', options: ['〜本', '〜枚', '〜匹', '〜台'], correct: 3, explanation: '〜台 (dai) digunakan untuk kendaraan dan mesin.' },
-                { question: 'Bagaimana cara mengatakan "3 mobil"?', options: ['三本', '三枚', '三匹', '三台'], correct: 3, explanation: '三台 (san-dai) berarti 3 unit mobil.' }
-            ]
-        };
-    </script>
-    <script src="../js/quiz.js"></script>
+        <script>
+            const quizData = {
+                lessonId: 'satuan',
+                questions: [
+                    {
+                        question: 'Counter apa yang digunakan untuk menghitung orang?',
+                        options: ['〜本', '〜人', '〜枚', '〜匹'],
+                        correct: 1,
+                        explanation: '〜人 (nin) digunakan untuk menghitung orang.',
+                    },
+                    {
+                        question: 'Bagaimana cara mengatakan "3 orang" dalam bahasa Jepang?',
+                        options: ['三本', '三人', '三枚', '三匹'],
+                        correct: 1,
+                        explanation: '三人 (san-nin) berarti 3 orang.',
+                    },
+                    {
+                        question: 'Counter apa yang digunakan untuk pensil?',
+                        options: ['〜本', '〜枚', '〜冊', '〜台'],
+                        correct: 0,
+                        explanation: '〜本 digunakan untuk benda panjang seperti pensil.',
+                    },
+                    {
+                        question: 'Bagaimana cara mengatakan "2 lembar kertas"?',
+                        options: ['二本', '二人', '二枚', '二冊'],
+                        correct: 2,
+                        explanation: '二枚 (ni-mai) berarti 2 lembar.',
+                    },
+                    {
+                        question: 'Counter apa yang digunakan untuk buku?',
+                        options: ['〜本', '〜枚', '〜冊', '〜台'],
+                        correct: 2,
+                        explanation: '〜冊 (satsu) digunakan untuk buku.',
+                    },
+                    {
+                        question: 'Bagaimana cara mengatakan "1 buku"?',
+                        options: ['一本', '一枚', '一冊', '一台'],
+                        correct: 2,
+                        explanation: '一冊 (is-satsu) berarti 1 buku.',
+                    },
+                    {
+                        question: 'Counter apa yang digunakan untuk kucing?',
+                        options: ['〜人', '〜本', '〜匹', '〜台'],
+                        correct: 2,
+                        explanation: '〜匹 (hiki) digunakan untuk hewan kecil.',
+                    },
+                    {
+                        question: 'Bagaimana cara mengatakan "2 ekor anjing"?',
+                        options: ['二人', '二本', '二匹', '二台'],
+                        correct: 2,
+                        explanation: '二匹 (ni-hiki) berarti 2 ekor.',
+                    },
+                    {
+                        question: 'Counter apa yang digunakan untuk mobil?',
+                        options: ['〜本', '〜枚', '〜匹', '〜台'],
+                        correct: 3,
+                        explanation: '〜台 (dai) digunakan untuk kendaraan dan mesin.',
+                    },
+                    {
+                        question: 'Bagaimana cara mengatakan "3 mobil"?',
+                        options: ['三本', '三枚', '三匹', '三台'],
+                        correct: 3,
+                        explanation: '三台 (san-dai) berarti 3 unit mobil.',
+                    },
+                ],
+            };
+        </script>
+        <script src="../js/quiz.js"></script>
         <script src="../js/theme.js"></script>
-</body>
-
+    </body>
 </html>

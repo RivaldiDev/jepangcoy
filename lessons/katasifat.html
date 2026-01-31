@@ -1,115 +1,183 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kata Sifat - Japanese N5</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kata Sifat - Japanese N5</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/lesson.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo"><span class="logo-jp" aria-label="Japanese language">日本語</span><span class="logo-text">N5 Learning</span></div>
-                <nav class="nav" role="navigation">
-                    <a href="../index.html" class="nav-link">Beranda</a>
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
-                        <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
-                        <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span
+                        ><span class="logo-text">N5 Learning</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
                     </button>
-                    <a href="#study" class="nav-link">Materi</a>
-                    <a href="#quiz" class="nav-link">Latihan</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <div class="lesson-container">
-        <div class="lesson-header">
-            <h1 class="lesson-title">Kata Sifat Negatif & Lampau</h1>
-            <p class="lesson-subtitle">Bentuk negatif dan lampau kata sifat</p>
-        </div>
-
-        <section id="study" class="study-section">
-            <h2>Konjugasi Kata Sifat i</h2>
-            <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="background: rgba(220, 38, 38, 0.1);">
-                    <th style="padding: 1rem; text-align: left;">Bentuk</th>
-                    <th style="padding: 1rem; text-align: left;">Positif</th>
-                    <th style="padding: 1rem; text-align: left;">Negatif</th>
-                </tr>
-                <tr>
-                    <td style="padding: 1rem;">Sekarang</td>
-                    <td style="padding: 1rem;">大きい (ookii)</td>
-                    <td style="padding: 1rem;">大きくない (ookikunai)</td>
-                </tr>
-                <tr style="background: rgba(220, 38, 38, 0.05);">
-                    <td style="padding: 1rem;">Lampau</td>
-                    <td style="padding: 1rem;">大きかった (ookikatta)</td>
-                    <td style="padding: 1rem;">大きくなかった (ookikunakatta)</td>
-                </tr>
-            </table>
-
-            <h2 style="margin-top: 2rem;">Konjugasi Kata Sifat na</h2>
-            <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="background: rgba(220, 38, 38, 0.1);">
-                    <th style="padding: 1rem; text-align: left;">Bentuk</th>
-                    <th style="padding: 1rem; text-align: left;">Positif</th>
-                    <th style="padding: 1rem; text-align: left;">Negatif</th>
-                </tr>
-                <tr>
-                    <td style="padding: 1rem;">Sekarang</td>
-                    <td style="padding: 1rem;">きれいです (kirei desu)</td>
-                    <td style="padding: 1rem;">きれいじゃないです (kirei janai desu)</td>
-                </tr>
-                <tr style="background: rgba(220, 38, 38, 0.05);">
-                    <td style="padding: 1rem;">Lampau</td>
-                    <td style="padding: 1rem;">きれいでした (kirei deshita)</td>
-                    <td style="padding: 1rem;">きれいじゃなかったです (kirei janakatta desu)</td>
-                </tr>
-            </table>
-        </section>
-
-        <section id="quiz" class="quiz-section">
-            <div class="quiz-header">
-                <h2>Latihan Soal</h2>
-                <p>Uji pemahaman Anda tentang konjugasi kata sifat</p>
-                <div class="quiz-progress-container">
-                    <div id="quiz-progress"></div>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                            <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                            <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+                        </button>
+                        <a href="#study" class="nav-link">Materi</a>
+                        <a href="#quiz" class="nav-link">Latihan</a>
+                    </nav>
                 </div>
             </div>
-            <div id="quiz-container"></div>
-        </section>
-    </div>
+        </header>
 
-    <script>
-        const quizData = {
-            lessonId: 'katasifat',
-            questions: [
-                { question: 'Bentuk negatif dari 大きい (ookii) adalah?', options: ['大きくない', '大きいない', '大きじゃない', '大きではない'], correct: 0, explanation: 'Kata sifat i berubah menjadi negatif dengan mengganti い dengan くない.' },
-                { question: 'Bentuk lampau dari 高い (takai) adalah?', options: ['高いた', '高かった', '高くた', '高でした'], correct: 1, explanation: 'Kata sifat i berubah menjadi lampau dengan mengganti い dengan かった.' },
-                { question: 'Bentuk negatif lampau dari 小さい (chiisai) adalah?', options: ['小さくなかった', '小さいなかった', '小さじゃなかった', '小さではなかった'], correct: 0, explanation: 'Bentuk negatif lampau: い → くなかった' },
-                { question: 'Bentuk negatif dari きれいです (kirei desu) adalah?', options: ['きれいくないです', 'きれいじゃないです', 'きれいではないです', 'B dan C benar'], correct: 3, explanation: 'Kata sifat na menggunakan じゃないです atau ではないです untuk bentuk negatif.' },
-                { question: 'Bentuk lampau dari 静かです (shizuka desu) adalah?', options: ['静かでした', '静かかった', '静かだった', '静かました'], correct: 0, explanation: 'Kata sifat na menggunakan でした untuk bentuk lampau.' },
-                { question: 'Apa bentuk negatif dari 新しい (atarashii)?', options: ['新しくない', '新しいない', '新しじゃない', '新しではない'], correct: 0, explanation: 'Kata sifat i: い → くない' },
-                { question: 'Apa bentuk lampau dari 楽しい (tanoshii)?', options: ['楽しいた', '楽しかった', '楽しくた', '楽しでした'], correct: 1, explanation: 'Kata sifat i: い → かった' },
-                { question: 'Bentuk negatif lampau dari 便利です (benri desu) adalah?', options: ['便利くなかったです', '便利じゃなかったです', '便利ではなかったです', 'B dan C benar'], correct: 3, explanation: 'Kata sifat na: じゃなかったです atau ではなかったです' },
-                { question: 'Apa bentuk negatif dari いい (ii)?', options: ['いくない', 'いいない', 'よくない', 'いじゃない'], correct: 2, explanation: 'いい adalah kata sifat tidak beraturan, bentuk negatifnya adalah よくない.' },
-                { question: 'Apa bentuk lampau dari いい (ii)?', options: ['いかった', 'いいた', 'よかった', 'いでした'], correct: 2, explanation: 'いい adalah kata sifat tidak beraturan, bentuk lampaunya adalah よかった.' }
-            ]
-        };
-    </script>
-    <script src="../js/quiz.js"></script>
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <h1 class="lesson-title">Kata Sifat Negatif & Lampau</h1>
+                <p class="lesson-subtitle">Bentuk negatif dan lampau kata sifat</p>
+            </div>
+
+            <section id="study" class="study-section">
+                <h2>Konjugasi Kata Sifat i</h2>
+                <table style="width: 100%; border-collapse: collapse; margin: 2rem 0">
+                    <tr style="background: rgba(220, 38, 38, 0.1)">
+                        <th style="padding: 1rem; text-align: left">Bentuk</th>
+                        <th style="padding: 1rem; text-align: left">Positif</th>
+                        <th style="padding: 1rem; text-align: left">Negatif</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem">Sekarang</td>
+                        <td style="padding: 1rem">大きい (ookii)</td>
+                        <td style="padding: 1rem">大きくない (ookikunai)</td>
+                    </tr>
+                    <tr style="background: rgba(220, 38, 38, 0.05)">
+                        <td style="padding: 1rem">Lampau</td>
+                        <td style="padding: 1rem">大きかった (ookikatta)</td>
+                        <td style="padding: 1rem">大きくなかった (ookikunakatta)</td>
+                    </tr>
+                </table>
+
+                <h2 style="margin-top: 2rem">Konjugasi Kata Sifat na</h2>
+                <table style="width: 100%; border-collapse: collapse; margin: 2rem 0">
+                    <tr style="background: rgba(220, 38, 38, 0.1)">
+                        <th style="padding: 1rem; text-align: left">Bentuk</th>
+                        <th style="padding: 1rem; text-align: left">Positif</th>
+                        <th style="padding: 1rem; text-align: left">Negatif</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem">Sekarang</td>
+                        <td style="padding: 1rem">きれいです (kirei desu)</td>
+                        <td style="padding: 1rem">きれいじゃないです (kirei janai desu)</td>
+                    </tr>
+                    <tr style="background: rgba(220, 38, 38, 0.05)">
+                        <td style="padding: 1rem">Lampau</td>
+                        <td style="padding: 1rem">きれいでした (kirei deshita)</td>
+                        <td style="padding: 1rem">きれいじゃなかったです (kirei janakatta desu)</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="quiz" class="quiz-section">
+                <div class="quiz-header">
+                    <h2>Latihan Soal</h2>
+                    <p>Uji pemahaman Anda tentang konjugasi kata sifat</p>
+                    <div class="quiz-progress-container">
+                        <div id="quiz-progress"></div>
+                    </div>
+                </div>
+                <div id="quiz-container"></div>
+            </section>
+        </div>
+
+        <script>
+            const quizData = {
+                lessonId: 'katasifat',
+                questions: [
+                    {
+                        question: 'Bentuk negatif dari 大きい (ookii) adalah?',
+                        options: ['大きくない', '大きいない', '大きじゃない', '大きではない'],
+                        correct: 0,
+                        explanation: 'Kata sifat i berubah menjadi negatif dengan mengganti い dengan くない.',
+                    },
+                    {
+                        question: 'Bentuk lampau dari 高い (takai) adalah?',
+                        options: ['高いた', '高かった', '高くた', '高でした'],
+                        correct: 1,
+                        explanation: 'Kata sifat i berubah menjadi lampau dengan mengganti い dengan かった.',
+                    },
+                    {
+                        question: 'Bentuk negatif lampau dari 小さい (chiisai) adalah?',
+                        options: ['小さくなかった', '小さいなかった', '小さじゃなかった', '小さではなかった'],
+                        correct: 0,
+                        explanation: 'Bentuk negatif lampau: い → くなかった',
+                    },
+                    {
+                        question: 'Bentuk negatif dari きれいです (kirei desu) adalah?',
+                        options: ['きれいくないです', 'きれいじゃないです', 'きれいではないです', 'B dan C benar'],
+                        correct: 3,
+                        explanation: 'Kata sifat na menggunakan じゃないです atau ではないです untuk bentuk negatif.',
+                    },
+                    {
+                        question: 'Bentuk lampau dari 静かです (shizuka desu) adalah?',
+                        options: ['静かでした', '静かかった', '静かだった', '静かました'],
+                        correct: 0,
+                        explanation: 'Kata sifat na menggunakan でした untuk bentuk lampau.',
+                    },
+                    {
+                        question: 'Apa bentuk negatif dari 新しい (atarashii)?',
+                        options: ['新しくない', '新しいない', '新しじゃない', '新しではない'],
+                        correct: 0,
+                        explanation: 'Kata sifat i: い → くない',
+                    },
+                    {
+                        question: 'Apa bentuk lampau dari 楽しい (tanoshii)?',
+                        options: ['楽しいた', '楽しかった', '楽しくた', '楽しでした'],
+                        correct: 1,
+                        explanation: 'Kata sifat i: い → かった',
+                    },
+                    {
+                        question: 'Bentuk negatif lampau dari 便利です (benri desu) adalah?',
+                        options: [
+                            '便利くなかったです',
+                            '便利じゃなかったです',
+                            '便利ではなかったです',
+                            'B dan C benar',
+                        ],
+                        correct: 3,
+                        explanation: 'Kata sifat na: じゃなかったです atau ではなかったです',
+                    },
+                    {
+                        question: 'Apa bentuk negatif dari いい (ii)?',
+                        options: ['いくない', 'いいない', 'よくない', 'いじゃない'],
+                        correct: 2,
+                        explanation: 'いい adalah kata sifat tidak beraturan, bentuk negatifnya adalah よくない.',
+                    },
+                    {
+                        question: 'Apa bentuk lampau dari いい (ii)?',
+                        options: ['いかった', 'いいた', 'よかった', 'いでした'],
+                        correct: 2,
+                        explanation: 'いい adalah kata sifat tidak beraturan, bentuk lampaunya adalah よかった.',
+                    },
+                ],
+            };
+        </script>
+        <script src="../js/quiz.js"></script>
         <script src="../js/theme.js"></script>
-</body>
-
+    </body>
 </html>

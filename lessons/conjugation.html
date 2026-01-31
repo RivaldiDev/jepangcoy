@@ -1,313 +1,554 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Konjugasi Kata Kerja - Japanese N5</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link rel="stylesheet" href="../css/tabs.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konjugasi Kata Kerja - Japanese N5</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/lesson.css">
-    <link rel="stylesheet" href="../css/tabs.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-jp" aria-label="Japanese language">日本語</span>
-                    <span class="logo-text">N5 Learning</span>
-                </div>
-                <nav class="nav" role="navigation">
-                    <a href="../index.html" class="nav-link">Beranda</a>
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
-                        <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
-                        <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span>
+                        <span class="logo-text">N5 Learning</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
                     </button>
-                </nav>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                            <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                            <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <h1 class="lesson-title">Konjugasi Kata Kerja (動詞の活用)</h1>
+                <p class="lesson-subtitle">Bentuk-bentuk kata kerja untuk aktivitas sehari-hari - Materi Ujian</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-tab="study">
+                    <span class="material-symbols-outlined" aria-hidden="true">menu_book</span> Belajar
+                </button>
+                <button class="tab" data-tab="practice">
+                    <span class="material-symbols-outlined" aria-hidden="true">edit</span> Latihan
+                </button>
+            </div>
+
+            <!-- Study Tab -->
+            <div class="tab-content active" id="study">
+                <section class="study-section">
+                    <h2>Kata Kerja Aktivitas Sehari-hari</h2>
+                    <p style="margin-bottom: 2rem">Pelajari konjugasi 13 kata kerja penting untuk ujian</p>
+
+                    <!-- Verb Conjugation Table -->
+                    <div style="overflow-x: auto; margin: 2rem 0">
+                        <table
+                            style="
+                                width: 100%;
+                                border-collapse: collapse;
+                                background: white;
+                                box-shadow: var(--shadow-md);
+                                border-radius: 0.5rem;
+                            "
+                        >
+                            <thead>
+                                <tr style="background: var(--primary); color: white">
+                                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid var(--border)">
+                                        Arti
+                                    </th>
+                                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid var(--border)">
+                                        Bentuk Masu<br />(Present)
+                                    </th>
+                                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid var(--border)">
+                                        Negatif<br />(-masen)
+                                    </th>
+                                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid var(--border)">
+                                        Lampau<br />(-mashita)
+                                    </th>
+                                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid var(--border)">
+                                        Negatif Lampau<br />(-masen deshita)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border)">
+                                    <td style="padding: 1rem; font-weight: 600">Bangun</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        起きます<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >okimasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        起きません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >okimasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        起きました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >okimashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        起きませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >okimasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr
+                                    style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05)"
+                                >
+                                    <td style="padding: 1rem; font-weight: 600">Tidur</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        寝ます<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >nemasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        寝ません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >nemasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        寝ました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >nemashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        寝ませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >nemasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border)">
+                                    <td style="padding: 1rem; font-weight: 600">Makan</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        食べます<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >tabemasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        食べません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >tabemasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        食べました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >tabemashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        食べませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >tabemasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr
+                                    style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05)"
+                                >
+                                    <td style="padding: 1rem; font-weight: 600">Minum</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        飲みます<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >nomimasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        飲みません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >nomimasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        飲みました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >nomimashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        飲みませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >nomimasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border)">
+                                    <td style="padding: 1rem; font-weight: 600">Pergi</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        行きます<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >ikimasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        行きません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >ikimasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        行きました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >ikimashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        行きませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >ikimasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr
+                                    style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05)"
+                                >
+                                    <td style="padding: 1rem; font-weight: 600">Datang</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        来ます<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kimasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        来ません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kimasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        来ました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kimashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        来ませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kimasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border)">
+                                    <td style="padding: 1rem; font-weight: 600">Pulang</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        帰ります<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kaerimasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        帰りません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kaerimasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        帰りました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kaerimashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        帰りませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kaerimasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr
+                                    style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05)"
+                                >
+                                    <td style="padding: 1rem; font-weight: 600">Belajar</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        勉強します<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >benkyou shimasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        勉強しません<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >benkyou shimasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        勉強しました<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >benkyou shimashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        勉強しませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >benkyou shimasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border)">
+                                    <td style="padding: 1rem; font-weight: 600">Bekerja</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        働きます<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >hatarakimasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        働きません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >hatarakimasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        働きました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >hatarakimashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        働きませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >hatarakimasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr
+                                    style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05)"
+                                >
+                                    <td style="padding: 1rem; font-weight: 600">Melihat</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        見ます<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >mimasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        見ません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >mimasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        見ました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >mimashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        見ませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >mimasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border)">
+                                    <td style="padding: 1rem; font-weight: 600">Mendengar</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        聞きます<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kikimasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        聞きません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kikimasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        聞きました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kikimashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        聞きませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kikimasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr
+                                    style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05)"
+                                >
+                                    <td style="padding: 1rem; font-weight: 600">Membaca</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        読みます<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >yomimasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        読みません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >yomimasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        読みました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >yomimashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        読みませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >yomimasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr style="background: rgba(59, 130, 246, 0.05)">
+                                    <td style="padding: 1rem; font-weight: 600">Menulis</td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        書きます<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kakimasu</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        書きません<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kakimasen</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        書きました<br /><span style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kakimashita</span
+                                        >
+                                    </td>
+                                    <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif">
+                                        書きませんでした<br /><span
+                                            style="color: var(--text-secondary); font-size: 0.875rem"
+                                            >kakimasen deshita</span
+                                        >
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Tips Section -->
+                    <div
+                        style="
+                            margin: 2rem 0;
+                            padding: 1.5rem;
+                            background: rgba(59, 130, 246, 0.1);
+                            border-left: 4px solid var(--primary);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin-bottom: 1rem">💡 Tips Konjugasi:</h3>
+                        <ul style="margin-left: 1.5rem; line-height: 1.8">
+                            <li><strong>Negatif:</strong> Ganti -masu dengan -masen</li>
+                            <li><strong>Lampau:</strong> Ganti -masu dengan -mashita</li>
+                            <li><strong>Negatif Lampau:</strong> Ganti -masu dengan -masen deshita</li>
+                            <li>
+                                <strong>Kata kerja する (suru):</strong> Pola khusus - shimasu, shimasen, shimashita
+                            </li>
+                            <li><strong>Kata kerja 来る (kuru):</strong> Pola khusus - kimasu, kimasen, kimashita</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Practice Tab -->
+            <div class="tab-content" id="practice">
+                <section class="quiz-section">
+                    <div class="quiz-header">
+                        <h2>Latihan Konjugasi</h2>
+                        <p>Uji pemahaman Anda tentang konjugasi kata kerja</p>
+                        <div class="quiz-progress-container">
+                            <div id="quiz-progress"></div>
+                        </div>
+                    </div>
+                    <div id="quiz-container"></div>
+                </section>
             </div>
         </div>
-    </header>
 
-    <div class="lesson-container">
-        <div class="lesson-header">
-            <h1 class="lesson-title">Konjugasi Kata Kerja (動詞の活用)</h1>
-            <p class="lesson-subtitle">Bentuk-bentuk kata kerja untuk aktivitas sehari-hari - Materi Ujian</p>
-        </div>
-
-        <!-- Tab Navigation -->
-        <div class="tabs">
-            <button class="tab active" data-tab="study"><span class="material-symbols-outlined" aria-hidden="true">menu_book</span> Belajar</button>
-            <button class="tab" data-tab="practice"><span class="material-symbols-outlined" aria-hidden="true">edit</span> Latihan</button>
-        </div>
-
-        <!-- Study Tab -->
-        <div class="tab-content active" id="study">
-            <section class="study-section">
-                <h2>Kata Kerja Aktivitas Sehari-hari</h2>
-                <p style="margin-bottom: 2rem;">Pelajari konjugasi 13 kata kerja penting untuk ujian</p>
-
-                <!-- Verb Conjugation Table -->
-                <div style="overflow-x: auto; margin: 2rem 0;">
-                    <table
-                        style="width: 100%; border-collapse: collapse; background: white; box-shadow: var(--shadow-md); border-radius: 0.5rem;">
-                        <thead>
-                            <tr style="background: var(--primary); color: white;">
-                                <th style="padding: 1rem; text-align: left; border-bottom: 2px solid var(--border);">
-                                    Arti</th>
-                                <th style="padding: 1rem; text-align: left; border-bottom: 2px solid var(--border);">
-                                    Bentuk Masu<br>(Present)</th>
-                                <th style="padding: 1rem; text-align: left; border-bottom: 2px solid var(--border);">
-                                    Negatif<br>(-masen)</th>
-                                <th style="padding: 1rem; text-align: left; border-bottom: 2px solid var(--border);">
-                                    Lampau<br>(-mashita)</th>
-                                <th style="padding: 1rem; text-align: left; border-bottom: 2px solid var(--border);">
-                                    Negatif Lampau<br>(-masen deshita)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1rem; font-weight: 600;">Bangun</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">起きます<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">okimasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">起きません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">okimasen</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">起きました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">okimashita</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">起きませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">okimasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05);">
-                                <td style="padding: 1rem; font-weight: 600;">Tidur</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">寝ます<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">nemasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">寝ません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">nemasen</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">寝ました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">nemashita</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">寝ませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">nemasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1rem; font-weight: 600;">Makan</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">食べます<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">tabemasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">食べません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">tabemasen</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">食べました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">tabemashita</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">食べませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">tabemasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05);">
-                                <td style="padding: 1rem; font-weight: 600;">Minum</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">飲みます<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">nomimasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">飲みません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">nomimasen</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">飲みました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">nomimashita</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">飲みませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">nomimasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1rem; font-weight: 600;">Pergi</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">行きます<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">ikimasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">行きません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">ikimasen</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">行きました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">ikimashita</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">行きませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">ikimasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05);">
-                                <td style="padding: 1rem; font-weight: 600;">Datang</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">来ます<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kimasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">来ません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kimasen</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">来ました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kimashita</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">来ませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kimasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1rem; font-weight: 600;">Pulang</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">帰ります<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kaerimasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">帰りません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kaerimasen</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">帰りました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kaerimashita</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">帰りませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kaerimasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05);">
-                                <td style="padding: 1rem; font-weight: 600;">Belajar</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">勉強します<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">benkyou
-                                        shimasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">勉強しません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">benkyou
-                                        shimasen</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">勉強しました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">benkyou
-                                        shimashita</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">勉強しませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">benkyou shimasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1rem; font-weight: 600;">Bekerja</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">働きます<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">hatarakimasu</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">働きません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">hatarakimasen</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">働きました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">hatarakimashita</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">働きませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">hatarakimasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05);">
-                                <td style="padding: 1rem; font-weight: 600;">Melihat</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">見ます<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">mimasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">見ません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">mimasen</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">見ました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">mimashita</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">見ませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">mimasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1rem; font-weight: 600;">Mendengar</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">聞きます<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kikimasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">聞きません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kikimasen</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">聞きました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kikimashita</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">聞きませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kikimasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid var(--border); background: rgba(59, 130, 246, 0.05);">
-                                <td style="padding: 1rem; font-weight: 600;">Membaca</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">読みます<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">yomimasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">読みません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">yomimasen</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">読みました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">yomimashita</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">読みませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">yomimasen
-                                        deshita</span></td>
-                            </tr>
-                            <tr style="background: rgba(59, 130, 246, 0.05);">
-                                <td style="padding: 1rem; font-weight: 600;">Menulis</td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">書きます<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kakimasu</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">書きません<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kakimasen</span></td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">書きました<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kakimashita</span>
-                                </td>
-                                <td style="padding: 1rem; font-family: 'Noto Sans JP', sans-serif;">書きませんでした<br><span
-                                        style="color: var(--text-secondary); font-size: 0.875rem;">kakimasen
-                                        deshita</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Tips Section -->
-                <div
-                    style="margin: 2rem 0; padding: 1.5rem; background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--primary); border-radius: 0.5rem;">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">💡 Tips Konjugasi:</h3>
-                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
-                        <li><strong>Negatif:</strong> Ganti -masu dengan -masen</li>
-                        <li><strong>Lampau:</strong> Ganti -masu dengan -mashita</li>
-                        <li><strong>Negatif Lampau:</strong> Ganti -masu dengan -masen deshita</li>
-                        <li><strong>Kata kerja する (suru):</strong> Pola khusus - shimasu, shimasen, shimashita</li>
-                        <li><strong>Kata kerja 来る (kuru):</strong> Pola khusus - kimasu, kimasen, kimashita</li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-
-        <!-- Practice Tab -->
-        <div class="tab-content" id="practice">
-            <section class="quiz-section">
-                <div class="quiz-header">
-                    <h2>Latihan Konjugasi</h2>
-                    <p>Uji pemahaman Anda tentang konjugasi kata kerja</p>
-                    <div class="quiz-progress-container">
-                        <div id="quiz-progress"></div>
-                    </div>
-                </div>
-                <div id="quiz-container"></div>
-            </section>
-        </div>
-    </div>
-
-    <script src="../js/quiz.js"></script>
-    <script>
-        // Tab switching
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.tab;
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                document.getElementById(targetTab).classList.add('active');
+        <script src="../js/quiz.js"></script>
+        <script>
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    document.getElementById(targetTab).classList.add('active');
+                });
             });
-        });
 
-        // Quiz data
-        const quizData = {
-            lessonId: 'conjugation',
-            questions: [
-                { question: 'Bentuk negatif dari 食べます (tabemasu) adalah?', options: ['食べません', '食べました', '食べませんでした', '食べる'], correct: 0, explanation: 'Bentuk negatif: ganti -masu dengan -masen → 食べません (tabemasen).' },
-                { question: 'Bentuk lampau dari 行きます (ikimasu) adalah?', options: ['行きません', '行きました', '行きませんでした', '行く'], correct: 1, explanation: 'Bentuk lampau: ganti -masu dengan -mashita → 行きました (ikimashita).' },
-                { question: 'Bentuk negatif lampau dari 見ます (mimasu) adalah?', options: ['見ません', '見ました', '見ませんでした', '見る'], correct: 2, explanation: 'Bentuk negatif lampau: ganti -masu dengan -masen deshita → 見ませんでした (mimasen deshita).' },
-                { question: 'Bentuk negatif dari 勉強します (benkyou shimasu) adalah?', options: ['勉強しません', '勉強しました', '勉強する', '勉強しませんでした'], correct: 0, explanation: 'Kata kerja する: shimasu → shimasen.' },
-                { question: 'Bentuk lampau dari 来ます (kimasu) adalah?', options: ['来ません', '来ました', '来る', '来ませんでした'], correct: 1, explanation: 'Kata kerja 来る: kimasu → kimashita.' },
-                { question: 'Apa arti dari 飲みませんでした?', options: ['Tidak minum', 'Minum', 'Tidak minum (lampau)', 'Sudah minum'], correct: 2, explanation: '飲みませんでした (nomimasen deshita) = tidak minum (lampau).' },
-                { question: 'Bentuk present dari kata kerja "menulis" adalah?', options: ['書きます', '書きません', '書きました', '書く'], correct: 0, explanation: '書きます (kakimasu) = menulis (present/masu form).' },
-                { question: 'Bentuk negatif dari 起きます (okimasu) adalah?', options: ['起きません', '起きました', '起きませんでした', '起きる'], correct: 0, explanation: 'Bentuk negatif: 起きません (okimasen) = tidak bangun.' },
-                { question: 'Apa arti dari 帰りました?', options: ['Tidak pulang', 'Pulang', 'Sudah pulang', 'Tidak pulang (lampau)'], correct: 2, explanation: '帰りました (kaerimashita) = sudah pulang (lampau).' },
-                { question: 'Bentuk lampau dari 寝ます (nemasu) adalah?', options: ['寝ません', '寝ました', '寝ませんでした', '寝る'], correct: 1, explanation: '寝ました (nemashita) = sudah tidur (lampau).' }
-            ]
-        };
-    </script>
+            // Quiz data
+            const quizData = {
+                lessonId: 'conjugation',
+                questions: [
+                    {
+                        question: 'Bentuk negatif dari 食べます (tabemasu) adalah?',
+                        options: ['食べません', '食べました', '食べませんでした', '食べる'],
+                        correct: 0,
+                        explanation: 'Bentuk negatif: ganti -masu dengan -masen → 食べません (tabemasen).',
+                    },
+                    {
+                        question: 'Bentuk lampau dari 行きます (ikimasu) adalah?',
+                        options: ['行きません', '行きました', '行きませんでした', '行く'],
+                        correct: 1,
+                        explanation: 'Bentuk lampau: ganti -masu dengan -mashita → 行きました (ikimashita).',
+                    },
+                    {
+                        question: 'Bentuk negatif lampau dari 見ます (mimasu) adalah?',
+                        options: ['見ません', '見ました', '見ませんでした', '見る'],
+                        correct: 2,
+                        explanation:
+                            'Bentuk negatif lampau: ganti -masu dengan -masen deshita → 見ませんでした (mimasen deshita).',
+                    },
+                    {
+                        question: 'Bentuk negatif dari 勉強します (benkyou shimasu) adalah?',
+                        options: ['勉強しません', '勉強しました', '勉強する', '勉強しませんでした'],
+                        correct: 0,
+                        explanation: 'Kata kerja する: shimasu → shimasen.',
+                    },
+                    {
+                        question: 'Bentuk lampau dari 来ます (kimasu) adalah?',
+                        options: ['来ません', '来ました', '来る', '来ませんでした'],
+                        correct: 1,
+                        explanation: 'Kata kerja 来る: kimasu → kimashita.',
+                    },
+                    {
+                        question: 'Apa arti dari 飲みませんでした?',
+                        options: ['Tidak minum', 'Minum', 'Tidak minum (lampau)', 'Sudah minum'],
+                        correct: 2,
+                        explanation: '飲みませんでした (nomimasen deshita) = tidak minum (lampau).',
+                    },
+                    {
+                        question: 'Bentuk present dari kata kerja "menulis" adalah?',
+                        options: ['書きます', '書きません', '書きました', '書く'],
+                        correct: 0,
+                        explanation: '書きます (kakimasu) = menulis (present/masu form).',
+                    },
+                    {
+                        question: 'Bentuk negatif dari 起きます (okimasu) adalah?',
+                        options: ['起きません', '起きました', '起きませんでした', '起きる'],
+                        correct: 0,
+                        explanation: 'Bentuk negatif: 起きません (okimasen) = tidak bangun.',
+                    },
+                    {
+                        question: 'Apa arti dari 帰りました?',
+                        options: ['Tidak pulang', 'Pulang', 'Sudah pulang', 'Tidak pulang (lampau)'],
+                        correct: 2,
+                        explanation: '帰りました (kaerimashita) = sudah pulang (lampau).',
+                    },
+                    {
+                        question: 'Bentuk lampau dari 寝ます (nemasu) adalah?',
+                        options: ['寝ません', '寝ました', '寝ませんでした', '寝る'],
+                        correct: 1,
+                        explanation: '寝ました (nemashita) = sudah tidur (lampau).',
+                    },
+                ],
+            };
+        </script>
         <script src="../js/theme.js"></script>
-</body>
-
+    </body>
 </html>

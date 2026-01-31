@@ -1,251 +1,469 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kanji Dasar - Japanese N5</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanji Dasar - Japanese N5</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../css/lesson.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo"><span class="logo-jp" aria-label="Japanese language">日本語</span><span class="logo-text">N5 Learning</span></div>
-                <nav class="nav" role="navigation">
-                    <a href="../index.html" class="nav-link">Beranda</a>
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
-                        <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
-                        <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span
+                        ><span class="logo-text">N5 Learning</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
                     </button>
-                    <a href="#study" class="nav-link">Materi</a>
-                    <a href="#quiz" class="nav-link">Latihan</a>
-                </nav>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                            <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                            <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+                        </button>
+                        <a href="#study" class="nav-link">Materi</a>
+                        <a href="#quiz" class="nav-link">Latihan</a>
+                    </nav>
+                </div>
             </div>
+        </header>
+
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <h1 class="lesson-title">Kanji Dasar N5</h1>
+                <p class="lesson-subtitle">20 Kanji (Lesson 1 + 2) - Materi Ujian</p>
+            </div>
+
+            <section id="study" class="study-section">
+                <h2>10 Kanji Penting dari Materi</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary)">
+                    Kanji dasar yang berasal dari gambar - sesuai materi ujian Anda
+                </p>
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                        gap: 1rem;
+                        margin: 2rem 0;
+                    "
+                >
+                    <!-- 田 - Sawah -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(220, 38, 38, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            田
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">ta / den</div>
+                        <div>sawah</div>
+                    </div>
+                    <!-- 口 - Mulut -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(220, 38, 38, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            口
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">kuchi / kou</div>
+                        <div>mulut</div>
+                    </div>
+                    <!-- 車 - Mobil -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(220, 38, 38, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            車
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">kuruma / sha</div>
+                        <div>mobil</div>
+                    </div>
+                    <!-- 日 - Hari/Matahari -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(220, 38, 38, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            日
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">hi / nichi</div>
+                        <div>hari / matahari</div>
+                    </div>
+                    <!-- 月 - Bulan -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(220, 38, 38, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            月
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">tsuki / getsu</div>
+                        <div>bulan</div>
+                    </div>
+                    <!-- 木 - Pohon -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(220, 38, 38, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            木
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">ki / moku</div>
+                        <div>pohon / kayu</div>
+                    </div>
+                    <!-- 山 - Gunung -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(220, 38, 38, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            山
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">yama / san</div>
+                        <div>gunung</div>
+                    </div>
+                    <!-- 川 - Sungai -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(220, 38, 38, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            川
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">kawa / sen</div>
+                        <div>sungai</div>
+                    </div>
+                    <!-- 人 - Orang -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(220, 38, 38, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            人
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">hito / jin</div>
+                        <div>orang</div>
+                    </div>
+                    <!-- 門 - Gerbang -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(220, 38, 38, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            門
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">mon / kado</div>
+                        <div>gerbang / pintu</div>
+                    </div>
+
+                    <!-- LESSON 2 KANJI -->
+                    <div
+                        style="
+                            grid-column: 1 / -1;
+                            margin: 2rem 0 1rem;
+                            padding: 1rem;
+                            background: rgba(139, 92, 246, 0.1);
+                            border-radius: 0.5rem;
+                            text-align: center;
+                        "
+                    >
+                        <h3 style="color: var(--primary); margin: 0">📚 Lesson 2 - 10 Kanji Tambahan</h3>
+                    </div>
+
+                    <!-- 火 - Api -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(139, 92, 246, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            火
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">hi / ka</div>
+                        <div>api</div>
+                    </div>
+                    <!-- 水 - Air -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(139, 92, 246, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            水
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">mizu / sui</div>
+                        <div>air</div>
+                    </div>
+                    <!-- 金 - Emas/Uang -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(139, 92, 246, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            金
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">kane / kin</div>
+                        <div>emas / uang</div>
+                    </div>
+                    <!-- 土 - Tanah -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(139, 92, 246, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            土
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">tsuchi / do</div>
+                        <div>tanah</div>
+                    </div>
+                    <!-- 子 - Anak -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(139, 92, 246, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            子
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">ko / shi</div>
+                        <div>anak</div>
+                    </div>
+                    <!-- 女 - Perempuan -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(139, 92, 246, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            女
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">onna / jo</div>
+                        <div>perempuan</div>
+                    </div>
+                    <!-- 学 - Belajar -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(139, 92, 246, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            学
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">manabu / gaku</div>
+                        <div>belajar</div>
+                    </div>
+                    <!-- 生 - Hidup/Lahir -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(139, 92, 246, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            生
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">ikiru / sei</div>
+                        <div>hidup / lahir</div>
+                    </div>
+                    <!-- 先 - Sebelumnya -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(139, 92, 246, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            先
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">saki / sen</div>
+                        <div>sebelumnya / dulu</div>
+                    </div>
+                    <!-- 私 - Saya -->
+                    <div
+                        style="
+                            text-align: center;
+                            padding: 1.5rem;
+                            background: rgba(139, 92, 246, 0.1);
+                            border-radius: 0.5rem;
+                        "
+                    >
+                        <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem">
+                            私
+                        </div>
+                        <div style="color: var(--text-secondary); margin-bottom: 0.25rem">watashi / shi</div>
+                        <div>saya / pribadi</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quiz" class="quiz-section">
+                <div class="quiz-header">
+                    <h2>Latihan Soal</h2>
+                    <p>Uji pemahaman Anda tentang Kanji dasar</p>
+                    <div class="quiz-progress-container">
+                        <div id="quiz-progress"></div>
+                    </div>
+                </div>
+                <div id="quiz-container"></div>
+            </section>
         </div>
-    </header>
 
-    <div class="lesson-container">
-        <div class="lesson-header">
-            <h1 class="lesson-title">Kanji Dasar N5</h1>
-            <p class="lesson-subtitle">20 Kanji (Lesson 1 + 2) - Materi Ujian</p>
-        </div>
-
-        <section id="study" class="study-section">
-            <h2>10 Kanji Penting dari Materi</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-secondary);">Kanji dasar yang berasal dari gambar - sesuai
-                materi ujian Anda</p>
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0;">
-                <!-- 田 - Sawah -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">田
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">ta / den</div>
-                    <div>sawah</div>
-                </div>
-                <!-- 口 - Mulut -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">口
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">kuchi / kou</div>
-                    <div>mulut</div>
-                </div>
-                <!-- 車 - Mobil -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">車
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">kuruma / sha</div>
-                    <div>mobil</div>
-                </div>
-                <!-- 日 - Hari/Matahari -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">日
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">hi / nichi</div>
-                    <div>hari / matahari</div>
-                </div>
-                <!-- 月 - Bulan -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">月
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">tsuki / getsu</div>
-                    <div>bulan</div>
-                </div>
-                <!-- 木 - Pohon -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">木
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">ki / moku</div>
-                    <div>pohon / kayu</div>
-                </div>
-                <!-- 山 - Gunung -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">山
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">yama / san</div>
-                    <div>gunung</div>
-                </div>
-                <!-- 川 - Sungai -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">川
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">kawa / sen</div>
-                    <div>sungai</div>
-                </div>
-                <!-- 人 - Orang -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">人
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">hito / jin</div>
-                    <div>orang</div>
-                </div>
-                <!-- 門 - Gerbang -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(220, 38, 38, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">門
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">mon / kado</div>
-                    <div>gerbang / pintu</div>
-                </div>
-
-                <!-- LESSON 2 KANJI -->
-                <div
-                    style="grid-column: 1 / -1; margin: 2rem 0 1rem; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem; text-align: center;">
-                    <h3 style="color: var(--primary); margin: 0;">📚 Lesson 2 - 10 Kanji Tambahan</h3>
-                </div>
-
-                <!-- 火 - Api -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">火
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">hi / ka</div>
-                    <div>api</div>
-                </div>
-                <!-- 水 - Air -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">水
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">mizu / sui</div>
-                    <div>air</div>
-                </div>
-                <!-- 金 - Emas/Uang -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">金
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">kane / kin</div>
-                    <div>emas / uang</div>
-                </div>
-                <!-- 土 - Tanah -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">土
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">tsuchi / do</div>
-                    <div>tanah</div>
-                </div>
-                <!-- 子 - Anak -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">子
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">ko / shi</div>
-                    <div>anak</div>
-                </div>
-                <!-- 女 - Perempuan -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">女
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">onna / jo</div>
-                    <div>perempuan</div>
-                </div>
-                <!-- 学 - Belajar -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">学
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">manabu / gaku</div>
-                    <div>belajar</div>
-                </div>
-                <!-- 生 - Hidup/Lahir -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">生
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">ikiru / sei</div>
-                    <div>hidup / lahir</div>
-                </div>
-                <!-- 先 - Sebelumnya -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">先
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">saki / sen</div>
-                    <div>sebelumnya / dulu</div>
-                </div>
-                <!-- 私 - Saya -->
-                <div
-                    style="text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.5rem;">
-                    <div style="font-size: 3rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem;">私
-                    </div>
-                    <div style="color: var(--text-secondary); margin-bottom: 0.25rem;">watashi / shi</div>
-                    <div>saya / pribadi</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="quiz" class="quiz-section">
-            <div class="quiz-header">
-                <h2>Latihan Soal</h2>
-                <p>Uji pemahaman Anda tentang Kanji dasar</p>
-                <div class="quiz-progress-container">
-                    <div id="quiz-progress"></div>
-                </div>
-            </div>
-            <div id="quiz-container"></div>
-        </section>
-    </div>
-
-    <script>
-        const quizData = {
-            lessonId: 'kanji',
-            questions: [
-                { question: 'Apa arti dari kanji 一?', options: ['satu', 'dua', 'tiga', 'empat'], correct: 0, explanation: '一 (ichi) berarti "satu".' },
-                { question: 'Kanji mana yang berarti "gunung"?', options: ['川', '山', '水', '木'], correct: 1, explanation: '山 (yama/san) berarti "gunung".' },
-                { question: 'Apa arti dari kanji 日?', options: ['bulan', 'hari/matahari', 'api', 'air'], correct: 1, explanation: '日 (hi/nichi) berarti "hari" atau "matahari".' },
-                { question: 'Kanji mana yang berarti "air"?', options: ['火', '水', '木', '金'], correct: 1, explanation: '水 (mizu/sui) berarti "air".' },
-                { question: 'Apa arti dari kanji 人?', options: ['orang', 'buku', 'gunung', 'sungai'], correct: 0, explanation: '人 (hito/jin) berarti "orang".' },
-                { question: 'Kanji mana yang berarti "besar"?', options: ['小', '大', '中', '上'], correct: 1, explanation: '大 (oo/dai) berarti "besar".' },
-                { question: 'Apa arti dari kanji 小?', options: ['besar', 'kecil', 'atas', 'bawah'], correct: 1, explanation: '小 (chii/shou) berarti "kecil".' },
-                { question: 'Kanji mana yang berarti "atas"?', options: ['上', '下', '中', '外'], correct: 0, explanation: '上 (ue/jou) berarti "atas".' },
-                { question: 'Apa arti dari kanji 本?', options: ['orang', 'buku', 'gunung', 'sungai'], correct: 1, explanation: '本 (hon/moto) berarti "buku" atau "asal".' },
-                { question: 'Kanji mana yang berarti "belajar"?', options: ['学', '校', '生', '先'], correct: 0, explanation: '学 (gaku/mana) berarti "belajar".' }
-            ]
-        };
-    </script>
-    <script src="../js/quiz.js"></script>
+        <script>
+            const quizData = {
+                lessonId: 'kanji',
+                questions: [
+                    {
+                        question: 'Apa arti dari kanji 一?',
+                        options: ['satu', 'dua', 'tiga', 'empat'],
+                        correct: 0,
+                        explanation: '一 (ichi) berarti "satu".',
+                    },
+                    {
+                        question: 'Kanji mana yang berarti "gunung"?',
+                        options: ['川', '山', '水', '木'],
+                        correct: 1,
+                        explanation: '山 (yama/san) berarti "gunung".',
+                    },
+                    {
+                        question: 'Apa arti dari kanji 日?',
+                        options: ['bulan', 'hari/matahari', 'api', 'air'],
+                        correct: 1,
+                        explanation: '日 (hi/nichi) berarti "hari" atau "matahari".',
+                    },
+                    {
+                        question: 'Kanji mana yang berarti "air"?',
+                        options: ['火', '水', '木', '金'],
+                        correct: 1,
+                        explanation: '水 (mizu/sui) berarti "air".',
+                    },
+                    {
+                        question: 'Apa arti dari kanji 人?',
+                        options: ['orang', 'buku', 'gunung', 'sungai'],
+                        correct: 0,
+                        explanation: '人 (hito/jin) berarti "orang".',
+                    },
+                    {
+                        question: 'Kanji mana yang berarti "besar"?',
+                        options: ['小', '大', '中', '上'],
+                        correct: 1,
+                        explanation: '大 (oo/dai) berarti "besar".',
+                    },
+                    {
+                        question: 'Apa arti dari kanji 小?',
+                        options: ['besar', 'kecil', 'atas', 'bawah'],
+                        correct: 1,
+                        explanation: '小 (chii/shou) berarti "kecil".',
+                    },
+                    {
+                        question: 'Kanji mana yang berarti "atas"?',
+                        options: ['上', '下', '中', '外'],
+                        correct: 0,
+                        explanation: '上 (ue/jou) berarti "atas".',
+                    },
+                    {
+                        question: 'Apa arti dari kanji 本?',
+                        options: ['orang', 'buku', 'gunung', 'sungai'],
+                        correct: 1,
+                        explanation: '本 (hon/moto) berarti "buku" atau "asal".',
+                    },
+                    {
+                        question: 'Kanji mana yang berarti "belajar"?',
+                        options: ['学', '校', '生', '先'],
+                        correct: 0,
+                        explanation: '学 (gaku/mana) berarti "belajar".',
+                    },
+                ],
+            };
+        </script>
+        <script src="../js/quiz.js"></script>
         <script src="../js/theme.js"></script>
-</body>
-
+    </body>
 </html>

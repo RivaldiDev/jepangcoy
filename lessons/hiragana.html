@@ -1,458 +1,527 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Belajar Hiragana - Japanese N5</title>
-        <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-                rel="stylesheet">
-        <link rel="stylesheet" href="../styles.css">
-        <link rel="stylesheet" href="../css/lesson.css">
-        <link rel="stylesheet" href="../css/tabs.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Zen+Maru+Gothic:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="../css/lesson.css" />
+        <link rel="stylesheet" href="../css/tabs.css" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+    </head>
 
-<body>
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <body>
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
         <header class="header" role="banner">
-                <div class="container">
-                        <div class="header-content">
-                                <div class="logo">
-                                        <span class="logo-jp" aria-label="Japanese language">日本語</span>
-                                        <span class="logo-text">N5 Learning</span>
-                                </div>
-                                <nav class="nav" role="navigation">
-                                        <a href="../index.html" class="nav-link">Beranda</a>
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
-                        <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
-                        <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-jp" aria-label="Japanese language">日本語</span>
+                        <span class="logo-text">N5 Learning</span>
+                    </div>
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
                     </button>
-                                </nav>
-                        </div>
+                    <nav class="nav" id="mainNav" role="navigation" aria-label="Main navigation">
+                        <a href="../index.html" class="nav-link">Beranda</a>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle between dark and light theme">
+                            <span class="material-symbols-outlined sun-icon" aria-hidden="true">light_mode</span>
+                            <span class="material-symbols-outlined moon-icon" aria-hidden="true">dark_mode</span>
+                        </button>
+                    </nav>
                 </div>
+            </div>
         </header>
 
         <div class="lesson-container">
-                <div class="lesson-header">
-                        <h1 class="lesson-title">Hiragana (ひらがな)</h1>
-                        <p class="lesson-subtitle">Sistem penulisan dasar bahasa Jepang - 46 karakter</p>
-                </div>
+            <div class="lesson-header">
+                <h1 class="lesson-title">Hiragana (ひらがな)</h1>
+                <p class="lesson-subtitle">Sistem penulisan dasar bahasa Jepang - 46 karakter</p>
+            </div>
 
-                <!-- Tab Navigation -->
-                <div class="tabs">
-                        <button class="tab active" data-tab="study"><span class="material-symbols-outlined" aria-hidden="true">menu_book</span> Belajar</button>
-                        <button class="tab" data-tab="flashcard-tab"><span class="material-symbols-outlined" aria-hidden="true">style</span> Flashcard</button>
-                        <button class="tab" data-tab="practice"><span class="material-symbols-outlined" aria-hidden="true">edit</span> Latihan</button>
-                </div>
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-tab="study">
+                    <span class="material-symbols-outlined" aria-hidden="true">menu_book</span> Belajar
+                </button>
+                <button class="tab" data-tab="flashcard-tab">
+                    <span class="material-symbols-outlined" aria-hidden="true">style</span> Flashcard
+                </button>
+                <button class="tab" data-tab="practice">
+                    <span class="material-symbols-outlined" aria-hidden="true">edit</span> Latihan
+                </button>
+            </div>
 
-                <!-- Study Tab -->
-                <div class="tab-content active" id="study">
-                        <section class="study-section">
-                                <h2>Tabel Hiragana Lengkap</h2>
-                                <p>Klik karakter untuk mendengar pengucapannya! 🔊</p>
+            <!-- Study Tab -->
+            <div class="tab-content active" id="study">
+                <section class="study-section">
+                    <h2>Tabel Hiragana Lengkap</h2>
+                    <p>Klik karakter untuk mendengar pengucapannya! 🔊</p>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">Vokal Dasar</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="あ"><span
-                                                        class="character-jp">あ</span><span
-                                                        class="character-divider">|</span><span
-                                                        class="character-romaji">a</span></div>
-                                        <div class="character-item" data-char="い"><span
-                                                        class="character-jp">い</span><span
-                                                        class="character-divider">|</span><span
-                                                        class="character-romaji">i</span></div>
-                                        <div class="character-item" data-char="う"><span
-                                                        class="character-jp">う</span><span
-                                                        class="character-divider">|</span><span
-                                                        class="character-romaji">u</span></div>
-                                        <div class="character-item" data-char="え"><span
-                                                        class="character-jp">え</span><span
-                                                        class="character-divider">|</span><span
-                                                        class="character-romaji">e</span></div>
-                                        <div class="character-item" data-char="お"><span
-                                                        class="character-jp">お</span><span
-                                                        class="character-divider">|</span><span
-                                                        class="character-romaji">o</span></div>
-                                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">Vokal Dasar</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="あ">
+                            <span class="character-jp">あ</span><span class="character-divider">|</span
+                            ><span class="character-romaji">a</span>
+                        </div>
+                        <div class="character-item" data-char="い">
+                            <span class="character-jp">い</span><span class="character-divider">|</span
+                            ><span class="character-romaji">i</span>
+                        </div>
+                        <div class="character-item" data-char="う">
+                            <span class="character-jp">う</span><span class="character-divider">|</span
+                            ><span class="character-romaji">u</span>
+                        </div>
+                        <div class="character-item" data-char="え">
+                            <span class="character-jp">え</span><span class="character-divider">|</span
+                            ><span class="character-romaji">e</span>
+                        </div>
+                        <div class="character-item" data-char="お">
+                            <span class="character-jp">お</span><span class="character-divider">|</span
+                            ><span class="character-romaji">o</span>
+                        </div>
+                    </div>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">K-Baris (か行)</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="か"><span
-                                                        class="character-jp">か</span><span
-                                                        class="character-romaji">ka</span></div>
-                                        <div class="character-item" data-char="き"><span
-                                                        class="character-jp">き</span><span
-                                                        class="character-romaji">ki</span></div>
-                                        <div class="character-item" data-char="く"><span
-                                                        class="character-jp">く</span><span
-                                                        class="character-romaji">ku</span></div>
-                                        <div class="character-item" data-char="け"><span
-                                                        class="character-jp">け</span><span
-                                                        class="character-romaji">ke</span></div>
-                                        <div class="character-item" data-char="こ"><span
-                                                        class="character-jp">こ</span><span
-                                                        class="character-romaji">ko</span></div>
-                                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">K-Baris (か行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="か">
+                            <span class="character-jp">か</span><span class="character-romaji">ka</span>
+                        </div>
+                        <div class="character-item" data-char="き">
+                            <span class="character-jp">き</span><span class="character-romaji">ki</span>
+                        </div>
+                        <div class="character-item" data-char="く">
+                            <span class="character-jp">く</span><span class="character-romaji">ku</span>
+                        </div>
+                        <div class="character-item" data-char="け">
+                            <span class="character-jp">け</span><span class="character-romaji">ke</span>
+                        </div>
+                        <div class="character-item" data-char="こ">
+                            <span class="character-jp">こ</span><span class="character-romaji">ko</span>
+                        </div>
+                    </div>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">S-Baris (さ行)</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="さ"><span
-                                                        class="character-jp">さ</span><span
-                                                        class="character-romaji">sa</span></div>
-                                        <div class="character-item" data-char="し"><span
-                                                        class="character-jp">し</span><span
-                                                        class="character-romaji">shi</span></div>
-                                        <div class="character-item" data-char="す"><span
-                                                        class="character-jp">す</span><span
-                                                        class="character-romaji">su</span></div>
-                                        <div class="character-item" data-char="せ"><span
-                                                        class="character-jp">せ</span><span
-                                                        class="character-romaji">se</span></div>
-                                        <div class="character-item" data-char="そ"><span
-                                                        class="character-jp">そ</span><span
-                                                        class="character-romaji">so</span></div>
-                                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">S-Baris (さ行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="さ">
+                            <span class="character-jp">さ</span><span class="character-romaji">sa</span>
+                        </div>
+                        <div class="character-item" data-char="し">
+                            <span class="character-jp">し</span><span class="character-romaji">shi</span>
+                        </div>
+                        <div class="character-item" data-char="す">
+                            <span class="character-jp">す</span><span class="character-romaji">su</span>
+                        </div>
+                        <div class="character-item" data-char="せ">
+                            <span class="character-jp">せ</span><span class="character-romaji">se</span>
+                        </div>
+                        <div class="character-item" data-char="そ">
+                            <span class="character-jp">そ</span><span class="character-romaji">so</span>
+                        </div>
+                    </div>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">T-Baris (た行)</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="た"><span
-                                                        class="character-jp">た</span><span
-                                                        class="character-romaji">ta</span></div>
-                                        <div class="character-item" data-char="ち"><span
-                                                        class="character-jp">ち</span><span
-                                                        class="character-romaji">chi</span></div>
-                                        <div class="character-item" data-char="つ"><span
-                                                        class="character-jp">つ</span><span
-                                                        class="character-romaji">tsu</span></div>
-                                        <div class="character-item" data-char="て"><span
-                                                        class="character-jp">て</span><span
-                                                        class="character-romaji">te</span></div>
-                                        <div class="character-item" data-char="と"><span
-                                                        class="character-jp">と</span><span
-                                                        class="character-romaji">to</span></div>
-                                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">T-Baris (た行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="た">
+                            <span class="character-jp">た</span><span class="character-romaji">ta</span>
+                        </div>
+                        <div class="character-item" data-char="ち">
+                            <span class="character-jp">ち</span><span class="character-romaji">chi</span>
+                        </div>
+                        <div class="character-item" data-char="つ">
+                            <span class="character-jp">つ</span><span class="character-romaji">tsu</span>
+                        </div>
+                        <div class="character-item" data-char="て">
+                            <span class="character-jp">て</span><span class="character-romaji">te</span>
+                        </div>
+                        <div class="character-item" data-char="と">
+                            <span class="character-jp">と</span><span class="character-romaji">to</span>
+                        </div>
+                    </div>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">N-Baris (な行)</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="な"><span
-                                                        class="character-jp">な</span><span
-                                                        class="character-romaji">na</span></div>
-                                        <div class="character-item" data-char="に"><span
-                                                        class="character-jp">に</span><span
-                                                        class="character-romaji">ni</span></div>
-                                        <div class="character-item" data-char="ぬ"><span
-                                                        class="character-jp">ぬ</span><span
-                                                        class="character-romaji">nu</span></div>
-                                        <div class="character-item" data-char="ね"><span
-                                                        class="character-jp">ね</span><span
-                                                        class="character-romaji">ne</span></div>
-                                        <div class="character-item" data-char="の"><span
-                                                        class="character-jp">の</span><span
-                                                        class="character-romaji">no</span></div>
-                                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">N-Baris (な行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="な">
+                            <span class="character-jp">な</span><span class="character-romaji">na</span>
+                        </div>
+                        <div class="character-item" data-char="に">
+                            <span class="character-jp">に</span><span class="character-romaji">ni</span>
+                        </div>
+                        <div class="character-item" data-char="ぬ">
+                            <span class="character-jp">ぬ</span><span class="character-romaji">nu</span>
+                        </div>
+                        <div class="character-item" data-char="ね">
+                            <span class="character-jp">ね</span><span class="character-romaji">ne</span>
+                        </div>
+                        <div class="character-item" data-char="の">
+                            <span class="character-jp">の</span><span class="character-romaji">no</span>
+                        </div>
+                    </div>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">H-Baris (は行)</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="は"><span
-                                                        class="character-jp">は</span><span
-                                                        class="character-romaji">ha</span></div>
-                                        <div class="character-item" data-char="ひ"><span
-                                                        class="character-jp">ひ</span><span
-                                                        class="character-romaji">hi</span></div>
-                                        <div class="character-item" data-char="ふ"><span
-                                                        class="character-jp">ふ</span><span
-                                                        class="character-romaji">fu</span></div>
-                                        <div class="character-item" data-char="へ"><span
-                                                        class="character-jp">へ</span><span
-                                                        class="character-romaji">he</span></div>
-                                        <div class="character-item" data-char="ほ"><span
-                                                        class="character-jp">ほ</span><span
-                                                        class="character-romaji">ho</span></div>
-                                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">H-Baris (は行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="は">
+                            <span class="character-jp">は</span><span class="character-romaji">ha</span>
+                        </div>
+                        <div class="character-item" data-char="ひ">
+                            <span class="character-jp">ひ</span><span class="character-romaji">hi</span>
+                        </div>
+                        <div class="character-item" data-char="ふ">
+                            <span class="character-jp">ふ</span><span class="character-romaji">fu</span>
+                        </div>
+                        <div class="character-item" data-char="へ">
+                            <span class="character-jp">へ</span><span class="character-romaji">he</span>
+                        </div>
+                        <div class="character-item" data-char="ほ">
+                            <span class="character-jp">ほ</span><span class="character-romaji">ho</span>
+                        </div>
+                    </div>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">M-Baris (ま行)</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="ま"><span
-                                                        class="character-jp">ま</span><span
-                                                        class="character-romaji">ma</span></div>
-                                        <div class="character-item" data-char="み"><span
-                                                        class="character-jp">み</span><span
-                                                        class="character-romaji">mi</span></div>
-                                        <div class="character-item" data-char="む"><span
-                                                        class="character-jp">む</span><span
-                                                        class="character-romaji">mu</span></div>
-                                        <div class="character-item" data-char="め"><span
-                                                        class="character-jp">め</span><span
-                                                        class="character-romaji">me</span></div>
-                                        <div class="character-item" data-char="も"><span
-                                                        class="character-jp">も</span><span
-                                                        class="character-romaji">mo</span></div>
-                                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">M-Baris (ま行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="ま">
+                            <span class="character-jp">ま</span><span class="character-romaji">ma</span>
+                        </div>
+                        <div class="character-item" data-char="み">
+                            <span class="character-jp">み</span><span class="character-romaji">mi</span>
+                        </div>
+                        <div class="character-item" data-char="む">
+                            <span class="character-jp">む</span><span class="character-romaji">mu</span>
+                        </div>
+                        <div class="character-item" data-char="め">
+                            <span class="character-jp">め</span><span class="character-romaji">me</span>
+                        </div>
+                        <div class="character-item" data-char="も">
+                            <span class="character-jp">も</span><span class="character-romaji">mo</span>
+                        </div>
+                    </div>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">Y-Baris (や行)</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="や"><span
-                                                        class="character-jp">や</span><span
-                                                        class="character-romaji">ya</span></div>
-                                        <div class="character-item" data-char="ゆ"><span
-                                                        class="character-jp">ゆ</span><span
-                                                        class="character-romaji">yu</span></div>
-                                        <div class="character-item" data-char="よ"><span
-                                                        class="character-jp">よ</span><span
-                                                        class="character-romaji">yo</span></div>
-                                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">Y-Baris (や行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="や">
+                            <span class="character-jp">や</span><span class="character-romaji">ya</span>
+                        </div>
+                        <div class="character-item" data-char="ゆ">
+                            <span class="character-jp">ゆ</span><span class="character-romaji">yu</span>
+                        </div>
+                        <div class="character-item" data-char="よ">
+                            <span class="character-jp">よ</span><span class="character-romaji">yo</span>
+                        </div>
+                    </div>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">R-Baris (ら行)</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="ら"><span
-                                                        class="character-jp">ら</span><span
-                                                        class="character-romaji">ra</span></div>
-                                        <div class="character-item" data-char="り"><span
-                                                        class="character-jp">り</span><span
-                                                        class="character-romaji">ri</span></div>
-                                        <div class="character-item" data-char="る"><span
-                                                        class="character-jp">る</span><span
-                                                        class="character-romaji">ru</span></div>
-                                        <div class="character-item" data-char="れ"><span
-                                                        class="character-jp">れ</span><span
-                                                        class="character-romaji">re</span></div>
-                                        <div class="character-item" data-char="ろ"><span
-                                                        class="character-jp">ろ</span><span
-                                                        class="character-romaji">ro</span></div>
-                                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">R-Baris (ら行)</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="ら">
+                            <span class="character-jp">ら</span><span class="character-romaji">ra</span>
+                        </div>
+                        <div class="character-item" data-char="り">
+                            <span class="character-jp">り</span><span class="character-romaji">ri</span>
+                        </div>
+                        <div class="character-item" data-char="る">
+                            <span class="character-jp">る</span><span class="character-romaji">ru</span>
+                        </div>
+                        <div class="character-item" data-char="れ">
+                            <span class="character-jp">れ</span><span class="character-romaji">re</span>
+                        </div>
+                        <div class="character-item" data-char="ろ">
+                            <span class="character-jp">ろ</span><span class="character-romaji">ro</span>
+                        </div>
+                    </div>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">W-Baris & N (わ行・ん)</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="わ"><span
-                                                        class="character-jp">わ</span><span
-                                                        class="character-romaji">wa</span></div>
-                                        <div class="character-item" data-char="を"><span
-                                                        class="character-jp">を</span><span
-                                                        class="character-romaji">wo</span></div>
-                                        <div class="character-item" data-char="ん"><span
-                                                        class="character-jp">ん</span><span
-                                                        class="character-romaji">n</span></div>
-                                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">W-Baris & N (わ行・ん)</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="わ">
+                            <span class="character-jp">わ</span><span class="character-romaji">wa</span>
+                        </div>
+                        <div class="character-item" data-char="を">
+                            <span class="character-jp">を</span><span class="character-romaji">wo</span>
+                        </div>
+                        <div class="character-item" data-char="ん">
+                            <span class="character-jp">ん</span><span class="character-romaji">n</span>
+                        </div>
+                    </div>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">Dakuten (゛) - G, Z, D, B</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="が"><span
-                                                        class="character-jp">が</span><span
-                                                        class="character-romaji">ga</span></div>
-                                        <div class="character-item" data-char="ぎ"><span
-                                                        class="character-jp">ぎ</span><span
-                                                        class="character-romaji">gi</span></div>
-                                        <div class="character-item" data-char="ぐ"><span
-                                                        class="character-jp">ぐ</span><span
-                                                        class="character-romaji">gu</span></div>
-                                        <div class="character-item" data-char="げ"><span
-                                                        class="character-jp">げ</span><span
-                                                        class="character-romaji">ge</span></div>
-                                        <div class="character-item" data-char="ご"><span
-                                                        class="character-jp">ご</span><span
-                                                        class="character-romaji">go</span></div>
-                                        <div class="character-item" data-char="ざ"><span
-                                                        class="character-jp">ざ</span><span
-                                                        class="character-romaji">za</span></div>
-                                        <div class="character-item" data-char="じ"><span
-                                                        class="character-jp">じ</span><span
-                                                        class="character-romaji">ji</span></div>
-                                        <div class="character-item" data-char="ず"><span
-                                                        class="character-jp">ず</span><span
-                                                        class="character-romaji">zu</span></div>
-                                        <div class="character-item" data-char="ぜ"><span
-                                                        class="character-jp">ぜ</span><span
-                                                        class="character-romaji">ze</span></div>
-                                        <div class="character-item" data-char="ぞ"><span
-                                                        class="character-jp">ぞ</span><span
-                                                        class="character-romaji">zo</span></div>
-                                        <div class="character-item" data-char="だ"><span
-                                                        class="character-jp">だ</span><span
-                                                        class="character-romaji">da</span></div>
-                                        <div class="character-item" data-char="ぢ"><span
-                                                        class="character-jp">ぢ</span><span
-                                                        class="character-romaji">ji</span></div>
-                                        <div class="character-item" data-char="づ"><span
-                                                        class="character-jp">づ</span><span
-                                                        class="character-romaji">zu</span></div>
-                                        <div class="character-item" data-char="で"><span
-                                                        class="character-jp">で</span><span
-                                                        class="character-romaji">de</span></div>
-                                        <div class="character-item" data-char="ど"><span
-                                                        class="character-jp">ど</span><span
-                                                        class="character-romaji">do</span></div>
-                                        <div class="character-item" data-char="ば"><span
-                                                        class="character-jp">ば</span><span
-                                                        class="character-romaji">ba</span></div>
-                                        <div class="character-item" data-char="び"><span
-                                                        class="character-jp">び</span><span
-                                                        class="character-romaji">bi</span></div>
-                                        <div class="character-item" data-char="ぶ"><span
-                                                        class="character-jp">ぶ</span><span
-                                                        class="character-romaji">bu</span></div>
-                                        <div class="character-item" data-char="べ"><span
-                                                        class="character-jp">べ</span><span
-                                                        class="character-romaji">be</span></div>
-                                        <div class="character-item" data-char="ぼ"><span
-                                                        class="character-jp">ぼ</span><span
-                                                        class="character-romaji">bo</span></div>
-                                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">Dakuten (゛) - G, Z, D, B</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="が">
+                            <span class="character-jp">が</span><span class="character-romaji">ga</span>
+                        </div>
+                        <div class="character-item" data-char="ぎ">
+                            <span class="character-jp">ぎ</span><span class="character-romaji">gi</span>
+                        </div>
+                        <div class="character-item" data-char="ぐ">
+                            <span class="character-jp">ぐ</span><span class="character-romaji">gu</span>
+                        </div>
+                        <div class="character-item" data-char="げ">
+                            <span class="character-jp">げ</span><span class="character-romaji">ge</span>
+                        </div>
+                        <div class="character-item" data-char="ご">
+                            <span class="character-jp">ご</span><span class="character-romaji">go</span>
+                        </div>
+                        <div class="character-item" data-char="ざ">
+                            <span class="character-jp">ざ</span><span class="character-romaji">za</span>
+                        </div>
+                        <div class="character-item" data-char="じ">
+                            <span class="character-jp">じ</span><span class="character-romaji">ji</span>
+                        </div>
+                        <div class="character-item" data-char="ず">
+                            <span class="character-jp">ず</span><span class="character-romaji">zu</span>
+                        </div>
+                        <div class="character-item" data-char="ぜ">
+                            <span class="character-jp">ぜ</span><span class="character-romaji">ze</span>
+                        </div>
+                        <div class="character-item" data-char="ぞ">
+                            <span class="character-jp">ぞ</span><span class="character-romaji">zo</span>
+                        </div>
+                        <div class="character-item" data-char="だ">
+                            <span class="character-jp">だ</span><span class="character-romaji">da</span>
+                        </div>
+                        <div class="character-item" data-char="ぢ">
+                            <span class="character-jp">ぢ</span><span class="character-romaji">ji</span>
+                        </div>
+                        <div class="character-item" data-char="づ">
+                            <span class="character-jp">づ</span><span class="character-romaji">zu</span>
+                        </div>
+                        <div class="character-item" data-char="で">
+                            <span class="character-jp">で</span><span class="character-romaji">de</span>
+                        </div>
+                        <div class="character-item" data-char="ど">
+                            <span class="character-jp">ど</span><span class="character-romaji">do</span>
+                        </div>
+                        <div class="character-item" data-char="ば">
+                            <span class="character-jp">ば</span><span class="character-romaji">ba</span>
+                        </div>
+                        <div class="character-item" data-char="び">
+                            <span class="character-jp">び</span><span class="character-romaji">bi</span>
+                        </div>
+                        <div class="character-item" data-char="ぶ">
+                            <span class="character-jp">ぶ</span><span class="character-romaji">bu</span>
+                        </div>
+                        <div class="character-item" data-char="べ">
+                            <span class="character-jp">べ</span><span class="character-romaji">be</span>
+                        </div>
+                        <div class="character-item" data-char="ぼ">
+                            <span class="character-jp">ぼ</span><span class="character-romaji">bo</span>
+                        </div>
+                    </div>
 
-                                <h3 style="margin-top: 2rem; color: var(--primary);">Handakuten (゜) - P</h3>
-                                <div class="character-grid">
-                                        <div class="character-item" data-char="ぱ"><span
-                                                        class="character-jp">ぱ</span><span
-                                                        class="character-romaji">pa</span></div>
-                                        <div class="character-item" data-char="ぴ"><span
-                                                        class="character-jp">ぴ</span><span
-                                                        class="character-romaji">pi</span></div>
-                                        <div class="character-item" data-char="ぷ"><span
-                                                        class="character-jp">ぷ</span><span
-                                                        class="character-romaji">pu</span></div>
-                                        <div class="character-item" data-char="ぺ"><span
-                                                        class="character-jp">ぺ</span><span
-                                                        class="character-romaji">pe</span></div>
-                                        <div class="character-item" data-char="ぽ"><span
-                                                        class="character-jp">ぽ</span><span
-                                                        class="character-romaji">po</span></div>
-                                </div>
-                        </section>
-                </div>
+                    <h3 style="margin-top: 2rem; color: var(--primary)">Handakuten (゜) - P</h3>
+                    <div class="character-grid">
+                        <div class="character-item" data-char="ぱ">
+                            <span class="character-jp">ぱ</span><span class="character-romaji">pa</span>
+                        </div>
+                        <div class="character-item" data-char="ぴ">
+                            <span class="character-jp">ぴ</span><span class="character-romaji">pi</span>
+                        </div>
+                        <div class="character-item" data-char="ぷ">
+                            <span class="character-jp">ぷ</span><span class="character-romaji">pu</span>
+                        </div>
+                        <div class="character-item" data-char="ぺ">
+                            <span class="character-jp">ぺ</span><span class="character-romaji">pe</span>
+                        </div>
+                        <div class="character-item" data-char="ぽ">
+                            <span class="character-jp">ぽ</span><span class="character-romaji">po</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
-                <!-- Flashcard Tab -->
-                <div class="tab-content" id="flashcard-tab">
-                        <div id="flashcard-container"></div>
-                </div>
+            <!-- Flashcard Tab -->
+            <div class="tab-content" id="flashcard-tab">
+                <div id="flashcard-container"></div>
+            </div>
 
-                <!-- Practice Tab -->
-                <div class="tab-content" id="practice">
-                        <section class="quiz-section">
-                                <div class="quiz-header">
-                                        <h2>Latihan Soal</h2>
-                                        <p>Uji pemahaman Anda dengan 10 pertanyaan tentang Hiragana</p>
-                                        <div class="quiz-progress-container">
-                                                <div id="quiz-progress"></div>
-                                        </div>
-                                </div>
-                                <div id="quiz-container"></div>
-                        </section>
-                </div>
+            <!-- Practice Tab -->
+            <div class="tab-content" id="practice">
+                <section class="quiz-section">
+                    <div class="quiz-header">
+                        <h2>Latihan Soal</h2>
+                        <p>Uji pemahaman Anda dengan 10 pertanyaan tentang Hiragana</p>
+                        <div class="quiz-progress-container">
+                            <div id="quiz-progress"></div>
+                        </div>
+                    </div>
+                    <div id="quiz-container"></div>
+                </section>
+            </div>
         </div>
 
         <script src="../js/speech.js"></script>
         <script src="../js/flashcard.js"></script>
         <script src="../js/quiz.js"></script>
         <script>
-                // Tab switching
-                document.querySelectorAll('.tab').forEach(tab => {
-                        tab.addEventListener('click', () => {
-                                const targetTab = tab.dataset.tab;
+            // Tab switching
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetTab = tab.dataset.tab;
 
-                                // Update active tab
-                                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                                tab.classList.add('active');
+                    // Update active tab
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
 
-                                // Update active content
-                                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                                document.getElementById(targetTab).classList.add('active');
-                        });
+                    // Update active content
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    document.getElementById(targetTab).classList.add('active');
                 });
+            });
 
-                // Add voice to all characters
-                document.querySelectorAll('.character-item').forEach(item => {
-                        const char = item.dataset.char;
-                        item.style.cursor = 'pointer';
-                        item.style.transition = 'transform 0.2s';
+            // Add voice to all characters
+            document.querySelectorAll('.character-item').forEach(item => {
+                const char = item.dataset.char;
+                item.style.cursor = 'pointer';
+                item.style.transition = 'transform 0.2s';
 
-                        item.addEventListener('click', () => {
-                                japaneseSpeech.speak(char);
-                                item.style.transform = 'scale(1.1)';
-                                setTimeout(() => item.style.transform = 'scale(1)', 200);
-                        });
+                item.addEventListener('click', () => {
+                    japaneseSpeech.speak(char);
+                    item.style.transform = 'scale(1.1)';
+                    setTimeout(() => (item.style.transform = 'scale(1)'), 200);
                 });
+            });
 
-                // Flashcard data
-                const hiraganaCards = [
-                        { category: 'hiragana', front: 'あ', romaji: 'a', back: 'a' },
-                        { category: 'hiragana', front: 'い', romaji: 'i', back: 'i' },
-                        { category: 'hiragana', front: 'う', romaji: 'u', back: 'u' },
-                        { category: 'hiragana', front: 'え', romaji: 'e', back: 'e' },
-                        { category: 'hiragana', front: 'お', romaji: 'o', back: 'o' },
-                        { category: 'hiragana', front: 'か', romaji: 'ka', back: 'ka' },
-                        { category: 'hiragana', front: 'き', romaji: 'ki', back: 'ki' },
-                        { category: 'hiragana', front: 'く', romaji: 'ku', back: 'ku' },
-                        { category: 'hiragana', front: 'け', romaji: 'ke', back: 'ke' },
-                        { category: 'hiragana', front: 'こ', romaji: 'ko', back: 'ko' },
-                        { category: 'hiragana', front: 'さ', romaji: 'sa', back: 'sa' },
-                        { category: 'hiragana', front: 'し', romaji: 'shi', back: 'shi' },
-                        { category: 'hiragana', front: 'す', romaji: 'su', back: 'su' },
-                        { category: 'hiragana', front: 'せ', romaji: 'se', back: 'se' },
-                        { category: 'hiragana', front: 'そ', romaji: 'so', back: 'so' },
-                        { category: 'hiragana', front: 'た', romaji: 'ta', back: 'ta' },
-                        { category: 'hiragana', front: 'ち', romaji: 'chi', back: 'chi' },
-                        { category: 'hiragana', front: 'つ', romaji: 'tsu', back: 'tsu' },
-                        { category: 'hiragana', front: 'て', romaji: 'te', back: 'te' },
-                        { category: 'hiragana', front: 'と', romaji: 'to', back: 'to' },
-                        { category: 'hiragana', front: 'な', romaji: 'na', back: 'na' },
-                        { category: 'hiragana', front: 'に', romaji: 'ni', back: 'ni' },
-                        { category: 'hiragana', front: 'ぬ', romaji: 'nu', back: 'nu' },
-                        { category: 'hiragana', front: 'ね', romaji: 'ne', back: 'ne' },
-                        { category: 'hiragana', front: 'の', romaji: 'no', back: 'no' },
-                        { category: 'hiragana', front: 'は', romaji: 'ha', back: 'ha' },
-                        { category: 'hiragana', front: 'ひ', romaji: 'hi', back: 'hi' },
-                        { category: 'hiragana', front: 'ふ', romaji: 'fu', back: 'fu' },
-                        { category: 'hiragana', front: 'へ', romaji: 'he', back: 'he' },
-                        { category: 'hiragana', front: 'ほ', romaji: 'ho', back: 'ho' },
-                        { category: 'hiragana', front: 'ま', romaji: 'ma', back: 'ma' },
-                        { category: 'hiragana', front: 'み', romaji: 'mi', back: 'mi' },
-                        { category: 'hiragana', front: 'む', romaji: 'mu', back: 'mu' },
-                        { category: 'hiragana', front: 'め', romaji: 'me', back: 'me' },
-                        { category: 'hiragana', front: 'も', romaji: 'mo', back: 'mo' },
-                        { category: 'hiragana', front: 'や', romaji: 'ya', back: 'ya' },
-                        { category: 'hiragana', front: 'ゆ', romaji: 'yu', back: 'yu' },
-                        { category: 'hiragana', front: 'よ', romaji: 'yo', back: 'yo' },
-                        { category: 'hiragana', front: 'ら', romaji: 'ra', back: 'ra' },
-                        { category: 'hiragana', front: 'り', romaji: 'ri', back: 'ri' },
-                        { category: 'hiragana', front: 'る', romaji: 'ru', back: 'ru' },
-                        { category: 'hiragana', front: 'れ', romaji: 're', back: 're' },
-                        { category: 'hiragana', front: 'ろ', romaji: 'ro', back: 'ro' },
-                        { category: 'hiragana', front: 'わ', romaji: 'wa', back: 'wa' },
-                        { category: 'hiragana', front: 'を', romaji: 'wo', back: 'wo' },
-                        { category: 'hiragana', front: 'ん', romaji: 'n', back: 'n' }
-                ];
+            // Flashcard data
+            const hiraganaCards = [
+                { category: 'hiragana', front: 'あ', romaji: 'a', back: 'a' },
+                { category: 'hiragana', front: 'い', romaji: 'i', back: 'i' },
+                { category: 'hiragana', front: 'う', romaji: 'u', back: 'u' },
+                { category: 'hiragana', front: 'え', romaji: 'e', back: 'e' },
+                { category: 'hiragana', front: 'お', romaji: 'o', back: 'o' },
+                { category: 'hiragana', front: 'か', romaji: 'ka', back: 'ka' },
+                { category: 'hiragana', front: 'き', romaji: 'ki', back: 'ki' },
+                { category: 'hiragana', front: 'く', romaji: 'ku', back: 'ku' },
+                { category: 'hiragana', front: 'け', romaji: 'ke', back: 'ke' },
+                { category: 'hiragana', front: 'こ', romaji: 'ko', back: 'ko' },
+                { category: 'hiragana', front: 'さ', romaji: 'sa', back: 'sa' },
+                { category: 'hiragana', front: 'し', romaji: 'shi', back: 'shi' },
+                { category: 'hiragana', front: 'す', romaji: 'su', back: 'su' },
+                { category: 'hiragana', front: 'せ', romaji: 'se', back: 'se' },
+                { category: 'hiragana', front: 'そ', romaji: 'so', back: 'so' },
+                { category: 'hiragana', front: 'た', romaji: 'ta', back: 'ta' },
+                { category: 'hiragana', front: 'ち', romaji: 'chi', back: 'chi' },
+                { category: 'hiragana', front: 'つ', romaji: 'tsu', back: 'tsu' },
+                { category: 'hiragana', front: 'て', romaji: 'te', back: 'te' },
+                { category: 'hiragana', front: 'と', romaji: 'to', back: 'to' },
+                { category: 'hiragana', front: 'な', romaji: 'na', back: 'na' },
+                { category: 'hiragana', front: 'に', romaji: 'ni', back: 'ni' },
+                { category: 'hiragana', front: 'ぬ', romaji: 'nu', back: 'nu' },
+                { category: 'hiragana', front: 'ね', romaji: 'ne', back: 'ne' },
+                { category: 'hiragana', front: 'の', romaji: 'no', back: 'no' },
+                { category: 'hiragana', front: 'は', romaji: 'ha', back: 'ha' },
+                { category: 'hiragana', front: 'ひ', romaji: 'hi', back: 'hi' },
+                { category: 'hiragana', front: 'ふ', romaji: 'fu', back: 'fu' },
+                { category: 'hiragana', front: 'へ', romaji: 'he', back: 'he' },
+                { category: 'hiragana', front: 'ほ', romaji: 'ho', back: 'ho' },
+                { category: 'hiragana', front: 'ま', romaji: 'ma', back: 'ma' },
+                { category: 'hiragana', front: 'み', romaji: 'mi', back: 'mi' },
+                { category: 'hiragana', front: 'む', romaji: 'mu', back: 'mu' },
+                { category: 'hiragana', front: 'め', romaji: 'me', back: 'me' },
+                { category: 'hiragana', front: 'も', romaji: 'mo', back: 'mo' },
+                { category: 'hiragana', front: 'や', romaji: 'ya', back: 'ya' },
+                { category: 'hiragana', front: 'ゆ', romaji: 'yu', back: 'yu' },
+                { category: 'hiragana', front: 'よ', romaji: 'yo', back: 'yo' },
+                { category: 'hiragana', front: 'ら', romaji: 'ra', back: 'ra' },
+                { category: 'hiragana', front: 'り', romaji: 'ri', back: 'ri' },
+                { category: 'hiragana', front: 'る', romaji: 'ru', back: 'ru' },
+                { category: 'hiragana', front: 'れ', romaji: 're', back: 're' },
+                { category: 'hiragana', front: 'ろ', romaji: 'ro', back: 'ro' },
+                { category: 'hiragana', front: 'わ', romaji: 'wa', back: 'wa' },
+                { category: 'hiragana', front: 'を', romaji: 'wo', back: 'wo' },
+                { category: 'hiragana', front: 'ん', romaji: 'n', back: 'n' },
+            ];
 
-                // Initialize flashcard when tab is clicked
-                let flashcardEngine = null;
-                const flashcardTab = document.querySelector('[data-tab="flashcard-tab"]');
-                if (flashcardTab) {
-                        flashcardTab.addEventListener('click', () => {
-                                if (!flashcardEngine) {
-                                        flashcardEngine = initFlashcards(hiraganaCards, 'flashcard-container');
-                                }
-                        });
-                }
+            // Initialize flashcard when tab is clicked
+            let flashcardEngine = null;
+            const flashcardTab = document.querySelector('[data-tab="flashcard-tab"]');
+            if (flashcardTab) {
+                flashcardTab.addEventListener('click', () => {
+                    if (!flashcardEngine) {
+                        flashcardEngine = initFlashcards(hiraganaCards, 'flashcard-container');
+                    }
+                });
+            }
 
-                // Quiz data
-                const quizData = {
-                        lessonId: 'hiragana',
-                        questions: [
-                                { question: 'Apa romaji dari karakter あ?', options: ['a', 'i', 'u', 'e'], correct: 0, explanation: 'Karakter あ dibaca sebagai "a" - vokal pertama dalam Hiragana.' },
-                                { question: 'Karakter mana yang dibaca sebagai "ka"?', options: ['き', 'か', 'く', 'け'], correct: 1, explanation: 'か adalah karakter Hiragana untuk bunyi "ka".' },
-                                { question: 'Apa romaji dari karakter し?', options: ['si', 'shi', 'chi', 'ti'], correct: 1, explanation: 'し dibaca sebagai "shi", bukan "si".' },
-                                { question: 'Karakter mana yang dibaca sebagai "tsu"?', options: ['つ', 'て', 'と', 'た'], correct: 0, explanation: 'つ adalah karakter untuk bunyi "tsu".' },
-                                { question: 'Apa romaji dari karakter ん?', options: ['n', 'm', 'ng', 'nn'], correct: 0, explanation: 'ん adalah satu-satunya karakter Hiragana yang dibaca sebagai konsonan tunggal "n".' },
-                                { question: 'Karakter mana yang dibaca sebagai "chi"?', options: ['し', 'ち', 'き', 'に'], correct: 1, explanation: 'ち dibaca sebagai "chi".' },
-                                { question: 'Apa romaji dari karakter の?', options: ['no', 'mo', 'ro', 'ko'], correct: 0, explanation: 'の dibaca sebagai "no" dan sering digunakan sebagai partikel kepemilikan.' },
-                                { question: 'Karakter mana yang dibaca sebagai "ha"?', options: ['は', 'ほ', 'ひ', 'へ'], correct: 0, explanation: 'は dibaca "ha", tetapi ketika digunakan sebagai partikel dibaca "wa".' },
-                                { question: 'Apa romaji dari karakter を?', options: ['wo', 'o', 'wo/o', 'w'], correct: 2, explanation: 'を secara teknis dibaca "wo" tetapi dalam praktik modern sering diucapkan seperti "o". Hanya digunakan sebagai partikel objek.' },
-                                { question: 'Berapa total karakter dasar dalam Hiragana?', options: ['40', '46', '50', '48'], correct: 1, explanation: 'Ada 46 karakter dasar dalam Hiragana (termasuk ん).' }
-                        ]
-                };
+            // Quiz data
+            const quizData = {
+                lessonId: 'hiragana',
+                questions: [
+                    {
+                        question: 'Apa romaji dari karakter あ?',
+                        options: ['a', 'i', 'u', 'e'],
+                        correct: 0,
+                        explanation: 'Karakter あ dibaca sebagai "a" - vokal pertama dalam Hiragana.',
+                    },
+                    {
+                        question: 'Karakter mana yang dibaca sebagai "ka"?',
+                        options: ['き', 'か', 'く', 'け'],
+                        correct: 1,
+                        explanation: 'か adalah karakter Hiragana untuk bunyi "ka".',
+                    },
+                    {
+                        question: 'Apa romaji dari karakter し?',
+                        options: ['si', 'shi', 'chi', 'ti'],
+                        correct: 1,
+                        explanation: 'し dibaca sebagai "shi", bukan "si".',
+                    },
+                    {
+                        question: 'Karakter mana yang dibaca sebagai "tsu"?',
+                        options: ['つ', 'て', 'と', 'た'],
+                        correct: 0,
+                        explanation: 'つ adalah karakter untuk bunyi "tsu".',
+                    },
+                    {
+                        question: 'Apa romaji dari karakter ん?',
+                        options: ['n', 'm', 'ng', 'nn'],
+                        correct: 0,
+                        explanation:
+                            'ん adalah satu-satunya karakter Hiragana yang dibaca sebagai konsonan tunggal "n".',
+                    },
+                    {
+                        question: 'Karakter mana yang dibaca sebagai "chi"?',
+                        options: ['し', 'ち', 'き', 'に'],
+                        correct: 1,
+                        explanation: 'ち dibaca sebagai "chi".',
+                    },
+                    {
+                        question: 'Apa romaji dari karakter の?',
+                        options: ['no', 'mo', 'ro', 'ko'],
+                        correct: 0,
+                        explanation: 'の dibaca sebagai "no" dan sering digunakan sebagai partikel kepemilikan.',
+                    },
+                    {
+                        question: 'Karakter mana yang dibaca sebagai "ha"?',
+                        options: ['は', 'ほ', 'ひ', 'へ'],
+                        correct: 0,
+                        explanation: 'は dibaca "ha", tetapi ketika digunakan sebagai partikel dibaca "wa".',
+                    },
+                    {
+                        question: 'Apa romaji dari karakter を?',
+                        options: ['wo', 'o', 'wo/o', 'w'],
+                        correct: 2,
+                        explanation:
+                            'を secara teknis dibaca "wo" tetapi dalam praktik modern sering diucapkan seperti "o". Hanya digunakan sebagai partikel objek.',
+                    },
+                    {
+                        question: 'Berapa total karakter dasar dalam Hiragana?',
+                        options: ['40', '46', '50', '48'],
+                        correct: 1,
+                        explanation: 'Ada 46 karakter dasar dalam Hiragana (termasuk ん).',
+                    },
+                ],
+            };
         </script>
         <script src="../js/theme.js"></script>
-</body>
-
+    </body>
 </html>
