@@ -40,47 +40,37 @@ class QuizEngine {
     const container = document.getElementById('quiz-container');
     const isExam = this.lessonId === 'uts-midterm' || this.lessonId === 'uas-final';
 
+    // For regular quizzes: always show romaji
+    // For exams (UTS/UAS): hide romaji during questions
+    const questionText = isExam ? question.question : addRomaji(question.question);
+    const optionsHtml = question.options
+      .map((option, index) => {
+        const optionText = isExam ? option : addRomaji(option);
+        return `
+        <button class="option-btn" data-index="${index}">
+          <span class="option-letter">${String.fromCharCode(65 + index)}</span>
+          <span class="option-text">${optionText}</span>
+        </button>
+      `;
+      })
+      .join('');
+
     container.innerHTML = `
-            <div class="question-card">
-                <div class="question-header">
-                    <span class="question-number">Pertanyaan ${this.currentQuestion + 1} dari ${this.questions.length}</span>
-                </div>
-                <h3 class="question-text">${isExam ? this.stripRomaji(question.question) : addRomaji(question.question)}</h3>
-                <div class="options-container">
-                    ${question.options
-                      .map(
-                        (option, index) => `
-                        <button class="option-btn" data-index="${index}">
-                            <span class="option-letter">${String.fromCharCode(65 + index)}</span>
-                            <span class="option-text">${isExam ? this.stripRomaji(option) : addRomaji(option)}</span>
-                        </button>
-                    `
-                      )
-                      .join('')}
-                </div>
-            </div>
-        `;
+      <div class="question-card">
+        <div class="question-header">
+          <span class="question-number">Pertanyaan ${this.currentQuestion + 1} dari ${this.questions.length}</span>
+        </div>
+        <h3 class="question-text">${questionText}</h3>
+        <div class="options-container">
+          ${optionsHtml}
+        </div>
+      </div>
+    `;
 
     // Add click handlers
     document.querySelectorAll('.option-btn').forEach(btn => {
       btn.addEventListener('click', e => this.handleAnswer(e));
     });
-  }
-
-  // Helper function to strip romaji and show only Japanese text
-  stripRomaji(text) {
-    // If text contains word groups, extract just the Japanese
-    if (text.includes('word-group')) {
-      // Extract text content from spans with class "jp"
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = text;
-      const jpSpans = tempDiv.querySelectorAll('.jp');
-      return Array.from(jpSpans)
-        .map(span => span.textContent)
-        .join('');
-    }
-    // For plain text, return as-is
-    return text;
   }
 
   handleAnswer(e) {
@@ -109,38 +99,49 @@ class QuizEngine {
     const percentage = Math.round((this.score / this.questions.length) * 100);
     const isExam = this.lessonId === 'uts-midterm' || this.lessonId === 'uas-final';
 
-    // Build feedback content
     let feedbackContent = `
-            <div class="feedback-card ${isCorrect ? 'correct' : 'incorrect'}">
-                <div class="feedback-icon">
-                    ${isCorrect ? '✓' : '✗'}
-                </div>
-                <h3 class="feedback-title">${isCorrect ? 'Benar!' : 'Salah'}</h3>
-        `;
+      <div class="feedback-card ${isCorrect ? 'correct' : 'incorrect'}">
+        <div class="feedback-icon">
+          ${isCorrect ? '✓' : '✗'}
+        </div>
+        <h3 class="feedback-title">${isCorrect ? 'Benar!' : 'Salah'}</h3>
+    `;
 
-    // Show romaji breakdown for wrong answers in exams, or always in regular quizzes
-    if (!isCorrect || !isExam) {
+    // For exams: show romaji breakdown after wrong answer
+    // For regular quizzes: always show romaji in feedback
+    if (!isCorrect && isExam) {
+      // Exams: only show romaji after wrong answer
       feedbackContent += `
-                <div class="feedback-romaji-section">
-                    <p class="romaji-label">Jawaban yang benar:</p>
-                    <div class="feedback-answer-with-romaji">
-                        ${addRomaji(question.options[question.correct])}
-                    </div>
-                    <p class="romaji-label">Pertanyaan:</p>
-                    <div class="feedback-question-with-romaji">
-                        ${addRomaji(question.question)}
-                    </div>
-                </div>
-            `;
+        <div class="feedback-romaji-section">
+          <p class="romaji-label">Jawaban yang benar:</p>
+          <div class="feedback-answer-with-romaji">
+            ${addRomaji(question.options[question.correct])}
+          </div>
+          <p class="romaji-label">Pertanyaan:</p>
+          <div class="feedback-question-with-romaji">
+            ${addRomaji(question.question)}
+          </div>
+        </div>
+      `;
+    } else if (!isExam) {
+      // Regular quizzes: show romaji breakdown in feedback too
+      feedbackContent += `
+        <div class="feedback-romaji-section">
+          <p class="romaji-label">Jawaban yang benar:</p>
+          <div class="feedback-answer-with-romaji">
+            ${addRomaji(question.options[question.correct])}
+          </div>
+        </div>
+      `;
     }
 
     feedbackContent += `
-                <p class="feedback-explanation">${question.explanation}</p>
-                <button class="btn-next" id="nextBtn">
-                    ${this.currentQuestion < this.questions.length - 1 ? 'Pertanyaan Berikutnya' : 'Lihat Hasil'}
-                </button>
-            </div>
-        `;
+        <p class="feedback-explanation">${question.explanation}</p>
+        <button class="btn-next" id="nextBtn">
+          ${this.currentQuestion < this.questions.length - 1 ? 'Pertanyaan Berikutnya' : 'Lihat Hasil'}
+        </button>
+      </div>
+    `;
 
     container.innerHTML = feedbackContent;
 
@@ -173,38 +174,38 @@ class QuizEngine {
 
     const container = document.getElementById('quiz-container');
     container.innerHTML = `
-            <div class="results-card">
-                <div class="results-icon ${passed ? 'passed' : 'failed'}">
-                    ${passed ? '🎉' : '📚'}
-                </div>
-                <h2 class="results-title">${passed ? 'Selamat!' : 'Terus Belajar!'}</h2>
-                <div class="results-score">
-                    <div class="score-circle">
-                        <span class="score-number">${percentage}%</span>
-                    </div>
-                </div>
-                <div class="results-details">
-                    <div class="result-item">
-                        <span class="result-label">Benar</span>
-                        <span class="result-value">${this.score} / ${this.questions.length}</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Waktu</span>
-                        <span class="result-value">${timeSpent} detik</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Status</span>
-                        <span class="result-value ${passed ? 'text-success' : 'text-warning'}">
-                            ${passed ? 'Lulus' : 'Belum Lulus'}
-                        </span>
-                    </div>
-                </div>
-                <div class="results-actions">
-                    <button class="btn btn-secondary" onclick="location.reload()">Coba Lagi</button>
-                    <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
-                </div>
-            </div>
-        `;
+      <div class="results-card">
+        <div class="results-icon ${passed ? 'passed' : 'failed'}">
+          ${passed ? '🎉' : '📚'}
+        </div>
+        <h2 class="results-title">${passed ? 'Selamat!' : 'Terus Belajar!'}</h2>
+        <div class="results-score">
+          <div class="score-circle">
+            <span class="score-number">${percentage}%</span>
+          </div>
+        </div>
+        <div class="results-details">
+          <div class="result-item">
+            <span class="result-label">Benar</span>
+            <span class="result-value">${this.score} / ${this.questions.length}</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Waktu</span>
+            <span class="result-value">${timeSpent} detik</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Status</span>
+            <span class="result-value ${passed ? 'text-success' : 'text-warning'}">
+              ${passed ? 'Lulus' : 'Belum Lulus'}
+            </span>
+          </div>
+        </div>
+        <div class="results-actions">
+          <button class="btn btn-secondary" onclick="location.reload()">Coba Lagi</button>
+          <a href="../index.html" class="btn btn-primary">Kembali ke Beranda</a>
+        </div>
+      </div>
+    `;
   }
 }
 
