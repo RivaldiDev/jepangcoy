@@ -238,7 +238,9 @@
             <div class="tab-content" id="practice">
                 <section class="quiz-section">
                     <h2>Latihan Pemahaman</h2>
-                    <p class="section-intro">Pilih jawaban yang paling tepat untuk setiap pertanyaan.</p>
+                    <p class="section-intro">
+                        Pilih jawaban yang paling tepat. Setiap kata ditampilkan dengan romaji di bawahnya.
+                    </p>
 
                     <!-- Quiz Container -->
                     <div id="quiz-container">
@@ -248,21 +250,59 @@
                             <div class="options">
                                 <label class="option">
                                     <input type="radio" name="q1" value="a" />
-                                    <span class="option-text">わたしはせんせいです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">わたし</span><span class="romaji">watashi</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">は</span><span class="romaji">wa</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">せんせい</span><span class="romaji">sensei</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                                 <label class="option">
                                     <input type="radio" name="q1" value="b" />
-                                    <span class="option-text">わたしはがくせいです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">わたし</span><span class="romaji">watashi</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">は</span><span class="romaji">wa</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">がくせい</span><span class="romaji">gakusei</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                                 <label class="option">
                                     <input type="radio" name="q1" value="c" />
-                                    <span class="option-text">わたしがくせいです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">わたし</span><span class="romaji">watashi</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">がくせい</span><span class="romaji">gakusei</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                             </div>
                             <div class="explanation" id="exp1" style="display: none">
                                 <p><strong>Jawaban benar:</strong> わたしはがくせいです。</p>
                                 <p>
-                                    Polanya adalah: X<strong>は</strong>Y<strong>です</strong>. Jangan lupa partikel は!
+                                    Perhatikan: <strong>がくせい</strong> (gakusei) = pelajar,
+                                    <strong>せんせい</strong> (sensei) = guru. Jangan lupa partikel
+                                    <strong>は</strong> (wa)!
                                 </p>
                             </div>
                         </div>
@@ -273,22 +313,58 @@
                             <div class="options">
                                 <label class="option">
                                     <input type="radio" name="q2" value="a" />
-                                    <span class="option-text">それはほんです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">それ</span><span class="romaji">sore</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">は</span><span class="romaji">wa</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">ほん</span><span class="romaji">hon</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                                 <label class="option">
                                     <input type="radio" name="q2" value="b" />
-                                    <span class="option-text">これはほんです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">これ</span><span class="romaji">kore</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">は</span><span class="romaji">wa</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">ほん</span><span class="romaji">hon</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                                 <label class="option">
                                     <input type="radio" name="q2" value="c" />
-                                    <span class="option-text">これほんです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">これ</span><span class="romaji">kore</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">ほん</span><span class="romaji">hon</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                             </div>
                             <div class="explanation" id="exp2" style="display: none">
                                 <p><strong>Jawaban benar:</strong> これはほんです。</p>
                                 <p>
-                                    <strong>これ</strong> = ini (dekat pembicara). <strong>それ</strong> = itu (dekat
-                                    lawan bicara).
+                                    <strong>これ</strong> (kore) = ini. <strong>それ</strong> (sore) = itu. Jangan lupa
+                                    partikel <strong>は</strong> (wa)!
                                 </p>
                             </div>
                         </div>
@@ -299,48 +375,114 @@
                             <div class="options">
                                 <label class="option">
                                     <input type="radio" name="q3" value="a" />
-                                    <span class="option-text">わたしはかばん</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">わたし</span><span class="romaji">watashi</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">は</span><span class="romaji">wa</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">かばん</span><span class="romaji">kaban</span></span
+                                        >
+                                    </div>
                                 </label>
                                 <label class="option">
                                     <input type="radio" name="q3" value="b" />
-                                    <span class="option-text">わたしのかばん</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">わたし</span><span class="romaji">watashi</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">の</span><span class="romaji">no</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">かばん</span><span class="romaji">kaban</span></span
+                                        >
+                                    </div>
                                 </label>
                                 <label class="option">
                                     <input type="radio" name="q3" value="c" />
-                                    <span class="option-text">わたしもかばん</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">わたし</span><span class="romaji">watashi</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">も</span><span class="romaji">mo</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">かばん</span><span class="romaji">kaban</span></span
+                                        >
+                                    </div>
                                 </label>
                             </div>
                             <div class="explanation" id="exp3" style="display: none">
                                 <p><strong>Jawaban benar:</strong> わたしのかばん</p>
-                                <p><strong>の</strong> menunjukkan kepemilikan, seperti "milik" atau "punya".</p>
+                                <p><strong>の</strong> (no) menunjukkan kepemilikan, seperti "milik" atau "punya".</p>
                             </div>
                         </div>
 
                         <!-- Question 4 -->
                         <div class="quiz-question" data-question="4">
                             <p class="question-text">
-                                4. Jika temanmu berkata "わたしはがくせいです。", dan kamu juga pelajar, kamu menjawab:
+                                4. Temanmu berkata "Saya pelajar." Jawab dengan "Saya juga pelajar."
                             </p>
                             <div class="options">
                                 <label class="option">
                                     <input type="radio" name="q4" value="a" />
-                                    <span class="option-text">わたしはがくせいです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">わたし</span><span class="romaji">watashi</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">は</span><span class="romaji">wa</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">がくせい</span><span class="romaji">gakusei</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                                 <label class="option">
                                     <input type="radio" name="q4" value="b" />
-                                    <span class="option-text">わたしもがくせいです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">わたし</span><span class="romaji">watashi</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">も</span><span class="romaji">mo</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">がくせい</span><span class="romaji">gakusei</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                                 <label class="option">
                                     <input type="radio" name="q4" value="c" />
-                                    <span class="option-text">わたしのがくせいです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">わたし</span><span class="romaji">watashi</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">の</span><span class="romaji">no</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">がくせい</span><span class="romaji">gakusei</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                             </div>
                             <div class="explanation" id="exp4" style="display: none">
                                 <p><strong>Jawaban benar:</strong> わたしもがくせいです。</p>
-                                <p>
-                                    Gunakan <strong>も</strong> untuk "juga" ketika informasinya sama dengan yang baru
-                                    disebutkan.
-                                </p>
+                                <p><strong>も</strong> (mo) artinya "juga". Gunakan untuk menyatakan hal yang sama.</p>
                             </div>
                         </div>
 
@@ -350,20 +492,62 @@
                             <div class="options">
                                 <label class="option">
                                     <input type="radio" name="q5" value="a" />
-                                    <span class="option-text">これはペンです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">これ</span><span class="romaji">kore</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">は</span><span class="romaji">wa</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">ペン</span><span class="romaji">pen</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                                 <label class="option">
                                     <input type="radio" name="q5" value="b" />
-                                    <span class="option-text">これはペンじゃないです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">これ</span><span class="romaji">kore</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">は</span><span class="romaji">wa</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">ペン</span><span class="romaji">pen</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">じゃない</span><span class="romaji">ja nai</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                                 <label class="option">
                                     <input type="radio" name="q5" value="c" />
-                                    <span class="option-text">これもペンです。</span>
+                                    <div class="word-group">
+                                        <span class="word"
+                                            ><span class="jp">これ</span><span class="romaji">kore</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">も</span><span class="romaji">mo</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">ペン</span><span class="romaji">pen</span></span
+                                        >
+                                        <span class="word"
+                                            ><span class="jp">です</span><span class="romaji">desu</span></span
+                                        >
+                                    </div>
                                 </label>
                             </div>
                             <div class="explanation" id="exp5" style="display: none">
                                 <p><strong>Jawaban benar:</strong> これはペンじゃないです。</p>
-                                <p><strong>じゃないです</strong> digunakan untuk menyangkal (bukan).</p>
+                                <p><strong>じゃないです</strong> (ja nai desu) artinya "bukan".</p>
                             </div>
                         </div>
                     </div>
