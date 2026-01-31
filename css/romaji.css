@@ -1,4 +1,97 @@
-/* Romaji Annotations Styling */
+/* Word Group Styling - Groups words with romaji below */
+.word-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    line-height: 1.8;
+}
+
+.word {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 45px;
+    padding: 0.25rem 0.1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+}
+
+.word:hover {
+    background-color: rgba(255, 46, 99, 0.1);
+}
+
+.word .jp {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+    display: block;
+}
+
+.word .romaji {
+    font-size: 0.75rem;
+    color: var(--primary);
+    margin-top: 0.15rem;
+    font-style: italic;
+    font-weight: 500;
+    display: block;
+}
+
+/* Particles styling */
+.word.particle {
+    min-width: 25px;
+}
+
+.word.particle .jp {
+    font-size: 1rem;
+    color: var(--accent-cyan);
+}
+
+.word.particle .romaji {
+    font-size: 0.7rem;
+    color: var(--accent-cyan);
+    opacity: 0.8;
+}
+
+/* Question text specific styling */
+.question-text .word-group {
+    gap: 0.75rem;
+}
+
+.question-text .word {
+    min-width: 50px;
+}
+
+.question-text .word .jp {
+    font-size: 1.25rem;
+}
+
+.question-text .word .romaji {
+    font-size: 0.8rem;
+}
+
+/* Option text styling */
+.option-text .word-group {
+    gap: 0.5rem;
+}
+
+.option-text .word {
+    min-width: 40px;
+    padding: 0.15rem 0.1rem;
+}
+
+.option-text .word .jp {
+    font-size: 1rem;
+}
+
+.option-text .word .romaji {
+    font-size: 0.7rem;
+}
+
+/* Legacy ruby support - hide arrows */
 ruby {
     position: relative;
     display: inline-flex;
@@ -19,54 +112,73 @@ rt.romaji-rt {
     position: relative;
 }
 
-/* Arrow connecting character to romaji */
+/* Remove arrows - no longer needed with word grouping */
 rt.romaji-rt::before {
-    content: '↓';
-    position: absolute;
-    top: -0.8em;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.8em;
-    color: var(--primary);
-    opacity: 0.6;
-}
-
-/* Hover effect */
-ruby:hover rt.romaji-rt {
-    color: #dc2626;
-}
-
-ruby:hover rt.romaji-rt::before {
-    opacity: 1;
-    color: #dc2626;
-}
-
-/* Question text specific styling */
-.question-text ruby {
-    margin: 0 0.15em;
-}
-
-.question-text rt.romaji-rt {
-    font-size: 0.55em;
-    margin-top: 0.4em;
-}
-
-/* Option text styling */
-.option-text ruby {
-    margin: 0 0.1em;
-}
-
-.option-text rt.romaji-rt {
-    font-size: 0.5em;
+    display: none;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    rt.romaji-rt {
-        font-size: 0.55em;
+    .word-group {
+        gap: 0.4rem;
     }
 
-    rt.romaji-rt::before {
-        font-size: 0.7em;
+    .word {
+        min-width: 40px;
+        padding: 0.2rem 0.1rem;
+    }
+
+    .word .jp {
+        font-size: 1rem;
+    }
+
+    .word .romaji {
+        font-size: 0.7rem;
+    }
+
+    .question-text .word-group {
+        gap: 0.5rem;
+    }
+
+    .question-text .word {
+        min-width: 45px;
+    }
+
+    .question-text .word .jp {
+        font-size: 1.1rem;
+    }
+
+    .option-text .word {
+        min-width: 35px;
+    }
+
+    .option-text .word .jp {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .word-group {
+        gap: 0.35rem;
+    }
+
+    .word {
+        min-width: 35px;
+    }
+
+    .word .jp {
+        font-size: 0.95rem;
+    }
+
+    .word .romaji {
+        font-size: 0.65rem;
+    }
+
+    .question-text .word {
+        min-width: 40px;
+    }
+
+    .question-text .word .jp {
+        font-size: 1rem;
     }
 }
