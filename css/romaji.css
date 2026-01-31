@@ -157,6 +157,56 @@ rt.romaji-rt::before {
     }
 }
 
+/* Feedback Romaji Section - Shows after wrong answer */
+.feedback-romaji-section {
+    background: rgba(255, 46, 99, 0.05);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+    border: 2px solid var(--accent-crimson);
+    border-left: 4px solid var(--accent-crimson);
+}
+
+.romaji-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feedback-answer-with-romaji,
+.feedback-question-with-romaji {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: var(--bg-card);
+    border-radius: var(--radius-sm);
+}
+
+.feedback-answer-with-romaji {
+    border-left: 3px solid var(--success);
+}
+
+.feedback-question-with-romaji {
+    border-left: 3px solid var(--accent-cyan);
+}
+
+.feedback-romaji-section .word-group {
+    justify-content: flex-start;
+    gap: 0.75rem;
+}
+
+.feedback-romaji-section .word .jp {
+    font-size: 1.35rem;
+}
+
+.feedback-romaji-section .word .romaji {
+    font-size: 0.85rem;
+    color: var(--accent-crimson);
+    font-weight: 600;
+}
+
 @media (max-width: 480px) {
     .word-group {
         gap: 0.35rem;
@@ -180,5 +230,18 @@ rt.romaji-rt::before {
 
     .question-text .word .jp {
         font-size: 1rem;
+    }
+
+    .feedback-romaji-section {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .feedback-romaji-section .word .jp {
+        font-size: 1.1rem;
+    }
+
+    .feedback-romaji-section .word .romaji {
+        font-size: 0.75rem;
     }
 }
