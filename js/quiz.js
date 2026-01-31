@@ -98,6 +98,7 @@ class QuizEngine {
     const container = document.getElementById('quiz-container');
     const percentage = Math.round((this.score / this.questions.length) * 100);
     const isExam = this.lessonId === 'uts-midterm' || this.lessonId === 'uas-final';
+    const selectedAnswer = this.answers[this.answers.length - 1].selected;
 
     let feedbackContent = `
       <div class="feedback-card ${isCorrect ? 'correct' : 'incorrect'}">
@@ -105,6 +106,14 @@ class QuizEngine {
           ${isCorrect ? '✓' : '✗'}
         </div>
         <h3 class="feedback-title">${isCorrect ? 'Benar!' : 'Salah'}</h3>
+    `;
+
+    // Show detailed answer breakdown
+    feedbackContent += `
+      <div class="feedback-answers-breakdown">
+        <h4 class="breakdown-title">Analisis Jawaban:</h4>
+        ${this.buildAnswerBreakdown(question, selectedAnswer, isCorrect)}
+      </div>
     `;
 
     // For exams: show romaji breakdown after wrong answer
@@ -123,8 +132,8 @@ class QuizEngine {
           </div>
         </div>
       `;
-    } else if (!isExam) {
-      // Regular quizzes: show romaji breakdown in feedback too
+    } else if (!isExam && !isCorrect) {
+      // Regular quizzes when wrong: show romaji breakdown
       feedbackContent += `
         <div class="feedback-romaji-section">
           <p class="romaji-label">Jawaban yang benar:</p>
@@ -136,7 +145,10 @@ class QuizEngine {
     }
 
     feedbackContent += `
-        <p class="feedback-explanation">${question.explanation}</p>
+        <div class="feedback-explanation-box">
+          <h4>Penjelasan:</h4>
+          <p>${question.explanation}</p>
+        </div>
         <button class="btn-next" id="nextBtn">
           ${this.currentQuestion < this.questions.length - 1 ? 'Pertanyaan Berikutnya' : 'Lihat Hasil'}
         </button>
@@ -154,6 +166,55 @@ class QuizEngine {
         this.showResults();
       }
     });
+  }
+
+  // Build detailed answer breakdown showing why each option is correct or wrong
+  buildAnswerBreakdown(question, selectedIndex, isCorrect) {
+    const letters = ['A', 'B', 'C', 'D'];
+    let breakdown = '';
+
+    question.options.forEach((option, index) => {
+      const letter = letters[index];
+      const isSelected = index === selectedIndex;
+      const isTheCorrectAnswer = index === question.correct;
+
+      let statusClass = '';
+      let statusIcon = '';
+      let reason = '';
+
+      if (isTheCorrectAnswer) {
+        // This is the correct answer
+        statusClass = 'correct-answer';
+        statusIcon = '✓';
+        reason = question.whyCorrect || 'Ini adalah jawaban yang tepat.';
+      } else if (isSelected) {
+        // User selected this but it's wrong
+        statusClass = 'wrong-selected';
+        statusIcon = '✗';
+        reason = question.whyWrong?.[index] || 'Jawaban ini tidak tepat untuk pertanyaan tersebut.';
+      } else {
+        // Not selected and not correct
+        statusClass = 'other-option';
+        statusIcon = '○';
+        reason = question.whyWrong?.[index] || 'Bukan jawaban yang tepat.';
+      }
+
+      breakdown += `
+        <div class="answer-item ${statusClass} ${isSelected ? 'selected' : ''}">
+          <div class="answer-header">
+            <span class="answer-letter ${statusClass}">${letter}</span>
+            <span class="answer-status-icon">${statusIcon}</span>
+            <span class="answer-text">${option}</span>
+          </div>
+          <div class="answer-reason">
+            <span class="reason-label">${isTheCorrectAnswer ? '✓ Benar:' : isSelected ? '✗ Salah:' : '○'}</span>
+            <span class="reason-text">${reason}</span>
+          </div>
+        </div>
+      `;
+    });
+
+    return breakdown;
   }
 
   updateProgressBar() {
