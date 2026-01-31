@@ -89,26 +89,18 @@
 
             <!-- Tab Navigation -->
             <div class="tabs">
-                <button class="tab active" data-tab="instructions">
-                    <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle"
-                        >assignment</span
-                    >
-                    Petunjuk
+                <button class="tab active" data-tab="materi">
+                    <span class="material-symbols-outlined">menu_book</span>
+                    Materi
                 </button>
-                <button class="tab" data-tab="multiple-choice">
-                    <span class="material-symbols-outlined" style="font-size: 20px; vertical-align: middle"
-                        >check_circle</span
-                    >
-                    Pilihan Ganda (40)
-                </button>
-                <button class="tab" data-tab="drag-drop">
-                    <span class="material-symbols-outlined">drag_indicator</span>
-                    Susun Kata (10)
+                <button class="tab" data-tab="latihan">
+                    <span class="material-symbols-outlined">edit</span>
+                    Latihan
                 </button>
             </div>
 
-            <!-- Instructions Tab -->
-            <div class="tab-content active" id="instructions">
+            <!-- Materi Tab -->
+            <div class="tab-content active" id="materi">
                 <section class="study-section">
                     <h2>Petunjuk Ujian</h2>
 
@@ -143,8 +135,8 @@
                 </section>
             </div>
 
-            <!-- Multiple Choice Tab -->
-            <div class="tab-content" id="multiple-choice">
+            <!-- Latihan Tab -->
+            <div class="tab-content" id="latihan">
                 <section class="quiz-section">
                     <div class="quiz-header">
                         <h2>Pilihan Ganda (100 poin)</h2>
@@ -155,11 +147,8 @@
                     </div>
                     <div id="quiz-container"></div>
                 </section>
-            </div>
 
-            <!-- Drag and Drop Tab -->
-            <div class="tab-content" id="drag-drop">
-                <section class="quiz-section">
+                <section class="quiz-section" style="margin-top: 3rem;">
                     <div class="quiz-header">
                         <h2>Soal Susun Kata (100 poin)</h2>
                         <p>Susun kata-kata menjadi kalimat yang benar</p>
@@ -232,7 +221,7 @@
 
             function startExam() {
                 examStarted = true;
-                document.querySelector('[data-tab="multiple-choice"]').click();
+                document.querySelector('[data-tab="latihan"]').click();
                 startTimer();
             }
 
@@ -598,7 +587,7 @@
             ];
 
             // Initialize drag-drop quiz when tab is clicked
-            document.querySelector('[data-tab="drag-drop"]').addEventListener('click', () => {
+            document.querySelector('[data-tab="latihan"]').addEventListener('click', () => {
                 if (!window.dragDropQuiz) {
                     window.dragDropQuiz = new DragDropQuiz('dragdrop-container', dragDropExercises);
                     window.dragDropQuiz.init();
