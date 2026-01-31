@@ -7,6 +7,7 @@ class QuizEngine {
     this.score = 0;
     this.answers = [];
     this.startTime = Date.now();
+    this.isExam = lessonId === 'uts-midterm' || lessonId === 'uas-final';
   }
 
   init() {
@@ -38,14 +39,13 @@ class QuizEngine {
   renderQuestion() {
     const question = this.questions[this.currentQuestion];
     const container = document.getElementById('quiz-container');
-    const isExam = this.lessonId === 'uts-midterm' || this.lessonId === 'uas-final';
 
     // For regular quizzes: always show romaji
     // For exams (UTS/UAS): hide romaji during questions
-    const questionText = isExam ? question.question : addRomaji(question.question);
+    const questionText = this.isExam ? question.question : addRomaji(question.question);
     const optionsHtml = question.options
       .map((option, index) => {
-        const optionText = isExam ? option : addRomaji(option);
+        const optionText = this.isExam ? option : addRomaji(option);
         return `
         <button class="option-btn" data-index="${index}">
           <span class="option-letter">${String.fromCharCode(65 + index)}</span>
@@ -90,14 +90,25 @@ class QuizEngine {
       this.score++;
     }
 
-    // Show feedback
-    this.showFeedback(isCorrect, question);
+    // For exams: don't show feedback, just go to next or finish
+    // For regular quizzes: show feedback
+    if (this.isExam) {
+      this.currentQuestion++;
+      if (this.currentQuestion < this.questions.length) {
+        this.renderQuestion();
+        this.updateProgressBar();
+      } else {
+        // Exam finished - show review page with all answers
+        this.showExamReview();
+      }
+    } else {
+      // Regular quiz: show feedback
+      this.showFeedback(isCorrect, question);
+    }
   }
 
   showFeedback(isCorrect, question) {
     const container = document.getElementById('quiz-container');
-    const percentage = Math.round((this.score / this.questions.length) * 100);
-    const isExam = this.lessonId === 'uts-midterm' || this.lessonId === 'uas-final';
     const selectedAnswer = this.answers[this.answers.length - 1].selected;
 
     let feedbackContent = `
@@ -116,24 +127,8 @@ class QuizEngine {
       </div>
     `;
 
-    // For exams: show romaji breakdown after wrong answer
-    // For regular quizzes: always show romaji in feedback
-    if (!isCorrect && isExam) {
-      // Exams: only show romaji after wrong answer
-      feedbackContent += `
-        <div class="feedback-romaji-section">
-          <p class="romaji-label">Jawaban yang benar:</p>
-          <div class="feedback-answer-with-romaji">
-            ${addRomaji(question.options[question.correct])}
-          </div>
-          <p class="romaji-label">Pertanyaan:</p>
-          <div class="feedback-question-with-romaji">
-            ${addRomaji(question.question)}
-          </div>
-        </div>
-      `;
-    } else if (!isExam && !isCorrect) {
-      // Regular quizzes when wrong: show romaji breakdown
+    // Show romaji breakdown for wrong answers
+    if (!isCorrect) {
       feedbackContent += `
         <div class="feedback-romaji-section">
           <p class="romaji-label">Jawaban yang benar:</p>
@@ -168,6 +163,122 @@ class QuizEngine {
     });
   }
 
+  // Show exam review page with all questions and answers
+  showExamReview() {
+    const container = document.getElementById('quiz-container');
+    const percentage = Math.round((this.score / this.questions.length) * 100);
+    const passingScore = 80; // Exams require 80% to pass
+    const passed = percentage >= passingScore;
+    const timeSpent = Math.round((Date.now() - this.startTime) / 1000);
+    const wrongCount = this.questions.length - this.score;
+
+    // Save progress
+    this.saveProgress(passed, percentage);
+
+    let reviewContent = `
+      <div class="exam-review-card">
+        <div class="exam-review-header">
+          <div class="review-icon ${passed ? 'passed' : 'failed'}">
+            ${passed ? '🎉' : '📚'}
+          </div>
+          <h2 class="review-title">${passed ? 'Selamat! Ujian Selesai' : 'Ujian Selesai'}</h2>
+          <p class="review-subtitle">${passed ? 'Anda telah lulus ujian!' : 'Terus semangat belajar!'}</p>
+        </div>
+
+        <div class="exam-score-section">
+          <div class="score-circle ${passed ? 'passed' : 'failed'}">
+            <span class="score-number">${percentage}%</span>
+            <span class="score-label">${this.score}/${this.questions.length}</span>
+          </div>
+          <p class="passing-info">Nilai kelulusan: ${passingScore}%</p>
+        </div>
+
+        <div class="exam-stats">
+          <div class="stat-item correct">
+            <span class="stat-icon">✓</span>
+            <span class="stat-label">Benar</span>
+            <span class="stat-value">${this.score}</span>
+          </div>
+          <div class="stat-item wrong">
+            <span class="stat-icon">✗</span>
+            <span class="stat-label">Salah</span>
+            <span class="stat-value">${wrongCount}</span>
+          </div>
+          <div class="stat-item time">
+            <span class="stat-icon">⏱</span>
+            <span class="stat-label">Waktu</span>
+            <span class="stat-value">${timeSpent}d</span>
+          </div>
+        </div>
+
+        <div class="exam-status ${passed ? 'passed' : 'failed'}">
+          ${passed ? '✓ LULUS' : '✗ BELUM LULUS'}
+        </div>
+    `;
+
+    // Show all questions with their answers if not passed
+    if (!passed) {
+      reviewContent += `
+        <div class="all-questions-review">
+          <h3 class="review-section-title">Review Jawaban:</h3>
+          ${this.buildAllQuestionsReview()}
+        </div>
+      `;
+    }
+
+    reviewContent += `
+        <div class="exam-actions">
+          <button class="btn btn-secondary" onclick="location.reload()">
+            <span class="material-symbols-outlined">replay</span>
+            Coba Lagi
+          </button>
+          <a href="../index.html" class="btn btn-primary">
+            <span class="material-symbols-outlined">home</span>
+            Kembali ke Beranda
+          </a>
+        </div>
+      </div>
+    `;
+
+    container.innerHTML = reviewContent;
+  }
+
+  // Build review for all questions
+  buildAllQuestionsReview() {
+    const letters = ['A', 'B', 'C', 'D'];
+    let review = '';
+
+    this.questions.forEach((question, index) => {
+      const answer = this.answers[index];
+      const isCorrect = answer.isCorrect;
+      const userAnswer = letters[answer.selected];
+      const correctAnswer = letters[answer.correct];
+
+      review += `
+        <div class="review-question-item ${isCorrect ? 'correct' : 'wrong'}">
+          <div class="review-question-header">
+            <span class="review-number">${index + 1}.</span>
+            <span class="review-status">${isCorrect ? '✓' : '✗'}</span>
+            <span class="review-question-text">${question.question}</span>
+          </div>
+          <div class="review-answer-details">
+            <p class="your-answer ${isCorrect ? 'correct' : 'wrong'}">
+              Jawaban Anda: <strong>${userAnswer}</strong> 
+              ${isCorrect ? '(Benar)' : '(Salah)'}
+            </p>
+            ${!isCorrect ? `<p class="correct-answer">Jawaban Benar: <strong>${correctAnswer}</strong></p>` : ''}
+            <div class="review-romaji">
+              ${addRomaji(question.options[answer.correct])}
+            </div>
+            <p class="review-explanation">${question.explanation}</p>
+          </div>
+        </div>
+      `;
+    });
+
+    return review;
+  }
+
   // Build detailed answer breakdown showing why each option is correct or wrong
   buildAnswerBreakdown(question, selectedIndex, isCorrect) {
     const letters = ['A', 'B', 'C', 'D'];
@@ -183,17 +294,14 @@ class QuizEngine {
       let reason = '';
 
       if (isTheCorrectAnswer) {
-        // This is the correct answer
         statusClass = 'correct-answer';
         statusIcon = '✓';
         reason = question.whyCorrect || 'Ini adalah jawaban yang tepat.';
       } else if (isSelected) {
-        // User selected this but it's wrong
         statusClass = 'wrong-selected';
         statusIcon = '✗';
         reason = question.whyWrong?.[index] || 'Jawaban ini tidak tepat untuk pertanyaan tersebut.';
       } else {
-        // Not selected and not correct
         statusClass = 'other-option';
         statusIcon = '○';
         reason = question.whyWrong?.[index] || 'Bukan jawaban yang tepat.';

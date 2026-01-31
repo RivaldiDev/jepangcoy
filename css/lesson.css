@@ -1309,3 +1309,590 @@
         font-size: 0.7rem;
     }
 }
+
+/* ============================================
+   EXAM REVIEW STYLES
+   Results and Answer Review Components
+   ============================================ */
+
+/* ===== Exam Review Card ===== */
+.exam-review-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-bottom: 2rem;
+}
+
+.exam-review-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-crimson), var(--accent-cyan));
+    opacity: 0.7;
+}
+
+/* ===== Exam Review Header ===== */
+.exam-review-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.review-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    animation: iconPulse 0.6s ease;
+}
+
+.review-icon.passed {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--success);
+    box-shadow: 0 0 50px var(--success-glow);
+}
+
+.review-icon.failed {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+    box-shadow: 0 0 50px var(--danger-glow);
+}
+
+.review-title {
+    font-family: "Zen Dots", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.review-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+}
+
+/* ===== Exam Score Section ===== */
+.exam-score-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.score-circle.passed {
+    border-color: var(--success);
+    box-shadow:
+        0 0 40px var(--success-glow),
+        inset 0 0 30px rgba(16, 185, 129, 0.1);
+}
+
+.score-circle.passed::before {
+    border-color: var(--success);
+    opacity: 0.5;
+}
+
+.score-circle.passed .score-number {
+    color: var(--success);
+}
+
+.score-circle.failed {
+    border-color: var(--danger);
+    box-shadow:
+        0 0 40px var(--danger-glow),
+        inset 0 0 30px rgba(239, 68, 68, 0.1);
+}
+
+.score-circle.failed::before {
+    border-color: var(--danger);
+    opacity: 0.5;
+}
+
+.score-circle.failed .score-number {
+    color: var(--danger);
+}
+
+.passing-info {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-elevated);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    font-size: 1rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.passing-info::before {
+    content: "📋";
+}
+
+/* ===== Exam Stats ===== */
+.exam-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.stat-item.correct {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success);
+}
+
+.stat-item.wrong {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--danger);
+}
+
+.stat-item.time {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid var(--accent-cyan);
+}
+
+.stat-item .stat-icon {
+    font-size: 1.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.stat-item .stat-value {
+    font-family: "Zen Dots", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.stat-item.correct .stat-value {
+    color: var(--success);
+}
+
+.stat-item.wrong .stat-value {
+    color: var(--danger);
+}
+
+.stat-item.time .stat-value {
+    color: var(--accent-cyan);
+}
+
+/* ===== Exam Status Banner ===== */
+.exam-status {
+    padding: 1.25rem 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    font-family: "Zen Dots", sans-serif;
+    font-size: 1.25rem;
+    margin: 1.5rem 0;
+    animation: fadeSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+}
+
+.exam-status.passed {
+    background: rgba(16, 185, 129, 0.15);
+    border: 2px solid var(--success);
+    color: var(--success);
+    box-shadow: 0 0 30px var(--success-glow);
+}
+
+.exam-status.failed {
+    background: rgba(239, 68, 68, 0.15);
+    border: 2px solid var(--danger);
+    color: var(--danger);
+    box-shadow: 0 0 30px var(--danger-glow);
+}
+
+/* ===== All Questions Review ===== */
+.all-questions-review {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    margin-top: 2rem;
+}
+
+.review-section-title {
+    font-family: "Zen Dots", sans-serif;
+    font-size: 1.5rem;
+    color: var(--accent-crimson);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent-crimson);
+}
+
+/* ===== Review Question Item ===== */
+.review-question-item {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border);
+    transition: var(--transition);
+}
+
+.review-question-item:hover {
+    border-color: var(--accent-crimson);
+    transform: translateX(4px);
+}
+
+.review-question-item:last-child {
+    margin-bottom: 0;
+}
+
+.review-question-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.review-question-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--accent-crimson), var(--accent-crimson-dark));
+    border-radius: 50%;
+    font-size: 0.875rem;
+    color: white;
+    font-weight: 600;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px var(--accent-crimson-glow);
+}
+
+.review-question-text {
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+    flex: 1;
+}
+
+/* ===== Review Answer Details ===== */
+.review-answer-details {
+    margin-left: 3.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.your-answer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+.your-answer.correct {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success);
+    color: var(--success);
+}
+
+.your-answer.wrong {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+}
+
+.your-answer::before {
+    font-size: 1.25rem;
+}
+
+.your-answer.correct::before {
+    content: "✓";
+}
+
+.your-answer.wrong::before {
+    content: "✗";
+}
+
+.correct-answer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success);
+    border-radius: var(--radius);
+    color: var(--success);
+    font-size: 1rem;
+}
+
+.correct-answer::before {
+    content: "✓ Jawaban Benar:";
+    font-weight: 600;
+}
+
+/* ===== Review Romaji ===== */
+.review-romaji {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.25rem;
+    color: var(--accent-cyan);
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: var(--radius);
+    display: inline-block;
+}
+
+/* ===== Review Explanation ===== */
+.review-explanation {
+    margin-top: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border-left: 3px solid var(--accent-cyan);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.review-explanation strong {
+    color: var(--accent-cyan);
+    font-family: "Zen Dots", sans-serif;
+    font-size: 0.875rem;
+}
+
+/* ===== Exam Actions ===== */
+.exam-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+/* ===== Mobile Responsive for Exam Review ===== */
+@media (max-width: 768px) {
+    .exam-review-card {
+        padding: 2rem 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .review-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .review-title {
+        font-size: 1.5rem;
+    }
+
+    .review-subtitle {
+        font-size: 1rem;
+    }
+
+    .exam-score-section {
+        margin: 1.5rem 0;
+    }
+
+    .passing-info {
+        font-size: 0.9rem;
+        padding: 0.625rem 1rem;
+    }
+
+    .exam-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .stat-item {
+        padding: 0.75rem;
+    }
+
+    .stat-item .stat-icon {
+        font-size: 1.25rem;
+    }
+
+    .stat-item .stat-label {
+        font-size: 0.8rem;
+    }
+
+    .stat-item .stat-value {
+        font-size: 1.25rem;
+    }
+
+    .exam-status {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .all-questions-review {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .review-section-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .review-question-item {
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .review-question-item:hover {
+        transform: none;
+    }
+
+    .review-question-header {
+        gap: 0.75rem;
+    }
+
+    .review-question-number {
+        width: 36px;
+        height: 36px;
+        font-size: 0.8rem;
+    }
+
+    .review-question-text {
+        font-size: 1rem;
+    }
+
+    .review-answer-details {
+        margin-left: 0;
+        padding-top: 0.75rem;
+    }
+
+    .your-answer,
+    .correct-answer {
+        font-size: 0.95rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .review-romaji {
+        font-size: 1.125rem;
+    }
+
+    .review-explanation {
+        font-size: 0.9rem;
+        padding: 0.875rem 1rem;
+    }
+
+    .exam-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .exam-review-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .review-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .review-title {
+        font-size: 1.25rem;
+    }
+
+    .review-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .passing-info {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.875rem;
+    }
+
+    .exam-stats {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .stat-item {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.625rem 1rem;
+    }
+
+    .stat-item .stat-value {
+        font-size: 1.125rem;
+    }
+
+    .exam-status {
+        font-size: 0.9rem;
+        padding: 0.875rem 1rem;
+    }
+
+    .all-questions-review {
+        padding: 1.25rem;
+    }
+
+    .review-section-title {
+        font-size: 1.125rem;
+    }
+
+    .review-question-item {
+        padding: 1rem;
+    }
+
+    .review-question-number {
+        width: 32px;
+        height: 32px;
+        font-size: 0.75rem;
+    }
+
+    .review-question-text {
+        font-size: 0.95rem;
+    }
+
+    .your-answer,
+    .correct-answer {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .review-romaji {
+        font-size: 1rem;
+        padding: 0.375rem 0.625rem;
+    }
+
+    .review-explanation {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+    }
+}
